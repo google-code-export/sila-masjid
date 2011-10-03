@@ -1,10 +1,3 @@
 #sila-masjid
 
 Aplikasi yang kami buat kami beri nama sila masjid (sistem informasi dan pelaporan keuangan masjid), yaitu aplikasi berbasis web yang dikembangkan dengan menggunakan bahasa pemrograman Java. Aplikasi ini ditujukan bagi para pengurus masjid untuk membukukan keuangan masjid dan menghasilkan laporan keuangan yang akurat dan dapat dipercaya.
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
