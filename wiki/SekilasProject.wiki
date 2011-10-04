@@ -1,0 +1,41 @@
+Project : Sila Masjid
+
+Luaran dari project ini adalah sebuah aplikasi yang nantinya akan digunakan sebagai alat bantu melakukan pembukuan transaksi keuangan baik pengeluaran maupun penerimaan yang terjadi di dalam operasional masjid. Diharapkan dengan adanya bantuan aplikasi akuntansi ini, laporan yang dikeluarkan oleh pengurus masjid akan lebih akuntabel,transparan, dan sesuai dengan standar akuntansi yang berlaku khususnya bagi sektor publik seperti masjid.
+
+Beberapa fitur yang ada di dalam aplikasi Sila Masjid
+
+Fitur pengguna:
+1.Registrasi Masjid
+  a.Input profil masjid
+  b.Edit profil masjid
+  c.Input pengurus masjid
+  d.Edit pengurus masjid
+  e.Hapus pengurus masjid 
+2.Registrasi member non masjid (masyarakat/jamaah)
+  a. Input data pribadi
+  b. Edit data pribadi
+3.Login sistem
+4.Logout sistem
+5.Edit pasword
+
+Fitur transaksi:
+1.Input kode transaksi
+2.Input penerimaan
+3.Edit penerimaan
+4.Input pengeluaran
+5.Edit pengeluaran
+6.Input permohonan bantuan
+
+Fitur laporan:
+1.Laporan penerimaan rinci
+2.Laporan pengeluaran rinci
+3.Laporan Saldo Dana
+4.Laporan penerima Dana
+5.Laporan pemohon bantuan yang telah dibantu
+6.Laporan pemohon bantuan yang belum dibantu
+7.Laporan masjid pemilik dana terbesar
+8.Laporan masjid pemberi bantuan terbesar
+9.Laporan/liputan kegiatan masjid-masjid
+
+
+ 
