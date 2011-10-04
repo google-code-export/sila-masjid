@@ -1,0 +1,3 @@
+Metode pengerjaan aplikasi yang akan kelompok kami kembangkan menggunakan metode iteratif.
+Kami memilih metode ini karena menurut kelompok kami dengan metode iteratif ini pengerjaan project tidak akan terpaku pada satu jenis pekerjaan jika pekerjaan tersebut tidak dapat diselesaikan dengan cepat.
+Metode iteratif ini juga tidak memerlukan keterikatan antara satu pekerjaan dengan pekerjaan lainnya,sehingga ketika satu pekerjaan mengalami jalan buntu, maka pekerjaan tersebut dapat ditunda untuk kemudian hari dilanjutkan kembali.
