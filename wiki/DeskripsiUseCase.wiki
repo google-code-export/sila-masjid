@@ -15,7 +15,7 @@ UC-11 Lihat daftar lokasi masjid
 
 Deskripsi tiap-tiap use case adalah sbb. 
 
-UC-01 : Registrasi User
+*UC-01 : Registrasi User*
 =======================
 Aktor : 
 Pengguna SILA MASJID (Pengurus masjid)
@@ -36,7 +36,7 @@ Alternate flow :
  * Jika kata sandi yang dimasukkan kurang dari 6 digit, keluar pesan "Kata sandi minimal 6 digit". 
  * Jika field kata sandi dan field konfirmasi kata sandi tidak sama, keluar pesan "Kata sandi dan konfirmasi kata sandi yang Anda masukkan tidak sama"
 	
-UC-02 : Login
+*UC-02 : Login*
 ==============
 Aktor :
 Pengguna SILA MASJID (Admin dan Pengurus masjid)
@@ -56,13 +56,13 @@ Alternate flow :
  * Jika field nama atau kata sandi kosong, sistem menampilkan peringatan "nama dan kata sandi harus diisi"
  * Jika nama dan kata sandi yang dimasukkan pengguna tidak sesuai dengan nama dan kata sandi yang tersimpan di database, sistem menampilkan pesan "nama atau kata sandi tidak sesuai"
 
-UC-03 Profil masjid
+*UC-03 Profil masjid*
 ====================
 
-UC-04 Pengurus masjid
+*UC-04 Pengurus masjid*
 =====================
 
-UC-05 Rekening
+*UC-05 Rekening*
 ===============
 Aktor : 
 Pengguna SILA MASJID (Pengurus masjid)
@@ -106,7 +106,7 @@ Alternate flow :
   # Menu “ubah” dan “hapus” hanya bisa digunakan apabila telah terdapat data rekening.
 
 
-UC-06 Donatur
+*UC-06 Donatur*
 =============
 Aktor : 
 Pengguna SILA MASJID (Pengurus masjid)
@@ -150,7 +150,7 @@ Alternate flow :
 
 
 
-UC-07 Kode transaksi
+*UC-07 Kode transaksi*
 ====================
 Aktor : 
 Pengguna SILA MASJID (Admin dan Pengurus masjid)
@@ -191,14 +191,14 @@ Hapus :
 Alternate flow :
   * Jika field pada perekaman data ternyata kode transaksi atau deskripsi transaksi belum terisi, maka akan keluar pesan "silahkan isi kode dan deskripsi transaksi".
 
-UC-08 Transaksi penerimaan(R/U/H)
+*UC-08 Transaksi penerimaan(R/U/H)*
 =================================
 
-UC-09 Transaksi pengeluaran(R/U/H)
+*UC-09 Transaksi pengeluaran(R/U/H)*
 =================================
 
-UC-10 Cetak / Tayang Laporan Keuangan masjid
+*UC-10 Cetak / Tayang Laporan Keuangan masjid*
 ============================================
 
-UC-11 Lihat daftar lokasi masjid (user : pengunjung)
+*UC-11 Lihat daftar lokasi masjid (user : pengunjung)*
 ===================================================
