@@ -23,19 +23,18 @@ Pengguna SILA MASJID (Pengurus masjid)
 Deskripsi :
 Use case ini digunakan untuk melakukan pendaftaran pengguna baru SILA MASJID
 
-normal flow :
-1. Pengguna membuka halaman depan SILA MASJID
-2. Pengguna meng-klik link "Daftar"
-3. Sistem menampilkan halaman pendaftaran pengguna baru.
-4. Pengguna mengisikan field email, field kata sandi, dan field konfirmasi kata sandi.
-5. Pengguna menekan tombol Daftar.
-6. Sistem menyimpan data masukan dari pengguna ke dalam database dan mengirimkan notifikasi pendaftaran ke email yang digunakan.
-    dan menampilkan halaman depan.
+Normal flow :
+ # Pengguna membuka halaman depan SILA MASJID 
+ # Pengguna meng-klik link "Daftar"
+ # Sistem menampilkan halaman pendaftaran pengguna baru.
+ # Pengguna mengisikan field email, field kata sandi, dan field konfirmasi kata sandi.
+ # Pengguna menekan tombol Daftar.
+ # Sistem menyimpan data masukan dari pengguna ke dalam database dan mengirimkan notifikasi pendaftaran ke email yang digunakan dan menampilkan halaman depan.
 	
 Alternate flow :
-4a. Jika email sudah pernah terdaftar, keluar pesan "Email ini sudah pernah digunakan".
-4b. Jika kata sandi yang dimasukkan kurang dari 6 digit, keluar pesan "Kata sandi minimal 6 digit".
-4c. Jika field kata sandi dan field konfirmasi kata sandi tidak sama, keluar pesan "Kata sandi dan konfirmasi kata sandi yang Anda masukkan tidak sama"
+ * Jika email sudah pernah terdaftar, keluar pesan "Email ini sudah pernah digunakan".
+ * Jika kata sandi yang dimasukkan kurang dari 6 digit, keluar pesan "Kata sandi minimal 6 digit". 
+ * Jika field kata sandi dan field konfirmasi kata sandi tidak sama, keluar pesan "Kata sandi dan konfirmasi kata sandi yang Anda masukkan tidak sama"
 	
 UC-02 : Login
 ==============
@@ -46,16 +45,16 @@ Deskripsi :
 Use case ini digunakan untuk melakukan pengecekan terhadap nama dan kata sandi yang dimasukkan oleh admin dan pengguna SILA MASJID yang ingin menggunakan aplikasi. 
 
 Normal flow:
-1. Pengguna membuka halaman depan SILA MASJID
-2. Pengguna mengisi data field nama dan field kata sandi pada halaman login
-3. Pengguna menekan tombol "Login"
-4. Sistem melakukan validasi terhadap data yang dimasukkan.
-5. Sistem membandingkan nama dan kata sandi yang dimasukan dengan nama dan kata sandi yang ada dalam database.
-6. Sistem menampilkan halaman utama sesuai dengan hak akses masing-masing pengguna.
+ # Pengguna membuka halaman depan SILA MASJID
+ # Pengguna mengisi data field nama dan field kata sandi pada halaman login
+ # Pengguna menekan tombol "Login"
+ # Sistem melakukan validasi terhadap data yang dimasukkan.
+ # Sistem membandingkan nama dan kata sandi yang dimasukan dengan nama dan kata sandi yang ada dalam database.
+ # Sistem menampilkan halaman utama sesuai dengan hak akses masing-masing pengguna.
 
 Alternate flow :
-4a. Jika field nama atau kata sandi kosong, sistem menampilkan peringatan "nama dan kata sandi harus diisi"
-5a. Jika nama dan kata sandi yang dimasukkan pengguna tidak sesuai dengan nama dan kata sandi yang tersimpan di database, sistem menampilkan pesan "nama atau kata sandi tidak sesuai"
+ * Jika field nama atau kata sandi kosong, sistem menampilkan peringatan "nama dan kata sandi harus diisi"
+ * Jika nama dan kata sandi yang dimasukkan pengguna tidak sesuai dengan nama dan kata sandi yang tersimpan di database, sistem menampilkan pesan "nama atau kata sandi tidak sesuai"
 
 UC-03 Profil masjid
 ====================
