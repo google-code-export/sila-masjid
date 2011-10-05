@@ -5,37 +5,37 @@ Luaran dari project ini adalah sebuah aplikasi yang nantinya akan digunakan seba
 Beberapa fitur yang ada di dalam aplikasi Sila Masjid
 
 Fitur pengguna:
-1.Registrasi Masjid
-  a.Input profil masjid
-  b.Edit profil masjid
-  c.Input pengurus masjid
-  d.Edit pengurus masjid
-  e.Hapus pengurus masjid 
-2.Registrasi member non masjid (masyarakat/jamaah)
-  a. Input data pribadi
-  b. Edit data pribadi
-3.Login sistem
-4.Logout sistem
-5.Edit pasword
+  * Registrasi Masjid
+    * Input profil masjid
+    * Edit profil masjid
+    * Input pengurus masjid
+    * Edit pengurus masjid
+    * Hapus pengurus masjid 
+  * Registrasi member non masjid (masyarakat/jamaah)
+    * Input data pribadi
+    * Edit data pribadi
+  * Login sistem
+  * Logout sistem
+  * Edit password
 
 Fitur transaksi:
-1.Input kode transaksi
-2.Input penerimaan
-3.Edit penerimaan
-4.Input pengeluaran
-5.Edit pengeluaran
-6.Input permohonan bantuan
+  #Input kode transaksi
+  #Input penerimaan
+  #Edit penerimaan
+  #Input pengeluaran
+  #Edit pengeluaran
+  #Input permohonan bantuan
 
 Fitur laporan:
-1.Laporan penerimaan rinci
-2.Laporan pengeluaran rinci
-3.Laporan Saldo Dana
-4.Laporan penerima Dana
-5.Laporan pemohon bantuan yang telah dibantu
-6.Laporan pemohon bantuan yang belum dibantu
-7.Laporan masjid pemilik dana terbesar
-8.Laporan masjid pemberi bantuan terbesar
-9.Laporan/liputan kegiatan masjid-masjid
+  #Laporan penerimaan rinci
+  #Laporan pengeluaran rinci
+  #Laporan Saldo Dana
+  # Laporan penerima Dana
+  #Laporan pemohon bantuan yang telah dibantu
+  #Laporan pemohon bantuan yang belum dibantu
+  #Laporan masjid pemilik dana terbesar
+  #Laporan masjid pemberi bantuan terbesar
+  #Laporan/liputan kegiatan masjid-masjid
 
 
  
