@@ -197,7 +197,7 @@ Hapus :
   # Sistem menampilkan halaman kegiatan penghapusan kode transaksi berupa panel baru yang berisi field "kode transaksi" dan "deskripsi transaksi" yang dapat dihapus oleh pengguna.
   # Pengguna melakukan penghapusan kode transaksi dengan cara memberikan tanda "v" pada salah satu kode yang akan dihapus.
   # Pengguna menekan tombol "ok".
-  # Sistem akan menampilkan pesan konfirmasi yang berisi "Apakah Anda akan menghapus kode transaksi ini?".
+  # Sistem menampilkan pesan konfirmasi yang berisi "Apakah Anda akan menghapus kode transaksi ini?".
   # Pengguna menekan tombol "ok".
   # Sistem menampilkan pemberitahuan "kode transaksi berhasil dihapus", dan menampilkan halaman daftar kode transaksi.
 	
@@ -226,10 +226,23 @@ normal flow :
   # Pengguna dan Pengunjung memilih tanggal yang ingin ditampilkan.
   # Pengguna dan pengunjung memilih salah satu aksi yang ingin dilakukan yaitu mencetak laporan atau menayangkan laporan.
 
+Pilihan : 
 Cetak Laporan :
 ===============
+  # Pengguna dan Pengunjung menekan tombol "cetak".
+  # Sistem menampilkan pop up box dialog yang menampilkan halaman laporan keuangan yang akan dicetak beserta printer yang akan digunakan untuk mencetak laporan keuangan.
+  # Pengguna dan Pengunjung memilih jenis printer yang tersedia yang akan digunakan untuk mencetak laporan.
+  # Pengguna dan Pengunjung dapat mereview laporan keuangan sebelum dicetak.
+  # Sistem menayangkan laporan keuangan yang akan dicetak.
+  # Pengguna dan pengunjung menekan tombol "cetak"
+  # Sistem mengirim data laporan keuangan ke printer untuk dicetak.
+  # Sistem kembali ke halaman cetak/tayang laporan keuangan.
 
-  # Sistem menampilkan halaman dari salah satu sub menu Laporan Keuangan yang dipilih oleh pengguna dan pengunjung.
+Tayang Laporan :
+================
+  # Pengguna dan Pengunjung menekan tombol "tayang".  
+  # Sistem menayangkan laporan keuangan yang dipilih pengguna dan pengunjung dalam bentuk PDF.
+
   # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
   # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
 	
