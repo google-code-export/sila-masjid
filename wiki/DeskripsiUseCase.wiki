@@ -236,12 +236,21 @@ Cetak Laporan :
   # Sistem menayangkan laporan keuangan yang akan dicetak.
   # Pengguna dan pengunjung menekan tombol "cetak"
   # Sistem mengirim data laporan keuangan ke printer untuk dicetak.
-  # Sistem kembali ke halaman cetak/tayang laporan keuangan.
+  # Sistem menampilkan pesan "Finish".
+  # Pengguna dan pengunjung menekan tombol "finish" untuk menyelesaikan kegiatan mencetak laporan keuangan.
+  # Sistem menampilkan halaman cetak/tayang laporan keuangan.
+  # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
+  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
 
 Tayang Laporan :
 ================
   # Pengguna dan Pengunjung menekan tombol "tayang".  
   # Sistem menayangkan laporan keuangan yang dipilih pengguna dan pengunjung dalam bentuk PDF.
+  # Pengguna dan Pengunjung menutup tayangan laporan keuangan dan menekan tombol "keluar".
+  # Sistem menampilkan halaman cetak/tayang laporan keuangan.
+  # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
+  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
+
 
   * Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
   * Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
