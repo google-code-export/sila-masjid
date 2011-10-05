@@ -221,9 +221,14 @@ Use case ini menampilkan halaman untuk mencetak dan menayangkan laporan keuangan
 normal flow :
   # Pengguna dan Pengunjung melihat halaman depan SILA MASJID
   # Pengguna dan Pengunjung memilih menu Laporan Keuangan Masjid pada halaman depan SILA MASJID.
-  # Sistem menampilkan halaman yang berisi Laporan Keuangan Masjid yang ada.
-  # Pengguna dan Pengunjung memilih salah satu sub menu Laporan Keuangan yang ingin dilihat.
-  # Pengunjung memilih tanggal yang ingin ditampilkan.
+  # Sistem menampilkan halaman yang berisi Laporan Keuangan Masjid yang ada beserta pilihan "cetak" dan "tayang".
+  # Pengguna dan Pengunjung memilih salah satu sub menu Laporan Keuangan yang ingin dicetak atau dilihat.
+  # Pengguna dan Pengunjung memilih tanggal yang ingin ditampilkan.
+  # Pengguna dan pengunjung memilih salah satu aksi yang ingin dilakukan yaitu mencetak laporan atau menayangkan laporan.
+
+Cetak Laporan :
+===============
+
   # Sistem menampilkan halaman dari salah satu sub menu Laporan Keuangan yang dipilih oleh pengguna dan pengunjung.
   # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
   # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
