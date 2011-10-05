@@ -243,8 +243,8 @@ Tayang Laporan :
   # Pengguna dan Pengunjung menekan tombol "tayang".  
   # Sistem menayangkan laporan keuangan yang dipilih pengguna dan pengunjung dalam bentuk PDF.
 
-  # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
-  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
+  * Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
+  * Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
 	
 Alternate flow :
   * Jika pada tanggal yang dipilih tidak ada laporan keuangan yang dikeluarkan masjid, maka sistem akan menampilkan pesan "Maaf, tidak ada laporan keuangan yang dapat ditampilkan".
