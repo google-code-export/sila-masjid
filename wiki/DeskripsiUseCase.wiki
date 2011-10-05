@@ -127,6 +127,7 @@ Use case ini digunakan untuk merekam, ubah, dan hapus nama-nama donatur tetap ma
 
 normal flow :
 rekam :
+======
   # Pengguna masuk menu “donatur”.
   # Sistem menampilkan halaman “donatur”
   # Pengguna meng-klik tombol R/U/H
@@ -171,6 +172,7 @@ Use case ini digunakan untuk melakukan perekaman, pengubahan, atau penghapusan d
 
 normal flow :
 Rekam :
+=======
   # Pengguna memilih salah satu menu yang ada di halaman utama yaitu Kode Transaksi.
   # Sistem menampilkan halaman yang berisi mengenai kegiatan perekaman, pengubahan, atau penghapusan kode transaksi yang dapat dilakukan oleh pengguna.
   # Pengguna menekan tombol "tambah" untuk melakukan perekaman.
