@@ -19,23 +19,23 @@ Fitur pengguna:
   * Edit password
 
 Fitur transaksi:
-  #Input kode transaksi
-  #Input penerimaan
-  #Edit penerimaan
-  #Input pengeluaran
-  #Edit pengeluaran
-  #Input permohonan bantuan
+  # Input kode transaksi
+  # Input penerimaan
+  # Edit penerimaan
+  # Input pengeluaran
+  # Edit pengeluaran
+  # Input permohonan bantuan
 
 Fitur laporan:
-  #Laporan penerimaan rinci
-  #Laporan pengeluaran rinci
-  #Laporan Saldo Dana
+  # Laporan penerimaan rinci
+  # Laporan pengeluaran rinci
+  # Laporan Saldo Dana
   # Laporan penerima Dana
-  #Laporan pemohon bantuan yang telah dibantu
-  #Laporan pemohon bantuan yang belum dibantu
-  #Laporan masjid pemilik dana terbesar
-  #Laporan masjid pemberi bantuan terbesar
-  #Laporan/liputan kegiatan masjid-masjid
+  # Laporan pemohon bantuan yang telah dibantu
+  # Laporan pemohon bantuan yang belum dibantu
+  # Laporan masjid pemilik dana terbesar
+  # Laporan masjid pemberi bantuan terbesar
+  # Laporan/liputan kegiatan masjid-masjid
 
 
  
