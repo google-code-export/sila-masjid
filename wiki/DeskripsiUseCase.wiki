@@ -251,13 +251,30 @@ Tayang Laporan :
   # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
   # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
 
-
-  * Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
-  * Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
-	
+  
 Alternate flow :
   * Jika pada tanggal yang dipilih tidak ada laporan keuangan yang dikeluarkan masjid, maka sistem akan menampilkan pesan "Maaf, tidak ada laporan keuangan yang dapat ditampilkan".
 
 
 *UC-11 Lihat daftar lokasi masjid (user : pengunjung)*
 ===================================================
+Aktor : 
+Pengunjung SILA MASJID 
+
+Deskripsi :
+Use case ini digunakan bagi pengunjung yang ingin melihat lokasi masjid yang ada.
+
+normal flow :
+  # Pengunjung melihat halaman depan SILA MASJID
+  # Pengunjung memilih menu Daftar Lokasi Masjid pada halaman depan SILA MASJID.
+  # Sistem menampilkan halaman yang berisi Daftar masjid yang ada.
+  # Pengunjung memilih salah satu masjid yang terdaftar.
+  # Sistem menampilkan Nama Masjid dan Alamat dari Masjid tersebut.
+  # Pengunjung mengisikan Nama Masjid pada kolom "Search".
+  # Sistem menampilkan Nama Masjid dan Alamat dari Masjid tersebut.
+  # Pengunjung keluar dari halaman Daftar Masjid dengan menekan tombol "keluar".
+  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
+	
+Alternate flow :
+  * Jika Nama Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Search" tidak ada, maka sistem akan menampilkan pesan "Maaf, untuk saat ini nama Masjid yang Anda cari belum terdaftar dalam database kami. Terima kasih".
+  * Jika Nama Masjid dan Lokasi Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Search" ternyata berbeda dengan yang ada di dalam database, maka sistem akan menampilkan pesan "Nama Masjid yang Anda cari saat ini hanya terdapat di lokasi(lokasi sesuai dengan yang ada di dalam database) ini.
