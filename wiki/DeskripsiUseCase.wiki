@@ -61,44 +61,94 @@ UC-03 Profil masjid
 
 UC-04 Pengurus masjid
 =====================
-UC-04 Pengurus Masjid
-Aktor :
-Pengguna SILA MASJID
-Deskripsi :
-Use case ini digunakan untuk mengelola (rekam/ubah/hapus) data pengurus masjid. 
-Normal flow :
- # Pengguna berada di halaman utama
- # Pengguna memilih menu pengurus
- # Sistem menampilkan halaman Pengurus Masjid
- # Pengguna mengisikan field nama, field jabatan, dan field no. telpon
- # pengguna menekan tombol simpan.
- # Sistem menampilkan pesan "Data Pengurus sudah tersimpan" dan menyimpan data masukan ke db
- # Sistem menampilkan pengurus masjid yang direkam ke dalam daftar pengurus masjid.
- # Sistem  menyediakan pilihan untuk mengubah atau menghapus data pengurus masjid.
- * Untuk mengubah data pengurus masjid, pengguna meng-klik link ubah. 
-   S-1 : Sistem mengakses halaman perubahan data pengurus
- * Untuk menghapus data, pengguna mengklik link hapus pada pengurus yang dipilih.
- * Sistem menampilkan pop up "Apakah Anda yakin data pengurus ini dihapus?"
-		* Jika pengguna menekan tombol OK, sistem melakukan penghapusan data yang dipilih
-		* Jika pengguna menekan tombol Batal, sistem kembali menampilkan halaman Pengurus Masjid tanpa melakukan aksi apapun
-
-Alternatif flow ;
- * Jika pengguna tidak mengisi field nama atau field jabatan, sistem akan menampilkan pesan "Nama dan jabatan harus diisi". Data tidak tersimpan ke database.
-  
- * Untuk melakukan perubahan, sistem menyediakan pilihan untuk mengubah atau menghapus data pengurus masjid.
-S-1 : Sistem mengakses halaman perubahan data pengurus
-	# Sistem secara otomatis menampilkan data pengurus yang akan diubah
-	# Pengguna mengganti field nama, jabatan, atau	no. telepon.
-	# Pengguna menekan tombol Simpan.
-	# Sistem menyimpan perubahan ke dalam database dan menampilkan pesan berhasil dan menampilkan data pengurus masjid yang ter-update
-Alternatif flow S-1 :
- * Jika field nama dan jabatan sistem menampilkan pesan "Nama dan Jabatan harus diisi."	
 
 UC-05 Rekening
 ===============
+Aktor : 
+Pengguna SILA MASJID (Pengurus masjid)
+
+Deskripsi :
+Use case ini digunakan untuk merekam, ubah, dan hapus nomor rekening bank yang digunakan dalam transaksi masjid yang bersangkutan
+
+normal flow :
+rekam :
+  # Pengguna masuk menu “rekening”
+  # Sistem menampilkan halaman “rekening”
+  # Pengguna meng-klik tombol R/U/H
+  # Sistem menampilkan panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”.
+  # Pengguna mengisi field “nomor rekening”, “nama pemilik”, dan “nama bank”.
+  # Pengguna menekan tombol “Simpan”.
+  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “rekening”.
+
+Ubah :
+  # Pengguna berada dalam halaman menu “rekening”
+  # Pengguna meng-klik tombol R/U/H
+  # Muncul panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”
+  # Pengguna memilih data rekening yang akan diubah
+  # Pengguna meng-klik tombol “ubah”
+  # Sistem menampilkan panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”.
+  # Pengguna merubah data yang ingin diubah dalam field yang muncul
+  # Pengguna menekan tombol “Simpan”.
+  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “rekening”.
+
+Hapus : 
+  # Pengguna berada dalam halaman menu “rekening”
+  # Pengguna meng-klik tombol R/U/H
+  # Muncul panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”
+  # Pengguna memilih data rekening yang akan dihapus
+  # Pengguna meng-klik tombol “hapus”
+  # Sistem menampilkan pesan “apakah anda yakin ingin menghapus data rekening ini?”
+  # Pengguna menekan tombol “ya”.
+  # Sistem menampilkan pesan “data sudah terhapus” dan menghapus data dalam database, dan menampilkan halaman “rekening”.
+	
+Alternate flow :
+  # Untuk menu “rekam”, jika pengguna memasukkam karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
+  # Menu “ubah” dan “hapus” hanya bisa digunakan apabila telah terdapat data rekening.
+
 
 UC-06 Donatur
 =============
+Aktor : 
+Pengguna SILA MASJID (Pengurus masjid)
+
+Deskripsi :
+Use case ini digunakan untuk merekam, ubah, dan hapus nama-nama donatur tetap masjid bersangkutan. 
+
+normal flow :
+rekam :
+  # Pengguna masuk menu “donatur”.
+  # Sistem menampilkan halaman “donatur”
+  # Pengguna meng-klik tombol R/U/H
+  # Sistem menampilkan panel baru berisi field “nama donatur”.
+  # Pengguna mengisi field “nama donatur”.
+  # Pengguna menekan tombol “Simpan”.
+  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “donatur”.
+
+Ubah :
+  # Pengguna berada dalam halaman menu “donatur”
+  # Pengguna meng-klik tombol R/U/H
+  # Sistem menampilkan panel baru berisi field “nama donatur”.
+  # Pengguna memilih data donatur yang akan diubah
+  # Pengguna meng-klik tombol “ubah”
+  # Sistem menampilkan panel baru berisi field “nama donatur”
+  # Pengguna merubah data yang ingin diubah dalam field yang muncul
+  # Pengguna menekan tombol “Simpan”.
+  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “donatur”.
+
+Hapus : 
+  # Pengguna berada dalam halaman menu “donatur”
+  # Pengguna meng-klik tombol R/U/H
+  # Sistem menampilkan panel baru berisi field “nama donatur”.
+  # Pengguna memilih data donatur yang akan dihapus
+  # Pengguna meng-klik tombol “hapus”
+  # Sistem menampilkan pesan “apakah anda yakin ingin menghapus data donatur ini?”
+  # Pengguna menekan tombol “ya”.
+  # Sistem menampilkan pesan “data sudah terhapus” dan menghapus data dalam database, dan menampilkan halaman “donatur”.
+	
+Alternate flow :
+  # Menu “ubah” dan “hapus” hanya bisa digunakan apabila telah terdapat data donatur.
+
+
 
 UC-07 Kode transaksi
 ====================
