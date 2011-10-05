@@ -212,6 +212,25 @@ Alternate flow :
 
 *UC-10 Cetak / Tayang Laporan Keuangan masjid*
 ============================================
+Aktor : 
+Pengguna dan Pengunjung SILA MASJID 
+
+Deskripsi :
+Use case ini menampilkan halaman untuk mencetak dan menayangkan laporan keuangan masjid.
+
+normal flow :
+  # Pengguna dan Pengunjung melihat halaman depan SILA MASJID
+  # Pengguna dan Pengunjung memilih menu Laporan Keuangan Masjid pada halaman depan SILA MASJID.
+  # Sistem menampilkan halaman yang berisi Laporan Keuangan Masjid yang ada.
+  # Pengguna dan Pengunjung memilih salah satu sub menu Laporan Keuangan yang ingin dilihat.
+  # Pengunjung memilih tanggal yang ingin ditampilkan.
+  # Sistem menampilkan halaman dari salah satu sub menu Laporan Keuangan yang dipilih oleh pengguna dan pengunjung.
+  # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
+  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
+	
+Alternate flow :
+  * Jika pada tanggal yang dipilih tidak ada laporan keuangan yang dikeluarkan masjid, maka sistem akan menampilkan pesan "Maaf, tidak ada laporan keuangan yang dapat ditampilkan".
+
 
 *UC-11 Lihat daftar lokasi masjid (user : pengunjung)*
 ===================================================
