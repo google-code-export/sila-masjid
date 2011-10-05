@@ -2,16 +2,27 @@
 DAFTAR USE CASE SILA MASJID :
 =============================
 UC-01 Registrasi
+================
 UC-02 Login
+===========
 UC-03 Profil masjid
+===================
 UC-04 Pengurus masjid
+=====================
 UC-05 Rekening
+==============
 UC-06 Donatur
+=============
 UC-07 Kode transaksi
+====================
 UC-08 Transaksi penerimaan(R/U/H)
+=================================
 UC-09 Transaksi pengeluaran(R/U/H)
+==================================
 UC-10 Cetak / Tayang Laporan Keuangan masjid
-UC-11 Lihat daftar lokasi masjid 
+============================================
+UC-11 Lihat daftar lokasi masjid
+================================ 
 
 Deskripsi tiap-tiap use case adalah sbb. 
 
