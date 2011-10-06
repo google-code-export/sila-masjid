@@ -1,6 +1,11 @@
 #labels Phase-Requirements
 DAFTAR USE CASE SILA MASJID :
 =============================
+TIPE-TIPE USER :
+ * ADMINISTRATOR
+ * PENGGUNA (PENGURUS MASJID)
+ * PENGUNJUNG
+
 UC-01 Registrasi
 ================
 UC-02 Login
