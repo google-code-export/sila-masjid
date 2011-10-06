@@ -28,6 +28,10 @@ UC-10 Cetak / Tayang Laporan Keuangan masjid
 ============================================
 UC-11 Lihat daftar lokasi masjid
 ================================ 
+UC-12 Penyaluran zakat
+======================
+UC-13 Log out
+=============
 
 Deskripsi tiap-tiap use case adalah sbb. 
 
@@ -335,3 +339,9 @@ normal flow :
 Alternate flow :
   * Jika Nama Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Search" tidak ada, maka sistem akan menampilkan pesan "Maaf, untuk saat ini nama Masjid yang Anda cari belum terdaftar dalam database kami. Terima kasih".
   * Jika Nama Masjid dan Lokasi Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Search" ternyata berbeda dengan yang ada di dalam database, maka sistem akan menampilkan pesan "Nama Masjid yang Anda cari saat ini hanya terdapat di lokasi(lokasi sesuai dengan yang ada di dalam database) ini.
+
+*UC-12 Penyaluran Zakat*
+========================
+
+*UC-13 Log out*
+===============
