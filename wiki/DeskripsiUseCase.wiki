@@ -69,9 +69,61 @@ Alternate flow :
 
 *UC-03 Profil masjid*
 ====================
+Aktor :
+Pengguna SILA MASJID
+
+Deskripsi :
+Use case ini digunakan untuk mengubah/menyesuaikan profil masjid.
+ 
+Normal flow :
+ # Pengguna berada di halaman utama
+ # Pengguna memilih menu profil masjid
+ # Sistem menampilkan halaman Profil masjid. Field Email dalam keadaan tertutup (tidak dapat diubah) 
+ # Pengguna mengisikan field nama masjid, alamat jalan, kota, dan no. telpon.
+ # Pengguna menekan tombol simpan.
+ # Sistem menampilkan pesan berhasil dan menyimpan data masukan ke database
+ 
+Alternatif flow ;
+ * Jika pengguna tidak mengisi field nama masjid,alamat jalan, kota, atau no. telpon ada yan kosong, sistem akan menampilkan pesan "Semua field harus diisi". Data tidak tersimpan ke database.
+
 
 *UC-04 Pengurus masjid*
 =====================
+Aktor :
+Pengguna SILA MASJID
+
+Deskripsi :
+Use case ini digunakan untuk mengelola (rekam/ubah/hapus) data pengurus masjid. 
+
+Normal flow :
+ # Pengguna berada di halaman utama
+ # Pengguna memilih menu pengurus
+ # Sistem menampilkan halaman Pengurus Masjid
+ # Pengguna mengisikan field nama, field jabatan, dan field no. telpon
+ # pengguna menekan tombol simpan.
+ # Sistem menampilkan pesan "Data Pengurus sudah tersimpan" dan menyimpan data masukan ke db
+ # Sistem menampilkan pengurus masjid yang direkam ke dalam daftar pengurus masjid.
+ # Sistem  menyediakan pilihan untuk mengubah atau menghapus data pengurus masjid.
+ * Untuk mengubah data pengurus masjid, pengguna meng-klik link ubah. 
+   S-1 : Sistem mengakses halaman perubahan data pengurus
+ * Untuk menghapus data, pengguna mengklik link hapus pada pengurus yang dipilih.
+   * sistem menampilkan pop up "Apakah Anda yakin data pengurus ini dihapus?"
+     * Jika pengguna menekan tombol OK, sistem melakukan penghapusan data yang dipilih
+     * Jika pengguna menekan tombol Batal, sistem kembali menampilkan halaman Pengurus Masjid tanpa melakukan aksi apapun
+
+Alternatif flow ;
+ * Jika pengguna tidak mengisi field nama atau field jabatan, sistem akan menampilkan pesan "Nama dan jabatan harus diisi". Data masukan tidak tersimpan ke database.
+  
+Untuk melakukan perubahan, sistem menyediakan pilihan untuk mengubah atau menghapus data pengurus masjid.
+
+S-1 : Sistem mengakses halaman perubahan data pengurus
+	* Sistem secara otomatis menampilkan data pengurus yang akan diubah
+	* Pengguna mengganti field nama, jabatan, atau	no. telepon.
+	* Pengguna menekan tombol Simpan.
+	* Sistem menyimpan perubahan ke dalam database dan menampilkan pesan berhasil dan menampilkan data pengurus masjid yang ter-update
+Alternatif flow S-1 :
+ * Jika field nama dan jabatan sistem menampilkan pesan "Nama dan Jabatan harus diisi."	
+
 
 *UC-05 Rekening*
 ===============
