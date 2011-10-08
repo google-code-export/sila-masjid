@@ -231,27 +231,18 @@ Pengguna SILA MASJID (Admin dan Pengurus masjid)
 Deskripsi :
 Use case ini digunakan untuk melakukan perekaman, pengubahan, atau penghapusan dari kode transaksi yang ada yang sesuai dengan standar akuntansi yang berlaku untuk sektor publik.
 
-normal flow :
-Rekam :
-=======
-  # Pengguna memilih salah satu menu yang ada di halaman utama yaitu Kode Transaksi.
-  # Sistem menampilkan halaman yang berisi mengenai daftar kode transaksi yang telah ada beserta halaman untuk menambah kode transaksi.
-  # Pengguna mengisi kode transaksi dan deskripsi transaksi.
-  # Pengguna menekan tombol "simpan".
-  # Sistem menyimpan kode dan deskripsi transaksi yang telah diinput pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diinput oleh pengguna.
-  
-Ubah :
-  # Pengguna memilih salah satu kode transaksi yang akan diubah.
-  # Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan kode dan deskripsi transaksi.
-  # Pengguna mengubah kode transaksi dan deskripsi transaksi.
-  # Pengguna menekan tombol "ubah".
-  # Sistem menyimpan kode dan deskripsi transaksi yang telah diubah pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diubah oleh pengguna.
+normal flow : Rekam : 
 
-Hapus :
-  # Pengguna memilih salah satu kode transaksi yang akan dihapus.
-  # Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus kode transaksi ini?".
-  # Pengguna menekan tombol "ok" pada pesan konfirmasi.
-  # Sistem menampilkan daftar kode transaksi.
+Pengguna memilih salah satu menu yang ada di halaman utama yaitu Kode Transaksi. Sistem menampilkan halaman yang berisi mengenai daftar kode transaksi yang telah ada beserta halaman untuk menambah kode transaksi. Pengguna mengisi kode transaksi dan deskripsi transaksi. Pengguna menekan tombol "simpan". Sistem menyimpan kode dan deskripsi transaksi yang telah diinput pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diinput oleh pengguna. 
+
+Ubah : 
+
+Pengguna memilih salah satu kode transaksi yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan kode dan deskripsi transaksi. Pengguna mengubah kode transaksi dan deskripsi transaksi. Pengguna menekan tombol "ubah". Sistem menyimpan kode dan deskripsi transaksi yang telah diubah pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diubah oleh pengguna. 
+
+Hapus : 
+
+Pengguna memilih salah satu kode transaksi yang akan dihapus. Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus kode transaksi ini?". Pengguna menekan tombol "ok" pada pesan konfirmasi. Sistem menampilkan daftar kode transaksi. 
+
 	
 Alternate flow :
   * Jika field pada perekaman data ternyata kode transaksi atau deskripsi transaksi belum terisi, maka akan keluar pesan "silahkan isi kode dan deskripsi transaksi".
@@ -271,44 +262,13 @@ Deskripsi :
 Use case ini menampilkan halaman untuk mencetak dan menayangkan laporan keuangan masjid.
 
 normal flow :
-  # Pengguna dan Pengunjung melihat halaman depan SILA MASJID
-  # Pengguna dan Pengunjung memilih menu Laporan Keuangan Masjid pada halaman depan SILA MASJID.
-  # Sistem menampilkan halaman yang berisi Laporan Keuangan Masjid yang ada beserta pilihan "cetak" dan "tayang".
-  # Pengguna dan Pengunjung memilih salah satu sub menu Laporan Keuangan yang ingin dicetak atau dilihat.
-  # Pengguna dan Pengunjung memilih tanggal yang ingin ditampilkan.
-  # Pengguna dan pengunjung memilih salah satu aksi yang ingin dilakukan yaitu mencetak laporan atau menayangkan laporan.
-
-Pilihan : 
-Cetak Laporan :
-===============
-  # Pengguna dan Pengunjung menekan tombol "cetak".
-  # Sistem menampilkan pop up box dialog yang menampilkan halaman laporan keuangan yang akan dicetak beserta printer yang akan digunakan untuk mencetak laporan keuangan.
-  # Pengguna dan Pengunjung memilih jenis printer yang tersedia yang akan digunakan untuk mencetak laporan.
-  # Pengguna dan Pengunjung dapat mereview laporan keuangan sebelum dicetak.
-  # Sistem menayangkan laporan keuangan yang akan dicetak.
-  # Pengguna dan pengunjung menekan tombol "cetak"
-  # Sistem mengirim data laporan keuangan ke printer untuk dicetak.
-  # Sistem menampilkan pesan "Finish".
-  # Pengguna dan pengunjung menekan tombol "finish" untuk menyelesaikan kegiatan mencetak laporan keuangan.
-  # Sistem menampilkan halaman cetak/tayang laporan keuangan.
-  # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
-  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
-
-Tayang Laporan :
-================
-  # Pengguna dan Pengunjung menekan tombol "tayang".  
-  # Sistem menayangkan laporan keuangan yang dipilih pengguna dan pengunjung dalam bentuk PDF.
-  # Pengguna dan Pengunjung menutup tayangan laporan keuangan dan menekan tombol "keluar".
-  # Sistem menampilkan halaman cetak/tayang laporan keuangan.
-  # Pengguna dan Pengunjung keluar dari halaman Laporan Keuangan Masjid dengan menekan tombol "keluar".
-  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
-
+  Pengguna dan Pengunjung melihat halaman depan SILA MASJID. Pengguna dan Pengunjung memilih menu Laporan Keuangan Masjid pada halaman depan SILA MASJID. Sistem menampilkan halaman yang berisi Laporan Keuangan Masjid yang ada. Pengguna dan Pengunjung memilih salah satu jenis Laporan Keuangan yang ingin dicetak atau dilihat. Pengguna dan Pengunjung memilih tanggal yang ingin ditampilkan. Sistem menampilkan jenis laporan keuangan sesuai dengan periode yang dipilih oleh pengguna. Pengguna dan pengunjung memilih apakah akan menyimpan dokumen laporan keuangan tersebut ke dalam PC atau mencetak laporan keuangan tersebut melalui printer.
   
 Alternate flow :
   * Jika pada tanggal yang dipilih tidak ada laporan keuangan yang dikeluarkan masjid, maka sistem akan menampilkan pesan "Maaf, tidak ada laporan keuangan yang dapat ditampilkan".
 
 
-*UC-11 Lihat daftar lokasi masjid (user : pengunjung)*
+*UC-11 Lihat lokasi masjid (user : pengunjung)*
 ===================================================
 Aktor : 
 Pengunjung SILA MASJID 
@@ -317,15 +277,7 @@ Deskripsi :
 Use case ini digunakan bagi pengunjung yang ingin melihat lokasi masjid yang ada.
 
 normal flow :
-  # Pengunjung melihat halaman depan SILA MASJID
-  # Pengunjung memilih menu Daftar Lokasi Masjid pada halaman depan SILA MASJID.
-  # Sistem menampilkan halaman yang berisi Daftar masjid yang ada.
-  # Pengunjung memilih salah satu masjid yang terdaftar.
-  # Sistem menampilkan Nama Masjid dan Alamat dari Masjid tersebut.
-  # Pengunjung mengisikan Nama Masjid pada kolom "Search".
-  # Sistem menampilkan Nama Masjid dan Alamat dari Masjid tersebut.
-  # Pengunjung keluar dari halaman Daftar Masjid dengan menekan tombol "keluar".
-  # Sistem menampilkan halaman depan SILA MASJID dan menampilkan pesan "Terima Kasih atas kunjungan Anda".
+  Pengunjung melihat halaman depan SILA MASJID. Pengunjung memilih menu Lokasi Masjid pada halaman depan SILA MASJID. Sistem menampilkan halaman yang berisi data masjid beserta alamat dan peta yang berasal dari google map. 
 	
 Alternate flow :
   * Jika Nama Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Search" tidak ada, maka sistem akan menampilkan pesan "Maaf, untuk saat ini nama Masjid yang Anda cari belum terdaftar dalam database kami. Terima kasih".
