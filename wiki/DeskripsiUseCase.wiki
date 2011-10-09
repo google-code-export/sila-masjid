@@ -56,40 +56,11 @@ Pengguna mengisi field-field yang ada kemudian menekan tombol simpan. Jika ada s
 
 *UC-04 Pengurus masjid*
 =====================
-Aktor :
-Pengguna SILA MASJID
+Use case ini digunakan untuk mengelola data (rekam/ubah/hapus) pengurus masjid. Aktor yang terlibat dalam use case ini adalah pengurus masjid (pengguna). Pertama-tama dalam keadaan login, pengguna berada di halaman utama kemudian memilih menu Pengurus. Sistem merespon dengan menampilkan halaman Pengurus Masjid, yang terdiri atas form untuk merekam/mengubah data pengurus masjid dan daftar pengurus masjid di bagian bawahnya. Untuk menambah pengurus baru, pengguna mengisi field-field pada form pengurus masjid meliputi field-field nama, jabatan, dan no. telepon kemudian menekan tombol Simpan. Semua field tersebut harus diisi, jika ada field yang kosong, sistem akan menampilkan pesan "Field harus diisi". Jika sudah benar, sistem akan menampilkan pesan berhasil dan menyimpan data masukan ke dalam database serta menampilkan pengurus yang baru ditambahkan ke dalam daftar pengurus.
 
-Deskripsi :
-Use case ini digunakan untuk mengelola (rekam/ubah/hapus) data pengurus masjid. 
+Daftar pengurus berupa tabel yang menampilkan data pengurus dan terdapat juga ikon ubah dan hapus untuk mengubah atau menghapus data pengurus. Untuk mengubah data pengurus, klik ikon ubah pada baris pengurus dimaksud, sistem akan menampilkan data pengurus tersebut pada form Pengurus masjid. Pengguna kemudian mengubah data yang diinginkan (nama, jabatan, no. telepon, atau gabungan dari ketiganya) lalu menekan tombol Simpan. Sistem akan menampilkan pesan "Field harus diisi" jika terdapat field yang kosong, sedangkan jika semua field sudah terisi dengan benar, sistem menampilkan pesan berhasil, menyimpan perubahan data tersebut ke dalam database, dan menampilkan data pengurus yang sudah di-ubah dalam daftar pengurus.
 
-Normal flow :
- # Pengguna berada di halaman utama
- # Pengguna memilih menu pengurus
- # Sistem menampilkan halaman Pengurus Masjid
- # Pengguna mengisikan field nama, field jabatan, dan field no. telpon
- # pengguna menekan tombol simpan.
- # Sistem menampilkan pesan "Data Pengurus sudah tersimpan" dan menyimpan data masukan ke db
- # Sistem menampilkan pengurus masjid yang direkam ke dalam daftar pengurus masjid.
- # Sistem  menyediakan pilihan untuk mengubah atau menghapus data pengurus masjid.
- * Untuk mengubah data pengurus masjid, pengguna meng-klik link ubah. 
-   S-1 : Sistem mengakses halaman perubahan data pengurus
- * Untuk menghapus data, pengguna mengklik link hapus pada pengurus yang dipilih.
-   * sistem menampilkan pop up "Apakah Anda yakin data pengurus ini dihapus?"
-     * Jika pengguna menekan tombol OK, sistem melakukan penghapusan data yang dipilih
-     * Jika pengguna menekan tombol Batal, sistem kembali menampilkan halaman Pengurus Masjid tanpa melakukan aksi apapun
-
-Alternatif flow ;
- * Jika pengguna tidak mengisi field nama atau field jabatan, sistem akan menampilkan pesan "Nama dan jabatan harus diisi". Data masukan tidak tersimpan ke database.
-  
-Untuk melakukan perubahan, sistem menyediakan pilihan untuk mengubah atau menghapus data pengurus masjid.
-
-S-1 : Sistem mengakses halaman perubahan data pengurus
-	* Sistem secara otomatis menampilkan data pengurus yang akan diubah
-	* Pengguna mengganti field nama, jabatan, atau	no. telepon.
-	* Pengguna menekan tombol Simpan.
-	* Sistem menyimpan perubahan ke dalam database dan menampilkan pesan berhasil dan menampilkan data pengurus masjid yang ter-update
-Alternatif flow S-1 :
- * Jika field nama dan jabatan sistem menampilkan pesan "Nama dan Jabatan harus diisi."	
+Untuk menghapus data pengurus, dalam Daftar Pengurus pengguna mengklik ikon Hapus pada data pengurus yang ingin dihapus. Sistem akan menampilkan pesan "Apakah Anda yakin data pengurus xxx akan dihapus?". Jika pengguna memilih Ya, maka sistem akan menampilkan pesan "Data pengurus xxx berhasil dihapus", sedangkan jika pengguna memilih Batal, sistem tidak melakukan apapun. Pengguna tetap berada di halaman Pengurus Masjid. 
 
 
 *UC-05 Rekening*
