@@ -32,7 +32,8 @@ UC-12 Penyaluran zakat
 ======================
 UC-13 Log out
 =============
-
+UC-14 Lupa Password
+===================
 Deskripsi tiap-tiap use case adalah sbb. 
 
 *UC-01 : Registrasi User*
@@ -217,3 +218,8 @@ Alternate flow :
 
 *UC-13 Log out*
 ===============
+Aktor yang terlibat dalam use case ini adalah Administrator dan Pengurus Masjid (pengguna). Use case ini digunakan pengguna untuk keluar dari SILA MASJID. Untuk logout, Pengguna dalam keadaan login berada di halaman mana saja kemudian menekan link "Keluar". Pengguna keluar dari SILA MASJID, sistem menampilkan halaman depan SILA MASJID.
+
+*UC-14 Lupa Password*
+=====================
+Aktor yang terlibat dalam use case ini adalah pengurus masjid (pengguna). Use case ini digunakan untuk me-reset kata sandi pengguna sehingga pengguna tidak terkendala jika ingin login ke SILA MASJID. Prosesnya adalah pengguna menekan link Lupa Password, sistem kemudian menampilkan halaman Reset Password yang berisi field alamat email. Pengguna mengisi field ini dengan email pengguna tersebut. Sistem mengubah kata sandi yang terekam dalam database kemudian mengirimkan kata sandi baru ke alamat email dimaksud.
