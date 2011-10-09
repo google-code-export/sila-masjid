@@ -1,10 +1,10 @@
 #labels Phase-Requirements
-DAFTAR USE CASE SILA MASJID :
-=============================
-TIPE-TIPE USER :
+==TIPE-TIPE USER==
  * ADMINISTRATOR
  * PENGGUNA (PENGURUS MASJID)
  * PENGUNJUNG
+
+==DAFTAR USE CASE SILA MASJID==
 
 UC-01 Registrasi
 ================
@@ -37,25 +37,11 @@ Deskripsi tiap-tiap use case adalah sbb.
 
 *UC-01 : Registrasi User*
 =======================
-Aktor : 
-Pengguna SILA MASJID (Pengurus masjid)
+Use case ini digunakan untuk melakukan pendaftaran pengguna baru SILA MASJID dalam hal ini pengurus masjid. Use case ini dimulai pada saat Pengguna membuka halaman depan SILA MASJID. Setelah itu, Pengguna meng-klik link "Daftar". Sistem kemudian merespon dengan menampilkan halaman pendaftaran pengguna baru. Di situ terdapat field email, kata sandi, dan konfirmasi kata sandi. Pengguna mengisi field-field tersebut lalu menekan tombol daftar. Jika email yang digunakan sudah terdaftar, maka sistem menampilkan pesan "Email ini sudah pernah digunakan". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak cocok". Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field tidak boleh kosong".
 
-Deskripsi :
-Use case ini digunakan untuk melakukan pendaftaran pengguna baru SILA MASJID
+Jika pengguna telah mengisikan semua field dengan benar, maka sistem menyimpan data masukan dari pengguna ke dalam database dan mengirimkan notifikasi pendaftaran ke email yang digunakan pengguna dan membawa pengguna langsung masuk (login) ke halaman utama SILA MASJID.
+	
 
-Normal flow :
- # Pengguna membuka halaman depan SILA MASJID 
- # Pengguna meng-klik link "Daftar"
- # Sistem menampilkan halaman pendaftaran pengguna baru.
- # Pengguna mengisikan field email, field kata sandi, dan field konfirmasi kata sandi.
- # Pengguna menekan tombol Daftar.
- # Sistem menyimpan data masukan dari pengguna ke dalam database dan mengirimkan notifikasi pendaftaran ke email yang digunakan dan menampilkan halaman depan.
-	
-Alternate flow :
- * Jika email sudah pernah terdaftar, keluar pesan "Email ini sudah pernah digunakan".
- * Jika kata sandi yang dimasukkan kurang dari 6 digit, keluar pesan "Kata sandi minimal 6 digit". 
- * Jika field kata sandi dan field konfirmasi kata sandi tidak sama, keluar pesan "Kata sandi dan konfirmasi kata sandi yang Anda masukkan tidak sama"
-	
 *UC-02 : Login*
 ==============
 Aktor :
