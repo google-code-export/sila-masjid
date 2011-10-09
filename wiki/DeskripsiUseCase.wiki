@@ -44,42 +44,14 @@ Jika pengguna telah mengisikan semua field dengan benar, maka sistem menyimpan d
 
 *UC-02 : Login*
 ==============
-Aktor :
-Pengguna SILA MASJID (Admin dan Pengurus masjid)
+Aktor yang terlibat dalam use case ini adalah Admin dan Pengurus masjid (pengguna). Use case ini dimulai ketika pengguna membuka halaman depan SILA MASJID. Di halaman tersebut terdapat macam-macam menu, seperti daftar, lupa pasword, informasi pengunjung, dan bagian login. Untuk login, pengguna harus mengisikan nama dan kata sandi pada field nama dan kata sandi. Field nama dan kata sandi harus diisi. Jika salah satu field itu kosong, sistem akan menampilkan pesan "nama dan kata sandi harus diisi". Setelah user mengisi dengan lengkap field nama dan kata sandi, lalu sistem memvalidasi terhadap data yang dimasukkan pengguna, dengan membandingkan nama dan kata sandi yang dimasukkan dengan nama dan kata sandi yang ada dalam database.
 
-Deskripsi :
-Use case ini digunakan untuk melakukan pengecekan terhadap nama dan kata sandi yang dimasukkan oleh admin dan pengguna SILA MASJID yang ingin menggunakan aplikasi. 
-
-Normal flow:
- # Pengguna membuka halaman depan SILA MASJID
- # Pengguna mengisi data field nama dan field kata sandi pada halaman login
- # Pengguna menekan tombol "Login"
- # Sistem melakukan validasi terhadap data yang dimasukkan.
- # Sistem membandingkan nama dan kata sandi yang dimasukan dengan nama dan kata sandi yang ada dalam database.
- # Sistem menampilkan halaman utama sesuai dengan hak akses masing-masing pengguna.
-
-Alternate flow :
- * Jika field nama atau kata sandi kosong, sistem menampilkan peringatan "nama dan kata sandi harus diisi"
- * Jika nama dan kata sandi yang dimasukkan pengguna tidak sesuai dengan nama dan kata sandi yang tersimpan di database, sistem menampilkan pesan "nama atau kata sandi tidak sesuai"
+Jika nama dan kata sandi yang dimasukkan pengguna tidak sama dengan nama dan kata sandi yang tersimpan dalam database, sistem akan menampilkan pesan "nama dan kata sandi tidak cocok". Proses login gagal, pengguna masih tetap di halaman depan SILA MASJID. Jika nama dan kata sandi yang diisikan pengguna sudah benar / sesuai dengan yang ada dalam database, sistem menampilkan halaman utama sesuai dengan hak akses masing-masing pengguna. 
 
 *UC-03 Profil masjid*
 ====================
-Aktor :
-Pengguna SILA MASJID
-
-Deskripsi :
-Use case ini digunakan untuk mengubah/menyesuaikan profil masjid.
- 
-Normal flow :
- # Pengguna berada di halaman utama
- # Pengguna memilih menu profil masjid
- # Sistem menampilkan halaman Profil masjid. Field Email dalam keadaan tertutup (tidak dapat diubah) 
- # Pengguna mengisikan field nama masjid, alamat jalan, kota, dan no. telpon.
- # Pengguna menekan tombol simpan.
- # Sistem menampilkan pesan berhasil dan menyimpan data masukan ke database
- 
-Alternatif flow ;
- * Jika pengguna tidak mengisi field nama masjid,alamat jalan, kota, atau no. telpon ada yan kosong, sistem akan menampilkan pesan "Semua field harus diisi". Data tidak tersimpan ke database.
+Use case ini digunakan untuk mengatur (ubah-simpan) profil masjid. Aktor yang terlibat dalam use case ini  pengurus masjid (pengguna). Use case dimulai ketika pengguna yang telah login berada di halaman utama SILA MASJID. Setelah itu pengguna memilih menu profil masjid. Sistem merespon dengan menampilkan halaman profil masjid yang berisi form untuk mengisikan data profil masjid. Form tersebut terdiri atas field nama masjid, alamat jalan, kota, dan no. telepon.
+Pengguna mengisi field-field yang ada kemudian menekan tombol simpan. Jika ada salah satu field yang kosong, maka sistem akan menampilkan pesan "Semua field harus diisi". Jika semua field telah diisi, sistem akan menampilkan pesan berhasil dan menyimpan data masukan ke database.
 
 
 *UC-04 Pengurus masjid*
