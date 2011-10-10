@@ -20,9 +20,9 @@ UC-06 Donatur
 =============
 UC-07 Kode transaksi
 ====================
-UC-08 Transaksi penerimaan(R/U/H)
+UC-08 Transaksi penerimaan
 =================================
-UC-09 Transaksi pengeluaran(R/U/H)
+UC-09 Transaksi pengeluaran
 ==================================
 UC-10 Cetak / Tayang Laporan Keuangan masjid
 ============================================
@@ -177,11 +177,15 @@ Pengguna memilih salah satu kode transaksi yang akan dihapus. Sistem menampilkan
 Alternate flow :
   * Jika field pada perekaman data ternyata kode transaksi atau deskripsi transaksi belum terisi, maka akan keluar pesan "silahkan isi kode dan deskripsi transaksi".
 
-*UC-08 Transaksi penerimaan(R/U/H)*
-=================================
+*UC-08 Transaksi penerimaan*
+============================
+Use case ini digunakan oleh pengurus masjid (pengguna) untuk merekam transaksi penerimaan masjid seperti kotak jumat, zakat, infak, dan sedekah. Untuk mengakses menu ini pengguna harus login terlebih dahulu kemudian pada halaman utama SILA MASJID pengguna memilih menu Penerimaan. Sistem merespon dengan menampilkan halaman Perekaman Penerimaan Masjid, di mana terdapat form pengisian penerimaan masjid yang terdiri atas field tanggal, kode transaksi, nama donatur, jumlah uang, dan keterangan. Pengguna harus mengisi semua field kecuali field keterangan boleh kosong kemudian menekan tombol Simpan. Jika semua masukan benar, maka sistem menampilkan pesan berhasil dan menyimpan masukan ke dalam database. Jika semua field kecuali keterangan kosong/tidak diisi, maka keluar pesan "Field xx harus diisi", data masukan tidak tersimpan.
 
-*UC-09 Transaksi pengeluaran(R/U/H)*
-=================================
+
+*UC-09 Transaksi pengeluaran*
+=============================
+Use case ini digunakan oleh pengurus masjid (pengguna) untuk merekam transaksi pengeluaran masjid seperti biaya operasional masjid, penyaluran zakat, dan lain-lain. Untuk mengakses menu ini pengguna harus login terlebih dahulu kemudian pada halaman utama SILA MASJID pengguna memilih menu Pengeluaran. Sistem merespon dengan menampilkan halaman Perekaman Pengeluaran Masjid, di mana terdapat form pengisian Pengeluaran masjid yang terdiri atas field tanggal, kode transaksi, nama penerima, jumlah uang, dan keterangan. Pengguna harus mengisi semua field kecuali field keterangan boleh kosong kemudian menekan tombol Simpan. Jika semua masukan benar, maka sistem menampilkan pesan berhasil dan menyimpan masukan ke dalam database. Jika semua field kecuali keterangan kosong/tidak diisi, maka keluar pesan "Field xx harus diisi", data masukan tidak tersimpan.
+ 
 
 *UC-10 Cetak / Tayang Laporan Keuangan masjid*
 ============================================
