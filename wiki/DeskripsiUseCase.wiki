@@ -73,38 +73,25 @@ Deskripsi :
 Use case ini digunakan untuk merekam, ubah, dan hapus nomor rekening bank yang digunakan dalam transaksi masjid yang bersangkutan
 
 normal flow :
-rekam :
-  # Pengguna masuk menu “rekening”
-  # Sistem menampilkan halaman “rekening”
-  # Pengguna meng-klik tombol R/U/H
-  # Sistem menampilkan panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”.
-  # Pengguna mengisi field “nomor rekening”, “nama pemilik”, dan “nama bank”.
-  # Pengguna menekan tombol “Simpan”.
-  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “rekening”.
 
-Ubah :
-  # Pengguna berada dalam halaman menu “rekening”
-  # Pengguna meng-klik tombol R/U/H
-  # Muncul panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”
-  # Pengguna memilih data rekening yang akan diubah
-  # Pengguna meng-klik tombol “ubah”
-  # Sistem menampilkan panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”.
-  # Pengguna merubah data yang ingin diubah dalam field yang muncul
-  # Pengguna menekan tombol “Simpan”.
-  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “rekening”.
+rekam : 
+
+Pengguna memilih salah satu menu yang ada di halaman utama yaitu Rekening. Sistem menampilkan halaman yang berisi mengenai daftar rekening yang telah ada beserta form isian untuk menambah nomor rekening. Pengguna mengisi field “No.rek”, “nama” dan “bank”. Pengguna menekan tombol "simpan". Sistem menyimpan nomor rekening, nama pemilik rekening dan bank yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nomor rekening, nama pemilik rekening dan bank termasuk yang baru saja diinput oleh pengguna termasuk yang baru saja diinput oleh pengguna. 
+
+Ubah : 
+
+Pengguna memilih salah satu nomor rekening yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan nomor rekening, nama pemilik, dan bank. Pengguna mengubah nomor rekening, nama pemilik, dan bank. Pengguna menekan tombol "ubah". Sistem menyimpan nomor rekening, nama pemilik, dan bank yang telah diubah pengguna dan dan menampilkan daftar nomor rekening, nama pemilik rekening dan bank termasuk yang baru saja diubah oleh pengguna.
 
 Hapus : 
-  # Pengguna berada dalam halaman menu “rekening”
-  # Pengguna meng-klik tombol R/U/H
-  # Muncul panel baru berisi field “nomor rekening”, “nama pemilik”, dan “nama bank”
-  # Pengguna memilih data rekening yang akan dihapus
-  # Pengguna meng-klik tombol “hapus”
-  # Sistem menampilkan pesan “apakah anda yakin ingin menghapus data rekening ini?”
-  # Pengguna menekan tombol “ya”.
-  # Sistem menampilkan pesan “data sudah terhapus” dan menghapus data dalam database, dan menampilkan halaman “rekening”.
+
+Pengguna memilih salah satu nomor rekening yang akan dihapus. Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus nomor rekening ini?". Pengguna menekan tombol "ok" pada pesan konfirmasi. Sistem menampilkan daftar nomor rekening. 
+
 	
 Alternate flow :
   # Untuk menu “rekam”, jika pengguna memasukkam karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
+  # Jika field pada perekaman data ternyata nomor rekening belum terisi, maka akan keluar pesan "silahkan isi nomor rekening".
+  # Jika field pada perekaman data ternyata nama pemilik belum terisi, maka akan keluar pesan "silahkan isi nama pemilik".
+  # Jika field pada perekaman data ternyata bank belum terisi, maka akan keluar pesan "silahkan isi nama bank ".
   # Menu “ubah” dan “hapus” hanya bisa digunakan apabila telah terdapat data rekening.
 
 
@@ -117,40 +104,23 @@ Deskripsi :
 Use case ini digunakan untuk merekam, ubah, dan hapus nama-nama donatur tetap masjid bersangkutan. 
 
 normal flow :
-rekam :
-======
-  # Pengguna masuk menu “donatur”.
-  # Sistem menampilkan halaman “donatur”
-  # Pengguna meng-klik tombol R/U/H
-  # Sistem menampilkan panel baru berisi field “nama donatur”.
-  # Pengguna mengisi field “nama donatur”.
-  # Pengguna menekan tombol “Simpan”.
-  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “donatur”.
 
-Ubah :
-  # Pengguna berada dalam halaman menu “donatur”
-  # Pengguna meng-klik tombol R/U/H
-  # Sistem menampilkan panel baru berisi field “nama donatur”.
-  # Pengguna memilih data donatur yang akan diubah
-  # Pengguna meng-klik tombol “ubah”
-  # Sistem menampilkan panel baru berisi field “nama donatur”
-  # Pengguna merubah data yang ingin diubah dalam field yang muncul
-  # Pengguna menekan tombol “Simpan”.
-  # Sistem menampilkan pesan “data sudah tersimpan” dan menyimpan data masukan dari pengguna ke dalam database, dan menampilkan halaman “donatur”.
+rekam : 
+
+Pengguna memilih salah satu menu yang ada di halaman utama yaitu Donatur. Sistem menampilkan halaman yang berisi mengenai daftar donatur yang telah ada beserta form isian untuk menambah donatur. Pengguna mengisi field “nama”, “alamat” dan “telepon”. Pengguna menekan tombol "simpan". Sistem menyimpan nama, alamat dan telepon yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nama, alamat, dan telepon donatur termasuk yang baru saja diinput oleh pengguna termasuk yang baru saja diinput oleh pengguna. 
+
+Ubah : 
+
+Pengguna memilih salah satu nama donatur yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan nama, alamat, dan telepon donatur Pengguna mengubah nama, alamat, dan telepon donatur. Pengguna menekan tombol "ubah". Sistem menyimpan nama, alamat, dan telepon donatur yang telah diubah pengguna dan dan menampilkan daftar nama, alamat, dan telepon donatur termasuk yang baru saja diubah oleh pengguna.
 
 Hapus : 
-  # Pengguna berada dalam halaman menu “donatur”
-  # Pengguna meng-klik tombol R/U/H
-  # Sistem menampilkan panel baru berisi field “nama donatur”.
-  # Pengguna memilih data donatur yang akan dihapus
-  # Pengguna meng-klik tombol “hapus”
-  # Sistem menampilkan pesan “apakah anda yakin ingin menghapus data donatur ini?”
-  # Pengguna menekan tombol “ya”.
-  # Sistem menampilkan pesan “data sudah terhapus” dan menghapus data dalam database, dan menampilkan halaman “donatur”.
-	
-Alternate flow :
-  # Menu “ubah” dan “hapus” hanya bisa digunakan apabila telah terdapat data donatur.
 
+Pengguna memilih salah satu nama donatur yang akan dihapus. Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus donatur ini?". Pengguna menekan tombol "ok" pada pesan konfirmasi. Sistem menampilkan daftar nama donatur. 
+
+Alternate flow : 
+  # Jika field pada perekaman data ternyata nama belum terisi, maka akan keluar pesan "silahkan isi nama donatur".
+  # Jika field pada perekaman data ternyata alamat belum terisi, maka akan keluar pesan "silahkan isi alamat donatur".
+  # Menu “ubah” dan “hapus” hanya bisa digunakan apabila telah terdapat data donatur. 
 
 
 *UC-07 Kode transaksi*
