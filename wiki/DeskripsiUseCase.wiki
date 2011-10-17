@@ -12,8 +12,12 @@ UC-02 Login
 ===========
 UC-03 Ubah Profil masjid
 ===================
-UC-04 Pengurus masjid
+UC- Tambah Pengurus masjid
 =====================
+UC- Ubah Pengurus masjid
+
+UC- Hapus Pengurus masjid
+
 UC-05 Rekening
 ==============
 UC-06 Donatur
@@ -64,9 +68,23 @@ Jika ada salah satu field ada yang kosong, maka sistem akan menampilkan pesan "S
 =====================
 Aktor : Pengurus Masjid (Pengguna)
 
-Pengguna berada di halaman utama kemudian memilih menu Pengurus. Sistem menampilkan halaman Pengurus Masjid. Pengguna mengisi field nama, jabatan, dan no. telepon kemudian menekan tombol Simpan. Sistem menyimpan data masukan ke dalam daftar pengurus masjid, menampilkan pesan berhasil dan menampilkan pengurus-pengurus masjid dalam daftar pengurus masjid pada halaman pengurus masjid.
+Pengguna berada di halaman utama kemudian memilih menu Pengurus. Sistem menampilkan halaman Pengurus Masjid. Pengguna mengisi field nama, jabatan, dan no. telepon kemudian menekan tombol Simpan. Sistem menyimpan data masukan ke dalam daftar pengurus masjid, menampilkan pesan berhasil dan menampilkan data pengurus masjid dalam daftar pengurus masjid pada halaman yang sama.
 
 Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman pengurus masjid.
+
+*UC Ubah Pengurus Masjid*
+
+Aktor : Pengurus Masjid (Pengguna)
+
+Pengguna berada di halaman pengurus masjid meng-klik link Ubah pada baris pengurus yang akan diubah. Sistem memuat data pengurus tersebut pada field-field yang sesuai. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan perubahan data pengurus tersebut ke dalam daftar pengurus, dan menampilkan data pengurus masjid dalam daftar pengurus masjid pada halaman yang sama.
+
+Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman pengurus masjid.
+
+*UC Hapus Pengurus Masjid*
+
+Aktor : Pengurus masjid (Pengguna).
+
+Pengguna berada di halaman pengurus masjid mengklik link Hapus pada baris pengurus yang akan dihapus.Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data pengurus ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data pengurus tersebut dalam daftar pengurus. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun.
 
 *UC-05.1 Rekam Rekening*
 ========================
