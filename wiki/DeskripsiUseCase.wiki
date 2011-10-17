@@ -141,29 +141,39 @@ Alternate flow :
 
 
 
-*UC-07 Kode transaksi*
-====================
-Aktor : 
-Pengguna SILA MASJID (Admin dan Pengurus masjid)
+*UC-07.1 Rekam Kode transaksi*
+==============================
+Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)
 
-Deskripsi :
-Use case ini digunakan untuk melakukan perekaman, pengubahan, atau penghapusan dari kode transaksi yang ada yang sesuai dengan standar akuntansi yang berlaku untuk sektor publik.
+Pengguna memilih salah satu menu yang ada di halaman utama yaitu Kode Transaksi. Sistem menampilkan halaman yang berisi mengenai daftar kode transaksi yang telah ada beserta halaman untuk menambah kode transaksi. Pengguna mengisi field "kode transaksi" dan "deskripsi transaksi". Pengguna menekan tombol "simpan". Sistem menyimpan kode dan deskripsi transaksi yang telah diinput pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diinput oleh pengguna. 
 
-normal flow : Rekam : 
+Alternate flow :
+  # Jika field "kode transaksi" belum terisi, maka akan keluar pesan "silahkan isi kode transaksi".
+  # Jika field "deskripsi transaksi" belum terisi, maka akan keluar pesan "silahkan isi deskripsi transaksi".
+  
 
-Pengguna memilih salah satu menu yang ada di halaman utama yaitu Kode Transaksi. Sistem menampilkan halaman yang berisi mengenai daftar kode transaksi yang telah ada beserta halaman untuk menambah kode transaksi. Pengguna mengisi kode transaksi dan deskripsi transaksi. Pengguna menekan tombol "simpan". Sistem menyimpan kode dan deskripsi transaksi yang telah diinput pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diinput oleh pengguna. 
-
-Ubah : 
+*UC-07.2 Ubah Kode transaksi*
+=============================
+Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)
 
 Pengguna memilih salah satu kode transaksi yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan kode dan deskripsi transaksi. Pengguna mengubah kode transaksi dan deskripsi transaksi. Pengguna menekan tombol "ubah". Sistem menyimpan kode dan deskripsi transaksi yang telah diubah pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diubah oleh pengguna. 
 
-Hapus : 
+Alternate flow :
+  # Menu “ubah” hanya bisa digunakan apabila telah terdapat data kode transaksi.
+  # Jika field "kode transaksi" belum terisi, maka akan keluar pesan "silahkan isi kode transaksi".
+  # Jika field "deskripsi transaksi" belum terisi, maka akan keluar pesan "silahkan isi deskripsi transaksi".
+
+
+*UC-07.3 Hapus Kode transaksi*
+==============================
+Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)  
 
 Pengguna memilih salah satu kode transaksi yang akan dihapus. Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus kode transaksi ini?". Pengguna menekan tombol "ok" pada pesan konfirmasi. Sistem menampilkan daftar kode transaksi. 
 
-	
 Alternate flow :
-  * Jika field pada perekaman data ternyata kode transaksi atau deskripsi transaksi belum terisi, maka akan keluar pesan "silahkan isi kode dan deskripsi transaksi".
+  # Menu “hapus” hanya bisa digunakan apabila telah terdapat data kode transaksi.
+  # Jika pengguna belum memilih data yang akan dihapus dan meng-klik tombol "hapus" maka sistem akan menampilkan pesan "Pilih data yang akan dihapus terlebih dahulu."
+
 
 *UC-08 Transaksi penerimaan*
 ============================
