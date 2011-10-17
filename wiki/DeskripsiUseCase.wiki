@@ -177,6 +177,7 @@ Alternate flow :
 
 
 *UC Tambah Penerima Dana*
+
 Aktor : Pengurus Masjid (Pengguna)
 
 Pengguna berada di halaman utama SILA MASJID memilih menu penerima dana. Sistem menampilkan halaman Penerima Dana yang terdiri atas form isian penerima dana dan daftar penerima dana. Pengguna mengisi field nama dengan nama penerima dana, field alamat dengan alamat penerima dana, dan field no. telepon dengan nama telepon penerima dana kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan data masukan ke dalam daftar penerima dana, dan menampilkannya ke dalam daftar penerima dana pada halaman penerima dana.
@@ -234,18 +235,25 @@ Alternate flow :
 
 *UC Transaksi penerimaan*
 ============================
-Use case ini digunakan oleh pengurus masjid (pengguna) untuk merekam transaksi penerimaan masjid seperti kotak jumat, zakat, infak, dan sedekah. Untuk mengakses menu ini pengguna harus login terlebih dahulu kemudian pada halaman utama SILA MASJID pengguna memilih menu Penerimaan. Sistem merespon dengan menampilkan halaman Perekaman Penerimaan Masjid, di mana terdapat form pengisian penerimaan masjid yang terdiri atas field tanggal, kode transaksi, nama donatur, jumlah uang, dan keterangan. Pengguna harus mengisi semua field kecuali field keterangan boleh kosong kemudian menekan tombol Simpan. Jika semua masukan benar, maka sistem menampilkan pesan berhasil dan menyimpan masukan ke dalam database. Jika semua field kecuali keterangan kosong/tidak diisi, maka keluar pesan "Field xx harus diisi", data masukan tidak tersimpan.
+
+Aktor : Pengurus masjid (pengguna)
+
+Pengguna berada di halaman utama SILA MASJID memilih menu Penerimaan. Sistem menampilkan halaman Perekaman Penerimaan Masjid, di mana terdapat form pengisian penerimaan masjid yang terdiri atas field tanggal, kode transaksi, nama donatur, jumlah uang, dan keterangan. Pengguna mengisi field-field tersebut kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil dan menyimpan masukan dari pengguna ke dalam daftar penerimaan.
+
+Jika field tanggal, kode transaksi, nama donatur, atau jumlah uang kosong, sistem menampilkan pesan "Field harus diisi !", pengguna tetap berada di halaman Perekaman Penerimaan Masjid.
 
 
 *UC Transaksi pengeluaran*
 =============================
-Use case ini digunakan oleh pengurus masjid (pengguna) untuk merekam transaksi pengeluaran masjid seperti biaya operasional masjid, penyaluran zakat, dan lain-lain. Untuk mengakses menu ini pengguna harus login terlebih dahulu kemudian pada halaman utama SILA MASJID pengguna memilih menu Pengeluaran. Sistem merespon dengan menampilkan halaman Perekaman Pengeluaran Masjid, di mana terdapat form pengisian Pengeluaran masjid yang terdiri atas field tanggal, kode transaksi, nama penerima, jumlah uang, dan keterangan. Pengguna harus mengisi semua field kecuali field keterangan boleh kosong kemudian menekan tombol Simpan. Jika semua masukan benar, maka sistem menampilkan pesan berhasil dan menyimpan masukan ke dalam database. Jika semua field kecuali keterangan kosong/tidak diisi, maka keluar pesan "Field xx harus diisi", data masukan tidak tersimpan.
- 
+Aktor : Pengurus masjid (pengguna)
+
+Pengguna berada di halaman utama SILA MASJID memilih menu Pengeluaran. Sistem menampilkan halaman Perekaman Pengeluaran Masjid, di mana terdapat form pengisian penerimaan masjid yang terdiri atas field tanggal, kode transaksi, nama penerima dana, jumlah uang, dan keterangan. Pengguna mengisi field-field tersebut kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil dan menyimpan masukan dari pengguna ke dalam daftar penerimaan.
+
+Jika field tanggal, kode transaksi, nama penerima dana, atau jumlah uang kosong, sistem menampilkan pesan "Field harus diisi !", pengguna tetap berada di halaman Perekaman Pengeluran Masjid.
 
 *UC Cetak / Tayang Laporan Keuangan masjid*
 ============================================
-Aktor : 
-Pengguna dan Pengunjung SILA MASJID 
+Aktor : Pengguna dan Pengunjung SILA MASJID 
 
 Deskripsi :
 Use case ini menampilkan halaman untuk mencetak dan menayangkan laporan keuangan masjid.
@@ -259,8 +267,7 @@ Alternate flow :
 
 *UC Lihat lokasi masjid (user : pengunjung)*
 ===================================================
-Aktor : 
-Pengunjung SILA MASJID 
+Aktor : Pengunjung SILA MASJID 
 
 Deskripsi :
 Use case ini digunakan bagi pengunjung yang ingin melihat lokasi masjid yang ada.
@@ -274,8 +281,13 @@ Alternate flow :
 
 *UC Log out*
 ===============
-Aktor yang terlibat dalam use case ini adalah Administrator dan Pengurus Masjid (pengguna). Use case ini digunakan pengguna untuk keluar dari SILA MASJID. Untuk logout, Pengguna dalam keadaan login berada di halaman mana saja kemudian menekan link "Keluar". Pengguna keluar dari SILA MASJID, sistem menampilkan halaman depan SILA MASJID.
+Aktor : Administrator dan Pengurus Masjid (pengguna). 
+
+Pengguna berada di halaman utama SILA MASJID. Pengguna menekan link "Keluar". Pengguna keluar dari SILA MASJID. Sistem menampilkan halaman depan SILA MASJID.
 
 *UC Lupa Password*
 =====================
-Aktor yang terlibat dalam use case ini adalah pengurus masjid (pengguna). Use case ini digunakan untuk me-reset kata sandi pengguna sehingga pengguna tidak terkendala jika ingin login ke SILA MASJID. Prosesnya adalah pengguna menekan link Lupa Password, sistem kemudian menampilkan halaman Reset Password yang berisi field alamat email. Pengguna mengisi field ini dengan email pengguna tersebut. Sistem mengubah kata sandi yang terekam dalam database kemudian mengirimkan kata sandi baru ke alamat email dimaksud.
+Aktor : pengurus masjid (pengguna). 
+
+Pengguna berada di halaman depan SILA MASJID menekan link Lupa Password. Sistem menampilkan halaman Reset Password. Pengguna mengisi field email dengan email pengguna tersebut kemudian mengklik tombol Reset Password. Sistem mengubah kata sandi pengguna tersebut yang ada dalam daftar pengguna kemudian mengirimkan kata sandi baru ke alamat email dimaksud.
+Jika field email kosong, sistem menampilkan pesan "Email harus diisi".
