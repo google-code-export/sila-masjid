@@ -10,7 +10,7 @@ UC-01 Registrasi
 ================
 UC-02 Login
 ===========
-UC-03 Profil masjid
+UC-03 Ubah Profil masjid
 ===================
 UC-04 Pengurus masjid
 =====================
@@ -34,23 +34,30 @@ UC-13 Lupa Password
 ===================
 Deskripsi tiap-tiap use case adalah sbb. 
 
-*UC-01 : Registrasi User*
+*UC-01 : Registrasi*
 =======================
-Use case ini digunakan untuk melakukan pendaftaran pengguna baru SILA MASJID dalam hal ini pengurus masjid (selanjutnya disebut dengan Pengguna). Pengguna membuka halaman depan SILA MASJID. Setelah itu, Pengguna meng-klik link "Daftar". Sistem kemudian merespon dengan menampilkan halaman pendaftaran pengguna baru. Pengguna mengisi field alamat email dengan email pengguna, field kata sandi dengan kata sandi yang sandi, dan field konfirmasi kata sandi dengan kata sandi sama dengan yang diisikan pada field kata sandi. Pengguna kemudian menekan tombol daftar. Sistem menyimpan data masukan dari pengguna ke dalam daftar pengguna dan mengirimkan notifikasi pendaftaran ke email yang digunakan pengguna. Selanjutnya pengguna langsung diarahkan ke halaman utama SILA MASJID.
+Aktor : Pengurus Masjid (Pengguna)
 
-Jika email yang digunakan sudah terdaftar, maka sistem menampilkan pesan "Email ini sudah pernah digunakan". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak sama". Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field harus diisi".
+Pengguna membuka halaman depan SILA MASJID. Setelah itu, Pengguna meng-klik link "Daftar". Sistem menampilkan halaman pendaftaran pengguna baru. Pengguna mengisi field alamat email dengan email pengguna, field kata sandi dengan kata sandi yang sandi, dan field konfirmasi kata sandi dengan kata sandi sama dengan yang diisikan pada field kata sandi. Pengguna kemudian menekan tombol daftar. Sistem menyimpan data masukan dari pengguna ke dalam daftar pengguna dan mengirimkan notifikasi pendaftaran ke email yang digunakan pengguna. Pengguna diarahkan menuju halaman utama SILA MASJID.
+
+Jika email yang digunakan sudah berada dalam daftar pengguna, maka sistem menampilkan pesan "Email ini sudah terdaftar". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak sama". Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field harus diisi".
 		
 
 *UC-02 : Login*
 ==============
-Use case ini digunakan oleh Admin dan Pengurus masjid (pengguna) untuk masuk ke dalam aplikasi SILA MASJID. Pengguna membuka halaman depan SILA MASJID. Pengguna mengisi field email dengan email pengguna dan field kata sandi dengan kata sandi kemudian mengklik tombol login. Sistem memvalidasi terhadap masukan dari pengguna, dengan mencari nama dan kata sandi yang dimasukkan dengan nama dan kata sandi yang ada dalam daftar pengguna dan menemukan pengguna tersebut dalam daftar pengguna. Sistem menampilkan halaman depan SILA MASJID.
+Aktor : Pengurus Masjid, Admin (Pengguna)
+
+Pengguna membuka halaman depan SILA MASJID. Pengguna mengisi field email dengan email pengguna dan field kata sandi dengan kata sandi kemudian mengklik tombol login. Sistem memvalidasi terhadap masukan dari pengguna, dengan mencari nama dan kata sandi yang dimasukkan dengan nama dan kata sandi yang ada dalam daftar pengguna dan menemukan pengguna tersebut dalam daftar pengguna. Sistem menampilkan halaman utama SILA MASJID.
 
 Jika salah satu dari field email dan kata sandi kosong, sistem akan menampilkan pesan "email dan kata sandi harus diisi". Jika pengguna email dan kata sandi yang dimasukkan tidak cocok dengan yang berada dalam daftar pengguna, sistem akan menampilkan pesan "email dan kata sandi tidak cocok". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit".
 
-*UC-03 Profil masjid*
+*UC-03 Ubah Profil masjid*
 ====================
-Use case ini digunakan untuk mengatur (ubah-simpan) profil masjid. Aktor yang terlibat dalam use case ini  pengurus masjid (pengguna). Use case dimulai ketika pengguna yang telah login berada di halaman utama SILA MASJID. Setelah itu pengguna memilih menu profil masjid. Sistem merespon dengan menampilkan halaman profil masjid yang berisi form untuk mengisikan data profil masjid. Form tersebut terdiri atas field nama masjid, alamat jalan, kota, dan no. telepon.
-Pengguna mengisi field-field yang ada kemudian menekan tombol simpan. Jika ada salah satu field yang kosong, maka sistem akan menampilkan pesan "Semua field harus diisi". Jika semua field telah diisi, sistem akan menampilkan pesan berhasil dan menyimpan data masukan ke database.
+Aktor : Pengurus Masjid (Pengguna)
+
+Pengguna berada pada halaman Utama SILA MASJID memilih menu profil masjid. Sistem menampilkan halaman profil masjid. Pengguna mengisi field nama masjid, alamat jalan, kota, dan no. telepon kemudian menekan tombol simpan. Sistem menyimpan masukan dari pengguna ke dalam daftar profil masjid dan menampilkan pesan berhasil.
+
+Jika ada salah satu field ada yang kosong, maka sistem akan menampilkan pesan "Semua field harus diisi". Jika no. telepon bukan berupa angka, sistem menampilkan pesan "No. telepon tidak valid".
 
 
 *UC-04 Pengurus masjid*
