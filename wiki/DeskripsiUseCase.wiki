@@ -43,9 +43,9 @@ Jika email yang digunakan sudah terdaftar, maka sistem menampilkan pesan "Email 
 
 *UC-02 : Login*
 ==============
-Aktor yang terlibat dalam use case ini adalah Admin dan Pengurus masjid (pengguna). Use case ini dimulai ketika pengguna membuka halaman depan SILA MASJID. Di halaman tersebut terdapat macam-macam menu, seperti daftar, lupa pasword, informasi pengunjung, dan bagian login. Untuk login, pengguna harus mengisikan nama dan kata sandi pada field nama dan kata sandi. Field nama dan kata sandi harus diisi. Jika salah satu field itu kosong, sistem akan menampilkan pesan "nama dan kata sandi harus diisi". Setelah user mengisi dengan lengkap field nama dan kata sandi, lalu sistem memvalidasi terhadap data yang dimasukkan pengguna, dengan membandingkan nama dan kata sandi yang dimasukkan dengan nama dan kata sandi yang ada dalam database.
+Use case ini digunakan oleh Admin dan Pengurus masjid (pengguna) untuk masuk ke dalam aplikasi SILA MASJID. Pengguna membuka halaman depan SILA MASJID. Pengguna mengisi field email dengan email pengguna dan field kata sandi dengan kata sandi kemudian mengklik tombol login. Sistem memvalidasi terhadap masukan dari pengguna, dengan mencari nama dan kata sandi yang dimasukkan dengan nama dan kata sandi yang ada dalam daftar pengguna dan menemukan pengguna tersebut dalam daftar pengguna. Sistem menampilkan halaman depan SILA MASJID.
 
-Jika nama dan kata sandi yang dimasukkan pengguna tidak sama dengan nama dan kata sandi yang tersimpan dalam database, sistem akan menampilkan pesan "nama dan kata sandi tidak cocok". Proses login gagal, pengguna masih tetap di halaman depan SILA MASJID. Jika nama dan kata sandi yang diisikan pengguna sudah benar / sesuai dengan yang ada dalam database, sistem menampilkan halaman utama sesuai dengan hak akses masing-masing pengguna. 
+Jika salah satu dari field email dan kata sandi kosong, sistem akan menampilkan pesan "email dan kata sandi harus diisi". Jika pengguna email dan kata sandi yang dimasukkan tidak cocok dengan yang berada dalam daftar pengguna, sistem akan menampilkan pesan "email dan kata sandi tidak cocok". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit".
 
 *UC-03 Profil masjid*
 ====================
