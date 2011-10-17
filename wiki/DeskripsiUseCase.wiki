@@ -38,10 +38,10 @@ Deskripsi tiap-tiap use case adalah sbb.
 
 *UC-01 : Registrasi User*
 =======================
-Use case ini digunakan untuk melakukan pendaftaran pengguna baru SILA MASJID dalam hal ini pengurus masjid. Use case ini dimulai pada saat Pengguna membuka halaman depan SILA MASJID. Setelah itu, Pengguna meng-klik link "Daftar". Sistem kemudian merespon dengan menampilkan halaman pendaftaran pengguna baru. Di situ terdapat field email, kata sandi, dan konfirmasi kata sandi. Pengguna mengisi field-field tersebut lalu menekan tombol daftar. Jika email yang digunakan sudah terdaftar, maka sistem menampilkan pesan "Email ini sudah pernah digunakan". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak cocok". Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field tidak boleh kosong".
+Use case ini digunakan untuk melakukan pendaftaran pengguna baru SILA MASJID dalam hal ini pengurus masjid (selanjutnya disebut dengan Pengguna). Pengguna membuka halaman depan SILA MASJID. Setelah itu, Pengguna meng-klik link "Daftar". Sistem kemudian merespon dengan menampilkan halaman pendaftaran pengguna baru. Pengguna mengisi field alamat email dengan email pengguna, field kata sandi dengan kata sandi yang sandi, dan field konfirmasi kata sandi dengan kata sandi sama dengan yang diisikan pada field kata sandi. Pengguna kemudian menekan tombol daftar. Sistem menyimpan data masukan dari pengguna ke dalam daftar pengguna dan mengirimkan notifikasi pendaftaran ke email yang digunakan pengguna. Selanjutnya pengguna langsung diarahkan ke halaman utama SILA MASJID.
 
-Jika pengguna telah mengisikan semua field dengan benar, maka sistem menyimpan data masukan dari pengguna ke dalam database dan mengirimkan notifikasi pendaftaran ke email yang digunakan pengguna dan membawa pengguna langsung masuk (login) ke halaman utama SILA MASJID.
-	
+Jika email yang digunakan sudah terdaftar, maka sistem menampilkan pesan "Email ini sudah pernah digunakan". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak sama". Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field harus diisi".
+		
 
 *UC-02 : Login*
 ==============
