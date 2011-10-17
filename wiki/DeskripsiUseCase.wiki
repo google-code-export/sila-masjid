@@ -60,14 +60,13 @@ Pengguna berada pada halaman Utama SILA MASJID memilih menu profil masjid. Siste
 Jika ada salah satu field ada yang kosong, maka sistem akan menampilkan pesan "Semua field harus diisi". Jika no. telepon bukan berupa angka, sistem menampilkan pesan "No. telepon tidak valid".
 
 
-*UC-04 Pengurus masjid*
+*UC Tambah Pengurus masjid*
 =====================
-Use case ini digunakan untuk mengelola data (rekam/ubah/hapus) pengurus masjid. Aktor yang terlibat dalam use case ini adalah pengurus masjid (pengguna). Pertama-tama dalam keadaan login, pengguna berada di halaman utama kemudian memilih menu Pengurus. Sistem merespon dengan menampilkan halaman Pengurus Masjid, yang terdiri atas form untuk merekam/mengubah data pengurus masjid dan daftar pengurus masjid di bagian bawahnya. Untuk menambah pengurus baru, pengguna mengisi field-field pada form pengurus masjid meliputi field-field nama, jabatan, dan no. telepon kemudian menekan tombol Simpan. Semua field tersebut harus diisi, jika ada field yang kosong, sistem akan menampilkan pesan "Field harus diisi". Jika sudah benar, sistem akan menampilkan pesan berhasil dan menyimpan data masukan ke dalam database serta menampilkan pengurus yang baru ditambahkan ke dalam daftar pengurus.
+Aktor : Pengurus Masjid (Pengguna)
 
-Daftar pengurus berupa tabel yang menampilkan data pengurus dan terdapat juga ikon ubah dan hapus untuk mengubah atau menghapus data pengurus. Untuk mengubah data pengurus, klik ikon ubah pada baris pengurus dimaksud, sistem akan menampilkan data pengurus tersebut pada form Pengurus masjid. Pengguna kemudian mengubah data yang diinginkan (nama, jabatan, no. telepon, atau gabungan dari ketiganya) lalu menekan tombol Simpan. Sistem akan menampilkan pesan "Field harus diisi" jika terdapat field yang kosong, sedangkan jika semua field sudah terisi dengan benar, sistem menampilkan pesan berhasil, menyimpan perubahan data tersebut ke dalam database, dan menampilkan data pengurus yang sudah di-ubah dalam daftar pengurus.
+Pengguna berada di halaman utama kemudian memilih menu Pengurus. Sistem menampilkan halaman Pengurus Masjid. Pengguna mengisi field nama, jabatan, dan no. telepon kemudian menekan tombol Simpan. Sistem menyimpan data masukan ke dalam daftar pengurus masjid, menampilkan pesan berhasil dan menampilkan pengurus-pengurus masjid dalam daftar pengurus masjid pada halaman pengurus masjid.
 
-Untuk menghapus data pengurus, dalam Daftar Pengurus pengguna mengklik ikon Hapus pada data pengurus yang ingin dihapus. Sistem akan menampilkan pesan "Apakah Anda yakin data pengurus xxx akan dihapus?". Jika pengguna memilih Ya, maka sistem akan menampilkan pesan "Data pengurus xxx berhasil dihapus", sedangkan jika pengguna memilih Batal, sistem tidak melakukan apapun. Pengguna tetap berada di halaman Pengurus Masjid. 
-
+Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman pengurus masjid.
 
 *UC-05.1 Rekam Rekening*
 ========================
