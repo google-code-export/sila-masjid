@@ -20,7 +20,18 @@ UC- Hapus Pengurus masjid
 
 UC-05 Rekening
 ==============
-UC-06 Donatur
+UC-06 Tambah Donatur
+
+UC-06 Ubah Donatur
+
+UC-06 Hapus Donatur
+=============
+
+UC- Tambah Penerima Dana
+
+UC- Ubah Penerima Dana
+
+UC- Hapus Penerima Dana
 =============
 UC-07 Kode transaksi
 ====================
@@ -157,6 +168,27 @@ Alternate flow :
   # Menu “hapus” hanya bisa digunakan apabila telah terdapat data donatur.
   # Jika pengguna belum memilih data yang akan dihapus dan meng-klik tombol "hapus" maka sistem akan menampilkan pesan "Pilih data yang akan dihapus terlebih dahulu."
 
+
+*UC Tambah Penerima Dana*
+Aktor : Pengurus Masjid (Pengguna)
+
+Pengguna berada di halaman utama SILA MASJID memilih menu penerima dana. Sistem menampilkan halaman Penerima Dana yang terdiri atas form isian penerima dana dan daftar penerima dana. Pengguna mengisi field nama dengan nama penerima dana, field alamat dengan alamat penerima dana, dan field no. telepon dengan nama telepon penerima dana kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan data masukan ke dalam daftar penerima dana, dan menampilkannya ke dalam daftar penerima dana pada halaman penerima dana.
+
+Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman penerima dana.
+
+*UC Ubah Penerima Dana*
+
+Aktor : Pengurus Masjid (Pengguna)
+
+Pengguna berada di halaman penerima dana meng-klik link Ubah pada baris penerima dana yang akan diubah. Sistem memuat data penerima dana tersebut pada field-field yang sesuai pada form isian penerima dana. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan perubahan data penerima dana tersebut ke dalam daftar penerima dana, dan menampilkan data penerima dana dalam daftar penerima dana pada halaman yang sama.
+
+Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman penerima dana.
+
+*UC Hapus Penerima Dana*
+
+Aktor : Pengurus Masjid (Pengguna)
+
+Pengguna berada di halaman penerima dana mengklik link Hapus pada baris penerima dana yang akan dihapus.Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data penerima dana ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data penerima dana tersebut dalam daftar pengurus. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun.
 
 
 *UC-07.1 Rekam Kode transaksi*
