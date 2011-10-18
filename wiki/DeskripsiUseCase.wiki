@@ -203,23 +203,23 @@ Pengguna berada di halaman penerima dana mengklik link Hapus pada baris penerima
 ==============================
 Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)
 
-Pengguna memilih salah satu menu yang ada di halaman utama yaitu Kode Transaksi. Sistem menampilkan halaman yang berisi mengenai daftar kode transaksi yang telah ada beserta halaman untuk menambah kode transaksi. Pengguna mengisi field "kode transaksi" dan "deskripsi transaksi". Pengguna menekan tombol "simpan". Sistem menyimpan kode dan deskripsi transaksi yang telah diinput pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diinput oleh pengguna. 
+Pengguna memilih salah satu menu yang ada di halaman utama yaitu Kode Transaksi. Sistem menampilkan halaman yang berisi mengenai daftar kode transaksi yang telah ada beserta halaman untuk menambah kode transaksi. Pengguna memilih kode golongan dan kode kelompok kemudian mengisi field "kode transaksi" dan "nama transaksi". Pengguna menekan tombol "simpan". Sistem menyimpan kode dan nama transaksi yang telah diinput pengguna dan menampilkan daftar kode serta nama transaksi termasuk yang baru saja diinput oleh pengguna. 
 
 Alternate flow :
   # Jika field "kode transaksi" belum terisi, maka akan keluar pesan "silahkan isi kode transaksi".
-  # Jika field "deskripsi transaksi" belum terisi, maka akan keluar pesan "silahkan isi deskripsi transaksi".
+  # Jika field "nama transaksi" belum terisi, maka akan keluar pesan "silahkan isi nama transaksi".
   
 
 *UC Ubah Kode transaksi*
 =============================
 Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)
 
-Pengguna memilih salah satu kode transaksi yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan kode dan deskripsi transaksi. Pengguna mengubah kode transaksi dan deskripsi transaksi. Pengguna menekan tombol "ubah". Sistem menyimpan kode dan deskripsi transaksi yang telah diubah pengguna dan menampilkan daftar kode serta deskripsi transaksi termasuk yang baru saja diubah oleh pengguna. 
+Pengguna memilih salah satu kode transaksi yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan kode dan nama transaksi. Pengguna mengubah kode transaksi dan nama transaksi. Pengguna menekan tombol "ubah". Sistem menyimpan kode dan nama transaksi yang telah diubah pengguna dan menampilkan daftar kode serta nama transaksi termasuk yang baru saja diubah oleh pengguna. 
 
 Alternate flow :
   # Menu “ubah” hanya bisa digunakan apabila telah terdapat data kode transaksi.
   # Jika field "kode transaksi" belum terisi, maka akan keluar pesan "silahkan isi kode transaksi".
-  # Jika field "deskripsi transaksi" belum terisi, maka akan keluar pesan "silahkan isi deskripsi transaksi".
+  # Jika field "nama transaksi" belum terisi, maka akan keluar pesan "silahkan isi deskripsi transaksi".
 
 
 *UC Hapus Kode transaksi*
