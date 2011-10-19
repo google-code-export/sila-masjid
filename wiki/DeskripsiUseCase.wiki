@@ -265,7 +265,7 @@ Alternate flow :
   * Jika pada tanggal yang dipilih tidak ada laporan keuangan yang dikeluarkan masjid, maka sistem akan menampilkan pesan "Maaf, tidak ada laporan keuangan yang dapat ditampilkan".
 
 
-*UC Lihat lokasi masjid (user : pengunjung)*
+*UC Daftar lokasi masjid (user : pengunjung)*
 ===================================================
 Aktor : Pengunjung SILA MASJID 
 
@@ -273,12 +273,11 @@ Deskripsi :
 Use case ini digunakan bagi pengunjung yang ingin melihat lokasi masjid yang ada.
 
 normal flow :
-  Pengunjung melihat halaman depan SILA MASJID. Pengunjung memilih menu Lokasi Masjid pada halaman depan SILA MASJID. Sistem menampilkan halaman yang berisi data masjid beserta alamat dan peta yang berasal dari google map. 
+  Pengunjung melihat halaman depan SILA MASJID. Pengunjung memilih menu Daftar Lokasi Masjid pada halaman depan SILA MASJID. Sistem menampilkan halaman yang berisi pencarian lokasi masjid. Pengunjung mengetikan nama masjid yang akan dicari. Sistem menampilkan alamat masjid yang diketikkan pengunjung beserat peta lokasinya melalui google map.
 	
 Alternate flow :
-  * Jika Nama Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Search" tidak ada, maka sistem akan menampilkan pesan "Maaf, untuk saat ini nama Masjid yang Anda cari belum terdaftar dalam database kami. Terima kasih".
-  * Jika Nama Masjid dan Lokasi Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Search" ternyata berbeda dengan yang ada di dalam database, maka sistem akan menampilkan pesan "Nama Masjid yang Anda cari saat ini hanya terdapat di lokasi(lokasi sesuai dengan yang ada di dalam database) ini.
-
+  * Jika Nama Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Cari Masjid" tidak ada, maka sistem akan menampilkan pesan "Maaf, untuk saat ini nama Masjid yang Anda cari belum terdaftar dalam database kami. Terima kasih".
+  
 *UC Log out*
 ===============
 Aktor : Administrator dan Pengurus Masjid (pengguna). 
