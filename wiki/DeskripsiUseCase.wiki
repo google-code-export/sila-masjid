@@ -219,7 +219,7 @@ Pengguna menekan tombol "ubah" pada salah satu kode transaksi yang akan diubah. 
 Alternate flow :
   # Menu “ubah” hanya bisa digunakan apabila telah terdapat data kode transaksi.
   # Jika field "kode transaksi" belum terisi, maka akan keluar pesan "silahkan isi kode transaksi".
-  # Jika field "nama transaksi" belum terisi, maka akan keluar pesan "silahkan isi deskripsi transaksi".
+  # Jika field "nama transaksi" belum terisi, maka akan keluar pesan "silahkan isi nama transaksi".
 
 
 *UC Hapus Kode transaksi*
