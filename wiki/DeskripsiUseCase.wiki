@@ -13,11 +13,11 @@ UC Login
 UC Ubah Profil masjid
 ===================
 UC Tambah Pengurus masjid
-=====================
+=========================
 UC Ubah Pengurus masjid
-
+=======================
 UC Hapus Pengurus masjid
-
+========================
 UC Tambah Rekening
 ==============
 UC Ubah Rekening
@@ -25,17 +25,17 @@ UC Ubah Rekening
 UC Hapus Rekening
 ==============
 UC Tambah Donatur
-
+=================
 UC Ubah Donatur
-
+================
 UC Hapus Donatur
-=============
+================
 UC Tambah Penerima Dana
-
+=======================
 UC Ubah Penerima Dana
-
+=======================
 UC Hapus Penerima Dana
-=============
+======================
 UC Tambah Kode transaksi
 ====================
 UC Ubah Kode transaksi
@@ -93,7 +93,7 @@ Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". 
 
 
 *UC Ubah Pengurus Masjid*
-
+==========================
 Aktor : Pengurus Masjid (Pengguna)
 
 Pengguna berada di halaman pengurus masjid meng-klik link Ubah pada baris pengurus yang akan diubah. Sistem memuat data pengurus tersebut pada field-field yang sesuai (nama, jabatan, no. telp). Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan perubahan data pengurus tersebut ke dalam daftar pengurus, dan menampilkan data pengurus masjid dalam daftar pengurus masjid pada halaman yang sama.
@@ -102,105 +102,95 @@ Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". 
 
 
 *UC Hapus Pengurus Masjid*
-
+============================
 Aktor : Pengurus masjid (Pengguna).
 
 Pengguna berada di halaman pengurus masjid mengklik link Hapus pada baris pengurus yang akan dihapus pada daftar pengurus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data pengurus ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data pengurus tersebut dari daftar pengurus, menampilkan pesan berhasil, dan menampilkan daftar pengurus terbaru. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. Pengguna tetap di halaman Pengurus Masjid.
 
 
-*UC Rekam Rekening*
+*UC Tambah Rekening*
 ========================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna memilih salah satu menu yang ada di halaman utama yaitu Rekening. Sistem menampilkan halaman yang berisi mengenai daftar rekening yang telah ada beserta form isian untuk menambah nomor rekening. Pengguna mengisi field “No.rek”, “nama” dan “bank”. Pengguna menekan tombol "simpan". Sistem menyimpan nomor rekening, nama pemilik rekening dan bank yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nomor rekening, nama pemilik rekening dan bank termasuk yang baru saja diinput oleh pengguna termasuk yang baru saja diinput oleh pengguna.
+Pengguna berada di halaman Rekening yang berisi mengenai daftar rekening yang telah ada beserta form isian untuk menambah nomor rekening. Pengguna mengisi field “No.rek”, “nama” dan “bank”. Pengguna menekan tombol "simpan". Sistem menyimpan nomor rekening, nama pemilik rekening dan bank yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nomor rekening, nama pemilik rekening dan bank termasuk yang baru saja diinput oleh pengguna.
 
 Alternate flow :
-  # Jika pengguna memasukkam karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
-  # Jika field "nomor rekening" belum terisi, maka akan keluar pesan "silahkan isi nomor rekening".
-  # Jika field "nama" belum terisi, maka akan keluar pesan "silahkan isi nama pemilik".
-  # Jika field "bank" belum terisi, maka akan keluar pesan "silahkan isi nama bank ".
+  # Jika pengguna memasukkan karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
+  # Jika field "nomor rekening", "nama" dan "bank" belum terisi, maka akan keluar pesan "field harus diisi". 
 
 
 *UC Ubah Rekening*
 =======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna memilih salah satu nomor rekening yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan nomor rekening, nama pemilik, dan bank. Pengguna mengubah nomor rekening, nama pemilik, dan bank. Pengguna menekan tombol "ubah". Sistem menyimpan nomor rekening, nama pemilik, dan bank yang telah diubah pengguna dan dan menampilkan daftar nomor rekening, nama pemilik rekening dan bank termasuk yang baru saja diubah oleh pengguna.
+Pengguna berada di halaman Rekening meng-klik link Ubah pada baris rekening yang akan diubah. Sistem memuat data rekening tersebut pada field-field yang sesuai pada form isian rekening. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol "Simpan". Sistem menampilkan pesan berhasil, menyimpan perubahan data rekening tersebut ke dalam daftar rekening, dan menampilkan data rekening dalam daftar rekening pada halaman yang sama.
 
 Alternate flow :
-  # Menu “ubah” hanya bisa digunakan apabila telah terdapat data rekening.
   # Jika pengguna memasukkam karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
-  # Jika field "nomor rekening" belum terisi, maka akan keluar pesan "silahkan isi nomor rekening".
-  # Jika field "nama" belum terisi, maka akan keluar pesan "silahkan isi nama pemilik".
-  # Jika field "bank" belum terisi, maka akan keluar pesan "silahkan isi nama bank ".
+  # Jika field "nomor rekening", "nama" dan "bank" belum terisi, maka akan keluar pesan "field harus diisi". 
+
 
 
 *UC Hapus Rekening*
 ========================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna memilih salah satu nomor rekening yang akan dihapus. Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus nomor rekening ini?". Pengguna menekan tombol "ok" pada pesan konfirmasi. Sistem menampilkan daftar nomor rekening. 
-
-Alternate flow :
-  # Menu “hapus” hanya bisa digunakan apabila telah terdapat data rekening.
-  # Jika pengguna belum memilih data yang akan dihapus dan meng-klik tombol "hapus" maka sistem akan menampilkan pesan "Pilih data yang akan dihapus terlebih dahulu."
+Pengguna berada di halaman Rekening. mengklik link Hapus pada baris rekening yang akan dihapus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data rekening ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data rekening tersebut dan menampilkan daftar rekening baru setelah dilakukan penghapusan.. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. 
 
 
 *UC Tambah Donatur*
 =======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna memilih salah satu menu yang ada di halaman utama yaitu Donatur. Sistem menampilkan halaman yang berisi mengenai daftar donatur yang telah ada beserta form isian untuk menambah donatur. Pengguna mengisi field “nama”, “alamat” dan “telepon”. Pengguna menekan tombol "simpan". Sistem menyimpan nama, alamat dan telepon yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nama, alamat, dan telepon donatur termasuk yang baru saja diinput oleh pengguna termasuk yang baru saja diinput oleh pengguna.
+Pengguna berada di halaman Donatur yang berisi mengenai daftar donatur yang telah ada beserta form isian untuk menambah donatur. Pengguna mengisi field “nama”, “alamat” dan “telepon”. Pengguna menekan tombol "simpan". Sistem menyimpan nama, alamat dan telepon yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nama, alamat, dan telepon donatur termasuk yang baru saja diinput oleh pengguna.
 
 Alternate flow : 
-  # Jika field "nama" belum terisi, maka akan keluar pesan "silahkan isi nama donatur".
-  # Jika field "alamat" belum terisi, maka akan keluar pesan "silahkan isi alamat donatur".
+  # Jika field "nama", "alamat" belum terisi, maka akan keluar pesan "field harus diisi". 
+
 
 
 *UC Ubah Donatur*
 ======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna memilih salah satu nama donatur yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan nama, alamat, dan telepon donatur Pengguna mengubah nama, alamat, dan telepon donatur. Pengguna menekan tombol "ubah". Sistem menyimpan nama, alamat, dan telepon donatur yang telah diubah pengguna dan dan menampilkan daftar nama, alamat, dan telepon donatur termasuk yang baru saja diubah oleh pengguna.
+Pengguna berada di halaman Donatur meng-klik link Ubah pada baris donatur yang akan diubah. Sistem memuat data donatur tersebut pada field-field yang sesuai pada form isian donatur. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol "Simpan". Sistem menampilkan pesan berhasil, menyimpan perubahan data donatur tersebut ke dalam daftar donatur, dan menampilkan data donatur dalam daftar donatur pada halaman yang sama.
 
-Alternate flow : 
-  # Menu “ubah” hanya bisa digunakan apabila telah terdapat data donatur. 
-  # Jika field "nama" belum terisi, maka akan keluar pesan "silahkan isi nama donatur".
-  # Jika field "alamat" belum terisi, maka akan keluar pesan "silahkan isi alamat donatur".
+Alternate flow :
+Jika field "nama", "alamat" dan/atau  "telepon" belum terisi, maka akan keluar pesan "field harus diisi". 
 
 
 *UC Hapus Donatur*
 =======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna memilih salah satu nama donatur yang akan dihapus. Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus donatur ini?". Pengguna menekan tombol "ok" pada pesan konfirmasi. Sistem menampilkan daftar nama donatur. 
-
-Alternate flow : 
-  # Menu “hapus” hanya bisa digunakan apabila telah terdapat data donatur.
-  # Jika pengguna belum memilih data yang akan dihapus dan meng-klik tombol "hapus" maka sistem akan menampilkan pesan "Pilih data yang akan dihapus terlebih dahulu."
+Pengguna berada di halaman Donatur. mengklik link Hapus pada baris donatur yang akan dihapus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data donatur ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data donatur tersebut dan menampilkan daftar donatur baru setelah dilakukan penghapusan. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. 
 
 
 *UC Tambah Penerima Dana*
-
+=========================
 Aktor : Pengurus Masjid (Pengguna)
 
 Pengguna berada di halaman utama SILA MASJID memilih menu penerima dana. Sistem menampilkan halaman Penerima Dana yang terdiri atas form isian penerima dana dan daftar penerima dana. Pengguna mengisi field nama dengan nama penerima dana, field alamat dengan alamat penerima dana, dan field no. telepon dengan nama telepon penerima dana kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan data masukan ke dalam daftar penerima dana, dan menampilkannya ke dalam daftar penerima dana pada halaman penerima dana.
 
-Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman penerima dana.
+alternate flow:
+Jika field "nama", "alamat", dan "telepon" belum terisi, maka akan keluar pesan "field harus diisi". 
+
 
 *UC Ubah Penerima Dana*
-
+=======================
 Aktor : Pengurus Masjid (Pengguna)
 
 Pengguna berada di halaman penerima dana meng-klik link Ubah pada baris penerima dana yang akan diubah. Sistem memuat data penerima dana tersebut pada field-field yang sesuai pada form isian penerima dana. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan perubahan data penerima dana tersebut ke dalam daftar penerima dana, dan menampilkan data penerima dana dalam daftar penerima dana pada halaman yang sama.
 
-Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman penerima dana.
+alternate flow:
+Jika field "nama", "alamat", dan "telepon" belum terisi, maka akan keluar pesan "field harus diisi"
+
 
 *UC Hapus Penerima Dana*
-
+========================
 Aktor : Pengurus Masjid (Pengguna)
 
-Pengguna berada di halaman penerima dana mengklik link Hapus pada baris penerima dana yang akan dihapus.Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data penerima dana ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data penerima dana tersebut dalam daftar pengurus. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun.
+Pengguna berada di halaman penerima dana. mengklik link Hapus pada baris penerima dana yang akan dihapus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data penerima dana ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data penerima dana tersebut dan menampilkan daftar penerima dana baru setelah dilakukan penghapusan.  Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. 
 
 
 *UC Rekam Kode transaksi*
