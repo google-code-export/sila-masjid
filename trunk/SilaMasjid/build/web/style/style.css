@@ -1,0 +1,77 @@
+/* 
+    Document   : style
+    Created on : Nov 1, 2011, 9:15:37 PM
+    Author     : alin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	color: #4E4E4E;
+	background-color: #F1F1F1;
+	margin: 4px;
+}
+.lcolumnt {
+	background-image: url(../images/css_bg_lcoumn.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.lcum {
+	background-image: url(../images/bg_lcoumn.gif);
+	background-position: right;
+	background-repeat: repeat-y;
+}
+table {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	color: #727272;
+}
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	color: #585858;
+	background-color: #F4F4F4;
+	border: 1px solid #969696;
+}
+.contentheader {
+	background-image: url(../images/main_content_header.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.mctop {
+	background-image: url(../images/mc_bg_top.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.mcbg {
+	background-image: url(../images/mc_main_bg.gif);
+	background-repeat: repeat-y;
+	background-position: left;
+	padding-top: -20px;
+}
+a:link {
+	color: #727272;
+	text-decoration: none;
+}
+a:visited {
+	color: #727272;
+	text-decoration: none;
+}
+a:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.unnamed1 {
+	background-repeat: repeat-y;
+	background-position: center center;
+}
