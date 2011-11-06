@@ -4,9 +4,17 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>servlets.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AplikasiServlet</servlet-name>
+        <servlet-class>servlets.AplikasiServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AplikasiServlet</servlet-name>
+        <url-pattern>/aplikasi</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
