@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Nov 1, 2011, 9:00:17 PM
+    Document   : aplikasi
+    Created on : Nov 6, 2011, 1:28:35 PM
     Author     : alin
 --%>
 
@@ -46,8 +46,8 @@
       </table>
       <table border="0" cellpadding="0" cellspacing="0" class="lcum">
         <tr> 
-          <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center">Main 
-              Navigation</div></td>
+          <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"><b> 
+              TRANSAKSI</b></div></td>
         </tr>
         <tr> 
           <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
@@ -57,64 +57,29 @@
               <tr> 
                 <td width="15%">&nbsp;</td>
                 <td width="8%">
-<div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
+                    <div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="terima">Penerimaan Dana</a></td>
                 <td width="11%">&nbsp;</td>
               </tr>
               <tr> 
                 <td width="15%">&nbsp;</td>
                 <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="keluar">Pengeluaran Dana</a></td>
                 <td width="11%">&nbsp;</td>
               </tr>
               <tr> 
                 <td width="15%">&nbsp;</td>
                 <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="setuju">Setujui Proposal</a></td>
                 <td width="11%">&nbsp;</td>
               </tr>
               <tr> 
                 <td width="15%">&nbsp;</td>
                 <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="home"><b>Logout</b></a></td>
                 <td width="11%">&nbsp;</td>
               </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="#">Link Here</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
+              
             </table></td>
         </tr>
         <tr> 
@@ -126,26 +91,7 @@
           <td><img src="images/pipe_bg.gif" alt="" width="28" height="5"></td>
         </tr>
       </table>
-      <table border="0" cellpadding="0" cellspacing="0" class="lcum">
-        <tr> 
-          <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center">Text 
-              Here </div></td>
-        </tr>
-        <tr> 
-          <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
-        </tr>
-        <tr> 
-          <td class="lcolumnt" height="17"> <table width="84%" height="14" border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td width="9%">&nbsp;</td>
-                <td width="91%">Content here</td>
-              </tr>
-            </table></td>
-        </tr>
-        <tr> 
-          <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"></div></td>
-        </tr>
-      </table>
+      
       <table border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
@@ -153,8 +99,8 @@
       </table>
       <table border="0" cellpadding="0" cellspacing="0" class="lcum">
         <tr> 
-          <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center">Text 
-              Here </div></td>
+          <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"> 
+                  <b>REFERENSI</b> </div></td>
         </tr>
         <tr> 
           <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
@@ -162,8 +108,22 @@
         <tr> 
           <td class="lcolumnt" height="17"> <table width="84%" height="14" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr> 
-                <td width="9%">&nbsp;</td>
-                <td width="91%">Content Here</td>
+                <td width="15%">&nbsp;</td>
+                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="kode">Kode Transaksi</a></td>
+                <td width="11%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="15%">&nbsp;</td>
+                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="profil">Profil Masjid</a></td>
+                <td width="11%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="15%">&nbsp;</td>
+                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="pengurus">Pengurus Masjid</a></td>
+                <td width="11%">&nbsp;</td>
               </tr>
             </table></td>
         </tr>
@@ -178,9 +138,9 @@
         </tr>
       </table>
       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">
+          
         <tr> 
-          <td width="452" height="32" class="contentheader"><div align="center">Main 
-              Content</div></td>
+          <td width="452" height="32" class="contentheader"><div align="center"><b>RINGKASAN LAPORAN DANA</b></div></td>
         </tr>
         <tr> 
           <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>

@@ -142,12 +142,14 @@
         </tr>
       </table>
       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">
+          <form action="aplikasi">
           <tr>
               <td align="center">Email <input type="text" name="email"></input>
                   Password <input type="password" name="password"></input>
                   <input type="submit" name="submit" value="LOGIN"></input>
               </td>
           </tr>
+          </form>
           <tr>
               <td>&nbsp;</td>
           </tr>
