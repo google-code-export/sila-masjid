@@ -58,7 +58,7 @@
                 <td width="15%">&nbsp;</td>
                 <td width="8%">
 <div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="index">Home</a></td>
+                <td width="66%" bgcolor="#F4F4F4"><a href="home">Home</a></td>
                 <td width="11%">&nbsp;</td>
               </tr>
               <tr> 
