@@ -3,6 +3,7 @@
   <persistence-unit name="SilaMasjidPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entities.PengurusMasjid</class>
+    <class>entities.Donatur</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tes"/>
