@@ -1,7 +1,7 @@
 <%-- 
-    Document   : aplikasi
+    Document   : donator
     Created on : Nov 6, 2011, 1:28:35 PM
-    Author     : alin
+    Author     : eisen
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -146,17 +146,34 @@
       <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">
           
         <tr> 
-          <td width="452" height="32" class="contentheader"><div align="center"><b>RINGKASAN LAPORAN DANA</b></div></td>
+          <td width="452" height="32" class="contentheader"><div align="center"><b>DONATUR MASJID</b></div></td>
         </tr>
         <tr> 
           <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
         </tr>
         <tr> 
+            
           <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
-              <tr> 
+                                    <tr> 
                 <td width="6%">&nbsp;</td>
-                <td width="94%">Content here</td>
+              <tr>
+                  <td align="center">Nama <input type="text" name="nama"></input>
+                  </td>
               </tr>
+              <tr>
+                  <td align="center"> Alamat <input type="textfield" name="alamat"></input>
+                  </td>
+              </tr>
+                    
+              <tr> 
+               <td align="center"> Telepon<input type="telepon" name="telepon"></input>
+               </td>
+              </tr>
+              <td>
+                  <input type="submit" name="submit" value="SIMPAN"></input>
+              </td>
+              </tr>
+</tr>
             </table></td>
         </tr>
         <tr> 
