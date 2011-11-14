@@ -41,7 +41,7 @@ public class ProcessRegisterServlet extends HttpServlet {
         masjid.setPassword(password);
         daftar.addMasjid(masjid);
 
-        response.sendRedirect("page/register.jsp");
+        response.sendRedirect("register");
         /*  try {
         
         out.println("<html>");
