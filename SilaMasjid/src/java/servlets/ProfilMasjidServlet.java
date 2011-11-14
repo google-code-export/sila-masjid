@@ -4,11 +4,11 @@
  */
 package servlets;
 
-import entities.DaftarMasjid;
-import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sumurmunding
  */
-public class ProcessRegisterServlet extends HttpServlet {
+@WebServlet(name = "ProfilServlet", urlPatterns = {"/profil"})
+public class ProfilMasjidServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -30,31 +31,22 @@ public class ProcessRegisterServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-
-        DaftarMasjid daftar = new DaftarMasjid();
-        Masjid masjid = new Masjid();
-
-        masjid.setEmail(email);
-        masjid.setPassword(password);
-        daftar.addMasjid(masjid);
-
-        response.sendRedirect("aplikasi");
-        /*  try {
-        
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet ProcessRegisterServlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet ProcessRegisterServlet at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
+        try {
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/ubahprofil.jsp");
+            rdp.forward(request, response);
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ProfilMasjidServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ProfilMasjidServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {
-        out.close();
-        }*/
+            out.close();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
