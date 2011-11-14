@@ -9,8 +9,8 @@
         <servlet-class>servlets.AplikasiServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>register</servlet-name>
-        <servlet-class>servlets.Register</servlet-class>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>servlets.RegisterServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ProcessRegister</servlet-name>
@@ -25,7 +25,7 @@
         <url-pattern>/aplikasi</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>register</servlet-name>
+        <servlet-name>Register</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>

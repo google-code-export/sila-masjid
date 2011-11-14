@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sumurmunding
  */
-public class Register extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,10 +37,10 @@ public class Register extends HttpServlet {
             /* TODO output your page here
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");  
+            out.println("<title>Servlet RegisterServlet</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
              */
