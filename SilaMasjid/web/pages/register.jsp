@@ -8,29 +8,52 @@
 <%@page import="entities.DaftarMasjid"%>
 <%@page import="entities.Masjid"%>
 <!DOCTYPE html>
-
+<%@include file='hometemplate.html' %>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Halaman Registrasi</title>
-    </head>
-    <body>
-        <h2>Registrasi Pengguna Baru SILA MASJID</h2>
-        <form action="processregister" method="post" >
-            <table width="450">
-                <tr>
-                    <td>Email</td><td><input type="text" name="email" style="width: 160px"></td>
-                </tr>
-                <tr>
-                    <td>Password</td><td><input type="password" name="password" style="width: 120px"></td>
-                </tr>
-                <tr>
-                    <td>Ulangi Password</td><td><input type="password" name="ulangipassword" style="width: 120px"></td>
-                </tr>
-                <tr>
-                    <td></td><td><input type="reset"><input type="submit" value="Register" ></td>
-                </tr>
-            </table>
-        </form>
-    </body>
+    <tr> 
+<%--JUDUL DI SINI--%>
+        <td width="452" height="32" class="contentheader"><div align="center"><b>FORM REGISTRASI</b></div></td>
+    </tr>
+    <tr> 
+        <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
+    </tr>
+    <tr> 
+        <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
+ <%--ISI MULAI DI SINI--%>
+                <form action="processregister" method="post" >
+
+                    <tr>
+                        <td width="10%">&nbsp;</td>
+                        <td>Email</td><td><input type="text" name="email" style="width: 160px"></td>
+                    </tr>
+                    <tr>
+                        <td width="10%">&nbsp;</td>
+                        <td>Password</td><td><input type="password" name="password" style="width: 120px"></td>
+                    </tr>
+                    <tr>
+                        <td width="10%">&nbsp;</td>
+                        <td>Ulangi Password</td><td><input type="password" name="ulangipassword" style="width: 120px"></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td width="10%">&nbsp;</td>
+                        <td>&nbsp;</td><td><input type="reset" value="Reset"><input type="submit" value="Register" ></td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                </form>
+ 
+<%--SISI SAMPAI DI SINI--%>
+            </table></td>
+    </tr>
+    <tr> 
+        <td class="mctop"><img src="images/mc_box_bottom.gif" alt="-" width="452" height="23"></td>
+    </tr>
+</table>
+<!-- COPYRIGHT - WWW.ZYMIC.COM - IF YOU REMOVE COPYRIGHT LEGAL ACTION WILL BE TAKEN -->
+<!-- WE TRACK COPYRIGHT ON A DAILY BASIS, WE KNOW WHO YOU ARE!                      -->
+<div align="center"><a href="http://www.zymic.com" target="_blank"><img src="images/copyright_DO_NOT_STEAL_ELSE_LEGAL_ACTION.gif" alt="Free Templates" width="422" height="15" border="0"></a></div></td>
+</tr>
+</table>
+</body>
 </html>
+
