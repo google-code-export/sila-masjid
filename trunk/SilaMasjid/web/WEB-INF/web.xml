@@ -16,6 +16,10 @@
         <servlet-name>ProcessRegister</servlet-name>
         <servlet-class>servlets.ProcessRegisterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RekeningServlet</servlet-name>
+        <servlet-class>servlets.RekeningServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ProcessRegister</servlet-name>
         <url-pattern>/processregister</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RekeningServlet</servlet-name>
+        <url-pattern>/rekening</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
