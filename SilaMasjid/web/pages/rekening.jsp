@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="entities.Rekening"%>
+
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <html>
