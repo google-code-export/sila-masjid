@@ -6,7 +6,9 @@
     <class>entities.Donatur</class>
     <class>entities.DaftarMasjid</class>
     <class>entities.Masjid</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <class>entities.Rekening</class>
+    <class>entities.DaftarRekening</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/silama"/>
       <property name="javax.persistence.jdbc.password" value=""/>
