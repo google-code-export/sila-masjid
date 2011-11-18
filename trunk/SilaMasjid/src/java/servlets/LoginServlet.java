@@ -42,9 +42,9 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("error", "Afwan (maaf) Email atau Password Tidak Boleh Kosong");
             RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
             rdp.forward(request, response);
-
-        } else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-            request.setAttribute("error", "Afwan (maaf), format email salah");
+         //validasi format email   
+        }else if (email.indexOf("@")==-1||email.indexOf(".")==-1){
+            request.setAttribute("error","Afwan (maaf), format email salah");
             RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
             rdp.forward(request, response);
         } else if (masjids.check(email, password) == false) {
@@ -54,8 +54,9 @@ public class LoginServlet extends HttpServlet {
         } else {
 
             HttpSession session = request.getSession(true);
+            session.setAttribute("idMasjid", masjid.getId());
             session.setAttribute("email", masjid.getEmail());
-            session.setAttribute("nama", masjid.getNmMasjid());
+            session.setAttribute("nmMasjid", masjid.getNmMasjid());
 
             RequestDispatcher rdp = request.getRequestDispatcher("pages/aplikasi.jsp");
             rdp.forward(request, response);
