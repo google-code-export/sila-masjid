@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author LENOVO
  */
 @WebServlet(name = "donatur", urlPatterns = {"/donatur"})
-public class donatur extends HttpServlet {
+public class DonaturServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -37,10 +37,10 @@ public class donatur extends HttpServlet {
             /* TODO output your page here
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet donatur</title>");  
+            out.println("<title>Servlet DonaturServlet</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet donatur at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet DonaturServlet at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
              */
