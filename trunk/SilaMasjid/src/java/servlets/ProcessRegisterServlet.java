@@ -8,10 +8,12 @@ import entities.DaftarMasjid;
 import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,15 +35,42 @@ public class ProcessRegisterServlet extends HttpServlet {
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String ulangiPassword = request.getParameter("ulangipassword");
 
-        DaftarMasjid daftar = new DaftarMasjid();
-        Masjid masjid = new Masjid();
+        //validasi masukan
+        if (email.isEmpty() || password.isEmpty() || ulangiPassword.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("error", "Afwan, kolom tidak boleh kosong !");
+            RequestDispatcher rdp = request.getRequestDispatcher("register");
+            rdp.forward(request, response);
 
-        masjid.setEmail(email);
-        masjid.setPassword(password);
-        daftar.addMasjid(masjid);
+        } else if (email.indexOf("@") == -1 && email.indexOf(".") == -1) {//validasi format email
+            request.setAttribute("error", "Afwan (maaf), format email yang dimasukkan salah");
+            RequestDispatcher rdp = request.getRequestDispatcher("register");
+            rdp.forward(request, response);
 
-        response.sendRedirect("aplikasi");
+        } else if (password.length() < 6) { //validasi panjang password
+            request.setAttribute("error", "Afwan (maaf), password minimal 6 karakter");
+            RequestDispatcher rdp = request.getRequestDispatcher("register");
+            rdp.forward(request, response);
+
+        } /*else if (password.equals(ulangiPassword)) {//validasi password dan konfirm password (sama/tidak)
+            request.setAttribute("error", "Afwan (maaf), password dan konfirmasi password yang dimasukkan salah");
+            RequestDispatcher rdp = request.getRequestDispatcher("register");
+            rdp.forward(request, response);
+            
+        }*/ else {
+            DaftarMasjid daftar = new DaftarMasjid();
+            Masjid masjid = new Masjid();
+
+            masjid.setEmail(email);
+            masjid.setPassword(password);
+            daftar.addMasjid(masjid); //menambahkan record ke tabel masjid
+
+            HttpSession session = request.getSession(true);//setelah registrasi berhasil, langsung login
+            session.setAttribute("email", masjid.getEmail());
+            session.setAttribute("nama", masjid.getNmMasjid());
+            response.sendRedirect("profil");
+        }
         /*  try {
         
         out.println("<html>");

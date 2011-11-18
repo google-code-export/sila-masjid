@@ -39,7 +39,7 @@
                         <td width="10%">&nbsp;</td>
                         <td>&nbsp;</td><td><input type="reset" value="Reset"><input type="submit" value="Register" ></td>
                     </tr>
-                    <tr><td>&nbsp;</td></tr>
+                    <tr><td colspan="3" align="center"><label align="center"><font color="red"><b>${error}</b></font></label></td></tr>
                 </form>
  
 <%--SISI SAMPAI DI SINI--%>

@@ -32,32 +32,31 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-       String email = request.getParameter("email");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        
-        DaftarMasjid masjids=new DaftarMasjid();
-        Masjid masjid=masjids.getMasjid(email, password);
-       
-       if (email.isEmpty() || password.isEmpty()){
-           request.setAttribute("error", "Afwan (maaf) Email atau Password Tidak Boleh Kosong");
-           RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
-            rdp.forward(request, response);
-            
-        }else if (email.indexOf("@")==-1||email.indexOf(".")==-1){
-            request.setAttribute("error","Afwan (maaf), format email salah");
+
+        DaftarMasjid masjids = new DaftarMasjid();
+        Masjid masjid = masjids.getMasjid(email, password);
+
+        if (email.isEmpty() || password.isEmpty()) {
+            request.setAttribute("error", "Afwan (maaf) Email atau Password Tidak Boleh Kosong");
             RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
             rdp.forward(request, response);
-        }
-        else if (masjids.check(email, password)==false){
-            request.setAttribute("error","Afwan (maaf), email atau password salah");
+
+        } else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+            request.setAttribute("error", "Afwan (maaf), format email salah");
             RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
             rdp.forward(request, response);
-        }else{
-         
+        } else if (masjids.check(email, password) == false) {
+            request.setAttribute("error", "Afwan (maaf), email atau password salah");
+            RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
+            rdp.forward(request, response);
+        } else {
+
             HttpSession session = request.getSession(true);
             session.setAttribute("email", masjid.getEmail());
             session.setAttribute("nama", masjid.getNmMasjid());
- 
+
             RequestDispatcher rdp = request.getRequestDispatcher("pages/aplikasi.jsp");
             rdp.forward(request, response);
         }
@@ -72,7 +71,7 @@ public class LoginServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
              */
-        } finally {            
+        } finally {
             out.close();
         }
     }
