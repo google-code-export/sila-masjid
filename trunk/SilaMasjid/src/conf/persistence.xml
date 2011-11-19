@@ -8,6 +8,7 @@
     <class>entities.Masjid</class>
     <class>entities.Rekening</class>
     <class>entities.DaftarRekening</class>
+    <class>entities.DaftarDonatur</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/silama"/>
