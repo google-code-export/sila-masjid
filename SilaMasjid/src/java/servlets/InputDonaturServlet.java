@@ -41,7 +41,7 @@ public class InputDonaturServlet extends HttpServlet {
         //validasi masukan
         if (nama.isEmpty() || telepon.isEmpty() || alamat.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("error", "Afwan, kolom tidak boleh kosong !");
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/donator.jsp");
+            RequestDispatcher rdp = request.getRequestDispatcher("donator");
             rdp.forward(request, response);
 
         } 
@@ -53,13 +53,13 @@ public class InputDonaturServlet extends HttpServlet {
             donatur.setNmDonatur(nama);
             donatur.setAlmtDonatur(alamat);
             donatur.setTelpDonatur(telepon);
-            daftar.addDonatur(donatur); //menambahkan record ke tabel masjid
+            daftar.addDonatur(donatur); //menambahkan record ke tabel donatur
 
             HttpSession session = request.getSession(true);//setelah registrasi berhasil, langsung login
             session.setAttribute("nama", donatur.getNmDonatur());
             session.setAttribute("telepon", donatur.getTelpDonatur());
             session.setAttribute("alamat", donatur.getAlmtDonatur());
-            response.sendRedirect("profil");
+            response.sendRedirect("donator");
         }
         /*  try {
         
