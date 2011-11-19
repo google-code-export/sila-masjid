@@ -32,6 +32,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SimpanKodeTransaksiServlet</servlet-name>
+        <servlet-class>servlets.SimpanKodeTransaksiServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -57,12 +61,8 @@
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>InputDonatur</servlet-name>
-        <url-pattern>/inputdonatur</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Donatur</servlet-name>
-        <url-pattern>/donator</url-pattern>
+        <servlet-name>SimpanKodeTransaksiServlet</servlet-name>
+        <url-pattern>/SimpanKodeTransaksi</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
