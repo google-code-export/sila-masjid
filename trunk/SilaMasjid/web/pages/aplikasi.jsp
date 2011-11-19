@@ -5,8 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%--<%@include file='aplikasitemplate.html' %>--%>
-<jsp:include page="apptemplate.jsp"></jsp:include>
+<%@include file='aplikasitemplate.html' %>
+
 <!DOCTYPE html>
 <html>
       </table>

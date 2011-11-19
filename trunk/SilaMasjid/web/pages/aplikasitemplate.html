@@ -2,6 +2,7 @@
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
+<% String nmMasjid=(String)session.getAttribute("nmMasjid");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,6 +145,12 @@ and open the template in the editor.
     <td width="456" valign="top" class="mctop"><table border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td><img src="images/pipes_maincontent.gif" alt="-" width="452" height="6"></td>
+        </tr>
+        <tr>
+            <td align="center"><font color="blue"><% if(nmMasjid != null){ %><%="Anda Login sebagai: "+nmMasjid%><%}%></font></td>
+        </tr>
+        <tr> 
+            <td><img src="images/pipes_maincontent.gif" alt="-" width="452" height="6"></td>
         </tr>
 
 </html>

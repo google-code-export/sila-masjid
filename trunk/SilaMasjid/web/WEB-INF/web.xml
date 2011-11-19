@@ -36,6 +36,10 @@
         <servlet-name>SimpanKodeTransaksiServlet</servlet-name>
         <servlet-class>servlets.SimpanKodeTransaksiServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>KodeTransaksiServlet</servlet-name>
+        <servlet-class>servlets.KodeTransaksiServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -64,9 +68,11 @@
         <servlet-name>SimpanKodeTransaksiServlet</servlet-name>
         <url-pattern>/SimpanKodeTransaksi</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KodeTransaksiServlet</servlet-name>
+        <url-pattern>/kode</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>
