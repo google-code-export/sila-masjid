@@ -20,24 +20,24 @@ public class KodeTransaksi implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int idMasjid;
-    private int kdTrans;
+    private Long idMasjid;
+    private String kdTrans;
     private String nmTrans;
 
-    public int getKdTrans() {
+    public String getKdTrans() {
         return kdTrans;
     }
 
-    public int getIdMasjid() {
+    public void setKdTrans(String kdTrans) {
+        this.kdTrans = kdTrans;
+    }
+
+    public Long getIdMasjid() {
         return idMasjid;
     }
 
-    public void setIdMasjid(int idMasjid) {
+    public void setIdMasjid(Long idMasjid) {
         this.idMasjid = idMasjid;
-    }
-
-    public void setKdTrans(int kdTrans) {
-        this.kdTrans = kdTrans;
     }
 
     public String getNmTrans() {
