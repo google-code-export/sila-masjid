@@ -24,7 +24,7 @@ import jpa.exceptions.NonexistentEntityException;
 public class DaftarKodeTransaksi implements Serializable {
 
     public DaftarKodeTransaksi() {
-        emf = Persistence.createEntityManagerFactory("KodeTransaksi");
+        emf = Persistence.createEntityManagerFactory("SilaMasjidPU");
     }
     
     private EntityManagerFactory emf = null;

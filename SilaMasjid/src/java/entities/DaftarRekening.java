@@ -25,7 +25,7 @@ public class DaftarRekening implements Serializable {
     
     public DaftarRekening()
     {
-        emf = Persistence.createEntityManagerFactory("masjid");
+        emf = Persistence.createEntityManagerFactory("SilaMasjidPU");
     }
     private static final long serialVersionUID = 1L;
     
