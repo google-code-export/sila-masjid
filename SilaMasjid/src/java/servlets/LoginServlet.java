@@ -39,23 +39,23 @@ public class LoginServlet extends HttpServlet {
         Masjid masjid = masjids.getMasjid(email, password);
 
         if (email.isEmpty() || password.isEmpty()) {
-            request.setAttribute("error", "Afwan (maaf) Email atau Password Tidak Boleh Kosong");
+            request.setAttribute("errorLogin", "Afwan (maaf) Email atau Password Tidak Boleh Kosong");
             RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
             rdp.forward(request, response);
          //validasi format email   
         }else if (email.indexOf("@")==-1||email.indexOf(".")==-1){
-            request.setAttribute("error","Afwan (maaf), format email salah");
+            request.setAttribute("errorLogin","Afwan (maaf), format email salah");
             RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
             rdp.forward(request, response);
         } else if (masjids.check(email, password) == false) {
-            request.setAttribute("error", "Afwan (maaf), email atau password salah");
+            request.setAttribute("errorLogin", "Afwan (maaf), email atau password salah");
             RequestDispatcher rdp = request.getRequestDispatcher("index.jsp");
             rdp.forward(request, response);
         } else {
 
             HttpSession session = request.getSession(true);
             session.setAttribute("loged", masjid);
-            session.setAttribute("nmMasjid",masjid.getNmMasjid());
+            session.setAttribute("nmMasjid",masjid.getEmail()+'/'+masjid.getNmMasjid());
 
             RequestDispatcher rdp = request.getRequestDispatcher("pages/aplikasi.jsp");
             rdp.forward(request, response);
