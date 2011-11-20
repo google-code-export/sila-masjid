@@ -9,11 +9,12 @@
 <%@page import="entities.KodeTransaksi"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
-<% DaftarKodeTransaksi daftran=new DaftarKodeTransaksi();%>
-<% List<KodeTransaksi> trans=daftran.getKodeTransaksis();%>
-<% Iterator<KodeTransaksi> iterator = trans.iterator();%>
+
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
+<% DaftarKodeTransaksi daftran=new DaftarKodeTransaksi();%>
+<% List<KodeTransaksi> trans=daftran.getKodeTransaksis(idMasjid);%>
+<% Iterator<KodeTransaksi> iterator = trans.iterator();%>
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
     <tr> 
