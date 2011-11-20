@@ -67,12 +67,13 @@ public class DaftarKodeTransaksi implements Serializable {
         return kodeTransaksi;
     }
 
-    public List<KodeTransaksi> getKodeTransaksis() {
+    public List<KodeTransaksi> getKodeTransaksis(Long idMasjid) {
         List<KodeTransaksi> kodeTransaksis = new ArrayList<KodeTransaksi>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o");
+            Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o WHERE o.idMasjid=:idMasjid");
+            q.setParameter("idMasjid", idMasjid);
             kodeTransaksis = q.getResultList();
 
         } finally {
