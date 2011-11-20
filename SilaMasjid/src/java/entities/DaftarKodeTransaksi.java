@@ -33,12 +33,12 @@ public class DaftarKodeTransaksi implements Serializable {
         return emf.createEntityManager();
     }
 
-    public boolean check(String kdTrans) {
+    public boolean check(Long id) {
         boolean result = false;
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT count(o) FROM KodeTransaksi AS o WHERE o.kdTrans=:kdTrans");
-            q.setParameter("kdTrans", kdTrans);
+            Query q = em.createQuery("SELECT count(o) FROM KodeTransaksi AS o WHERE o.id=:id");
+            q.setParameter("id", id);
  
             int jumlahKodeTransaksi = ((Long) q.getSingleResult()).intValue();
             if (jumlahKodeTransaksi > 0) {
@@ -50,14 +50,14 @@ public class DaftarKodeTransaksi implements Serializable {
         return result;
     }
 
-    public KodeTransaksi getKodeTransaksi(String kdTrans) {
+    public KodeTransaksi getKodeTransaksi(Long id) {
         KodeTransaksi kodeTransaksi = null;
         EntityManager em = getEntityManager();
         try {
-            boolean hasilCheck = this.check(kdTrans);
+            boolean hasilCheck = this.check(id);
             if (hasilCheck) {
-                Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o WHERE o.kdTrans=:kdTrans");
-                q.setParameter("kdTrans", kdTrans);
+                Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o WHERE o.id=:id");
+                q.setParameter("id", id);
  
                 kodeTransaksi = (KodeTransaksi) q.getSingleResult();
             }
