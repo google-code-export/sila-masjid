@@ -33,7 +33,7 @@ public class DaftarKodeTransaksi implements Serializable {
         return emf.createEntityManager();
     }
 
-    public boolean check(int kdTrans) {
+    public boolean check(String kdTrans) {
         boolean result = false;
         EntityManager em = getEntityManager();
         try {
@@ -50,7 +50,7 @@ public class DaftarKodeTransaksi implements Serializable {
         return result;
     }
 
-    public KodeTransaksi getKodeTransaksi(int kdTrans) {
+    public KodeTransaksi getKodeTransaksi(String kdTrans) {
         KodeTransaksi kodeTransaksi = null;
         EntityManager em = getEntityManager();
         try {
