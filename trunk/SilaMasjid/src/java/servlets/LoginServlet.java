@@ -54,6 +54,7 @@ public class LoginServlet extends HttpServlet {
         } else {
 
             HttpSession session = request.getSession(true);
+            session.setAttribute("idMasjid", masjid.getId());
             session.setAttribute("loged", masjid);
             session.setAttribute("nmMasjid",masjid.getEmail()+'/'+masjid.getNmMasjid());
 
