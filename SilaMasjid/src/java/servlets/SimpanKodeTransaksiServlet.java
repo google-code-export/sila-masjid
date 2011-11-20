@@ -35,7 +35,11 @@ public class SimpanKodeTransaksiServlet extends HttpServlet {
         HttpSession session = request.getSession(); 
         Masjid masjid = (Masjid) session.getAttribute("loged");
         Long idMasjid=masjid.getId();
-            
+        
+        Long id = null;
+        if (request.getParameter("id")!=null){
+            id=Long.parseLong(request.getParameter("id"));
+        }
         String klp=request.getParameter("kelompok");
         String jns=request.getParameter("jenis");
         String kdTrans=klp+jns;
@@ -48,8 +52,8 @@ public class SimpanKodeTransaksiServlet extends HttpServlet {
         kode.setKdTrans(kdTrans);
         kode.setNmTrans(nmTrans);
         //simpan
-        //jika kode sudah ada, edit (update), jika belum maka add
-        if (daftar.check(kdTrans)==false){
+        //jika id sudah ada, edit (update), jika belum maka add
+        if (daftar.check(id)==false){
             daftar.addKodeTransaksi(kode);
         }else{
             daftar.editKodeTransaksi(kode);
