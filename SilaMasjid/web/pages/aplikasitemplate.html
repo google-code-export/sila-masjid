@@ -3,7 +3,7 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <% Long idMasjid=(Long)session.getAttribute("idMasjid");%>
-<% Long idMas=idMasjid;%>
+<% if (idMasjid==null){response.sendRedirect("home");}%>
 <% String nmMasjid=(String)session.getAttribute("nmMasjid");%>
 <!DOCTYPE html>
 <html>
