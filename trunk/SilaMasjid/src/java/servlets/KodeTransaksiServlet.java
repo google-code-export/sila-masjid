@@ -29,6 +29,7 @@ public class KodeTransaksiServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+ 
         try {
             RequestDispatcher rdp = request.getRequestDispatcher("pages/kodetransaksi.jsp");
             rdp.forward(request, response);

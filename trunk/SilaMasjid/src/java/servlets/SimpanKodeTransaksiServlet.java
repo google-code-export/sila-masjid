@@ -9,7 +9,6 @@ import entities.KodeTransaksi;
 import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,11 +32,10 @@ public class SimpanKodeTransaksiServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession();
-
-        Masjid masjid = (Masjid)session.getAttribute("loged");
+        HttpSession session = request.getSession(); 
+        Masjid masjid = (Masjid) session.getAttribute("loged");
         Long idMasjid=masjid.getId();
-        
+            
         String klp=request.getParameter("kelompok");
         String jns=request.getParameter("jenis");
         String kdTrans=klp+jns;
@@ -50,7 +48,12 @@ public class SimpanKodeTransaksiServlet extends HttpServlet {
         kode.setKdTrans(kdTrans);
         kode.setNmTrans(nmTrans);
         //simpan
-        daftar.addKodeTransaksi(kode);
+        //jika kode sudah ada, edit (update), jika belum maka add
+        if (daftar.check(kdTrans)==false){
+            daftar.addKodeTransaksi(kode);
+        }else{
+            daftar.editKodeTransaksi(kode);
+        } 
         
         try {
            response.sendRedirect("kode");

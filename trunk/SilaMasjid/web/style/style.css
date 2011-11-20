@@ -36,7 +36,17 @@ table {
 	font-size: xx-small;
 	color: #727272;
 }
+th {
+        background-color: #99CCFF;
+}
 input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	color: #585858;
+	background-color: #F4F4F4;
+	border: 1px solid #969696;
+}
+select {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: xx-small;
 	color: #585858;

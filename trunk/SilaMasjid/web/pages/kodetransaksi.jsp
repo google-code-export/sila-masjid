@@ -7,6 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarKodeTransaksi"%>
 <%@page import="entities.KodeTransaksi"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<% DaftarKodeTransaksi daftran=new DaftarKodeTransaksi();%>
+<% List<KodeTransaksi> trans=daftran.getKodeTransaksis();%>
+<% Iterator<KodeTransaksi> iterator = trans.iterator();%>
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 </table>
@@ -35,7 +40,7 @@
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td >Jenis Transaksi</td><td><input type="text" name="jenis" style="width: 20px"></td>
+                        <td >No. Urut</td><td><input type="text" name="jenis" style="width: 20px"></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
@@ -48,8 +53,27 @@
                     </tr>
                     <tr><td>&nbsp;</td></tr>
                 </form>
-
+   
                 <%--ISI SAMPAI SINI--%>
+                    <tr>
+                    <td width="10%">&nbsp;</td>
+                    <th width="20%" align="left">Kode</th>
+                    <th>Nama Transaksi</th>
+                    <th align="left">Edit</th>
+                    <th align="left">Hapus</th>
+                    </tr>
+                    
+                    <% while (iterator.hasNext()) {%>
+                        <% KodeTransaksi next = iterator.next();%>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><%=next.getKdTrans()%></td>
+                        <td><%=next.getNmTrans()%></td>
+                        <td bgcolor="#F4F4F4"><a href="editkode?id=<%=next.getId() %>"><font color="brown">edit</font></a></td>
+                        <td bgcolor="#F4F4F4"><a href="hapuskode?id=<%=next.getId() %>"><font color="red">hapus</font></a></td>
+                    </tr>
+                    <%}%>     
+                    <tr><td>&nbsp;</td></tr>
             </table></td>
     </tr>
     <tr> 
