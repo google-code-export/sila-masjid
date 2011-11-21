@@ -68,12 +68,12 @@ public class DaftarMasjid implements Serializable {
         return masjid;
     }
 
-    public List<Masjid> getMasjid() {
+    public List<Masjid> getMasjids(Long idMasjid) {//edit tanggal 21 nop 2011
         List<Masjid> masjids = new ArrayList<Masjid>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Masjid AS o");
+            Query q = em.createQuery("SELECT object(o) FROM Masjid AS o where o.idMasjid=:idMasjid");
             masjids = q.getResultList();
 
         } finally {
