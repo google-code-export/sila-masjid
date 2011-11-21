@@ -44,6 +44,10 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>servlets.LogoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditKodeTransaksiServlet</servlet-name>
+        <servlet-class>servlets.EditKodeTransaksiServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditKodeTransaksiServlet</servlet-name>
+        <url-pattern>/editkode</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
