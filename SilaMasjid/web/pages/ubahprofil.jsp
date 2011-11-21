@@ -7,9 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarMasjid"%>
 <%@page import="entities.Masjid"%>
+
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <html>
+    
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
     <tr> 
@@ -57,6 +59,7 @@
                     <tr>
                         <td >&nbsp;</td>
                     </tr>
+                    
                 </form>
                 <%--ISI SAMPAI SINI--%>
             </table></td>

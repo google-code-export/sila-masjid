@@ -53,12 +53,12 @@ public class ProcessRegisterServlet extends HttpServlet {
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
 
-        } /*else if (password.equals(ulangiPassword)) {//validasi password dan konfirm password (sama/tidak)
+        } else if (!password.equals(ulangiPassword)) {//validasi password dan konfirm password (sama/tidak)
             request.setAttribute("error", "Afwan (maaf), password dan konfirmasi password yang dimasukkan salah");
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
             
-        }*/ else {
+        }else {
             DaftarMasjid daftar = new DaftarMasjid();
             Masjid masjid = new Masjid();
 
@@ -67,7 +67,7 @@ public class ProcessRegisterServlet extends HttpServlet {
             daftar.addMasjid(masjid); //menambahkan record ke tabel masjid
 
             HttpSession session = request.getSession(true);//setelah registrasi berhasil, langsung login
-            session.setAttribute("email", masjid.getEmail());
+            session.setAttribute("idMasjid", masjid.getId());
             session.setAttribute("nama", masjid.getNmMasjid());
             response.sendRedirect("profil");
         }
