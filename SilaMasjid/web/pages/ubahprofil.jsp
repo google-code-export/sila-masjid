@@ -7,11 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarMasjid"%>
 <%@page import="entities.Masjid"%>
-<% Masjid masjid=(Masjid)request.getAttribute("masjid");%>
+<% Masjid masjid = (Masjid) request.getAttribute("masjid");%>
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <html>
-    
+
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
     <tr> 
@@ -26,7 +26,7 @@
                 <%-- ISI MULAI SINI---%>
                 <form action="ubahprofilmasjid" method="post" >
                     <tr>
-                        <td width="10%">&nbsp;</td>
+                        <td width="10%"><input type="hidden" name="id" value="<%=masjid.getId()%>" style="width: 160px"></td>
                         <td>Email</td><td><input type="text" name="email" value="<%=masjid.getEmail()%>" style="width: 160px"></td>
                     </tr>
                     <tr>
@@ -59,7 +59,7 @@
                     <tr>
                         <td >&nbsp;</td>
                     </tr>
-                    
+                    <tr><td colspan="3" align="center"><label align="center"><font color="red"><b>${errorprofil}</b></font></label></td></tr>
                 </form>
                 <%--ISI SAMPAI SINI--%>
             </table></td>

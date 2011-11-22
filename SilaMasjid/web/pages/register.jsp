@@ -37,7 +37,7 @@
                     <tr><td>&nbsp;</td></tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>&nbsp;</td><td><input type="reset" value="Reset"><input type="submit" value="Register" ></td>
+                        <td>&nbsp;</td><td><input type="submit" value="Register" ><input type="reset" value="Reset"></td>
                     </tr>
                     <tr><td colspan="3" align="center"><label align="center"><font color="red"><b>${error}</b></font></label></td></tr>
                 </form>

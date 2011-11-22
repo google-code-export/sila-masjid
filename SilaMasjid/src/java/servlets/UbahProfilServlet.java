@@ -32,38 +32,49 @@ public class UbahProfilServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
-        String email = request.getParameter("email");
+        HttpSession session = request.getSession(); 
+        Masjid masjid = (Masjid) session.getAttribute("loged");
+        Long id=masjid.getId();
+        
+        DaftarMasjid dafMasjid = new DaftarMasjid();
+        
+        //String email = request.getParameter("email");
         String password = request.getParameter("password");
         String nmMasjid = request.getParameter("nmmasjid");
         String alamat = request.getParameter("alamat");
         String kota = request.getParameter("kota");
         String telepon = request.getParameter("telepon");
 
+        //Long id = Long.parseLong(request.getParameter("id"));
+       
+        //Masjid masjid = dafMasjid.findMasjid(id);
+
+        request.setAttribute("ubahmasjid", masjid);
+
         //validasi masukan
-        if (email.isEmpty() || password.isEmpty() || nmMasjid.isEmpty() || alamat.isEmpty() || kota.isEmpty() || telepon.isEmpty()) {//validasi isian masukan (kosong/tidak)
-            request.setAttribute("error", "Afwan, kolom tidak boleh kosong !");
-            RequestDispatcher rdp = request.getRequestDispatcher("ubahprofil");
+        if (password.isEmpty() || nmMasjid.isEmpty() || alamat.isEmpty() || kota.isEmpty() || telepon.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("errorprofil", "Afwan (maaf), ubah profil masjid gagal. Semua kolom tidak boleh kosong !");
+            RequestDispatcher rdp = request.getRequestDispatcher("profil");
             rdp.forward(request, response);
 
         } else if (password.length() < 6) { //validasi panjang password
-            request.setAttribute("error", "Afwan (maaf), password minimal 6 karakter");
-            RequestDispatcher rdp = request.getRequestDispatcher("register");
+            request.setAttribute("errorprofil", "Afwan (maaf), password minimal 6 karakter");
+            RequestDispatcher rdp = request.getRequestDispatcher("profil");
+            rdp.forward(request, response);
+            
+        }else if(!telepon.matches("[0-9]*")){ //validasi input telepon harus angka
+            request.setAttribute("errorprofil", "Afwan (maaf), nomor telepon harus berupa angka. Proses ubah profil gagal.");
+            RequestDispatcher rdp = request.getRequestDispatcher("profil");
             rdp.forward(request, response);
 
-
-        } else {
-            DaftarMasjid daftar = new DaftarMasjid();
-            Masjid masjid = new Masjid();
-
-            masjid.setEmail(email);
+        } else {         
             masjid.setPassword(password);
             masjid.setNmMasjid(nmMasjid);
             masjid.setAlmtMasjid(alamat);
             masjid.setKotaMasjid(kota);
-            masjid.setKotaMasjid(kota);
-            daftar.editMasjid(masjid); //menambahkan record ke tabel masjid
-            
+            masjid.setTelpMasjid(telepon);
+            dafMasjid.editMasjid(masjid); //mengubah record ke tabel masjid
+            session.setAttribute("nmMasjid",masjid.getEmail()+'/'+masjid.getNmMasjid());
             response.sendRedirect("profil");
         }
         /*  try {

@@ -40,7 +40,7 @@ public class ProfilMasjidServlet extends HttpServlet {
         Long id = masjid.getId();
         
         DaftarMasjid daf=new DaftarMasjid();
-        Masjid masjid2=daf.getMasjid2(id);
+        Masjid masjid2=daf.findMasjid(id);
         
         request.setAttribute("masjid", masjid2);
         try {
