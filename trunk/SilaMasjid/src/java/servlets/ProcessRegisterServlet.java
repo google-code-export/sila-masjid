@@ -37,9 +37,13 @@ public class ProcessRegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String ulangiPassword = request.getParameter("ulangipassword");
 
+        DaftarMasjid daftar = new DaftarMasjid();
+        Masjid masjid = new Masjid();
+
+
         //validasi masukan
         if (email.isEmpty() || password.isEmpty() || ulangiPassword.isEmpty()) {//validasi isian masukan (kosong/tidak)
-            request.setAttribute("error", "Afwan, kolom tidak boleh kosong !");
+            request.setAttribute("error", "Afwan (maaf), semua kolom tidak boleh kosong !");
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
 
@@ -57,19 +61,21 @@ public class ProcessRegisterServlet extends HttpServlet {
             request.setAttribute("error", "Afwan (maaf), password dan konfirmasi password yang dimasukkan salah");
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
-            
-        }else {
-            DaftarMasjid daftar = new DaftarMasjid();
-            Masjid masjid = new Masjid();
 
+        } else if (daftar.checkEmail(email)==true) { //validasi apakah email sudah perna terdaftar
+            request.setAttribute("error", "Afwan (maaf), email yang Anda masukkan sudah terdaftar");
+            RequestDispatcher rdp = request.getRequestDispatcher("register");
+            rdp.forward(request, response);
+            
+        } else { //jika tidak ada error, menambah record masjid
             masjid.setEmail(email);
             masjid.setPassword(password);
-            daftar.addMasjid(masjid); //menambahkan record ke tabel masjid
+            daftar.addMasjid(masjid);
 
             HttpSession session = request.getSession(true);//setelah registrasi berhasil, langsung login
             session.setAttribute("idMasjid", masjid.getId());
             session.setAttribute("loged", masjid);
-            session.setAttribute("nmMasjid",masjid.getEmail()+'/'+masjid.getNmMasjid());
+            session.setAttribute("nmMasjid", masjid.getEmail() + '/' + masjid.getNmMasjid());
 
             response.sendRedirect("profil");
         }
