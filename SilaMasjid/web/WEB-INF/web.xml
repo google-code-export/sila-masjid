@@ -52,6 +52,14 @@
         <servlet-name>UbahProfilMasjid</servlet-name>
         <servlet-class>servlets.UbahProfilServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InputRekeningServlet</servlet-name>
+        <servlet-class>servlets.InputRekeningServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditRekeningServlet</servlet-name>
+        <servlet-class>servlets.EditRekeningServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>UbahProfilMasjid</servlet-name>
         <url-pattern>/ubahprofilmasjid</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InputRekeningServlet</servlet-name>
+        <url-pattern>/inputrekening</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditRekeningServlet</servlet-name>
+        <url-pattern>/editrekening</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
