@@ -1,6 +1,7 @@
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
+ * @author Sumurmunding
  */
 package entities;
 
@@ -50,12 +51,27 @@ public class DaftarMasjid implements Serializable {
         return result;
     }
 
-    public boolean check2(Long id) {
+    public boolean checkId(Long id) {
         boolean result = false;
         EntityManager em = getEntityManager();
         try {
             Query q = em.createQuery("SELECT count(o) FROM Masjid AS o WHERE o.id=:id");
             q.setParameter("id", id);
+            int jumlahMasjid = ((Long) q.getSingleResult()).intValue();
+            if (jumlahMasjid > 0) {
+                result = true;
+            }
+        } finally {
+            em.close();
+        }
+        return result;
+    }
+    public boolean checkEmail(String email) {
+        boolean result = false;
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT count(o) FROM Masjid AS o WHERE o.email=:email");
+            q.setParameter("email", email);
             int jumlahMasjid = ((Long) q.getSingleResult()).intValue();
             if (jumlahMasjid > 0) {
                 result = true;
@@ -87,7 +103,7 @@ public class DaftarMasjid implements Serializable {
         Masjid masjid = null;
         EntityManager em = getEntityManager();
         try {
-            boolean hasilCheck = this.check2(id);
+            boolean hasilCheck = this.checkId(id);
             if (hasilCheck) {
                 Query q = em.createQuery("SELECT object(o) FROM Masjid AS o WHERE o.id=:id");
                 q.setParameter("id", id);
