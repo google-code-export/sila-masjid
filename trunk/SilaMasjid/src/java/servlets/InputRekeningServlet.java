@@ -52,6 +52,7 @@ public class InputRekeningServlet extends HttpServlet {
         rek.setIdMasjid(idMasjid);
         rek.setNoRek(noRek);
         rek.setNmRek(nmRek);
+        rek.setBank(bank);
         
         if (daftar.check(id)==false)
         {
@@ -63,7 +64,7 @@ public class InputRekeningServlet extends HttpServlet {
         } 
         
         try {
-           response.sendRedirect("Rekening");
+           response.sendRedirect("rekening");
      
         } finally {            
             out.close();
