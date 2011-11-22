@@ -26,67 +26,83 @@ public class Rekening implements Serializable {
     private String nmRek;
     private String bank;
 
-    public Long getIdMasjid() {
+    public Long getIdMasjid()
+    {
         return idMasjid;
     }
 
-    public void setIdMasjid(Long idMasjid) {
+    public void setIdMasjid(Long idMasjid)
+    {
         this.idMasjid = idMasjid;
     }
-    public String getBank() {
+    
+    public String getBank()
+    {
         return bank;
     }
 
-    public void setBank(String bank) {
+    public void setBank(String bank)
+    {
         this.bank = bank;
     }
 
-    public String getNmRek() {
+    public String getNmRek()
+    {
         return nmRek;
     }
 
-    public void setNmRek(String nmRek) {
+    public void setNmRek(String nmRek)
+    {
         this.nmRek = nmRek;
     }
 
-    public String getNoRek() {
+    public String getNoRek()
+    {
         return noRek;
     }
 
-    public void setNoRek(String noRek) {
+    public void setNoRek(String noRek)
+    {
         this.noRek = noRek;
     }
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(Object object)
+    {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Rekening)) {
+        if (!(object instanceof Rekening))
+        {
             return false;
         }
         Rekening other = (Rekening) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)))
+        {
             return false;
         }
         return true;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "entities.Rekening[id=" + id + "]";
     }
 
