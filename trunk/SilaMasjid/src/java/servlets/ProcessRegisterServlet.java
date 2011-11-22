@@ -68,7 +68,9 @@ public class ProcessRegisterServlet extends HttpServlet {
 
             HttpSession session = request.getSession(true);//setelah registrasi berhasil, langsung login
             session.setAttribute("idMasjid", masjid.getId());
-            session.setAttribute("nama", masjid.getNmMasjid());
+            session.setAttribute("loged", masjid);
+            session.setAttribute("nmMasjid",masjid.getEmail()+'/'+masjid.getNmMasjid());
+
             response.sendRedirect("profil");
         }
         /*  try {

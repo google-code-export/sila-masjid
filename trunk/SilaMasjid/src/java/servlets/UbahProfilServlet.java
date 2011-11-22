@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Sumurmunding
  */
-@WebServlet(name = "ProfilServlet", urlPatterns = {"/profil"})
-public class ProfilMasjidServlet extends HttpServlet {
+public class UbahProfilServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -34,31 +32,53 @@ public class ProfilMasjidServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        //mengambil session
-        HttpSession session = request.getSession();
-        Masjid masjid = (Masjid) session.getAttribute("loged");
-        Long id = masjid.getId();
-        
-        DaftarMasjid daf=new DaftarMasjid();
-        Masjid masjid2=daf.getMasjid2(id);
-        
-        request.setAttribute("masjid", masjid2);
-        try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/ubahprofil.jsp");
+
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String nmMasjid = request.getParameter("nmmasjid");
+        String alamat = request.getParameter("alamat");
+        String kota = request.getParameter("kota");
+        String telepon = request.getParameter("telepon");
+
+        //validasi masukan
+        if (email.isEmpty() || password.isEmpty() || nmMasjid.isEmpty() || alamat.isEmpty() || kota.isEmpty() || telepon.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("error", "Afwan, kolom tidak boleh kosong !");
+            RequestDispatcher rdp = request.getRequestDispatcher("ubahprofil");
             rdp.forward(request, response);
-            /* TODO output your page here
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProfilMasjidServlet</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ProfilMasjidServlet at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-             */
-        } finally {
-            out.close();
+
+        } else if (password.length() < 6) { //validasi panjang password
+            request.setAttribute("error", "Afwan (maaf), password minimal 6 karakter");
+            RequestDispatcher rdp = request.getRequestDispatcher("register");
+            rdp.forward(request, response);
+
+
+        } else {
+            DaftarMasjid daftar = new DaftarMasjid();
+            Masjid masjid = new Masjid();
+
+            masjid.setEmail(email);
+            masjid.setPassword(password);
+            masjid.setNmMasjid(nmMasjid);
+            masjid.setAlmtMasjid(alamat);
+            masjid.setKotaMasjid(kota);
+            masjid.setKotaMasjid(kota);
+            daftar.editMasjid(masjid); //menambahkan record ke tabel masjid
+            
+            response.sendRedirect("profil");
         }
+        /*  try {
+        
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Servlet ProcessRegisterServlet</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h1>Servlet ProcessRegisterServlet at " + request.getContextPath() + "</h1>");
+        out.println("</body>");
+        out.println("</html>");
+        } finally {
+        out.close();
+        }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
