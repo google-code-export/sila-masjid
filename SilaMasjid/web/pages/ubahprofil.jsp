@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarMasjid"%>
 <%@page import="entities.Masjid"%>
-
+<% Masjid masjid=(Masjid)request.getAttribute("masjid");%>
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <html>
@@ -24,30 +24,30 @@
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                 <%-- ISI MULAI SINI---%>
-                <form action="ubahprofil" method="post" >
+                <form action="ubahprofilmasjid" method="post" >
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Email</td><td><input type="text" name="email" style="width: 160px"></td>
+                        <td>Email</td><td><input type="text" name="email" value="<%=masjid.getEmail()%>" style="width: 160px"></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Password</td><td><input type="password" name="password" style="width: 120px"></td>
+                        <td>Password</td><td><input type="password" name="password" value="<%=masjid.getPassword()%>" style="width: 120px"></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Nama Masjid</td><td><input type="text" name="nmmasjid" style="width: 120px"></td>
+                        <td>Nama Masjid</td><td><input type="text" name="nmmasjid" value="<%=masjid.getNmMasjid()%>"style="width: 120px"></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Alamat</td><td><input type="text" name="alamat" style="width: 120px"></td>
+                        <td>Alamat</td><td><input type="text" name="alamat" value="<%=masjid.getAlmtMasjid()%>" style="width: 120px"></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Kota</td><td><input type="text" name="kota" style="width: 120px"></td>
+                        <td>Kota</td><td><input type="text" name="kota" value="<%=masjid.getKotaMasjid()%>" style="width: 120px"></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Telepon</td><td><input type="text" name="telepon" style="width: 120px"></td>
+                        <td>Telepon</td><td><input type="text" name="telepon" value="<%=masjid.getTelpMasjid()%>" style="width: 120px"></td>
                     </tr>
                     <tr>
                         <td >&nbsp;</td>

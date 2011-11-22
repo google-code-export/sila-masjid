@@ -48,6 +48,10 @@
         <servlet-name>EditKodeTransaksiServlet</servlet-name>
         <servlet-class>servlets.EditKodeTransaksiServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UbahProfilMasjid</servlet-name>
+        <servlet-class>servlets.UbahProfilServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>EditKodeTransaksiServlet</servlet-name>
         <url-pattern>/editkode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UbahProfilMasjid</servlet-name>
+        <url-pattern>/ubahprofilmasjid</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
