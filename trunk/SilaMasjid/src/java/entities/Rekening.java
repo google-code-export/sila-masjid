@@ -21,10 +21,18 @@ public class Rekening implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long noRek;
+    private Long idMasjid;
+    private String noRek;
     private String nmRek;
     private String bank;
 
+    public Long getIdMasjid() {
+        return idMasjid;
+    }
+
+    public void setIdMasjid(Long idMasjid) {
+        this.idMasjid = idMasjid;
+    }
     public String getBank() {
         return bank;
     }
@@ -41,11 +49,11 @@ public class Rekening implements Serializable {
         this.nmRek = nmRek;
     }
 
-    public Long getNoRek() {
+    public String getNoRek() {
         return noRek;
     }
 
-    public void setNoRek(Long noRek) {
+    public void setNoRek(String noRek) {
         this.noRek = noRek;
     }
 
