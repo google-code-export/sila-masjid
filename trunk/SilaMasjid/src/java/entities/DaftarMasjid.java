@@ -99,7 +99,7 @@ public class DaftarMasjid implements Serializable {
         return masjid;
     }
 
-    public Masjid getMasjid2(Long id) {
+    public Masjid findMasjid(Long id) {
         Masjid masjid = null;
         EntityManager em = getEntityManager();
         try {
