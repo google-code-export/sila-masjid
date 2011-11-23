@@ -13,7 +13,7 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
     <tr> 
         <%--JUDUL DI SINI--%>
-        <td width="452" height="32" class="contentheader"><div align="center"><b>KODE TRANSAKSI</b></div></td>
+        <td width="452" height="32" class="contentheader"><div align="center"><b>EDIT KODE TRANSAKSI</b></div></td>
     </tr>
     <tr> 
         <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
@@ -21,9 +21,9 @@
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                 <%-- ISI MULAI SINI---%>
-                <form action="SimpanKodeTransaksi" method="post" >
+                <form action="simpan_edit_kode" method="post" >
                     <tr>
-                        <td width="10%"><hidden name="id" value="<%=kode.toString()%>"></hidden></td>
+                        <td width="10%">&nbsp;</td>
                         <td>Kelompok</td><td><select name="kelompok">
                                 <option value="<%=kode.getKdTrans().substring(0,2)%>" selected><%=kode.getKdTrans().substring(0,2)%></option>
                                 <option value="11">11 Penerimaan Zakat</option>

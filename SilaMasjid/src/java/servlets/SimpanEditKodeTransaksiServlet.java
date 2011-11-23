@@ -6,20 +6,18 @@ package servlets;
 
 import entities.DaftarKodeTransaksi;
 import entities.KodeTransaksi;
-import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author alin
  */
-public class SimpanKodeTransaksiServlet extends HttpServlet {
+public class SimpanEditKodeTransaksiServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,28 +30,33 @@ public class SimpanKodeTransaksiServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession(); 
-        Masjid masjid = (Masjid) session.getAttribute("loged");
-        Long idMasjid=masjid.getId();
-        
-        String klp=request.getParameter("kelompok");
-        String jns=request.getParameter("jenis");
-        String kdTrans=klp+jns;
-        String nmTrans=request.getParameter("nmTrans");
-        
-        DaftarKodeTransaksi daftar=new DaftarKodeTransaksi();
-        KodeTransaksi kode=new KodeTransaksi();
-        
-        kode.setIdMasjid(idMasjid);
+
+        DaftarKodeTransaksi daftar = new DaftarKodeTransaksi();
+        KodeTransaksi kode = (KodeTransaksi) request.getAttribute("kode");
+
+        String klp = request.getParameter("kelompok");
+        String jns = request.getParameter("jenis");
+        String kdTrans = klp + jns;
+        String nmTrans = request.getParameter("nmTrans");
+
         kode.setKdTrans(kdTrans);
         kode.setNmTrans(nmTrans);
+
         //simpan
-        daftar.addKodeTransaksi(kode);
-        
+        daftar.editKodeTransaksi(kode);
+        response.sendRedirect("kode");
         try {
-           response.sendRedirect("kode");
-     
-        } finally {            
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SimpanEditKodeTransaksiServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SimpanEditKodeTransaksiServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
+        } finally {
             out.close();
         }
     }
