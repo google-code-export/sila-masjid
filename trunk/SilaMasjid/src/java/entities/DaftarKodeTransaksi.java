@@ -72,7 +72,7 @@ public class DaftarKodeTransaksi implements Serializable {
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o WHERE o.idMasjid=:idMasjid");
+            Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o WHERE o.idMasjid=:idMasjid ORDER BY o.kdTrans");
             q.setParameter("idMasjid", idMasjid);
             kodeTransaksis = q.getResultList();
 
