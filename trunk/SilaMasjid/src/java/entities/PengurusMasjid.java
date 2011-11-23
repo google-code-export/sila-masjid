@@ -16,10 +16,12 @@ import javax.persistence.Id;
  */
 @Entity
 public class PengurusMasjid implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long idMasjid;
     private String nama;
     private String jabatan;
     private String notelp;
@@ -42,6 +44,14 @@ public class PengurusMasjid implements Serializable {
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public Long getIdMasjid() {
+        return idMasjid;
+    }
+
+    public void setIdMasjid(Long idMasjid) {
+        this.idMasjid = idMasjid;
     }
 
     public String getNotelp() {
@@ -80,5 +90,4 @@ public class PengurusMasjid implements Serializable {
     public String toString() {
         return "entities.PengurusMasjid[ id=" + id + " ]";
     }
-    
 }
