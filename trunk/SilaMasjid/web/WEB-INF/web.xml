@@ -22,7 +22,7 @@
     </servlet>
     <servlet>
         <servlet-name>ProcessRegister</servlet-name>
-        <servlet-class>servlets.ProcessRegisterServlet</servlet-class>
+        <servlet-class>servlets.ProsesRegisterServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RekeningServlet</servlet-name>
@@ -71,6 +71,14 @@
     <servlet>
         <servlet-name>HapusKodeTransaksiServlet</servlet-name>
         <servlet-class>servlets.HapusKodeTransaksiServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SimpanPengurusServlet</servlet-name>
+        <servlet-class>servlets.SimpanPengurusServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditPengurusServlet</servlet-name>
+        <servlet-class>servlets.EditPengurusServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
@@ -143,6 +151,14 @@
     <servlet-mapping>
         <servlet-name>HapusKodeTransaksiServlet</servlet-name>
         <url-pattern>/hapus_kode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanPengurusServlet</servlet-name>
+        <url-pattern>/simpanpengurus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPengurusServlet</servlet-name>
+        <url-pattern>/editpengurus</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

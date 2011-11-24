@@ -4,6 +4,9 @@
  */
 package servlets;
 
+import entities.DaftarPengurusMasjid;
+import entities.Masjid;
+import entities.PengurusMasjid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -11,12 +14,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Sumurmunding
  */
-public class PengurusMasjidServlet extends HttpServlet {
+public class EditPengurusServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -29,11 +33,18 @@ public class PengurusMasjidServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
+       
+        Long id=Long.parseLong(request.getParameter("id"));
+        
+        DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();
+        PengurusMasjid pengurus = daftar.getPengurusMasjid(id);
+        
+        request.setAttribute("pengurus", pengurus);
+        
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/pengurus.jsp");
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/editpengurus.jsp");
             rdp.forward(request, response);
-        } finally {
+        } finally {            
             out.close();
         }
     }

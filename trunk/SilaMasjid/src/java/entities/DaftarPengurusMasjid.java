@@ -63,6 +63,21 @@ public class DaftarPengurusMasjid implements Serializable {
         }
         return pengurus;
     }
+    public PengurusMasjid findPengurusMasjid(Long id) {
+        PengurusMasjid pengurus = null;
+        EntityManager em = getEntityManager();
+        try {
+            boolean hasilCheck = this.check(id);
+            if (hasilCheck) {
+                Query q = em.createQuery("SELECT object(o) FROM PengurusMasjid AS o WHERE o.id=:id");
+                q.setParameter("id", id);
+                pengurus = (PengurusMasjid) q.getSingleResult();
+            }
+        } finally {
+            em.close();
+        }
+        return pengurus;
+    }
 
     public List<PengurusMasjid> getPengurusMasjids(Long idMasjid) {
         List<PengurusMasjid> pengurusMasjids = new ArrayList<PengurusMasjid>();

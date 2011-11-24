@@ -24,7 +24,7 @@ public class PengurusMasjid implements Serializable {
     private Long idMasjid;
     private String nama;
     private String jabatan;
-    private String notelp;
+    private String noTelp;
 
     public Long getId() {
         return id;
@@ -54,12 +54,12 @@ public class PengurusMasjid implements Serializable {
         this.idMasjid = idMasjid;
     }
 
-    public String getNotelp() {
-        return notelp;
+    public String getNoTelp() {
+        return noTelp;
     }
 
-    public void setNotelp(String notelp) {
-        this.notelp = notelp;
+    public void setNoTelp(String noTelp) {
+        this.noTelp = noTelp;
     }
 
     public void setId(Long id) {

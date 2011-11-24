@@ -4,10 +4,13 @@
  */
 package servlets;
 
+import entities.DaftarPengurusMasjid;
+import entities.PengurusMasjid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sumurmunding
  */
-public class PengurusMasjidServlet extends HttpServlet {
+@WebServlet(name = "SimpanEditPengurusServlet", urlPatterns = {"/simpaneditpengurus"})
+public class SimpanEditPengurusServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -30,9 +34,34 @@ public class PengurusMasjidServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/pengurus.jsp");
+        DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();
+
+        String nama = request.getParameter("nama");
+        String jabatan = request.getParameter("jabatan");
+        String noTelp = request.getParameter("noTelp");
+        Long id = Long.parseLong(request.getParameter("id"));
+
+        PengurusMasjid pengurus = daftar.findPengurusMasjid(id);
+
+        if (nama.isEmpty() || jabatan.isEmpty() || noTelp.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("errorpengurus", "Afwan, data pengurus gagal disimpan. Semua kolom harus diisi. ");
+            RequestDispatcher rdp = request.getRequestDispatcher("pengurus");
             rdp.forward(request, response);
+
+        } else if (!noTelp.matches("[0-9]*")) { //validasi input telepon harus angka
+            request.setAttribute("errorpengurus", "Afwan, data pengurus gagal disimpan. Nomor telepon harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("pengurus");
+            rdp.forward(request, response);
+
+        } else {
+            pengurus.setNama(nama);
+            pengurus.setJabatan(jabatan);
+            pengurus.setNoTelp(noTelp);
+            daftar.editPengurusMasjid(pengurus);
+        }
+
+        try {
+            response.sendRedirect("pengurus");
         } finally {
             out.close();
         }
