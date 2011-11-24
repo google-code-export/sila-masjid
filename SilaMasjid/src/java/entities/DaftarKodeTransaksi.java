@@ -118,7 +118,7 @@ public class DaftarKodeTransaksi implements Serializable {
                 kodeTransaksi = em.getReference(KodeTransaksi.class, id);
                 kodeTransaksi.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The KodeTransaksi with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The kodeTransaksi with id " + id + " no longer exists.", enfe);
             }
             em.remove(kodeTransaksi);
             em.getTransaction().commit();

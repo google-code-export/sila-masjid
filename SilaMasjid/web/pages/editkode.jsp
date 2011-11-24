@@ -21,7 +21,7 @@
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                 <%-- ISI MULAI SINI---%>
-                <form action="simpan_edit_kode" method="post" >
+                <form action="" method="post" >
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td>Kelompok</td><td><select name="kelompok">
@@ -45,7 +45,9 @@
                     <tr><td>&nbsp;</td></tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>&nbsp;</td><td><input type="submit" value="Simpan" ><input type="reset" value="Reset"></td>
+                        <td>&nbsp;</td><td><input type="button" value="Simpan" onclick="this.form.action='simpan_edit_kode';this.form.submit();">
+                            <input type="reset" value="Reset"></td>
+                        <td><input type="button" value="Hapus" style="background-color:#c00; color:#fff;" onclick="this.form.action='hapus_kode';this.form.submit();"></td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
                 </form>

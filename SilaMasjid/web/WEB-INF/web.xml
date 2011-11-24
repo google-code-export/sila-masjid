@@ -68,6 +68,14 @@
         <servlet-name>SimpanEditKodeTransaksiServlet</servlet-name>
         <servlet-class>servlets.SimpanEditKodeTransaksiServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HapusKodeTransaksiServlet</servlet-name>
+        <servlet-class>servlets.HapusKodeTransaksiServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HapusKodeServlet</servlet-name>
+        <servlet-class>servlets.HapusKodeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>

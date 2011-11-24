@@ -60,8 +60,7 @@
                     <td width="10%">&nbsp;</td>
                     <th width="20%" align="left">Kode</th>
                     <th>Nama Transaksi</th>
-                    <th align="left">Edit</th>
-                    <th align="left">Hapus</th>
+                    <th align="left">Edit/Hapus</th>
                     </tr>
                     
                     <% while (iterator.hasNext()) {%>
@@ -70,8 +69,7 @@
                         <td>&nbsp;</td>
                         <td><%=next.getKdTrans()%></td>
                         <td><%=next.getNmTrans()%></td>
-                        <td bgcolor="#F4F4F4"><a href="editkode?id=<%=next.getId() %>"><font color="brown">edit</font></a></td>
-                        <td bgcolor="#F4F4F4"><a href="hapuskode?id=<%=next.getId() %>"><font color="red">hapus</font></a></td>
+                        <td bgcolor="#F4F4F4"><a href="editkode?id=<%=next.getId() %>"><font color="brown">pilih</font></a></td>
                     </tr>
                     <%}%>     
                     <tr><td>&nbsp;</td></tr>
