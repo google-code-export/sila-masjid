@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Sumurmunding
  */
-public class ProcessRegisterServlet extends HttpServlet {
+public class ProsesRegisterServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -62,11 +62,11 @@ public class ProcessRegisterServlet extends HttpServlet {
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
 
-        } else if (daftar.checkEmail(email)==true) { //validasi apakah email sudah perna terdaftar
+        } else if (daftar.checkEmail(email) == true) { //validasi apakah email sudah perna terdaftar
             request.setAttribute("error", "Afwan (maaf), email yang Anda masukkan sudah terdaftar");
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
-            
+
         } else { //jika tidak ada error, menambah record masjid
             masjid.setEmail(email);
             masjid.setPassword(password);
@@ -77,21 +77,12 @@ public class ProcessRegisterServlet extends HttpServlet {
             session.setAttribute("loged", masjid);
             session.setAttribute("nmMasjid", masjid.getEmail() + '/' + masjid.getNmMasjid());
 
-            response.sendRedirect("profil");
         }
-        /*  try {
-        
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet ProcessRegisterServlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet ProcessRegisterServlet at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
+        try {
+            response.sendRedirect("profil");
         } finally {
-        out.close();
-        }*/
+            out.close();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

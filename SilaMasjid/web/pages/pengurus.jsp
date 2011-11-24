@@ -26,8 +26,8 @@
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                 <%--ISI MULAI SINI--%>
-                
-                <form action="inputpengurus" method="post" >
+
+                <form action="simpanpengurus" method="post" >
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td >Nama Pengurus</td><td><input type="text" name="nama" style="width: 160px"></td>
@@ -36,15 +36,17 @@
                         <td width="10%">&nbsp;</td>
                         <td>Jabatan</td><td><input type="text" name="jabatan" style="width: 160px"></td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>No. Telepon</td><td><input type="text" name="notelp" style="width: 160px"></td>
+                        <td>No. Telepon</td><td><input type="text" name="noTelp" style="width: 160px"></td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td>&nbsp;</td><td><input type="submit" value="Simpan" ><input type="reset" value="Reset"></td>
                     </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr><td colspan="4" align="center"><label align="center"><font color="red"><b>${errorpengurus}</b></font></label></td></tr>
                     <tr><td>&nbsp;</td></tr>
                 </form>
 
@@ -64,9 +66,9 @@
                     <td>&nbsp;</td>
                     <td><%=next.getNama()%></td>
                     <td><%=next.getJabatan()%></td>
-                    <td><%=next.getNotelp()%></td>
-                    <td bgcolor="#F4F4F4"><a href="editkode?id=<%=next.getId()%>"><font color="brown">edit</font></a></td>
-                    <td bgcolor="#F4F4F4"><a href="hapuskode?id=<%=next.getId()%>"><font color="red">hapus</font></a></td>
+                    <td><%=next.getNoTelp()%></td>
+                    <td bgcolor="#F4F4F4"><a href="editpengurus?id=<%=next.getId()%>" > <font color="brown">edit</font></a></td>
+                    <td bgcolor="#F4F4F4"><a href="hapuspengurus?id=<%=next.getId()%>"><font color="red">hapus</font></a></td>
                 </tr>
                 <%}%>     
                 <tr><td>&nbsp;</td></tr>
