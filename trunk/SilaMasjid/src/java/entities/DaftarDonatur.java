@@ -4,44 +4,42 @@
  */
 package entities;
 
-
-import java.util.List;
-import java.util.ArrayList;
+import entities.Donatur;
 import java.io.Serializable;
-import javax.persistence.Entity;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.Id;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import jpa.exceptions.NonexistentEntityException;
 
 /**
  *
  * @author danke
  */
-@Entity
 public class DaftarDonatur implements Serializable {
 
     public DaftarDonatur() {
         emf = Persistence.createEntityManagerFactory("SilaMasjidPU");
     }
-    @Id
+    
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    public boolean check(String nama , String alamat, String telepon) {
+    public boolean check(Long id) {
         boolean result = false;
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT count(o) FROM Donatur AS o WHERE o.nama=:nama AND o.alamat=:alamat AND o.telepon=:telepon");
-            q.setParameter("nama", nama);
-            q.setParameter("alamat", alamat);
-            q.setParameter("telepon", telepon);
+            Query q = em.createQuery("SELECT count(o) FROM Donatur AS o WHERE o.id=:id");
+            q.setParameter("id", id);
+ 
             int jumlahDonatur = ((Long) q.getSingleResult()).intValue();
             if (jumlahDonatur > 0) {
                 result = true;
@@ -52,16 +50,15 @@ public class DaftarDonatur implements Serializable {
         return result;
     }
 
-    public Donatur getDonatur(String nama, String alamat, String telepon) {
+    public Donatur getDonatur(Long id) {
         Donatur donatur = null;
         EntityManager em = getEntityManager();
         try {
-            boolean hasilCheck = this.check(nama, alamat, telepon);
+            boolean hasilCheck = this.check(id);
             if (hasilCheck) {
-                Query q = em.createQuery("SELECT object(o) FROM Donatur AS o WHERE o.nama=:nama AND o.alamat=:alamat AND o.telepon=:telepon");
-                q.setParameter("nama", nama);
-                q.setParameter("alamat", alamat);
-                q.setParameter("telepon", telepon);
+                Query q = em.createQuery("SELECT object(o) FROM Donatur AS o WHERE o.id=:id");
+                q.setParameter("id", id);
+ 
                 donatur = (Donatur) q.getSingleResult();
             }
         } finally {
@@ -70,12 +67,13 @@ public class DaftarDonatur implements Serializable {
         return donatur;
     }
 
-    public List<Donatur> getDonatur() {
+    public List<Donatur> getDonaturs(Long idMasjid) {
         List<Donatur> donaturs = new ArrayList<Donatur>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Donatur AS o");
+            Query q = em.createQuery("SELECT object(o) FROM Donatur AS o WHERE o.idMasjid=:idMasjid ORDER BY o.nmDonatur");
+            q.setParameter("idMasjid", idMasjid);
             donaturs = q.getResultList();
 
         } finally {
@@ -120,7 +118,7 @@ public class DaftarDonatur implements Serializable {
                 donatur = em.getReference(Donatur.class, id);
                 donatur.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The user with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The Donatur with id " + id + " no longer exists.", enfe);
             }
             em.remove(donatur);
             em.getTransaction().commit();

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package entities;
 
 import java.io.Serializable;
@@ -12,7 +8,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author yooganz
+ * @author danke
  */
 @Entity
 public class Donatur implements Serializable {
@@ -20,9 +16,10 @@ public class Donatur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long idMasjid;
     private String nmDonatur;
-    private String almtDonatur;
     private String telpDonatur;
+    private String almtDonatur;
 
     public String getAlmtDonatur() {
         return almtDonatur;
@@ -30,6 +27,22 @@ public class Donatur implements Serializable {
 
     public void setAlmtDonatur(String almtDonatur) {
         this.almtDonatur = almtDonatur;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdMasjid() {
+        return idMasjid;
+    }
+
+    public void setIdMasjid(Long idMasjid) {
+        this.idMasjid = idMasjid;
     }
 
     public String getNmDonatur() {
@@ -48,15 +61,7 @@ public class Donatur implements Serializable {
         this.telpDonatur = telpDonatur;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
+@Override
     public int hashCode() {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
@@ -80,5 +85,26 @@ public class Donatur implements Serializable {
     public String toString() {
         return "entities.Donatur[ id=" + id + " ]";
     }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
