@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,14 +31,16 @@ public class SimpanEditKodeTransaksiServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
-        DaftarKodeTransaksi daftar = new DaftarKodeTransaksi();
-        KodeTransaksi kode = (KodeTransaksi) request.getAttribute("kode");
-
+        HttpSession sessionedit=request.getSession();
+        
         String klp = request.getParameter("kelompok");
         String jns = request.getParameter("jenis");
         String kdTrans = klp + jns;
         String nmTrans = request.getParameter("nmTrans");
+        
+        
+        DaftarKodeTransaksi daftar = new DaftarKodeTransaksi();
+        KodeTransaksi kode = (KodeTransaksi)sessionedit.getAttribute("kode");
 
         kode.setKdTrans(kdTrans);
         kode.setNmTrans(nmTrans);

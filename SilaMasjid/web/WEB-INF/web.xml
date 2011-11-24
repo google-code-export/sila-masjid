@@ -64,6 +64,10 @@
         <servlet-name>PengurusMasjidServlet</servlet-name>
         <servlet-class>servlets.PengurusMasjidServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SimpanEditKodeTransaksiServlet</servlet-name>
+        <servlet-class>servlets.SimpanEditKodeTransaksiServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>PengurusMasjidServlet</servlet-name>
         <url-pattern>/pengurus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanEditKodeTransaksiServlet</servlet-name>
+        <url-pattern>/simpan_edit_kode</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
