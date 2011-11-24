@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,6 +38,8 @@ public class EditKodeTransaksiServlet extends HttpServlet {
         DaftarKodeTransaksi daf=new DaftarKodeTransaksi();
         KodeTransaksi kode=daf.getKodeTransaksi(id);
         
+        HttpSession sessionedit=request.getSession();
+        sessionedit.setAttribute("kode", kode);
         request.setAttribute("kode", kode);
         try {
             RequestDispatcher rdp = request.getRequestDispatcher("pages/editkode.jsp");
