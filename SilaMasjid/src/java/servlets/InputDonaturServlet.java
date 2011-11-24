@@ -8,7 +8,6 @@ import entities.DaftarDonatur;
 import entities.Donatur;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +18,6 @@ import javax.servlet.http.HttpSession;
  *
  * @author danke
  */
-
 public class InputDonaturServlet extends HttpServlet {
 
     /** 
@@ -33,47 +31,35 @@ public class InputDonaturServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
-        String nama = request.getParameter("nama");
-        String telepon = request.getParameter("telepon");
-        String alamat = request.getParameter("alamat");
-
-        //validasi masukan
-        if (nama.isEmpty() || telepon.isEmpty() || alamat.isEmpty()) {//validasi isian masukan (kosong/tidak)
-            request.setAttribute("error", "Afwan, kolom tidak boleh kosong !");
-            RequestDispatcher rdp = request.getRequestDispatcher("donator");
-            rdp.forward(request, response);
-
-        } 
-
-         else {
-            DaftarDonatur daftar = new DaftarDonatur();
-            Donatur donatur = new Donatur();
-
-            donatur.setNmDonatur(nama);
-            donatur.setAlmtDonatur(alamat);
-            donatur.setTelpDonatur(telepon);
-            daftar.addDonatur(donatur); //menambahkan record ke tabel donatur
-
-            HttpSession session = request.getSession(true);//setelah registrasi berhasil, langsung login
-            session.setAttribute("nama", donatur.getNmDonatur());
-            session.setAttribute("telepon", donatur.getTelpDonatur());
-            session.setAttribute("alamat", donatur.getAlmtDonatur());
-            response.sendRedirect("donator");
-        }
-        /*  try {
+        HttpSession sessionedit=request.getSession();
         
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet ProcessRegisterServlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet ProcessRegisterServlet at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
+        String nama = request.getParameter("nmDonatur");
+        String telepon = request.getParameter("telpDOnatur");
+     
+        String alamat = request.getParameter("almtDonatur");
+        
+        
+        DaftarDonatur daftar = new DaftarDonatur();
+        Donatur dona = (Donatur)sessionedit.getAttribute("dona");
+
+        
+        //simpan
+        daftar.editDonatur(dona);
+        response.sendRedirect("donator");
+        try {
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SimpanEditKodeTransaksiServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SimpanEditKodeTransaksiServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {
-        out.close();
-        }*/
+            out.close();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
