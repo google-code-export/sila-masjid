@@ -80,6 +80,10 @@
         <servlet-name>EditPengurusServlet</servlet-name>
         <servlet-class>servlets.EditPengurusServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HapusPengurusServlet</servlet-name>
+        <servlet-class>servlets.HapusPengurusServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -159,6 +163,10 @@
     <servlet-mapping>
         <servlet-name>EditPengurusServlet</servlet-name>
         <url-pattern>/editpengurus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HapusPengurusServlet</servlet-name>
+        <url-pattern>/hapuspengurus</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
