@@ -47,6 +47,7 @@
                     </tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr><td colspan="4" align="center"><label align="center"><font color="red"><b>${errorpengurus}</b></font></label></td></tr>
+                    <tr><td colspan="4" align="center"><label align="center"><font color="red"><b>${sukses}</b></font></label></td></tr>
                     <tr><td>&nbsp;</td></tr>
                 </form>
 
