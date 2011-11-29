@@ -57,8 +57,8 @@
                     <th width="20%" align="left">Nama Pengurus</th>
                     <th>Jabatan</th>
                     <th>No. Telepon</th>
-                    <th align="left">Edit</th>
-                    <th align="left">Hapus</th>
+                    <th align="left">Edit/Hapus</th>
+                    
                 </tr>
 
                 <% while (iterator.hasNext()) {%>
@@ -68,8 +68,8 @@
                     <td><%=next.getNama()%></td>
                     <td><%=next.getJabatan()%></td>
                     <td><%=next.getNoTelp()%></td>
-                    <td bgcolor="#F4F4F4"><a href="editpengurus?id=<%=next.getId()%>" > <font color="brown">edit</font></a></td>
-                    <td bgcolor="#F4F4F4"><a href="hapuspengurus?id=<%=next.getId()%>"><font color="red">hapus</font></a></td>
+                    <td bgcolor="#F4F4F4"><a href="editpengurus?id=<%=next.getId()%>" > <font color="brown">pilih</font></a></td>
+                    
                 </tr>
                 <%}%>     
                 <tr><td>&nbsp;</td></tr>

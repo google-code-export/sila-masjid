@@ -34,11 +34,21 @@ public class EditPengurusServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
        
-        Long id=Long.parseLong(request.getParameter("id"));
+        /*Long id=Long.parseLong(request.getParameter("id"));
         
         DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();
         PengurusMasjid pengurus = daftar.getPengurusMasjid(id);
         
+        request.setAttribute("pengurus", pengurus);*/
+        
+        //edit 29 nopember 2011
+        Long id=Long.parseLong(request.getParameter("id"));
+        
+        DaftarPengurusMasjid daf=new DaftarPengurusMasjid();
+        PengurusMasjid pengurus=daf.getPengurusMasjid(id);
+        
+        HttpSession sessionedit=request.getSession();
+        sessionedit.setAttribute("pengurus", pengurus);
         request.setAttribute("pengurus", pengurus);
         
         try {
