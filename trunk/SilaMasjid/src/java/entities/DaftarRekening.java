@@ -23,6 +23,12 @@ import jpa.exceptions.NonexistentEntityException;
  */
 
 public class DaftarRekening implements Serializable {
+
+    private static class idMasjid {
+
+        public idMasjid() {
+        }
+    }
     
     public DaftarRekening()
     {
@@ -76,6 +82,22 @@ public class DaftarRekening implements Serializable {
         }
         finally
         {
+            em.close();
+        }
+        return rekening;
+    }
+    
+    public Rekening findRekening(Long id) {
+        Rekening rekening = null;
+        EntityManager em = getEntityManager();
+        try {
+            boolean hasilCheck = this.check(id);
+            if (hasilCheck) {
+                Query q = em.createQuery("SELECT object(o) FROM Rekening AS o WHERE o.id=:id");
+                q.setParameter("id", id);
+                rekening = (Rekening) q.getSingleResult();
+            }
+        } finally {
             em.close();
         }
         return rekening;

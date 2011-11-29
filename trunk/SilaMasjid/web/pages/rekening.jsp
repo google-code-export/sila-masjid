@@ -30,19 +30,19 @@
         <tr>
             <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
               <%--ISI MULAI SINI--%>
-              <form action="inputrekening" method="post">
+              <form action="" method="post">
                 <tr>
                   <td width="10%" align="left">&nbsp;</td>
                   <td align="left">Nomor Rekening</td>
                   <td align="center"><strong>:</strong></td>
-                  <td width="21%" align="left"><input type="text" name="noRek2" style="width: 160px"></td>
+                  <td width="21%" align="left"><input type="text" name="noRek" style="width: 160px"></td>
                   <td width="17%">&nbsp;</td>
                 </tr>
                 <tr>
                   <td width="10%" align="left">&nbsp;</td>
                   <td align="left">Atas Nama</td>
                   <td align="center"><strong>:</strong></td>
-                  <td align="left"><input type="text" name="nmRek2" style="width: 160px"></td>
+                  <td align="left"><input type="text" name="nmRek" style="width: 160px"></td>
                   <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -50,7 +50,7 @@
                   <td align="left">Bank</td>
                   <td align="center"><strong>:</strong></td>
                   <td align="left"><strong>
-                    <input type="text" name="bank2" style="width: 80px">
+                    <input type="text" name="bank" style="width: 80px">
                   </strong></td>
                   <td>&nbsp;</td>
                 </tr>
@@ -62,8 +62,8 @@
                   <td width="10%">&nbsp;</td>
                   <td width="24%">&nbsp;</td>
                   <td width="3%">&nbsp;</td>
-                  <td><input type="submit" value="Simpan">
-                    <input type="reset" value="Batal"></td>
+                  <td><input type="button" value="Simpan" onclick="this.form.action='inputrekening';this.form.submit();">
+                    <input type="reset" value="Reset"></td>
                   <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -73,12 +73,11 @@
               </form>
               <%--ISI SAMPAI SINI--%>
               <tr>
-                <th width="10%" align="center">&nbsp;</th>
+                <td width="10%" align="center">&nbsp;</td>
                 <th width="24%" align="center">No.Rek</th>
                 <th colspan="2" align="center">Atas Nama</th>
                 <th align="center">Bank</th>
-                <th width="11%" align="center">Edit</th>
-                <th width="11%" align="center">Hapus</th>
+                <th width="11%" align="center">Edit/Hapus</th>
                 <th width="3%" align="left">&nbsp;</th>
               </tr>
               <% while (iterator.hasNext()) {%>
@@ -89,7 +88,6 @@
                 <td colspan="2" align="left"><%=next.getNmRek()%></td>
                 <td align="center"><%=next.getBank()%></td>
                 <td align="center" bgcolor="#F4F4F4"><a href="editrekening?id=<%=next.getId() %>"><font color="brown">edit</font></a></td>
-                <td align="center" bgcolor="#F4F4F4"><a href="hapusrekening?id=<%=next.getId() %>"><font color="red">hapus</font></a></td>
                 <td bgcolor="#F4F4F4">&nbsp;</td>
               </tr>
               <%}%>
