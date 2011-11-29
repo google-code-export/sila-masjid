@@ -84,6 +84,14 @@
         <servlet-name>HapusPengurusServlet</servlet-name>
         <servlet-class>servlets.HapusPengurusServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SimpanEditRekeningServlet</servlet-name>
+        <servlet-class>servlets.SimpanEditRekeningServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HapusRekeningServlet</servlet-name>
+        <servlet-class>servlets.HapusRekeningServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -167,6 +175,14 @@
     <servlet-mapping>
         <servlet-name>HapusPengurusServlet</servlet-name>
         <url-pattern>/hapuspengurus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanEditRekeningServlet</servlet-name>
+        <url-pattern>/simpan_edit_rekening</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HapusRekeningServlet</servlet-name>
+        <url-pattern>/hapus_rekening</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
