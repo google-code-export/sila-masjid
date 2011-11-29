@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,15 +34,26 @@ public class SimpanEditPengurusServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
+        HttpSession sessionedit=request.getSession();//edit 29 nop 2011
 
-        DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();
+        /*DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();
 
         String nama = request.getParameter("nama");
         String jabatan = request.getParameter("jabatan");
         String noTelp = request.getParameter("noTelp");
         Long id = Long.parseLong(request.getParameter("id"));
 
-        PengurusMasjid pengurus = daftar.findPengurusMasjid(id);
+        PengurusMasjid pengurus = daftar.findPengurusMasjid(id);*/
+       
+        //edit 29 nop 2011
+        String nama = request.getParameter("nama");
+        String jabatan = request.getParameter("jabatan");
+        String noTelp = request.getParameter("noTelp");
+        Long id = Long.parseLong(request.getParameter("id"));
+        
+        DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();
+        PengurusMasjid pengurus = (PengurusMasjid)sessionedit.getAttribute("pengurus");
 
         if (nama.isEmpty() || jabatan.isEmpty() || noTelp.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("errorpengurus", "Afwan, data pengurus gagal disimpan. Semua kolom harus diisi. ");
@@ -50,8 +62,9 @@ public class SimpanEditPengurusServlet extends HttpServlet {
 
         } else if (!noTelp.matches("[0-9]*")) { //validasi input telepon harus angka
             request.setAttribute("errorpengurus", "Afwan, data pengurus gagal disimpan. Nomor telepon harus berupa angka.");
-            RequestDispatcher rdp = request.getRequestDispatcher("pengurus");
+            RequestDispatcher rdp = request.getRequestDispatcher("editpengurus");
             rdp.forward(request, response);
+            //response.sendRedirect("pengurus");
 
         } else {
             pengurus.setNama(nama);
