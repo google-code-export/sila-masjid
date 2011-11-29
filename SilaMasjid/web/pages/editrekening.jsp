@@ -16,7 +16,7 @@
                     <%--JUDUL DISINI--%>
         <tr>
             <td width="452" height="32" class="contentheader">
-            <div align="center"><b>REKENING MASJID</b></div></td>
+            <div align="center"><b>EDIT/HAPUS REKENING MASJID</b></div></td>
         </tr>
         <tr>
             <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
@@ -26,7 +26,7 @@
         <table width="94%" border="0" cellpadding="0" cellspacing="0">
 
                     <%--ISI MULAI SINI--%>
-         <form action="inputrekening" method="post">
+         <form action="" method="post">
                 <tr>
                   <td width="10%" align="left">&nbsp;</td>
                   <td align="left">Nomor Rekening</td>
@@ -60,8 +60,9 @@
                   <td width="10%">&nbsp;</td>
                   <td width="24%">&nbsp;</td>
                   <td width="3%">&nbsp;</td>
-                  <td><input type="submit" value="Simpan">
-                    <input type="reset" value="Batal"></td>
+                  <td><input type="button" value="Simpan" onclick="this.form.action='simpan_edit_rekening';this.form.submit();">
+                    <input type="reset" value="Reset"></td>
+                  <td><input type="button" value="Hapus" style="background-color:#c00; color:#fff;" onclick="this.form.action='hapus_rekening';this.form.submit();"></td>
                   <td>&nbsp;</td>
                 </tr>
                 <tr>

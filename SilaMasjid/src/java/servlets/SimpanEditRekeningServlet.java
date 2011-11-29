@@ -10,17 +10,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 /**
  *
  * @author yooganz
  */
-public class EditRekeningServlet extends HttpServlet {
+public class SimpanEditRekeningServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,19 +33,45 @@ public class EditRekeningServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        Long id=Long.parseLong(request.getParameter("id"));
+        HttpSession sessionedit=request.getSession();
         
         DaftarRekening daftar = new DaftarRekening();
-        Rekening rek = daftar.getRekening(id);
+
+        String noRek = request.getParameter("noRek");
+        String nmRek = request.getParameter("nmRek");
+        String bank = request.getParameter("bank");
+       
+        Rekening rek = (Rekening)sessionedit.getAttribute("rek");
         
-        HttpSession sessionedit=request.getSession();
-        sessionedit.setAttribute("rek", rek);
-        request.setAttribute("rek", rek);
-        
-        try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/editrekening.jsp");
+        if (noRek.isEmpty() || nmRek.isEmpty() || bank.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("errorrekening", "Afwan, data rekenig gagal disimpan. Semua kolom harus diisi. ");
+            RequestDispatcher rdp = request.getRequestDispatcher("rekening");
             rdp.forward(request, response);
+
+        } else if (!noRek.matches("[0-9]*")) { //validasi input nomor rekening harus angka
+            request.setAttribute("errorrekening", "Afwan, data rekening gagal disimpan. Nomor rekening harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("rekening");
+            rdp.forward(request, response);
+
+        } else {
+            rek.setNoRek(noRek);
+            rek.setNmRek(nmRek);
+            rek.setBank(bank);
+            daftar.editRekening(rek);
+            response.sendRedirect("rekening");
+        }
+        try {
+            
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SimpanEditRekeningServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SimpanEditRekeningServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {            
             out.close();
         }
