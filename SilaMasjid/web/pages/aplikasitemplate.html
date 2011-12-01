@@ -7,152 +7,207 @@ and open the template in the editor.
 <% String nmMasjid=(String)session.getAttribute("nmMasjid");%>
 <!DOCTYPE html>
 <html>
-<head>
-<title>SILA MASJID</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" type="text/css" href="style/style.css" />
-</head>
+    <head>
+        <title>SILA MASJID</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+    </head>
 
-<body>
-<table width="100" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="51" ><img src="images/tl_header.gif" alt="-" width="51" height="36"></td>
-          <td background="images/t_header_bg.gif" width="100%"></td>
-          <td width="47"><img src="images/tr_header.gif" alt="-" width="47" height="36"></td>
-        </tr>
-      </table></td>
-  </tr>
-  <tr> 
-    <td><img src="images/header.gif" alt="header" width="641" height="145"></td>
-  </tr>
-  <tr> 
-    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td background="images/b_header_bg.gif" width="106"><img src="images/bl_header.gif" alt="-" width="99" height="35"></td>
-          <td background="images/b_header_bg.gif" width="100%"></td>
-          <td background="images/b_header_bg.gif" width="47"><img src="images/br_header.gif" alt="-" width="106" height="35"></td>
-        </tr>
-      </table></td>
-  </tr>
-</table>
-<table width="641" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-    <td width="185" valign="top"><table border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
-        </tr>
-      </table>
-      <table border="0" cellpadding="0" cellspacing="0" class="lcum">
-        <tr> 
-          <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"><b> 
-              TRANSAKSI</b></div></td>
-        </tr>
-        <tr> 
-          <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
-        </tr>
-        <tr> 
-          <td class="lcolumnt" height="17"> <table width="100%" border="0" cellpadding="0" cellspacing="2">
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%">
-                    <div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="terima">Penerimaan Dana</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="keluar">Pengeluaran Dana</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="setuju">Setujui Proposal</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="Logout"><b>Logout</b></a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              
-            </table></td>
-        </tr>
-        <tr> 
-          <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"></div></td>
-        </tr>
-      </table>
-      <table border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td><img src="images/pipe_bg.gif" alt="" width="28" height="5"></td>
-        </tr>
-      </table>
-      
-      <table border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
-        </tr>
-      </table>
-      <table border="0" cellpadding="0" cellspacing="0" class="lcum">
-        <tr> 
-          <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"> 
-                  <b>REFERENSI</b> </div></td>
-        </tr>
-        <tr> 
-          <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
-        </tr>
-        <tr> 
-          <td class="lcolumnt" height="17"> <table width="84%" height="14" border="0" align="center" cellpadding="0" cellspacing="0">
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="kode">Kode Transaksi</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="profil">Profil Masjid</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="pengurus">Pengurus Masjid</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="donator">Donatur</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-              <tr> 
-                <td width="15%">&nbsp;</td>
-                <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                <td width="66%" bgcolor="#F4F4F4"><a href="rekening">Rekening</a></td>
-                <td width="11%">&nbsp;</td>
-              </tr>
-            </table></td>
-        </tr>
-        <tr> 
-          <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"><br>
-              <img src="images/pipes_end_lcolumn.gif" width="176" height="14"></div></td>
-        </tr>
-      </table></td>
-    <td width="456" valign="top" class="mctop"><table border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td><img src="images/pipes_maincontent.gif" alt="-" width="452" height="6"></td>
-        </tr>
-        <tr>
-            <td align="center"><font color="blue"><% if(nmMasjid != null){ %><%="Anda Login sebagai: "+nmMasjid%><%}%></font></td>
-        </tr>
-        <tr> 
-            <td><img src="images/pipes_maincontent.gif" alt="-" width="452" height="6"></td>
-        </tr>
+    <body>
+        <table width="100" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr> 
+                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                            <td width="51" ><img src="images/tl_header.gif" alt="-" width="51" height="36"></td>
+                            <td background="images/t_header_bg.gif" width="100%"></td>
+                            <td width="47"><img src="images/tr_header.gif" alt="-" width="47" height="36"></td>
+                        </tr>
+                    </table></td>
+            </tr>
+            <tr> 
+                <td><img src="images/header.gif" alt="header" width="641" height="145"></td>
+            </tr>
+            <tr> 
+                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                            <td background="images/b_header_bg.gif" width="106"><img src="images/bl_header.gif" alt="-" width="99" height="35"></td>
+                            <td background="images/b_header_bg.gif" width="100%"></td>
+                            <td background="images/b_header_bg.gif" width="47"><img src="images/br_header.gif" alt="-" width="106" height="35"></td>
+                        </tr>
+                    </table></td>
+            </tr>
+        </table>
+        <table width="641" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr> 
+                <td width="185" valign="top"><table border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                            <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" class="lcum">
+                        <tr> 
+                            <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"><b> 
+                                        LAPORAN</b></div></td>
+                        </tr>
+                        <tr> 
+                            <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
+                        </tr>
+                        <tr> 
+                            <td class="lcolumnt" height="17"> <table width="100%" border="0" cellpadding="0" cellspacing="2">
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%">
+                                            <div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="terima">Penerimaan Dana</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="keluar">Pengeluaran Dana</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="posting">Mengunggah Berita</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="setuju">Setujui Proposal</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
 
-</html>
+                                </table></td>
+                        </tr>
+                        <tr> 
+                            <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"></div></td>
+                        </tr>
+                    </table>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                            <td><img src="images/pipe_bg.gif" alt="" width="28" height="5"></td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" class="lcum">
+                        <tr> 
+                            <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"><b> 
+                                        TRANSAKSI</b></div></td>
+                        </tr>
+                        <tr> 
+                            <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
+                        </tr>
+                        <tr> 
+                            <td class="lcolumnt" height="17"> <table width="100%" border="0" cellpadding="0" cellspacing="2">
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%">
+                                            <div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="terima">Penerimaan Dana</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="keluar">Pengeluaran Dana</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="posting">Mengunggah Berita</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="setuju">Setujui Proposal</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="Logout"><b>Logout</b></a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+
+                                </table></td>
+                        </tr>
+                        <tr> 
+                            <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"></div></td>
+                        </tr>
+                    </table>
+                    
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                            <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" class="lcum">
+                        <tr> 
+                            <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"> 
+                                    <b>REFERENSI</b> </div></td>
+                        </tr>
+                        <tr> 
+                            <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
+                        </tr>
+                        <tr> 
+                            <td class="lcolumnt" height="17"> <table width="84%" height="14" border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="kode">Kode Transaksi</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="profil">Profil Masjid</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="pengurus">Pengurus Masjid</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="donator">Donatur</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                    <tr> 
+                                        <td width="15%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="rekening">Rekening</a></td>
+                                        <td width="11%">&nbsp;</td>
+                                    </tr>
+                                </table></td>
+                        </tr>
+                        <tr> 
+                            <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"><br>
+                                    <img src="images/pipes_end_lcolumn.gif" width="176" height="14"></div></td>
+                        </tr>
+                    </table></td>
+                <td width="456" valign="top" class="mctop"><table border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                            <td><img src="images/pipes_maincontent.gif" alt="-" width="452" height="6"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><font color="blue"><% if(nmMasjid != null){ %><%="Anda Login sebagai: "+nmMasjid%><%}%></font>
+                            <input type="button" value="Logout" style="background-color:#c00; color:#fff;" onclick="this.form.action='Logout';this.form.submit();"></td></td>
+                        </tr>
+                        <tr> 
+                            <td><img src="images/pipes_maincontent.gif" alt="-" width="452" height="6"></td>
+                        </tr>
+
+                        </html>
