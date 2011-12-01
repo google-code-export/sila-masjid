@@ -47,7 +47,7 @@ public class ProsesRegisterServlet extends HttpServlet {
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
 
-        } else if (email.indexOf("@") == -1 && email.indexOf(".") == -1) {//validasi format email
+        } else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {//validasi format email
             request.setAttribute("error", "Afwan (maaf), format email yang dimasukkan salah");
             RequestDispatcher rdp = request.getRequestDispatcher("register");
             rdp.forward(request, response);
