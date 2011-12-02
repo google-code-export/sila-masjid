@@ -35,11 +35,11 @@
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td >Nomor Telepon</td><td><input type="text" name="telpDonatur" style="width: 20px"></td>
+                        <td >Nomor Telepon</td><td><input type="text" name="telpDonatur" ></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Alamat</td><td><input type="text" name="almtDonatur" style="width: 160px"></td>
+                        <td>Alamat</td><td><input type="text" name="almtDonatur" ></td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr>
@@ -63,7 +63,7 @@
                         <td>&nbsp;</td>
                         <td><%=next.getNmDonatur()%></td>
                         <td><%=next.getTelpDonatur()%></td>
-                        <td bgcolor="#F4F4F4"><a href="editkode?id=<%=next.getId() %>"><font color="brown">pilih</font></a></td>
+                        <td bgcolor="#F4F4F4"><a href="editdonatur?id=<%=next.getId() %>"><font color="brown">pilih</font></a></td>
                     </tr>
                     <%}%>     
                     <tr><td>&nbsp;</td></tr>
