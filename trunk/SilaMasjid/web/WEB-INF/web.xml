@@ -96,6 +96,14 @@
         <servlet-name>EditDonatur</servlet-name>
         <servlet-class>servlets.EditDonaturServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UnggahProposalServlet</servlet-name>
+        <servlet-class>servlets.UnggahProposalServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProsesUnggahProposalServlet</servlet-name>
+        <servlet-class>servlets.ProsesUnggahProposalServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -191,6 +199,14 @@
     <servlet-mapping>
         <servlet-name>EditDonatur</servlet-name>
         <url-pattern>/editdonatur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UnggahProposalServlet</servlet-name>
+        <url-pattern>/proposal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProsesUnggahProposalServlet</servlet-name>
+        <url-pattern>/unggahproposal</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
