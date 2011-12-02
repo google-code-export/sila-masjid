@@ -92,6 +92,10 @@
         <servlet-name>HapusRekeningServlet</servlet-name>
         <servlet-class>servlets.HapusRekeningServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditDonatur</servlet-name>
+        <servlet-class>servlets.EditDonaturServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -183,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>HapusRekeningServlet</servlet-name>
         <url-pattern>/hapus_rekening</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditDonatur</servlet-name>
+        <url-pattern>/editdonatur</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
