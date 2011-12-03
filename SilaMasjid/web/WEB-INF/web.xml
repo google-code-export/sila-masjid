@@ -104,6 +104,18 @@
         <servlet-name>ProsesUnggahProposalServlet</servlet-name>
         <servlet-class>servlets.ProsesUnggahProposalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BatalSimpanServlet</servlet-name>
+        <servlet-class>servlets.BatalSimpanServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SimpanEditDonaturServlet</servlet-name>
+        <servlet-class>servlets.SimpanEditDonaturServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HapusDonaturServlet</servlet-name>
+        <servlet-class>servlets.HapusDonaturServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -207,6 +219,18 @@
     <servlet-mapping>
         <servlet-name>ProsesUnggahProposalServlet</servlet-name>
         <url-pattern>/unggahproposal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BatalSimpanServlet</servlet-name>
+        <url-pattern>/batal_donatur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanEditDonaturServlet</servlet-name>
+        <url-pattern>/simpan_edit_donatur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HapusDonaturServlet</servlet-name>
+        <url-pattern>/hapus_donatur</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -8,18 +8,20 @@ import entities.DaftarDonatur;
 import entities.Donatur;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import jpa.exceptions.NonexistentEntityException;
 
 /**
  *
  * @author danke
  */
-public class EditDonaturServlet extends HttpServlet {
+public class HapusDonaturServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -29,22 +31,29 @@ public class EditDonaturServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, NonexistentEntityException{
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        Long id=Long.parseLong(request.getParameter("id"));
-        
-        DaftarDonatur daftar=new DaftarDonatur();
-        Donatur dona=daftar.getDonatur(id);
-        
         HttpSession sessionedit=request.getSession();
-        sessionedit.setAttribute("donatur", dona);
-        request.setAttribute("donatur", dona);
+        
+        DaftarDonatur daftar = new DaftarDonatur();
+        Donatur dona = (Donatur)sessionedit.getAttribute("donatur");
+        Long id=dona.getId();
+        //hapus
+        daftar.deleteDonatur(id);
+        response.sendRedirect("donator");
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/editdonatur.jsp");
-            rdp.forward(request, response);
-        } finally {            
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SimpanEditKodeTransaksiServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SimpanEditKodeTransaksiServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
+        } finally {
             out.close();
         }
     }
@@ -60,7 +69,11 @@ public class EditDonaturServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(HapusKodeTransaksiServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /** 
@@ -73,7 +86,11 @@ public class EditDonaturServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(HapusKodeTransaksiServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /** 

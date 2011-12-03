@@ -8,7 +8,6 @@ import entities.DaftarDonatur;
 import entities.Donatur;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author danke
  */
-public class EditDonaturServlet extends HttpServlet {
+public class SimpanEditDonaturServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,19 +31,35 @@ public class EditDonaturServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        Long id=Long.parseLong(request.getParameter("id"));
-        
-        DaftarDonatur daftar=new DaftarDonatur();
-        Donatur dona=daftar.getDonatur(id);
-        
         HttpSession sessionedit=request.getSession();
-        sessionedit.setAttribute("donatur", dona);
-        request.setAttribute("donatur", dona);
+        
+        String nmDonatur=request.getParameter("nmDonatur");
+        String telpDonatur=request.getParameter("telpDonatur");
+       
+        String almtDonatur=request.getParameter("almtDonatur");
+        
+        
+        DaftarDonatur daftar = new DaftarDonatur();
+        Donatur dona = (Donatur)sessionedit.getAttribute("donatur");
+
+        dona.setNmDonatur(nmDonatur);
+        dona.setTelpDonatur(telpDonatur);
+        dona.setAlmtDonatur(almtDonatur);
+        //simpan
+        daftar.editDonatur(dona);
+        response.sendRedirect("donator");
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/editdonatur.jsp");
-            rdp.forward(request, response);
-        } finally {            
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SimpanEditKodeTransaksiServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SimpanEditKodeTransaksiServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
+        } finally {
             out.close();
         }
     }

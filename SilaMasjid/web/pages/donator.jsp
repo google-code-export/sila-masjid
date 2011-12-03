@@ -30,16 +30,16 @@
                 <form action="inputdonatur" method="post" >
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Nama Donatur</td><td><input name="nmDonatur">
+                        <td>Nama Donatur</td><td><input name="nmDonatur" style="width: 160px">
                                 </td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td >Nomor Telepon</td><td><input type="text" name="telpDonatur" ></td>
+                        <td >Nomor Telepon</td><td><input type="text" name="telpDonatur" style="width: 160px" ></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Alamat</td><td><input type="text" name="almtDonatur" ></td>
+                        <td>Alamat</td><td><input type="text" name="almtDonatur" style="width: 160px" ></td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr>
@@ -47,10 +47,13 @@
                         <td>&nbsp;</td><td><input type="submit" value="Simpan" ><input type="reset" value="Reset"></td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
+                    <tr><td colspan="3" align="center"><label align="center"><font color="red"><b>${error}</b></font></label></td></tr>
+
                 </form>
    
                 <%--ISI SAMPAI SINI--%>
                     <tr>
+                        <tr><td>&nbsp;</td></tr>
                     <td width="10%">&nbsp;</td>
                     <th width="20%" align="left">Nama</th>
                     <th>Nomor Telepon</th>
@@ -62,7 +65,7 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td><%=next.getNmDonatur()%></td>
-                        <td><%=next.getTelpDonatur()%></td>
+                        <td align="center"><%=next.getTelpDonatur()%></td>
                         <td bgcolor="#F4F4F4"><a href="editdonatur?id=<%=next.getId() %>"><font color="brown">pilih</font></a></td>
                     </tr>
                     <%}%>     
