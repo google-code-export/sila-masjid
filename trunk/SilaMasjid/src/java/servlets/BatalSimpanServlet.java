@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author danke
  */
-public class EditDonaturServlet extends HttpServlet {
+public class BatalSimpanServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,16 +33,9 @@ public class EditDonaturServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        Long id=Long.parseLong(request.getParameter("id"));
         
-        DaftarDonatur daftar=new DaftarDonatur();
-        Donatur dona=daftar.getDonatur(id);
-        
-        HttpSession sessionedit=request.getSession();
-        sessionedit.setAttribute("donatur", dona);
-        request.setAttribute("donatur", dona);
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/editdonatur.jsp");
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/donator.jsp");
             rdp.forward(request, response);
         } finally {            
             out.close();

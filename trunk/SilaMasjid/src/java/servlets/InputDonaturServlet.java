@@ -9,6 +9,7 @@ import entities.Donatur;
 import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -44,13 +45,20 @@ public class InputDonaturServlet extends HttpServlet {
         DaftarDonatur daftar=new DaftarDonatur();
         Donatur dona=new Donatur();
         
+        if (nmDonatur.isEmpty() || telpDonatur.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("error", "Afwan (maaf), untuk kolom nama dan telepon harus diisi !");
+            RequestDispatcher rdp = request.getRequestDispatcher("donator");
+            rdp.forward(request, response);
+
+        }
+        else{
         dona.setIdMasjid(idMasjid);
         dona.setNmDonatur(nmDonatur);
         dona.setTelpDonatur(telpDonatur);
         dona.setAlmtDonatur(almtDonatur);
         //simpan
         daftar.addDonatur(dona);
-        
+        }
         try {
            response.sendRedirect("donator");
      
