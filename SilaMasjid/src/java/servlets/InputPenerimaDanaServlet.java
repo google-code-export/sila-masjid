@@ -4,8 +4,8 @@
  */
 package servlets;
 
-import entities.DaftarRekening;
-import entities.Rekening;
+import entities.DaftarPenerimaDana;
+import entities.PenerimaDana;
 import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author yooganz
  */
-public class InputRekeningServlet extends HttpServlet {
+public class InputPenerimaDanaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -43,30 +43,38 @@ public class InputRekeningServlet extends HttpServlet {
             id=Long.parseLong(request.getParameter("id"));
         }
         
-        String noRek=request.getParameter("noRek");
-        String nmRek=request.getParameter("nmRek");
-        String bank=request.getParameter("bank");
+        String nmPenDan=request.getParameter("nmPenDan");
+        String almtPenDan=request.getParameter("almtPenDan");
+        String notelpPenDan=request.getParameter("notelpPenDan");
         
-        DaftarRekening daftar = new DaftarRekening();
-        Rekening rek = new Rekening();
+        DaftarPenerimaDana daftar = new DaftarPenerimaDana();
+        PenerimaDana pendan = new PenerimaDana();
         
-        rek.setIdMasjid(idMasjid);
-        rek.setNoRek(noRek);
-        rek.setNmRek(nmRek);
-        rek.setBank(bank);
-        
+        pendan.setIdMasjid(idMasjid);
+        pendan.setNmPenDan(nmPenDan);
+        pendan.setAlmtPenDan(almtPenDan);
+        pendan.setNotelpPenDan(notelpPenDan);
+                
         if (daftar.check(id)==false)
         {
-            daftar.addRekening(rek);
+            daftar.addPenerimaDana(pendan);
         }
         else
         {
-            daftar.editRekening(rek);
-        } 
-        
+            daftar.editPenerimaDana(pendan);
+        }        
         try {
-           response.sendRedirect("rekening");
-     
+            response.sendRedirect("penerimadana");
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet InputPenerimaDanaServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet InputPenerimaDanaServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {            
             out.close();
         }

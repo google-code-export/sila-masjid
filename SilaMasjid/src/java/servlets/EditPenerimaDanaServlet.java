@@ -4,11 +4,11 @@
  */
 package servlets;
 
-import entities.DaftarRekening;
-import entities.Rekening;
-import entities.Masjid;
+import entities.DaftarPenerimaDana;
+import entities.PenerimaDana;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author yooganz
  */
-public class InputRekeningServlet extends HttpServlet {
+public class EditPenerimaDanaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,40 +33,28 @@ public class InputRekeningServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        HttpSession session = request.getSession(); 
-        Masjid masjid = (Masjid) session.getAttribute("loged");
-        Long idMasjid=masjid.getId();
+        Long id=Long.parseLong(request.getParameter("id"));
         
-        Long id = null;
-        if (request.getParameter("id")!=null)
-        {
-            id=Long.parseLong(request.getParameter("id"));
-        }
+        DaftarPenerimaDana daftar = new DaftarPenerimaDana();
+        PenerimaDana pendan = daftar.getPenerimaDana(id);
         
-        String noRek=request.getParameter("noRek");
-        String nmRek=request.getParameter("nmRek");
-        String bank=request.getParameter("bank");
-        
-        DaftarRekening daftar = new DaftarRekening();
-        Rekening rek = new Rekening();
-        
-        rek.setIdMasjid(idMasjid);
-        rek.setNoRek(noRek);
-        rek.setNmRek(nmRek);
-        rek.setBank(bank);
-        
-        if (daftar.check(id)==false)
-        {
-            daftar.addRekening(rek);
-        }
-        else
-        {
-            daftar.editRekening(rek);
-        } 
+        HttpSession sessionedit=request.getSession();
+        sessionedit.setAttribute("pendan", pendan);
+        request.setAttribute("pendan", pendan);
         
         try {
-           response.sendRedirect("rekening");
-     
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/editpenerimadana.jsp");
+            rdp.forward(request, response);
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EditPenerimaDanaServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EditPenerimaDanaServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {            
             out.close();
         }

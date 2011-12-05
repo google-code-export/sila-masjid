@@ -13,7 +13,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author umum
+ * @author yooganz
  */
 @Entity
 public class Rekening implements Serializable {

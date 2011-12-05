@@ -4,22 +4,19 @@
  */
 package servlets;
 
-import entities.DaftarRekening;
-import entities.Rekening;
-import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author yooganz
  */
-public class InputRekeningServlet extends HttpServlet {
+public class PenerimaDanaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,40 +30,19 @@ public class InputRekeningServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        HttpSession session = request.getSession(); 
-        Masjid masjid = (Masjid) session.getAttribute("loged");
-        Long idMasjid=masjid.getId();
-        
-        Long id = null;
-        if (request.getParameter("id")!=null)
-        {
-            id=Long.parseLong(request.getParameter("id"));
-        }
-        
-        String noRek=request.getParameter("noRek");
-        String nmRek=request.getParameter("nmRek");
-        String bank=request.getParameter("bank");
-        
-        DaftarRekening daftar = new DaftarRekening();
-        Rekening rek = new Rekening();
-        
-        rek.setIdMasjid(idMasjid);
-        rek.setNoRek(noRek);
-        rek.setNmRek(nmRek);
-        rek.setBank(bank);
-        
-        if (daftar.check(id)==false)
-        {
-            daftar.addRekening(rek);
-        }
-        else
-        {
-            daftar.editRekening(rek);
-        } 
-        
+        RequestDispatcher rdp = request.getRequestDispatcher("pages/penerimadana.jsp");
+        rdp.forward(request, response);
         try {
-           response.sendRedirect("rekening");
-     
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet PenerimaDanaServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet PenerimaDanaServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {            
             out.close();
         }
