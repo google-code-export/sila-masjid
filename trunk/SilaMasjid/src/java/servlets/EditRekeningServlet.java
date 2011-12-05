@@ -46,6 +46,16 @@ public class EditRekeningServlet extends HttpServlet {
         try {
             RequestDispatcher rdp = request.getRequestDispatcher("pages/editrekening.jsp");
             rdp.forward(request, response);
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EditPenerimaDanaServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EditPenerimaDanaServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {            
             out.close();
         }

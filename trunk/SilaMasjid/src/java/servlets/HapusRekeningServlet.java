@@ -34,6 +34,7 @@ public class HapusRekeningServlet extends HttpServlet {
             throws ServletException, IOException, NonexistentEntityException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
         HttpSession sessionedit=request.getSession();
         
         DaftarRekening daftar = new DaftarRekening();
