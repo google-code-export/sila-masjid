@@ -116,6 +116,14 @@
         <servlet-name>HapusDonaturServlet</servlet-name>
         <servlet-class>servlets.HapusDonaturServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProsesUnggahBerita</servlet-name>
+        <servlet-class>servlets.ProsesUnggahBeritaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UnggahBeritaServlet</servlet-name>
+        <servlet-class>servlets.UnggahBeritaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -231,6 +239,14 @@
     <servlet-mapping>
         <servlet-name>HapusDonaturServlet</servlet-name>
         <url-pattern>/hapus_donatur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProsesUnggahBerita</servlet-name>
+        <url-pattern>/unggahberita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UnggahBeritaServlet</servlet-name>
+        <url-pattern>/posting</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
