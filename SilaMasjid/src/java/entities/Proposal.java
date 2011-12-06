@@ -24,7 +24,7 @@ public class Proposal implements Serializable {
     private String alamat;
     private String noTelp;
     private String email;
-    private Integer besarDana;
+    private Integer besarDana=null;
     private String judul;
     private String detailProposal;
     private boolean setuju = false;
