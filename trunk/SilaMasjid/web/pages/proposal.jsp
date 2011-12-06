@@ -183,7 +183,7 @@ and open the template in the editor.
                                         </tr>
                                         <tr>
                                             <td width="10%">&nbsp;</td>
-                                            <td>Detail Proposal</td><td><textarea rows="10" cols="30"></textarea></td>
+                                            <td>Detail Proposal</td><td><textarea style="width: 300px;height: 300px;" name="detailProposal"> </textarea></td>
                                         </tr>
                                         <tr><td>&nbsp;</td></tr>
                                         <tr>
