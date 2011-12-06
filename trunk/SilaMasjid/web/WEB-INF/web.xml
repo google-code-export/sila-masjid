@@ -124,6 +124,26 @@
         <servlet-name>UnggahBeritaServlet</servlet-name>
         <servlet-class>servlets.UnggahBeritaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PenerimaDanaServlet</servlet-name>
+        <servlet-class>servlets.PenerimaDanaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InputPenerimaDanaServlet</servlet-name>
+        <servlet-class>servlets.InputPenerimaDanaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditPenerimaDanaServlet</servlet-name>
+        <servlet-class>servlets.EditPenerimaDanaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SimpanEditPenerimaDanaServlet</servlet-name>
+        <servlet-class>servlets.SimpanEditPenerimaDanaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HapusPenerimaDanaServlet</servlet-name>
+        <servlet-class>servlets.HapusPenerimaDanaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -241,12 +261,24 @@
         <url-pattern>/hapus_donatur</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ProsesUnggahBerita</servlet-name>
-        <url-pattern>/unggahberita</url-pattern>
+        <servlet-name>PenerimaDanaServlet</servlet-name>
+        <url-pattern>/penerimadana</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UnggahBeritaServlet</servlet-name>
-        <url-pattern>/posting</url-pattern>
+        <servlet-name>InputPenerimaDanaServlet</servlet-name>
+        <url-pattern>/inputpenerimadana</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPenerimaDanaServlet</servlet-name>
+        <url-pattern>/editpenerimadana</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanEditPenerimaDanaServlet</servlet-name>
+        <url-pattern>/simpan_edit_penerimadana</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HapusPenerimaDanaServlet</servlet-name>
+        <url-pattern>/hapus_penerimadana</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
