@@ -12,6 +12,8 @@
     <class>entities.KodeTransaksi</class>
     <class>entities.DaftarPengurusMasjid</class>
     <class>entities.Proposal</class>
+    <class>entities.PenerimaDana</class>
+    <class>entities.DaftarPenerimaDana</class>
     <class>entities.Berita</class>
     <class>entities.IndexBerita</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
