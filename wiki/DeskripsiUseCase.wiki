@@ -142,10 +142,10 @@ Pengguna berada di halaman Rekening. mengklik link Hapus pada baris rekening yan
 =======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna berada di halaman Donatur yang berisi mengenai daftar donatur yang telah ada beserta form isian untuk menambah donatur. Pengguna mengisi field “nama”, “alamat” dan “telepon”. Pengguna menekan tombol "simpan". Sistem menyimpan nama, alamat dan telepon yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nama, alamat, dan telepon donatur termasuk yang baru saja diinput oleh pengguna.
+Pengguna berada di halaman Donatur yang berisi mengenai daftar donatur yang telah ada beserta form isian untuk menambah donatur. Pengguna mengisi field “nama”, “alamat” dan “telepon”. Pengguna menekan tombol "simpan". Sistem menyimpan nama, alamat dan telepon yang telah diinput pengguna dan sistem menampilkan daftar nama, dan telepon donatur termasuk yang baru saja diinput oleh pengguna.
 
 Alternate flow : 
-  # Jika field "nama", "alamat" belum terisi, maka akan keluar pesan "field harus diisi". 
+  # Jika field "nama", "telepon" belum terisi, maka akan keluar pesan "Afwan(maaf) untuk nama dan telepon harus diisi"
 
 
 
@@ -153,17 +153,17 @@ Alternate flow :
 ======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna berada di halaman Donatur meng-klik link Ubah pada baris donatur yang akan diubah. Sistem memuat data donatur tersebut pada field-field yang sesuai pada form isian donatur. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol "Simpan". Sistem menampilkan pesan berhasil, menyimpan perubahan data donatur tersebut ke dalam daftar donatur, dan menampilkan data donatur dalam daftar donatur pada halaman yang sama.
+Pengguna berada di halaman Donatur meng-klik *pilih* yang terdapat di sebelah paling kanan pada daftar donatur pada baris donatur yang akan diubah. Sistem memuat data donatur yang dipilih user untuk diubah. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol "Simpan". Sistem langsung menyimpan perubahan data donatur tersebut ke dalam daftar donatur, dan menampilkan data donatur dalam daftar donatur pada halaman yang sama.
 
 Alternate flow :
-Jika field "nama", "alamat" dan/atau  "telepon" belum terisi, maka akan keluar pesan "field harus diisi". 
+Jika field "nama" atau "telepon" belum terisi, maka akan keluar pesan "Afwan(maaf) untuk nama dan telepon harus diisi"
 
 
 *UC Hapus Donatur*
 =======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna berada di halaman Donatur. mengklik link Hapus pada baris donatur yang akan dihapus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data donatur ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data donatur tersebut dan menampilkan daftar donatur baru setelah dilakukan penghapusan. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. 
+Pengguna berada di halaman Donatur. meng-klik link *pilih* yang terdapat di sebelah paling kanan pada daftar donatur pada baris donatur yang akan dihapus. Sistem menampilkan halaman data seorang donatur yang dipilih user yang akan dihapus. Jika Pengguna memilih tombol *Hapus*, maka sistem menghapus data donatur tersebut dan menampilkan daftar donatur baru setelah dilakukan penghapusan. 
 
 
 *UC Tambah Penerima Dana*
