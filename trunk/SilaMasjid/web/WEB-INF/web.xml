@@ -117,7 +117,7 @@
         <servlet-class>servlets.HapusDonaturServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ProsesUnggahBerita</servlet-name>
+        <servlet-name>ProsesUnggahBeritaServlet</servlet-name>
         <servlet-class>servlets.ProsesUnggahBeritaServlet</servlet-class>
     </servlet>
     <servlet>
@@ -279,6 +279,14 @@
     <servlet-mapping>
         <servlet-name>HapusPenerimaDanaServlet</servlet-name>
         <url-pattern>/hapus_penerimadana</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UnggahBeritaServlet</servlet-name>
+        <url-pattern>/berita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProsesUnggahBeritaServlet</servlet-name>
+        <url-pattern>/unggahberita</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

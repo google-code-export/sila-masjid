@@ -48,8 +48,11 @@ public class InputDonaturServlet extends HttpServlet {
         if (nmDonatur.isEmpty() || telpDonatur.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("error", "Afwan (maaf), untuk kolom nama dan telepon harus diisi !");
             RequestDispatcher rdp = request.getRequestDispatcher("donator");
+            rdp.forward(request, response);}
+        else if (!telpDonatur.matches("[0-9]*")) { //validasi input telepon harus angka
+            request.setAttribute("error", "Afwan, data donatur gagal disimpan. Nomor telepon harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("donator");
             rdp.forward(request, response);
-
         }
         else{
         dona.setIdMasjid(idMasjid);
