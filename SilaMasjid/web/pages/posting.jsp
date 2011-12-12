@@ -1,8 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarMasjid"%>
 <%@page import="entities.Masjid"%>
+<%@page import="entities.Berita"%>
+
 <!DOCTYPE html>
-<%@include file='aplikasitemplate.html' %>
+<%@include file='pages/aplikasitemplate.html' %>
 <html>
     <tr> 
 <%--JUDUL DI SINI--%>

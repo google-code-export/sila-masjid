@@ -51,21 +51,7 @@ public class IndexBerita implements Serializable {
         return result;
     }
 
-    public boolean check(String email) {
-        boolean result = false;
-        EntityManager em = getEntityManager();
-        try {
-            Query q = em.createQuery("SELECT count(o) FROM Berita AS o WHERE o.email=:email");
-            q.setParameter("email", email);
-            int jumlahMasjid = ((Long) q.getSingleResult()).intValue();
-            if (jumlahMasjid > 0) {
-                result = true;
-            }
-        } finally {
-            em.close();
-        }
-        return result;
-    }
+    
     public Masjid getMasjid(Long id) {
         Masjid masjid = null;
         EntityManager em = getEntityManager();
