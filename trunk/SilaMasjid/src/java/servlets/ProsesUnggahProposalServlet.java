@@ -8,6 +8,7 @@ import entities.DaftarProposal;
 import entities.Proposal;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -40,6 +41,7 @@ public class ProsesUnggahProposalServlet extends HttpServlet {
         String dana = request.getParameter("besarDana");
         String judul = request.getParameter("judul");
         String detailProposal = request.getParameter("detailProposal");
+        Date tglUnggah = new Date(new java.util.Date().getTime());
 
         if (nama.isEmpty() || alamat.isEmpty() || noTelp.isEmpty() || email.isEmpty() || dana.isEmpty() || judul.isEmpty() || detailProposal.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("errorproposal", "Afwan, Proposal gagal diunggah. Semua kolom harus diisi. ");
@@ -72,6 +74,8 @@ public class ProsesUnggahProposalServlet extends HttpServlet {
                 proposal.setBesarDana(besarDana);
                 proposal.setJudul(judul);
                 proposal.setDetailProposal(detailProposal);
+                proposal.setTglUnggah(tglUnggah);
+                proposal.setSetuju(false);
                 daftar.addProposal(proposal);
                 response.sendRedirect("proposal");
             } finally {

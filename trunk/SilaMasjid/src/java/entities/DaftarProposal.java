@@ -40,8 +40,8 @@ public class DaftarProposal implements Serializable {
         try {
             Query q = em.createQuery("SELECT count(o) FROM Proposal AS o WHERE o.id=:id");
             q.setParameter("id", id);
-            int jumlahMasjid = ((Long) q.getSingleResult()).intValue();
-            if (jumlahMasjid > 0) {
+            int jumlahProposal = ((Long) q.getSingleResult()).intValue();
+            if (jumlahProposal > 0) {
                 result = true;
             }
         } finally {
@@ -65,28 +65,28 @@ public class DaftarProposal implements Serializable {
         }
         return result;
     }
-    public Masjid getMasjid(Long id) {
-        Masjid masjid = null;
+    public Proposal getProposal(Long id) {
+        Proposal proposal = null;
         EntityManager em = getEntityManager();
         try {
             boolean hasilCheck = this.checkId(id);
             if (hasilCheck) {
                 Query q = em.createQuery("SELECT object(o) FROM Proposal AS o WHERE o.id=:id");
                 q.setParameter("id", id);
-                masjid = (Masjid) q.getSingleResult();
+                proposal = (Proposal) q.getSingleResult();
             }
         } finally {
             em.close();
         }
-        return masjid;
+        return proposal;
     }
 
-    public List<Proposal> getProposals(Long id) {//
+    public List<Proposal> getProposals() {//
         List<Proposal> proposals = new ArrayList<Proposal>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o where o.id=:id");
+            Query q = em.createQuery("SELECT object(o) FROM Proposal");
             proposals = q.getResultList();
 
         } finally {

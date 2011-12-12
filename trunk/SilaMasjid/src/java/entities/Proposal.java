@@ -5,10 +5,12 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -27,7 +29,11 @@ public class Proposal implements Serializable {
     private Integer besarDana=null;
     private String judul;
     private String detailProposal;
-    private boolean setuju = false;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date tglUnggah;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date tglSetuju;
+    private boolean setuju;
     private Long idMasjid;
 
     public Long getIdMasjid() {
@@ -36,6 +42,22 @@ public class Proposal implements Serializable {
 
     public void setIdMasjid(Long idMasjid) {
         this.idMasjid = idMasjid;
+    }
+
+    public Date getTglSetuju() {
+        return tglSetuju;
+    }
+
+    public void setTglSetuju(Date tglSetuju) {
+        this.tglSetuju = tglSetuju;
+    }
+
+    public Date getTglUnggah() {
+        return tglUnggah;
+    }
+
+    public void setTglUnggah(Date tglUnggah) {
+        this.tglUnggah = tglUnggah;
     }
 
     public boolean isSetuju() {
