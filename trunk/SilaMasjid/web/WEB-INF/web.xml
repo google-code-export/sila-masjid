@@ -148,6 +148,10 @@
         <servlet-name>ProposalServlet</servlet-name>
         <servlet-class>servlets.ProposalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BeritaServlet</servlet-name>
+        <servlet-class>servlets.BeritaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -285,16 +289,20 @@
         <url-pattern>/hapus_penerimadana</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UnggahBeritaServlet</servlet-name>
-        <url-pattern>/berita</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ProsesUnggahBeritaServlet</servlet-name>
         <url-pattern>/unggahberita</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProposalServlet</servlet-name>
         <url-pattern>/setuju</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UnggahBeritaServlet</servlet-name>
+        <url-pattern>/posting</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BeritaServlet</servlet-name>
+        <url-pattern>/news</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

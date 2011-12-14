@@ -24,6 +24,9 @@ public class Berita implements Serializable {
     private Long id;
     private String judul;
     private String isiBerita;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date tglUnggah;
+    private Long idMasjid;
 
     public Long getIdMasjid() {
         return idMasjid;
@@ -56,9 +59,7 @@ public class Berita implements Serializable {
     public void setTglUnggah(Date tglUnggah) {
         this.tglUnggah = tglUnggah;
     }
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date tglUnggah;
-   private Long idMasjid;
+   
    
 
     public Long getId() {
