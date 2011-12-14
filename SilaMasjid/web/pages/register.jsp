@@ -11,15 +11,15 @@
 <%@include file='hometemplate2.html' %>
 <html>
     <tr> 
-<%--JUDUL DI SINI--%>
-        <td width="452" height="32" class="contentheader"><div align="center"><b>FORM REGISTRASI</b></div></td>
+        <%--JUDUL DI SINI--%>
+           <td width="452" height="32" class="contentheader"><div align="center"><b>FORM REGISTRASI</b></div></td>
     </tr>
     <tr> 
         <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
     </tr>
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
- <%--ISI MULAI DI SINI--%>
+                <%--ISI MULAI DI SINI--%>
                 <form action="processregister" method="post" >
 
                     <tr>
@@ -41,8 +41,8 @@
                     </tr>
                     <tr><td colspan="3" align="center"><label align="center"><font color="red"><b>${error}</b></font></label></td></tr>
                 </form>
- 
-<%--SISI SAMPAI DI SINI--%>
+
+                <%--SISI SAMPAI DI SINI--%>
             </table></td>
     </tr>
     <tr> 
