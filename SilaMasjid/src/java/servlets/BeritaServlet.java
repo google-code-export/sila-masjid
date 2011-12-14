@@ -4,22 +4,19 @@
  */
 package servlets;
 
-import entities.IndexBerita;
-import entities.Berita;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author LENOVO
+ * @author danke
  */
-public class ProsesUnggahBeritaServlet extends HttpServlet {
+public class BeritaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,19 +30,9 @@ public class ProsesUnggahBeritaServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        String judul = request.getParameter("judul");
-        String isiBerita = request.getParameter("isiBerita");
-        Date tglUnggah = new Date(new java.util.Date().getTime());
-        
         try {
-            IndexBerita index = new IndexBerita();
-            Berita berita = new Berita();
-
-            berita.setJudul(judul);
-            berita.setIsiBerita(isiBerita);
-            berita.setTglUnggah(tglUnggah);
-            index.addBerita(berita);
-            response.sendRedirect("posting");
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/news.jsp");
+            rdp.forward(request, response);
         } finally {
             out.close();
         }

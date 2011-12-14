@@ -1,11 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="entities.DaftarMasjid"%>
-<%@page import="entities.Masjid"%>
-<%@page import="entities.Berita"%>
+
 
 <!DOCTYPE html>
-<%@include file='pages/aplikasitemplate.html' %>
+<%@include file='aplikasitemplate.html' %>
 <html>
+    </table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg"> 
     <tr> 
 <%--JUDUL DI SINI--%>
         <td width="452" height="32" class="contentheader"><div align="center"><b>TULIS BERITA</b></div></td>
@@ -24,7 +24,7 @@
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Isi Berita</td><td><textarea rows="10" cols="30"></textarea></td>
+                        <td>Isi Berita</td><td><textarea rows="10" cols="30" name="isiBerita"></textarea></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>

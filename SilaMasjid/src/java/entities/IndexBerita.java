@@ -5,7 +5,7 @@
  */
 package entities;
 
-import entities.Berita;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.io.Serializable;
@@ -118,7 +118,7 @@ public class IndexBerita implements Serializable {
                 berita = em.getReference(Berita.class, id);
                 berita.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The user with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The berita with id " + id + " no longer exists.", enfe);
             }
             em.remove(berita);
             em.getTransaction().commit();
