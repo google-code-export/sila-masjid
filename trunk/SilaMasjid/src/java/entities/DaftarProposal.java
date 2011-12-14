@@ -24,12 +24,6 @@ import jpa.exceptions.NonexistentEntityException;
  */
 public class DaftarProposal implements Serializable {
 
-    private static class idMasjid {
-
-        public idMasjid() {
-        }
-    }
-
     public DaftarProposal() {
         emf = Persistence.createEntityManagerFactory("SilaMasjidPU");
     }
@@ -73,8 +67,23 @@ public class DaftarProposal implements Serializable {
         }
         return proposal;
     }
+    public List<Proposal> getProposals() {
+        List<Proposal> proposals = new ArrayList<Proposal>();
+        
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o");
+           // q.setParameter("idMasjid", idMasjid);
+            proposals = q.getResultList();
 
-    public List<Proposal> getProposals(Long idMasjid) {
+        } finally {
+            em.close();
+        }
+        return proposals;
+    }
+
+
+  /*  public List<Proposal> getProposals(Long idMasjid) {
         List<Proposal> proposals = new ArrayList<Proposal>();
         // idMasjid=null;
         EntityManager em = getEntityManager();
@@ -87,7 +96,7 @@ public class DaftarProposal implements Serializable {
             em.close();
         }
         return proposals;
-    }
+    }*/
 
     public void editProposal(Proposal proposal) {
         EntityManager em = getEntityManager();
