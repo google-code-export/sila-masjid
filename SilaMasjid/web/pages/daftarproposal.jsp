@@ -32,8 +32,8 @@
                         <%--ISI MULAI SINI--%>
                         <form action="setujuproposal" method="post">
                             <tr>
-                                <td width="5%">&nbsp;</td>
-                                <th width="25%" align="left">Pengunggah</th>
+                                <td width="10%">&nbsp;</td>
+                                <th width="20%" align="left">Pengunggah</th>
                                 <th width="20%" align="left">Judul Proposal</th>
                                 <th width="20%" align="left">Besar Dana</th>
                                 <th width="20%" align="left">Tgl Unggah</th>
@@ -46,10 +46,9 @@
                             <tr>
                                 <td width="10%">&nbsp;</td>
                                 <td width="20%"><%=next.getNama()%></td>
-                                <td width="20%"><%=next.getJudul()%></td>
+                                <td width="20%"><a href="detailproposal?id=<%=next.getId()%>" ><font color="blue"><%=next.getJudul()%></font></a></td>
                                 <td width="20%"><%=next.getBesarDana()%></td>
-                                <% Date tgl = new Date();%>
-                                <% tgl = next.getTglUnggah();%>
+                                <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
                                 <td width="10%"><input type="checkbox" name="cek" value="Cek"></td>
                             </tr>

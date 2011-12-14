@@ -81,7 +81,19 @@ public class DaftarProposal implements Serializable {
         }
         return proposals;
     }
+    public List<Proposal> getProposals(Long id) {//edit tanggal 21 nop 2011
+        List<Proposal> proposals = new ArrayList<Proposal>();
 
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o where o.id=:id");
+            proposals = q.getResultList();
+
+        } finally {
+            em.close();
+        }
+        return proposals;
+    }
 
   /*  public List<Proposal> getProposals(Long idMasjid) {
         List<Proposal> proposals = new ArrayList<Proposal>();
