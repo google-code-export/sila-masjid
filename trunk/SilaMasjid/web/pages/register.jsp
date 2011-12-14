@@ -8,7 +8,7 @@
 <%@page import="entities.DaftarMasjid"%>
 <%@page import="entities.Masjid"%>
 <!DOCTYPE html>
-<%@include file='hometemplate.html' %>
+<%@include file='hometemplate2.html' %>
 <html>
     <tr> 
 <%--JUDUL DI SINI--%>

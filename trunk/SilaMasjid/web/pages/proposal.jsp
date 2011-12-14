@@ -10,201 +10,68 @@
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@include file='hometemplate2.html' %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>SILA MASJID</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
-    </head>
+        <%--JUDUL DI SINI--%>
+    <td width="452" height="32" class="contentheader"><div align="center"><b>UNGGAH PROPOSAL</b></div></td>
+</tr>
+<tr> 
+    <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
+</tr>
+<tr> 
+    <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
+            <%--ISI MULAI DI SINI--%>
+            <form action="unggahproposal" method="post" >
 
-    <body>
-        <table width="100" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr> 
-                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr> 
-                            <td width="51" ><img src="images/tl_header.gif" alt="-" width="51" height="36"></td>
-                            <td background="images/t_header_bg.gif" width="100%"></td>
-                            <td width="47"><img src="images/tr_header.gif" alt="-" width="47" height="36"></td>
-                        </tr>
-                    </table></td>
-            </tr>
-            <tr> 
-                <td><img src="images/header.gif" alt="header" width="641" height="145"></td>
-            </tr>
-            <tr> 
-                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tr> 
-                            <td background="images/b_header_bg.gif" width="106"><img src="images/bl_header.gif" alt="-" width="99" height="35"></td>
-                            <td background="images/b_header_bg.gif" width="100%"></td>
-                            <td background="images/b_header_bg.gif" width="47"><img src="images/br_header.gif" alt="-" width="106" height="35"></td>
-                        </tr>
-                    </table></td>
-            </tr>
-        </table>
-        <table width="641" border="0" align="center" cellpadding="0" cellspacing="0">
-            <tr> 
-                <td width="185" valign="top"><table border="0" cellspacing="0" cellpadding="0">
-                        <tr> 
-                            <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
-                        </tr>
-                    </table>
-                    <table border="0" cellpadding="0" cellspacing="0" class="lcum">
-                        <tr> 
-                            <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"><b>MENU 
-                                        UTAMA</b></div></td>
-                        </tr>
-                        <tr> 
-                            <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
-                        </tr>
-                        <tr> 
-                            <td class="lcolumnt" height="17"> <table width="100%" border="0" cellpadding="0" cellspacing="2">
-                                    <tr> 
-                                        <td width="15%">&nbsp;</td>
-                                        <td width="8%">
-                                            <div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                                        <td width="66%" bgcolor="#F4F4F4"><a href="home">Home</a></td>
-                                        <td width="11%">&nbsp;</td>
-                                    </tr>
-                                    <tr> 
-                                        <td width="15%">&nbsp;</td>
-                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                                        <td width="66%" bgcolor="#F4F4F4"><a href="about">Tentang Kami</a></td>
-                                        <td width="11%">&nbsp;</td>
-                                    </tr>
-                                    <tr> 
-                                        <td width="15%">&nbsp;</td>
-                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                                        <td width="66%" bgcolor="#F4F4F4"><a href="contact">Kontak Kami</a></td>
-                                        <td width="11%">&nbsp;</td>
-                                    </tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>Nama</td><td><input type="text" name="nama" style="width: 120px"></td>
+                </tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>Alamat</td><td><input type="text" name="alamat" style="width: 120px"></td>
+                </tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>Telepon</td><td><input type="text" name="noTelp" style="width: 120px"></td>
+                </tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>Email</td><td><input type="text" name="email" style="width: 120px"></td>
+                </tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>Besar Dana</td><td><input type="text" name="besarDana" style="width: 120px"></td>
+                </tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>Judul</td><td><input type="text" name="judul" style="width: 120px"></td>
+                </tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>Detail Proposal</td><td><textarea style="width: 300px;height: 300px;" name="detailProposal"> </textarea></td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td width="10%">&nbsp;</td>
+                    <td>&nbsp;</td><td><input type="submit" value="Unggah" >&nbsp;&nbsp;<input type="reset" value="Reset"></td>
+                </tr>
+                <tr><td colspan="3" align="center"><label align="center"><font color="red"><b>${errorproposal}</b></font></label></td></tr>
+            </form>
 
-                                    <tr> 
-                                        <td width="15%">&nbsp;</td>
-                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                                        <td width="66%" bgcolor="#F4F4F4"><a href="news">Index Berita</a></td>
-                                        <td width="11%">&nbsp;</td>
-                                    </tr>
-                                    <tr> 
-                                        <td width="15%">&nbsp;</td>
-                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                                        <td width="66%" bgcolor="#F4F4F4"><a href="proposal">Mengunggah Proposal</a></td>
-                                        <td width="11%">&nbsp;</td>
-                                    </tr>
-                                    <tr> 
-                                        <td width="15%">&nbsp;</td>
-                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
-                                        <td width="66%" bgcolor="#F4F4F4"><a href="proposals">Index Proposal</a></td>
-                                        <td width="11%">&nbsp;</td>
-                                    </tr>
-
-                                </table></td>
-                        </tr>
-                        <tr> 
-                            <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"></div></td>
-                        </tr>
-                    </table>
-                    <table border="0" cellspacing="0" cellpadding="0">
-                        <tr> 
-                            <td><img src="images/pipe_bg.gif" alt="" width="28" height="5"></td>
-                        </tr>
-                    </table>
-
-                    <table border="0" cellspacing="0" cellpadding="0">
-                        <tr> 
-                            <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
-                        </tr>
-                    </table>
-                    <table border="0" cellpadding="0" cellspacing="0" class="lcum">
-                        <tr> 
-                            <td background="images/left_column_header_top.gif" width="179" height="35"><div align="center"> 
-                                    <b>BERITA POPULER</b> </div></td>
-                        </tr>
-                        <tr> 
-                            <td><div align="right"><img src="images/left_column_2box.gif" width="176" height="25"></div></td>
-                        </tr>
-                        <tr> 
-                            <td class="lcolumnt" height="17"> <table width="84%" height="14" border="0" align="center" cellpadding="0" cellspacing="0">
-                                    <tr> 
-                                        <td width="9%">&nbsp;</td>
-                                        <td width="91%">Content Here</td>
-                                    </tr>
-                                </table></td>
-                        </tr>
-                        <tr> 
-                            <td height="17"><div align="right"><img src="images/lcolumn_bottom.gif" alt="-" width="176" height="30"><br>
-                                    <img src="images/pipes_end_lcolumn.gif" width="176" height="14"></div></td>
-                        </tr>
-                    </table></td>
-                <td width="456" valign="top" class="mctop"><table border="0" cellspacing="0" cellpadding="0">
-                        <tr> 
-                            <td><img src="images/pipes_maincontent.gif" alt="-" width="452" height="6"></td>
-                        </tr>
-                    </table>
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">
-                        <tr>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr> 
-                            <%--JUDUL DI SINI--%>
-                            <td width="452" height="32" class="contentheader"><div align="center"><b>UNGGAH PROPOSAL</b></div></td>
-                        </tr>
-                        <tr> 
-                            <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
-                        </tr>
-                        <tr> 
-                            <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
-                                    <%--ISI MULAI DI SINI--%>
-                                    <form action="unggahproposal" method="post" >
-
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>Nama</td><td><input type="text" name="nama" style="width: 120px"></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>Alamat</td><td><input type="text" name="alamat" style="width: 120px"></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>Telepon</td><td><input type="text" name="noTelp" style="width: 120px"></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>Email</td><td><input type="text" name="email" style="width: 120px"></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>Besar Dana</td><td><input type="text" name="besarDana" style="width: 120px"></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>Judul</td><td><input type="text" name="judul" style="width: 120px"></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>Detail Proposal</td><td><textarea style="width: 300px;height: 300px;" name="detailProposal"> </textarea></td>
-                                        </tr>
-                                        <tr><td>&nbsp;</td></tr>
-                                        <tr>
-                                            <td width="10%">&nbsp;</td>
-                                            <td>&nbsp;</td><td><input type="submit" value="Unggah" >&nbsp;&nbsp;<input type="reset" value="Reset"></td>
-                                        </tr>
-                                        <tr><td colspan="3" align="center"><label align="center"><font color="red"><b>${errorproposal}</b></font></label></td></tr>
-                                    </form>
-
-                                    <%--SISI SAMPAI DI SINI--%>
-                                </table></td>
-                        </tr>
-                        <tr> 
-                            <td class="mctop"><img src="images/mc_box_bottom.gif" alt="-" width="452" height="23"></td>
-                        </tr>
-                    </table>
-                    <!-- COPYRIGHT - WWW.ZYMIC.COM - IF YOU REMOVE COPYRIGHT LEGAL ACTION WILL BE TAKEN -->
-                    <!-- WE TRACK COPYRIGHT ON A DAILY BASIS, WE KNOW WHO YOU ARE!                      -->
-                    <div align="center"><a href="http://www.zymic.com" target="_blank"><img src="images/copyright_DO_NOT_STEAL_ELSE_LEGAL_ACTION.gif" alt="Free Templates" width="422" height="15" border="0"></a></div></td>
-            </tr>
-        </table>
-    </body>
+            <%--ISI SAMPAI DI SINI--%>
+        </table></td>
+</tr>
+<tr> 
+    <td class="mctop"><img src="images/mc_box_bottom.gif" alt="-" width="452" height="23"></td>
+</tr>
+</table>
+<!-- COPYRIGHT - WWW.ZYMIC.COM - IF YOU REMOVE COPYRIGHT LEGAL ACTION WILL BE TAKEN -->
+<!-- WE TRACK COPYRIGHT ON A DAILY BASIS, WE KNOW WHO YOU ARE!                      -->
+<div align="center"><a href="http://www.zymic.com" target="_blank"><img src="images/copyright_DO_NOT_STEAL_ELSE_LEGAL_ACTION.gif" alt="Free Templates" width="422" height="15" border="0"></a></div></td>
+</tr>
+</table>
+</body>
 </html>
 
