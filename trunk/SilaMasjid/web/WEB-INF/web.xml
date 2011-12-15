@@ -160,6 +160,18 @@
         <servlet-name>LaporanProposal</servlet-name>
         <servlet-class>servlets.LaporanProposalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewsServlet</servlet-name>
+        <servlet-class>servlets.NewsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BeritaServlet</servlet-name>
+        <servlet-class>servlets.BeritaIndexServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailBerita</servlet-name>
+        <servlet-class>servlets.DetailBeritaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -319,6 +331,18 @@
     <servlet-mapping>
         <servlet-name>LaporanProposal</servlet-name>
         <url-pattern>/laporanproposalsetuju</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewsServlet</servlet-name>
+        <url-pattern>/news</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BeritaServlet</servlet-name>
+        <url-pattern>/indexberita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailBerita</servlet-name>
+        <url-pattern>/detailberita</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -4,6 +4,8 @@
  */
 package servlets;
 
+import entities.DaftarProposal;
+import entities.Proposal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author danke
+ * @author Sumurmunding
  */
-public class BeritaServlet extends HttpServlet {
+public class NewsServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
