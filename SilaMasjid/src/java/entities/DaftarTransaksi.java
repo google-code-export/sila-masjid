@@ -4,7 +4,7 @@
  */
 package entities;
 
-import entities.KodeTransaksi;
+import entities.Transaksi;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,17 +13,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import jpa.exceptions.NonexistentEntityException;
 
 /**
  *
  * @author alin
  */
-public class DaftarKodeTransaksi implements Serializable {
+public class DaftarTransaksi implements Serializable {
 
-    public DaftarKodeTransaksi() {
+    public DaftarTransaksi() {
         emf = Persistence.createEntityManagerFactory("SilaMasjidPU");
     }
     
@@ -37,11 +35,11 @@ public class DaftarKodeTransaksi implements Serializable {
         boolean result = false;
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT count(o) FROM KodeTransaksi AS o WHERE o.id=:id");
+            Query q = em.createQuery("SELECT count(o) FROM Transaksi AS o WHERE o.id=:id");
             q.setParameter("id", id);
  
-            int jumlahKodeTransaksi = ((Long) q.getSingleResult()).intValue();
-            if (jumlahKodeTransaksi > 0) {
+            int jumlahTransaksi = ((Long) q.getSingleResult()).intValue();
+            if (jumlahTransaksi > 0) {
                 result = true;
             }
         } finally {
@@ -50,43 +48,43 @@ public class DaftarKodeTransaksi implements Serializable {
         return result;
     }
 
-    public KodeTransaksi getKodeTransaksi(Long id) {
-        KodeTransaksi kodeTransaksi = null;
+    public Transaksi getTransaksi(Long id) {
+        Transaksi transaksi = null;
         EntityManager em = getEntityManager();
         try {
             boolean hasilCheck = this.check(id);
             if (hasilCheck) {
-                Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o WHERE o.id=:id");
+                Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.id=:id");
                 q.setParameter("id", id);
  
-                kodeTransaksi = (KodeTransaksi) q.getSingleResult();
+                transaksi = (Transaksi) q.getSingleResult();
             }
         } finally {
             em.close();
         }
-        return kodeTransaksi;
+        return transaksi;
     }
 
-    public List<KodeTransaksi> getKodeTransaksis(Long idMasjid) {
-        List<KodeTransaksi> kodeTransaksis = new ArrayList<KodeTransaksi>();
+    public List<Transaksi> getTransaksis(Long idMasjid) {
+        List<Transaksi> transaksis = new ArrayList<Transaksi>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM KodeTransaksi AS o WHERE o.idMasjid=:idMasjid ORDER BY o.kdTrans");
+            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid ORDER BY o.kdTrans");
             q.setParameter("idMasjid", idMasjid);
-            kodeTransaksis = q.getResultList();
+            transaksis = q.getResultList();
 
         } finally {
             em.close();
         }
-        return kodeTransaksis;
+        return transaksis;
     }
 
-    public void editKodeTransaksi(KodeTransaksi kodeTransaksi) {
+    public void editTransaksi(Transaksi transaksi) {
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
         try {
-            em.merge(kodeTransaksi);
+            em.merge(transaksi);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
@@ -95,11 +93,11 @@ public class DaftarKodeTransaksi implements Serializable {
         }
     }
 
-    public void addKodeTransaksi(KodeTransaksi kodeTransaksi) {
+    public void addTransaksi(Transaksi transaksi) {
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
         try {
-            em.persist(kodeTransaksi);
+            em.persist(transaksi);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
@@ -108,19 +106,19 @@ public class DaftarKodeTransaksi implements Serializable {
         }
     }
 
-    public void deleteKodeTransaksi(Long id) throws NonexistentEntityException {
+    public void deleteTransaksi(Long id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            KodeTransaksi kodeTransaksi;
+            Transaksi transaksi;
             try {
-                kodeTransaksi = em.getReference(KodeTransaksi.class, id);
-                kodeTransaksi.getId();
+                transaksi = em.getReference(Transaksi.class, id);
+                transaksi.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The kodeTransaksi with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The transaksi with id " + id + " no longer exists.", enfe);
             }
-            em.remove(kodeTransaksi);
+            em.remove(transaksi);
             em.getTransaction().commit();
         } finally {
             if (em != null) {

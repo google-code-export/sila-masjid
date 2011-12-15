@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -23,13 +25,60 @@ public class Transaksi implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date tglTrans;
-    private String kdTrans;
-    private Long idBank;
+    private Date tglTran;
+    private Long idTran;
+    private Long idRek;
+
+    public Long getIdMasjid() {
+        return idMasjid;
+    }
+
+    public void setIdMasjid(Long idMasjid) {
+        this.idMasjid = idMasjid;
+    }
+
+    public Long getIdRek() {
+        return idRek;
+    }
+
+    public void setIdRek(Long idRek) {
+        this.idRek = idRek;
+    }
+
+    public Long getIdTran() {
+        return idTran;
+    }
+
+    public void setIdTran(Long idTran) {
+        this.idTran = idTran;
+    }
+
+    public Rekening getNmRek() {
+        return nmRek;
+    }
+
+    public void setNmRek(Rekening nmRek) {
+        this.nmRek = nmRek;
+    }
+
+    public KodeTransaksi getNmTran() {
+        return nmTran;
+    }
+
+    public void setNmTran(KodeTransaksi nmTran) {
+        this.nmTran = nmTran;
+    }
+    private Long idMasjid;
     private String kasBank;
-    private Double jmlTrans;
+    private Double jmlTran;
     private String ket;
     private String flag;
+    @ManyToOne
+    @JoinColumn(name="idTran")
+    private KodeTransaksi nmTran;
+    @ManyToOne
+    @JoinColumn(name="idRek")
+    private Rekening nmRek;
 
     public String getFlag() {
         return flag;
@@ -39,20 +88,12 @@ public class Transaksi implements Serializable {
         this.flag = flag;
     }
 
-    public Long getIdBank() {
-        return idBank;
+    public Double getJmlTran() {
+        return jmlTran;
     }
 
-    public void setIdBank(Long idBank) {
-        this.idBank = idBank;
-    }
-
-    public Double getJmlTrans() {
-        return jmlTrans;
-    }
-
-    public void setJmlTrans(Double jmlTrans) {
-        this.jmlTrans = jmlTrans;
+    public void setJmlTran(Double jmlTran) {
+        this.jmlTran = jmlTran;
     }
 
     public String getKasBank() {
@@ -63,15 +104,7 @@ public class Transaksi implements Serializable {
         this.kasBank = kasBank;
     }
 
-    public String getKdTrans() {
-        return kdTrans;
-    }
-
-    public void setKdTrans(String kdTrans) {
-        this.kdTrans = kdTrans;
-    }
-
-    public String getKet() {
+   public String getKet() {
         return ket;
     }
 
@@ -79,12 +112,12 @@ public class Transaksi implements Serializable {
         this.ket = ket;
     }
 
-    public Date getTglTrans() {
-        return tglTrans;
+    public Date getTglTran() {
+        return tglTran;
     }
 
-    public void setTglTrans(Date tglTrans) {
-        this.tglTrans = tglTrans;
+    public void setTglTran(Date tglTran) {
+        this.tglTran = tglTran;
     }
     
     public Long getId() {
@@ -117,7 +150,7 @@ public class Transaksi implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Transaksi[ id=" + id + " ]";
+        return "entities.Tranaksi[ id=" + id + " ]";
     }
     
 }
