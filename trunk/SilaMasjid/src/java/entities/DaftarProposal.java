@@ -67,13 +67,14 @@ public class DaftarProposal implements Serializable {
         }
         return proposal;
     }
+
     public List<Proposal> getProposals() {
         List<Proposal> proposals = new ArrayList<Proposal>();
-        
+
         EntityManager em = getEntityManager();
         try {
             Query q = em.createQuery("SELECT object(o) FROM Proposal AS o");
-           // q.setParameter("idMasjid", idMasjid);
+            // q.setParameter("idMasjid", idMasjid);
             proposals = q.getResultList();
 
         } finally {
@@ -81,7 +82,8 @@ public class DaftarProposal implements Serializable {
         }
         return proposals;
     }
-    public List<Proposal> getProposals(Long id) {//edit tanggal 21 nop 2011
+
+    public List<Proposal> getProposals(Long id) {//
         List<Proposal> proposals = new ArrayList<Proposal>();
 
         EntityManager em = getEntityManager();
@@ -95,21 +97,20 @@ public class DaftarProposal implements Serializable {
         return proposals;
     }
 
-  /*  public List<Proposal> getProposals(Long idMasjid) {
-        List<Proposal> proposals = new ArrayList<Proposal>();
-        // idMasjid=null;
-        EntityManager em = getEntityManager();
-        try {
-            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o WHERE o.idMasjid=:idMasjid");
-            q.setParameter("idMasjid", idMasjid);
-            proposals = q.getResultList();
-
-        } finally {
-            em.close();
-        }
-        return proposals;
+    /*  public List<Proposal> getProposals(Long idMasjid) {
+    List<Proposal> proposals = new ArrayList<Proposal>();
+    // idMasjid=null;
+    EntityManager em = getEntityManager();
+    try {
+    Query q = em.createQuery("SELECT object(o) FROM Proposal AS o WHERE o.idMasjid=:idMasjid");
+    q.setParameter("idMasjid", idMasjid);
+    proposals = q.getResultList();
+    
+    } finally {
+    em.close();
+    }
+    return proposals;
     }*/
-
     public void editProposal(Proposal proposal) {
         EntityManager em = getEntityManager();
         em.getTransaction().begin();
