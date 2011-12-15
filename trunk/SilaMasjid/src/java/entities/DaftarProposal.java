@@ -68,12 +68,26 @@ public class DaftarProposal implements Serializable {
         return proposal;
     }
 
-    public List<Proposal> getProposals() {
+    public List<Proposal> getProposalBelums() {
         List<Proposal> proposals = new ArrayList<Proposal>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o");
+            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o where o.setuju=0");
+            // q.setParameter("idMasjid", idMasjid);
+            proposals = q.getResultList();
+
+        } finally {
+            em.close();
+        }
+        return proposals;
+    }
+    public List<Proposal> getProposalSudahs() {
+        List<Proposal> proposals = new ArrayList<Proposal>();
+
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o where o.setuju=1");
             // q.setParameter("idMasjid", idMasjid);
             proposals = q.getResultList();
 
@@ -83,12 +97,12 @@ public class DaftarProposal implements Serializable {
         return proposals;
     }
 
-    public List<Proposal> getProposals(Long id) {//
+    public List<Proposal> getProposals(Long idMasjid) {//
         List<Proposal> proposals = new ArrayList<Proposal>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o where o.id=:id");
+            Query q = em.createQuery("SELECT object(o) FROM Proposal AS o where o.idMasjid=:idMasjid and o.setuju=1");
             proposals = q.getResultList();
 
         } finally {

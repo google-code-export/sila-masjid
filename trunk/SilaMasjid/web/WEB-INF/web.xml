@@ -156,6 +156,10 @@
         <servlet-name>ProsesSetujuProposal</servlet-name>
         <servlet-class>servlets.ProsesSetujuProposal</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LaporanProposal</servlet-name>
+        <servlet-class>servlets.LaporanProposalServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -311,6 +315,10 @@
     <servlet-mapping>
         <servlet-name>ProsesSetujuProposal</servlet-name>
         <url-pattern>/setujuproposal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LaporanProposal</servlet-name>
+        <url-pattern>/laporanproposalsetuju</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

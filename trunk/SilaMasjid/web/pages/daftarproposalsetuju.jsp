@@ -15,14 +15,14 @@
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <% DaftarProposal daftar = new DaftarProposal();%>
-<% List<Proposal> proposal = daftar.getProposalBelums();%>
+<% List<Proposal> proposal = daftar.getProposalSudahs();%>
 <% Iterator<Proposal> iterator = proposal.iterator();%>
 <html>
     <body>
         <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
             <tr> 
                 <%--JUDUL DI SINI--%>
-                <td width="452" height="32" class="contentheader"><div align="center"><b>DAFTAR PROPOSAL</b></div></td>
+                <td width="452" height="32" class="contentheader"><div align="center"><b>LAPORAN PERSETUJUAN PROPOSAL</b></div></td>
             </tr>
             <tr> 
                 <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
@@ -37,8 +37,7 @@
                                 <th width="20%" align="left">Judul Proposal</th>
                                 <th width="20%" align="left">Besar Dana</th>
                                 <th width="20%" align="left">Tgl Unggah</th>
-                                <th width="10%" align="left">Cek</th>
-
+                                <th width="10%" align="left">Tgl Setuju</th>
                             </tr>
 
                             <% while (iterator.hasNext()) {%>
@@ -50,17 +49,11 @@
                                 <td width="20%"><%=next.getBesarDana()%></td>
                                 <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
-                                <td width="10%"><input type="checkbox" name="cek" value="<%=next.getId()%>"></td>
+                                <% Date tgl2 = (Date) next.getTglSetuju();%>
+                                <td width="10%"><%=DateFormat.getDateInstance().format(tgl2)%></td>
                             </tr>
                             <%}%>     
                             <tr><td>&nbsp;</td></tr>
-                            <tr>
-                                <td width="10%">&nbsp;</td>
-                                <td>&nbsp;</td><td><input type="submit" value="Setujui" ></td>
-                            </tr>
-                            <tr>
-                                <td colspan="6" align="center"><label align="center"><font color="black">${pesan}</font></label></td>
-                            </tr>
                         </form>
                     </table></td>
             </tr>
