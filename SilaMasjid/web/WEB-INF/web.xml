@@ -152,6 +152,10 @@
         <servlet-name>DetailProposalServlet</servlet-name>
         <servlet-class>servlets.DetailProposalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProsesSetujuProposal</servlet-name>
+        <servlet-class>servlets.ProsesSetujuProposal</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -299,6 +303,14 @@
     <servlet-mapping>
         <servlet-name>DetailProposalServlet</servlet-name>
         <url-pattern>/detailproposal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UnggahBeritaServlet</servlet-name>
+        <url-pattern>/posting</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProsesSetujuProposal</servlet-name>
+        <url-pattern>/setujuproposal</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

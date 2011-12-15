@@ -50,13 +50,16 @@
                                 <td width="20%"><%=next.getBesarDana()%></td>
                                 <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
-                                <td width="10%"><input type="checkbox" name="cek" value="Cek"></td>
+                                <td width="10%"><input type="checkbox" name="cek" value="<%=next.getId()%>"></td>
                             </tr>
                             <%}%>     
                             <tr><td>&nbsp;</td></tr>
                             <tr>
                                 <td width="10%">&nbsp;</td>
                                 <td>&nbsp;</td><td><input type="submit" value="Setujui" ></td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" align="center"><label align="center"><font color="black">${pesan}</font></label></td>
                             </tr>
                         </form>
                     </table></td>
