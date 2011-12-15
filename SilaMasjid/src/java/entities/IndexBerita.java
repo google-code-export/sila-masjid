@@ -52,20 +52,20 @@ public class IndexBerita implements Serializable {
     }
 
     
-    public Masjid getMasjid(Long id) {
-        Masjid masjid = null;
+    public Berita getBerita(Long id) {
+        Berita berita = null;
         EntityManager em = getEntityManager();
         try {
             boolean hasilCheck = this.checkId(id);
             if (hasilCheck) {
                 Query q = em.createQuery("SELECT object(o) FROM Berita AS o WHERE o.id=:id");
                 q.setParameter("id", id);
-                masjid = (Masjid) q.getSingleResult();
+                berita = (Berita) q.getSingleResult();
             }
         } finally {
             em.close();
         }
-        return masjid;
+        return berita;
     }
 
     public List<Berita> getBeritas(Long id) {//

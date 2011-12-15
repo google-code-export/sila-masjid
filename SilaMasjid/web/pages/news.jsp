@@ -13,7 +13,7 @@
 <%@page import="java.text.DateFormat"%>
 
 <!DOCTYPE html>
-<%@include file='aplikasitemplate.html' %>
+<%@include file='hometemplate.html' %>
 <% IndexBerita index = new IndexBerita();%>
 <% List<Berita> berita = index.getBeritas();%>
 <% Iterator<Berita> iterator = berita.iterator();%>
@@ -22,7 +22,7 @@
         <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
             <tr> 
                 <%--JUDUL DI SINI--%>
-                <td width="452" height="32" class="contentheader"><div align="center"><b>DAFTAR PROPOSAL</b></div></td>
+                <td width="452" height="32" class="contentheader"><div align="center"><b>INDEX BERITA</b></div></td>
             </tr>
             <tr> 
                 <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
@@ -30,14 +30,13 @@
             <tr> 
                 <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                         <%--ISI MULAI SINI--%>
-                        <form action="news" method="post">
+                        <form action="indexberita" method="post">
                             <tr>
-                                <td width="5%">&nbsp;</td>
-                                
-                                <th width="20%" align="left">Judul Berita</th>
+                                <td width="10%">&nbsp;</td>
+                                <th width="20%" align="left">judul Berita</th>
                                 
                                 <th width="20%" align="left">Tgl Unggah</th>
-                                
+                                <th width="10%" align="left">Cek</th>
 
                             </tr>
 
@@ -46,17 +45,20 @@
                             <tr>
                                 <td width="10%">&nbsp;</td>
                                 
-                                <td width="20%"><%=next.getJudul()%></td>
+                                <td width="20%"><a href="detailberita?id=<%=next.getId()%>" ><font color="blue"><%=next.getJudul()%></font></a></td>
                                 
-                                <% Date tgl = new Date();%>
-                                <% tgl = next.getTglUnggah();%>
+                                <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
-                                                            </tr>
+                                <td width="10%"><input type="checkbox" name="cek" value="<%=next.getId()%>"></td>
+                            </tr>
                             <%}%>     
                             <tr><td>&nbsp;</td></tr>
                             <tr>
                                 <td width="10%">&nbsp;</td>
-                                <td>&nbsp;</td><td><input type="submit" value="Lihat" ></td>
+                                <td>&nbsp;</td><td><input type="submit" value="Setujui" ></td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" align="center"><label align="center"><font color="black">${pesan}</font></label></td>
                             </tr>
                         </form>
                     </table></td>
