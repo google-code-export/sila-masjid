@@ -7,14 +7,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarKodeTransaksi"%>
 <%@page import="entities.KodeTransaksi"%>
+<%@page import="entities.DaftarTransaksi"%>
+<%@page import="entities.Transaksi"%>
+<%@page import="entities.DaftarRekening"%>
+<%@page import="entities.Rekening"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
-<% DaftarKodeTransaksi daftran=new DaftarKodeTransaksi();%>
-<% List<KodeTransaksi> trans=daftran.getKodeTransaksis(idMasjid);%>
-<% Iterator<KodeTransaksi> iterator = trans.iterator();%>
+<% DaftarKodeTransaksi dafkd=new DaftarKodeTransaksi();%>
+<% List<KodeTransaksi> kdtrans=dafkd.getKodeTransaksis(idMasjid);%>
+<% Iterator<KodeTransaksi> iterator = kdtrans.iterator();%>
+<% DaftarTransaksi daftr=new DaftarTransaksi();%>
+<% List<KodeTransaksi> trans=daftr.getTransaksis(idMasjid);%>
+<% Iterator<KodeTransaksi> iterTr = trans.iterator();%>
+<% DaftarRekening dafrek=new DaftarRekening();%>
+<% List<Rekening> reks=dafrek.getRekenings(idMasjid);%>
+<% Iterator<Rekening> iterRek = reks.iterator();%>
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
     <tr> 
@@ -34,7 +44,7 @@
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>kdTrans</td><td><select name="kdTrans">
+                        <td>Kode Transaksi</td><td><select name="kdTrans">
                                 <option value="11">11 Penerimaan Zakat</option>
                                 <option value="12">12 Penerimaan Infaq/Sedekah</option>
                                 <option value="13">13 Penerimaan Lainnya</option>
