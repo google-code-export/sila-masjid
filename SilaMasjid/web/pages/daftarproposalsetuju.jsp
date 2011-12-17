@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <% DaftarProposal daftar = new DaftarProposal();%>
-<% List<Proposal> proposal = daftar.getProposalSudahs();%>
+<% List<Proposal> proposal = daftar.getProposalSudahs(idMasjid);%>
 <% Iterator<Proposal> iterator = proposal.iterator();%>
 <html>
     <body>
