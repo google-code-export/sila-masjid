@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sumurmunding
  */
-public class ProposalServlet extends HttpServlet {
+public class IndeksProposalServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,7 +31,7 @@ public class ProposalServlet extends HttpServlet {
         
        
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/daftarproposal.jsp");
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/indeksproposal.jsp");
             rdp.forward(request, response);
         } finally {
             out.close();
