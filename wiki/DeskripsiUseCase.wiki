@@ -54,6 +54,19 @@ UC Log out
 =============
 UC Lupa Password
 ===================
+UC Unggah Proposal
+==================
+UC Setujui Proposal
+===================
+UC Laporan Proposal
+===================
+UC Indeks Proposal
+==================
+UC Unggah Berita
+==================
+UC Indeks Berita
+==================
+
 Deskripsi tiap-tiap use case adalah sbb. 
 
 *UC Registrasi*
@@ -73,6 +86,13 @@ Pengguna membuka halaman depan SILA MASJID. Pengguna mengisi field email dengan 
 
 Jika salah satu dari field email dan kata sandi kosong, sistem akan menampilkan pesan "email dan kata sandi harus diisi". Jika pengguna email dan kata sandi yang dimasukkan tidak cocok dengan yang berada dalam daftar pengguna, sistem akan menampilkan pesan "email dan kata sandi tidak cocok". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". 
 
+*UC Rekam Profil masjid*
+====================
+Aktor : Pengurus Masjid (Pengguna)
+
+Pengguna berada pada halaman Utama SILA MASJID memilih menu profil masjid. Sistem menampilkan halaman profil masjid dan me-load data profil masjid pada field yang sesuai. Pengguna mengisi field nama masjid, alamat jalan, kota, dan no. telepon kemudian menekan tombol simpan. Sistem menyimpan masukan dari pengguna ke dalam daftar profil masjid dan menampilkan pesan berhasil.
+
+Jika ada salah satu field ada yang kosong, maka sistem akan menampilkan pesan "Semua field harus diisi". Jika no. telepon bukan berupa angka, sistem menampilkan pesan "No. telepon tidak valid". 
 
 *UC Ubah Profil masjid*
 ====================
@@ -87,7 +107,7 @@ Jika ada salah satu field ada yang kosong, maka sistem akan menampilkan pesan "S
 =====================
 Aktor : Pengurus Masjid (Pengguna)
 
-Pengguna berada di halaman utama kemudian memilih menu Pengurus. Sistem menampilkan halaman Pengurus Masjid. Pengguna mengisi field nama, jabatan, dan no. telepon kemudian menekan tombol Simpan. Sistem menyimpan data masukan ke dalam daftar pengurus masjid, menampilkan pesan berhasil dan menampilkan data pengurus masjid dalam daftar pengurus masjid pada halaman yang sama.
+Pengguna berada di halaman utama kemudian memilih menu Pengurus. Sistem menampilkan halaman Pengurus Masjid. Pengguna mengisi field nama, jabatan, dan no. telepon kemudian menekan tombol Simpan. Sistem menyimpan data masukan ke dalam daftar pengurus masjid, dan menampilkan pesan berhasil dan menampilkan data pengurus masjid dalam daftar pengurus masjid pada halaman yang sama.
 
 Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman pengurus masjid. Jika no. telp bukan berupa angka, sistem menampilkan pesan "No. telp harus berupa angka."
 
@@ -96,7 +116,7 @@ Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". 
 ==========================
 Aktor : Pengurus Masjid (Pengguna)
 
-Pengguna berada di halaman pengurus masjid meng-klik link Ubah pada baris pengurus yang akan diubah. Sistem memuat data pengurus tersebut pada field-field yang sesuai (nama, jabatan, no. telp). Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan perubahan data pengurus tersebut ke dalam daftar pengurus, dan menampilkan data pengurus masjid dalam daftar pengurus masjid pada halaman yang sama.
+Pengguna berada di halaman pengurus masjid meng-klik link "pilih" pada baris pengurus yang akan diubah. Sistem memuat data pengurus tersebut pada field-field yang sesuai (nama, jabatan, no. telp). Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menyimpan perubahan data pengurus tersebut ke dalam daftar pengurus, dan menampilkan data pengurus masjid dalam daftar pengurus masjid pada halaman yang sama.
 
 Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". Pengguna tetap berada di halaman pengurus masjid. Jika no. telp yang dimasukkan bukan angka, sistem menampilkan pesan "No. Telp harus angka".
 
@@ -105,37 +125,46 @@ Jika ada field yang kosong, sistem menampilkan pesan "Semua field harus diisi". 
 ============================
 Aktor : Pengurus masjid (Pengguna).
 
-Pengguna berada di halaman pengurus masjid mengklik link Hapus pada baris pengurus yang akan dihapus pada daftar pengurus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data pengurus ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data pengurus tersebut dari daftar pengurus, menampilkan pesan berhasil, dan menampilkan daftar pengurus terbaru. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. Pengguna tetap di halaman Pengurus Masjid.
+Pengguna berada di halaman Pengurus Masjid. meng-klik link *pilih* yang terdapat di sebelah paling kanan pada daftar pengurus masjid pada baris pengurus masjid yang akan dihapus. Sistem menampilkan halaman data pengurus masjid yang dipilih user yang akan dihapus. Jika Pengguna memilih tombol *Hapus*, maka sistem menghapus data pengurus masjid tersebut dan menampilkan daftar pengurus masjid setelah dilakukan penghapusan. 
+
+Alternate flow :
+  # Menu “hapus” hanya bisa digunakan apabila telah terdapat data pengurus masjid.
+  # Jika pengguna tidak menekan tombol “ok” pada saat informasi konfirmasi muncul maka system akan menampikan halaman daftar pengurus masjid tanpa ada perubahan.
+
+
 
 
 *UC Tambah Rekening*
 ========================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna berada di halaman Rekening yang berisi mengenai daftar rekening yang telah ada beserta form isian untuk menambah nomor rekening. Pengguna mengisi field “No.rek”, “nama” dan “bank”. Pengguna menekan tombol "simpan". Sistem menyimpan nomor rekening, nama pemilik rekening dan bank yang telah diinput pengguna dan dan menampilkan dan menampilkan daftar nomor rekening, nama pemilik rekening dan bank termasuk yang baru saja diinput oleh pengguna.
+Pengguna berada di halaman Rekening yang berisi mengenai daftar rekening yang telah ada beserta form isian untuk menambah nomor rekening. Pengguna mengisi field “No.rek”, “nama” dan “bank”. Pengguna menekan tombol "simpan". Sistem menyimpan nomor rekening, nama pemilik rekening dan bank yang telah diinput pengguna dan menampilkan daftar nomor rekening, nama pemilik rekening dan bank termasuk yang baru saja diinput oleh pengguna pada halaman yang sama.
 
 Alternate flow :
+  # Jika field "nomor rekening" atau "atas nama" atau "Bank" belum terisi, maka akan keluar pesan "Afwan(maaf), semua kolom harus diisi"
   # Jika pengguna memasukkan karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
-  # Jika field "nomor rekening", "nama" dan "bank" belum terisi, maka akan keluar pesan "field harus diisi". 
 
 
 *UC Ubah Rekening*
 =======================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna berada di halaman Rekening meng-klik link Ubah pada baris rekening yang akan diubah. Sistem memuat data rekening tersebut pada field-field yang sesuai pada form isian rekening. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol "Simpan". Sistem menampilkan pesan berhasil, menyimpan perubahan data rekening tersebut ke dalam daftar rekening, dan menampilkan data rekening dalam daftar rekening pada halaman yang sama.
+Pengguna berada di halaman Donatur meng-klik *pilih* yang terdapat di sebelah paling kanan pada daftar rekening pada baris rekening yang akan diubah. Sistem memuat data rekening yang dipilih user untuk diubah. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol "Simpan". Sistem langsung menyimpan perubahan data rekening tersebut ke dalam daftar rekening, dan menampilkan data rekening dalam daftar rekening pada halaman yang sama.
 
 Alternate flow :
-  # Jika pengguna memasukkam karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
-  # Jika field "nomor rekening", "nama" dan "bank" belum terisi, maka akan keluar pesan "field harus diisi". 
-
+  # Jika field "nomor rekening" atau "atas nama" atau "Bank" belum terisi, maka akan keluar pesan "Afwan(maaf), semua field harus diisi"
+  # Jika pengguna memasukkan karakter bukan angka pada field “nomor rekening” maka sistem akan menampilkan pesan “input harus angka”.
 
 
 *UC Hapus Rekening*
 ========================
 Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
-Pengguna berada di halaman Rekening. mengklik link Hapus pada baris rekening yang akan dihapus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data rekening ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data rekening tersebut dan menampilkan daftar rekening baru setelah dilakukan penghapusan.. Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. 
+Pengguna berada di halaman Rekening. meng-klik link *pilih* yang terdapat di sebelah paling kanan pada daftar rekening pada baris rekening yang akan dihapus. Sistem menampilkan halaman data rekening yang dipilih user yang akan dihapus. Jika Pengguna memilih tombol *Hapus*, maka sistem menghapus data rekening tersebut dan menampilkan daftar rekening baru setelah dilakukan penghapusan. 
+
+Alternate flow :
+  # Menu “hapus” hanya bisa digunakan apabila telah terdapat data rekening.
+  # Jika pengguna tidak menekan tombol “ok” pada saat informasi konfirmasi muncul maka system akan menampikan halaman daftar rekening tanpa ada perubahan.
 
 
 *UC Tambah Donatur*
@@ -165,12 +194,15 @@ Aktor : Pengguna SILA MASJID (Pengurus masjid)
 
 Pengguna berada di halaman Donatur. meng-klik link *pilih* yang terdapat di sebelah paling kanan pada daftar donatur pada baris donatur yang akan dihapus. Sistem menampilkan halaman data seorang donatur yang dipilih user yang akan dihapus. Jika Pengguna memilih tombol *Hapus*, maka sistem menghapus data donatur tersebut dan menampilkan daftar donatur baru setelah dilakukan penghapusan. 
 
+Alternate flow :
+  # Menu “hapus” hanya bisa digunakan apabila telah terdapat data donatur.
+  # Jika pengguna tidak menekan tombol “ok” pada saat informasi konfirmasi muncul maka system akan menampikan halaman daftar donatur tanpa ada perubahan.
 
 *UC Tambah Penerima Dana*
 =========================
 Aktor : Pengurus Masjid (Pengguna)
 
-Pengguna berada di halaman utama SILA MASJID memilih menu penerima dana. Sistem menampilkan halaman Penerima Dana yang terdiri atas form isian penerima dana dan daftar penerima dana. Pengguna mengisi field nama dengan nama penerima dana, field alamat dengan alamat penerima dana, dan field no. telepon dengan nama telepon penerima dana kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan data masukan ke dalam daftar penerima dana, dan menampilkannya ke dalam daftar penerima dana pada halaman penerima dana.
+Pengguna berada di halaman utama SILA MASJID memilih menu penerima dana. Sistem menampilkan halaman Penerima Dana yang terdiri atas form isian penerima dana dan daftar penerima dana. Pengguna mengisi field nama dengan nama penerima dana, field alamat dengan alamat penerima dana, dan field no. telepon dengan nama telepon penerima dana kemudian menekan tombol Simpan. Sistem menyimpan data masukan ke dalam daftar penerima dana, dan menampilkannya ke dalam daftar penerima dana pada halaman penerima dana.
 
 alternate flow:
 Jika field "nama", "alamat", dan "telepon" belum terisi, maka akan keluar pesan "field harus diisi". 
@@ -180,7 +212,7 @@ Jika field "nama", "alamat", dan "telepon" belum terisi, maka akan keluar pesan 
 =======================
 Aktor : Pengurus Masjid (Pengguna)
 
-Pengguna berada di halaman penerima dana meng-klik link Ubah pada baris penerima dana yang akan diubah. Sistem memuat data penerima dana tersebut pada field-field yang sesuai pada form isian penerima dana. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menampilkan pesan berhasil, menyimpan perubahan data penerima dana tersebut ke dalam daftar penerima dana, dan menampilkan data penerima dana dalam daftar penerima dana pada halaman yang sama.
+Pengguna berada di halaman penerima dana meng-klik link "pilih" pada baris penerima dana yang akan diubah. Sistem memuat data penerima dana tersebut pada field-field yang sesuai pada form isian penerima dana. Pengguna mengubah isi dari field yang akan diubah kemudian menekan tombol Simpan. Sistem menyimpan perubahan data penerima dana tersebut ke dalam daftar penerima dana, dan menampilkan data penerima dana dalam daftar penerima dana pada halaman yang sama.
 
 alternate flow:
 Jika field "nama", "alamat", dan "telepon" belum terisi, maka akan keluar pesan "field harus diisi"
@@ -190,17 +222,21 @@ Jika field "nama", "alamat", dan "telepon" belum terisi, maka akan keluar pesan 
 ========================
 Aktor : Pengurus Masjid (Pengguna)
 
-Pengguna berada di halaman penerima dana. mengklik link Hapus pada baris penerima dana yang akan dihapus. Sistem menampilkan pesan "Apakah Anda yakin akan menghapus data penerima dana ini?". Jika Pengguna memilih tombol OK, maka sistem menghapus data penerima dana tersebut dan menampilkan daftar penerima dana baru setelah dilakukan penghapusan.  Jika pengguna memilih tombol Batal, maka sistem tidak melakukan apapun. 
+Pengguna berada pada halaman daftar penerima dana. Pengguna menekan tombol "pilih" pada salah satu nama penerima dana yang akan dihapus. Sistem menampilkan penerima dana beserta tombol "hapus". Pengguna menekan tombol "hapus" untuk menghapus data penerima dana. Sistem menampilkan pesan konfirmasi "apakah anda akan menghapus penerima danaini?". Pengguna menekan tombol "ok". Sistem menampilkan halaman daftar penerima dana.
+
+Alternate flow :
+  # Menu “hapus” hanya bisa digunakan apabila telah terdapat data penerima dana.
+  # Jika pengguna tidak menekan tombol “ok” pada saat informasi konfirmasi muncul maka system akan menampikan halaman daftar kode transaksi tanpa ada perubahan.
 
 
 *UC Rekam Kode transaksi*
 ==============================
 Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)
 
-Pengguna berada pada halaman depan SILA Masjid. Pengguna melakukan login. Pengguna memilih menu Kode Transaksi yang ada pada halaman utama SILA Masjid. Sistem menampilkan halaman Rekam Kode Transaksi. Pengguna memilih kode golongan dan kelompok. Pengguna mengisi field kode transaksi dan nama transaksi. Pengguna menekan tombol “Simpan”. Sistem menampilkan daftar kode transaksi termasuk kode yang baru saja dimasukkan oleh pengguna.
+Pengguna berada pada halaman depan SILA Masjid. Pengguna melakukan login. Pengguna memilih menu Kode Transaksi yang ada pada halaman utama SILA Masjid. Sistem menampilkan halaman Rekam Kode Transaksi. Pengguna memilih Kelompok, mengisi field No. Urut dan nama transaksi. Pengguna menekan tombol “Simpan”. Sistem menampilkan daftar kode transaksi termasuk kode yang baru saja dimasukkan oleh pengguna.
 
 Alternate flow :
-  # Jika field "kode transaksi" belum terisi, maka akan keluar pesan "silahkan isi kode transaksi".
+  # Jika field "No. Urut" belum terisi, maka akan keluar pesan "silahkan isi No. Urut".
   # Jika field "nama transaksi" belum terisi, maka akan keluar pesan "silahkan isi nama transaksi".
   # Jika pengguna tidak menekan tombol simpan maka system akan menampilkan halaman daftar kode transaksi tanpa ada perubahan.
   
@@ -209,23 +245,23 @@ Alternate flow :
 =============================
 Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)
 
-Pengguna berada pada halaman daftar kode transaksi. Pengguna menekan tombol "ubah" pada salah satu kode transaksi yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan kode dan nama transaksi. Pengguna memilih kode golongan dan kelompok. Pengguna mengubah kode transaksi dan nama transaksi. Pengguna menekan tombol "ubah". Sistem menyimpan kode dan nama transaksi yang telah diubah pengguna dan menampilkan daftar kode serta nama transaksi termasuk yang baru saja diubah oleh pengguna. 
+Pengguna berada pada halaman daftar kode transaksi. Pengguna menekan tombol "pilih" pada salah satu kode transaksi yang akan diubah. Sistem menampilkan halaman yang berisi mengenai kegiatan pengubahan kode dan nama transaksi. Pengguna memilih kelompok dan No. Urut. Pengguna mengubah kode transaksi dan nama transaksi. Pengguna menekan tombol "simpan". Sistem menyimpan kode dan nama transaksi yang telah diubah pengguna dan menampilkan daftar kode serta nama transaksi termasuk yang baru saja diubah oleh pengguna. 
 
 Alternate flow :
-  # Menu “ubah” hanya bisa digunakan apabila telah terdapat data kode transaksi.
-  # Jika field "kode transaksi" belum terisi, maka akan keluar pesan "silahkan isi kode transaksi".
-  # Jika field "nama transaksi" belum terisi, maka akan keluar pesan "silahkan isi nama transaksi".
-  # Jika pengguna tidak menekan tombol “ubah” maka system akan menampilkan halaman kode dan nama transaksi tanpa perubahan.
+  # Menu “edit” hanya bisa digunakan apabila telah terdapat data kode transaksi.
+  # Jika field "No. Urut" belum terisi, maka akan keluar pesan "silahkan isi Nomor Urut".
+    # Jika field "nama transaksi" belum terisi, maka akan keluar pesan "silahkan isi nama transaksi".
+  # Jika pengguna tidak menekan tombol “simpan” maka system akan menampilkan halaman kode dan nama transaksi tanpa perubahan.
 
 *UC Hapus Kode transaksi*
 ==============================
 Aktor : Pengguna SILA MASJID (Admin dan Pengurus masjid)  
 
-Pengguna berada pada halaman daftar kode transaksi. Pengguna menekan tombol "hapus" pada salah satu kode transaksi yang akan dihapus. Sistem menampilkan pesan konfirmasi berupa "Apakah Anda yakin akan menghapus kode transaksi ini?". Pengguna menekan tombol "ok" pada pesan konfirmasi. Sistem menampilkan daftar kode transaksi. 
+Pengguna berada pada halaman daftar kode transaksi. Pengguna menekan tombol "pilih" pada salah satu kode transaksi yang akan dihapus. Sistem menampilkan kode transaksi beserta tombol "hapus". Pengguna menekan tombol "hapus" untuk menghapus data kode transaksi. Sistem menampilkan pesan konfirmasi "apakah anda akan menghapus kode transaksi ini?". Pengguna menekan tombol "ok". Sistem menampilkan halaman daftar kode transaksi.
 
 Alternate flow :
   # Menu “hapus” hanya bisa digunakan apabila telah terdapat data kode transaksi.
-  # Jika pengguna tidak menekan tombol “ok” pada saat infromasi konfirmasi muncul maka system akan menampikan halaman daftar kode transaksi tanpa ada perubahan.
+  # Jika pengguna tidak menekan tombol “ok” pada saat informasi konfirmasi muncul maka system akan menampikan halaman daftar kode transaksi tanpa ada perubahan.
 
 
 *UC Transaksi penerimaan*
@@ -261,30 +297,45 @@ Alternate flow :
   * Jika pada tanggal yang dipilih tidak ada laporan keuangan yang dikeluarkan masjid, maka sistem akan menampilkan pesan "Maaf, tidak ada laporan keuangan yang dapat ditampilkan pada tanggal tersebut".
 
 
-*UC Daftar lokasi masjid (user : pengunjung)*
-===================================================
-Aktor : Pengunjung SILA MASJID 
-
-Deskripsi :
-Use case ini digunakan bagi pengunjung yang ingin melihat lokasi masjid yang ada.
-
-normal flow :
-  Pengunjung berada pada halaman depan SILA MASJID. Pengunjung memilih menu Daftar Lokasi Masjid pada halaman depan SILA MASJID. Sistem menampilkan halaman Daftar Lokasi Masjid. Pengunjung mengisikan nama masjid pada field pencarian masjid. Sistem menampilkan data masjid beserta peta lokasi menggunakan google map.
-	
-Alternate flow :
-  * Jika Nama Masjid yang dimasukkan oleh pengunjung ke dalam kolom "Cari Masjid" tidak ada, maka sistem akan menampilkan pesan "Maaf, untuk saat ini nama Masjid yang Anda cari belum terdaftar dalam database kami. Terima kasih".
-
-  * Jika field pencarian masjid kosong, system akan menampilkan pesan “Silahkan ketikkan nama masjid yang akan dicari”.
-  
 *UC Log out*
 ===============
 Aktor : Administrator dan Pengurus Masjid (pengguna).
 
-Pengguna berada di halaman utama SILA MASJID. Pengguna menekan link "Keluar". Pengguna keluar dari SILA MASJID. Sistem menampilkan halaman depan SILA MASJID. 
+Pengguna berada di halaman utama SILA MASJID. Pengguna menekan link "Log Out". Pengguna keluar dari SILA MASJID. Sistem menampilkan halaman depan SILA MASJID. 
+
+*UC Unggah Proposal*
+===================
+Aktor : Pengunjung SILA MASJID
+
+Pengunjung berada di halaman depan SILA MASJID dan memilih menu unggah proposal. Sistem menampilkan halaman Unggah Proposal yang terdapat form pengisian Unggah Proposal yang terdiri dari field nama, alamat, telepon, email, besar dana, judul, dan detail proposal. Pengunjung mengisi field-field tersebut kemudian menekan tombol "unggah". Sistem menyimpan data inputan dari pengunjung tersebut.
+
+Alternate flow :
+  # Jika field nama atau field yang lainnya belum terisi, maka akan muncul peringatan "Afwan, proposal gagal diunggah, semua kolom harus diisi".
+  # Jika field email salah formatnya maka akan muncul peringatan "Afwan, proposal gagal diunggah, format email salah".
+  # Jika field nomor telepon tidak berupa angka maka akan muncul peringatan "Afwan, proposal gagal diunggah, nomor telepon harus berupa angka".
+  # Jika field besar dana tidak berupa angka maka akan muncul peringatan "Afwan, proposal gagal diunggah, besar dana harus berupa angka".
 
 
-*UC Lupa Password*
-=====================
-Aktor : pengurus masjid (pengguna).
+*UC Setujui Proposal*
+===================
+Aktor : Pengguna SILA MASJID
 
-Pengguna berada di halaman depan SILA MASJID menekan link Lupa Password. Sistem menampilkan halaman Reset Password. Pengguna mengisi field email dengan email pengguna tersebut kemudian mengklik tombol Reset Password. Sistem mengubah kata sandi pengguna tersebut yang ada dalam daftar pengguna kemudian menyimpannya ke dalam daftar pengguna dan mengirimkannya ke alamat email dimaksud. Jika field email kosong, sistem menampilkan pesan "Email harus diisi". 
+
+*UC Laporan Proposal*
+===================
+Aktor : Pengguna SILA MASJID
+
+
+*UC Indeks Proposal*
+===================
+Aktor : Pengunjung SILA MASJID
+
+
+*UC Unggah Berita*
+===================
+Aktor : Pengguna SILA MASJID
+
+
+*UC Indeks Berita*
+===================
+Aktor : Pengunjung SILA MASJID
