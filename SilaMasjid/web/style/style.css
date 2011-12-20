@@ -16,7 +16,7 @@ root {
 }
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: small;
+	font-size: x-small;
 	color: #4E4E4E;
 	background-color: #F1F1F1;
 	margin: 4px;
@@ -33,7 +33,7 @@ body {
 }
 table {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: small;
+	font-size: x-small;
 	color: #727272;
 }
 th {
@@ -41,19 +41,19 @@ th {
 }
 input {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: small;
+	font-size: x-small;
 	color: #585858;
 	background-color: #F4F4F4;
 	border: 1px solid #969696;
 }
 button {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: small;
+	font-size: x-small;
 	border: 1px solid #969696;
 }
 select {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: small;
+	font-size: x-small;
 	color: #585858;
 	background-color: #F4F4F4;
 	border: 1px solid #969696;
