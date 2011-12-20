@@ -9,6 +9,7 @@ import entities.PenerimaDana;
 import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -50,19 +51,31 @@ public class InputPenerimaDanaServlet extends HttpServlet {
         DaftarPenerimaDana daftar = new DaftarPenerimaDana();
         PenerimaDana pendan = new PenerimaDana();
         
+        
+        if (nmPenDan.isEmpty() || almtPenDan.isEmpty() || notelpPenDan.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("errorpendan", "Afwan, data penerima dana gagal disimpan. Semua kolom harus diisi. ");
+            RequestDispatcher rdp = request.getRequestDispatcher("penerimadana");
+            rdp.forward(request, response);
+
+        } else if (!notelpPenDan.matches("[0-9]*")) { //validasi input telepon harus angka
+            request.setAttribute("errorpendan", "Afwan, data penerima dana gagal disimpan. Nomor telepon harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("penerimadana");
+            rdp.forward(request, response);
+
+        } else {
         pendan.setIdMasjid(idMasjid);
         pendan.setNmPenDan(nmPenDan);
         pendan.setAlmtPenDan(almtPenDan);
         pendan.setNotelpPenDan(notelpPenDan);
                 
-        if (daftar.check(id)==false)
-        {
-            daftar.addPenerimaDana(pendan);
+       // if (daftar.check(id)==false)
+        //{
+        daftar.addPenerimaDana(pendan);
         }
-        else
-        {
-            daftar.editPenerimaDana(pendan);
-        }        
+        //else
+        //{
+          //  daftar.editPenerimaDana(pendan);
+        //}        
         try {
             response.sendRedirect("penerimadana");
             /* TODO output your page here
