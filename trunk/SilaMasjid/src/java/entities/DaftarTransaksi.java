@@ -79,6 +79,20 @@ public class DaftarTransaksi implements Serializable {
         }
         return transaksis;
     }
+    public List<Transaksi> getTerima(Long idMasjid) {
+        List<Transaksi> transaksis = new ArrayList<Transaksi>();
+
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and kdTrans like '1%' ORDER BY o.kdTrans");
+            q.setParameter("idMasjid", idMasjid);
+            transaksis = q.getResultList();
+
+        } finally {
+            em.close();
+        }
+        return transaksis;
+    }
 
     public void editTransaksi(Transaksi transaksi) {
         EntityManager em = getEntityManager();

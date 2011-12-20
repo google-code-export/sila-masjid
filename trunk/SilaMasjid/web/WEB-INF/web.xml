@@ -174,7 +174,7 @@
     </servlet>
     <servlet>
         <servlet-name>IndeksProposalServlet</servlet-name>
-        <servlet-class>IndeksProposalServlet</servlet-class>
+        <servlet-class>servlets.IndeksProposalServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
