@@ -45,9 +45,10 @@
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td>Kode Transaksi</td><td><select name="kdTrans">
-                                <option value="11">11 Penerimaan Zakat</option>
-                                <option value="12">12 Penerimaan Infaq/Sedekah</option>
-                                <option value="13">13 Penerimaan Lainnya</option>
+                                <% while (iterator.hasNext()){%>
+                                   <% KodeTransaksi next = iterator.next();%>
+                                <option value=<%=next.getKdTrans()%>><%=next.getKdTrans()+' '+next.getNmTrans()%></option>
+                                <%}%>
                             </select></td>
                     </tr>
                     <tr>
