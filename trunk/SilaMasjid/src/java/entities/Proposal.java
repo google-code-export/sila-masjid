@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -34,7 +35,17 @@ public class Proposal implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglSetuju;
     private boolean setuju;
-    private Long idMasjid;
+    @ManyToOne
+    private Masjid masjid;
+
+    public Masjid getMasjid() {
+        return masjid;
+    }
+
+    public void setMasjid(Masjid masjid) {
+        this.masjid = masjid;
+    }
+   private Long idMasjid; 
 
     public Long getIdMasjid() {
         return idMasjid;
