@@ -75,7 +75,7 @@ Aktor : Pengurus Masjid (Pengguna)
 
 Pengguna membuka halaman depan SILA MASJID. Setelah itu, Pengguna meng-klik link "Daftar". Sistem menampilkan halaman pendaftaran pengguna baru. Pengguna mengisi field alamat email dengan email pengguna, field kata sandi dengan kata sandi yang sandi, dan field konfirmasi kata sandi dengan kata sandi sama dengan yang diisikan pada field kata sandi. Pengguna kemudian menekan tombol daftar. Sistem menyimpan data masukan dari pengguna ke dalam daftar pengguna dan mengirimkan notifikasi pendaftaran ke email yang digunakan pengguna. Pengguna diarahkan menuju halaman utama SILA MASJID.
 
-Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field harus diisi". Jika email yang digunakan sudah berada dalam daftar pengguna, maka sistem menampilkan pesan "Email ini sudah terdaftar". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak sama".
+Jika ada salah satu dari ketiga field kosong, sistem menalpilkan pesan "Field harus diisi". Jika email yang digunakan sudah berada dalam daftar pengguna, maka sistem menampilkan pesan "Email ini sudah terdaftar". Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit". Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak sama".
 		
 
 *UC Login*
@@ -320,22 +320,35 @@ Alternate flow :
 ===================
 Aktor : Pengguna SILA MASJID
 
+Pengguna berada pada halaman depan aplikasi, kemudian pengguna melakukan login. Pengguna memilih salah satu menu yaitu setujui proposal. Sistem menampilkan halaman persetujuan masjid. Pengguna men-ceklist semua proposal yang akan disetujui, kemudian menekan tombol "setujui". Sistem menyimpan proposal yang telah disetujui.
+
+Alternate flow :
+Jika pengguna belum men-ceklist salah satu proposal yang akan disetujui, maka ketika pengguna menekan tombol "setujui" akan keluar pesan "Anda belum memilih proposal yang akan disetujui"
 
 *UC Laporan Proposal*
 ===================
 Aktor : Pengguna SILA MASJID
 
+Pengguna berada pada halaman utama setelah melakukan login terlebih dahulu. Pengguna memilih menu persetujuan proposal untuk melihat laporan proposal yang telah disetujui. Sistem menampilkan sejumlah proposal yang telah disetujui.
 
 *UC Indeks Proposal*
 ===================
 Aktor : Pengunjung SILA MASJID
 
+Pengunjung berada pada halaman depan aplikasi kemudian memilih salah satu menu yaitu indeks proposal. Sistem menampilkan daftar dari semua proposal baik dengan status belum atau telah disetujui. Pengunjung mengklik Judul Proposal untuk mengetahui detail proposal yang diajukan. Sistem menampilkan detail proposal yang dipilih pengunjung.
 
 *UC Unggah Berita*
 ===================
 Aktor : Pengguna SILA MASJID
 
+Pengguna berada di halaman depan SILA MASJID dan melakukan login. Pengguna memilih menu mengunggah berita. sistem menampilkan halaman untuk mengunggah berita yang terdiri dari field judul dan isi berita. Pengguna mengisi field-field yang ada. Sistem menyimpan hasil inputan pengguna dan menampilkan halaman utama aplikasi.
 
+Alternate flow :
+Jika field judul dan isi berita belum terisi, maka akan muncul peringatan "Afwan, berita gagal diunggah, semua kolom harus diisi".
+  
+  
 *UC Indeks Berita*
 ===================
 Aktor : Pengunjung SILA MASJID
+
+Pengunjung berada pada halaman depan aplikasi. Pengunjung memilih menu indeks berita. Sistem menampilkan daftar berita. Pengunjung memilih salah satu judul berita yang akan dilihat detailnya. Sistem menampilkan detail berita yang dipilih pengunjung.
