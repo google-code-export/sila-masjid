@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <% DaftarKodeTransaksi dafkd=new DaftarKodeTransaksi();%>
-<% List<KodeTransaksi> kdtrans=dafkd.getKodeTransaksis(idMasjid);%>
+<% List<KodeTransaksi> kdtrans=dafkd.getKodeTerimas(idMasjid);%>
 <% Iterator<KodeTransaksi> iterator = kdtrans.iterator();%>
 <% DaftarTransaksi daftr=new DaftarTransaksi();%>
 <% List<KodeTransaksi> trans=daftr.getTransaksis(idMasjid);%>

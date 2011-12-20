@@ -16,7 +16,7 @@ root {
 }
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: xx-small;
+	font-size: small;
 	color: #4E4E4E;
 	background-color: #F1F1F1;
 	margin: 4px;
@@ -33,7 +33,7 @@ body {
 }
 table {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: xx-small;
+	font-size: small;
 	color: #727272;
 }
 th {
@@ -41,19 +41,19 @@ th {
 }
 input {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: xx-small;
+	font-size: small;
 	color: #585858;
 	background-color: #F4F4F4;
 	border: 1px solid #969696;
 }
 button {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: xx-small;
+	font-size: small;
 	border: 1px solid #969696;
 }
 select {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: xx-small;
+	font-size: small;
 	color: #585858;
 	background-color: #F4F4F4;
 	border: 1px solid #969696;
@@ -62,17 +62,20 @@ select {
 	background-image: url(../images/main_content_header.gif);
 	background-repeat: no-repeat;
 	background-position: left;
+        background-size:100%;
 }
 .mctop {
 	background-image: url(../images/mc_bg_top.gif);
 	background-repeat: no-repeat;
 	background-position: left top;
+        background-size:100%;
 }
 .mcbg {
 	background-image: url(../images/mc_main_bg.gif);
 	background-repeat: repeat-y;
 	background-position: left;
 	padding-top: -20px;
+        background-size:100%;
 }
 a:link {
 	color: #727272;
