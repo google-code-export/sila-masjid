@@ -23,10 +23,10 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <%--JUDUL DI SINI--%>
-    <td width="452" height="32" class="contentheader"><div align="center"><b>INDEKS PROPOSAL</b></div></td>
+    <td width="700" height="32" class="contentheader"><div align="center"><b>INDEKS PROPOSAL</b></div></td>
 </tr>
 <tr> 
-    <td><img src="images/main_content_header_under.gif" width="452" height="26"></td>
+    <td><img src="images/main_content_header_under.gif" width="700" height="26"></td>
 </tr>
 <tr> 
     <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
@@ -68,7 +68,7 @@ and open the template in the editor.
         </table></td>
 </tr>
 <tr> 
-    <td class="mctop"><img src="images/mc_box_bottom.gif" alt="-" width="452" height="23"></td>
+    <td class="mctop"><img src="images/mc_box_bottom.gif" alt="-" width="700" height="23"></td>
 </tr>
 </table>
 <!-- COPYRIGHT - WWW.ZYMIC.COM - IF YOU REMOVE COPYRIGHT LEGAL ACTION WILL BE TAKEN -->
