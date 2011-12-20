@@ -33,24 +33,25 @@ and open the template in the editor.
             <%--ISI MULAI DI SINI--%>
             <form action="" method="post">
                 <tr>
-                    <td width="10%">&nbsp;</td>
-                    <th width="20%" align="left">Pengunggah</th>
+                    <td width="5%">&nbsp;</td>
+                    <th width="15%" align="left">Pengunggah</th>
                     <th width="20%" align="left">Judul Proposal</th>
-                    <th width="20%" align="left">Besar Dana</th>
-                    <th width="20%" align="left">Tgl Unggah</th>
+                    <th width="15%" align="left">Besar Dana</th>
+                    <th width="15%" align="left">Tgl Unggah</th>
                     <th width="10%" align="left">Status</th>
+                    <th width="20%" align="left">Masjid</th>
 
                 </tr>
 
                 <% while (iterator.hasNext()) {%>
                 <% Proposal next = iterator.next();%>
                 <tr>
-                    <td width="10%">&nbsp;</td>
-                    <td width="20%"><%=next.getNama()%></td>
-                    <td width="20%"><a href="detailproposal?id=<%=next.getId()%>" ><font color="blue"><%=next.getJudul()%></font></a></td>
-                    <td width="20%"><%=next.getBesarDana()%></td>
+                    <td width="5%">&nbsp;</td>
+                    <td width="15%" align="left"><%=next.getNama()%></td>
+                    <td width="20%" align="left"><%=next.getJudul()%></td>
+                    <td width="15%" align="left"><%=next.getBesarDana()%></td>
                     <% Date tgl = (Date) next.getTglUnggah();%>
-                    <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
+                    <td width="15%" align="left"><%=DateFormat.getDateInstance().format(tgl)%></td>
                     <% boolean status = next.isSetuju();
                         String ketStatus = "";
                         if (status == true) {
@@ -59,7 +60,8 @@ and open the template in the editor.
                             ketStatus = "-";
                         }%>
 
-                    <td width="10%" align="center"><%=ketStatus%></td>
+                    <td width="10%" align="left"><%=ketStatus%></td>
+                    <td width="20%" align="left"><%=next.getMasjid().getNmMasjid()%></td>
                 </tr>
                 <%}%>     
                 <tr><td>&nbsp;</td></tr>

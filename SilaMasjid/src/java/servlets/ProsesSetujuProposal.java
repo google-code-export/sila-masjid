@@ -5,6 +5,7 @@
 package servlets;
 
 import entities.DaftarProposal;
+import entities.DaftarMasjid;
 import entities.Masjid;
 import entities.Proposal;
 import java.io.IOException;
@@ -55,9 +56,10 @@ public class ProsesSetujuProposal extends HttpServlet {
                     Proposal proposal = daftar.getProposal(id);
                     Date tglSetuju = new Date(new java.util.Date().getTime());
 
-                    proposal.setIdMasjid(idMasjid);
+        //            proposal.setIdMasjid(idMasjid);
                     proposal.setTglSetuju(tglSetuju);
                     proposal.setSetuju(true);
+                    proposal.setMasjid(masjid);
                     daftar.editProposal(proposal);
                 }
                 jsp = "pages/daftarproposal.jsp";
