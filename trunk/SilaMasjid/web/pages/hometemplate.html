@@ -2,6 +2,7 @@
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +23,8 @@ and open the template in the editor.
                     </table></td>
             </tr>
             <tr> 
-                <td><img src="images/header.gif" alt="header" width="900" height="145"></td>
+                <td><img src="images/header.gif" alt="header" width="900" height="145"><b><font color="blue"><%=new Utilitas.Kalender().getTanggal() %></font></b></td>
+                                        
             </tr>
             <tr> 
                 <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -39,6 +41,7 @@ and open the template in the editor.
                 <td width="200" valign="top"><table border="0" cellspacing="0" cellpadding="0">
                         <tr> 
                             <td><img src="images/pipe_bg.gif" alt="-" width="28" height="5"></td>
+                           
                         </tr>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="0" class="lcum">
@@ -70,7 +73,7 @@ and open the template in the editor.
                                         <td width="66%" bgcolor="#F4F4F4"><a href="contact">Kontak Kami</a></td>
                                         <td width="11%">&nbsp;</td>
                                     </tr>
-                                    
+
                                     <tr> 
                                         <td width="15%">&nbsp;</td>
                                         <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
@@ -142,7 +145,7 @@ and open the template in the editor.
                                 </td>
                             </tr>
                             <td align="center">
-                            <label align="center"> <font color="red"><b>${errorLogin}</b></font> </label>
+                                <label align="center"> <font color="red"><b>${errorLogin}</b></font> </label>
                             </td>
                         </form>
                         <tr>
