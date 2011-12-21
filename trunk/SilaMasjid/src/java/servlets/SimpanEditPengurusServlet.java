@@ -57,7 +57,7 @@ public class SimpanEditPengurusServlet extends HttpServlet {
 
         if (nama.isEmpty() || jabatan.isEmpty() || noTelp.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("errorpengurus", "Afwan, data pengurus gagal disimpan. Semua kolom harus diisi. ");
-            RequestDispatcher rdp = request.getRequestDispatcher("pengurus");
+            RequestDispatcher rdp = request.getRequestDispatcher("editpengurus");
             rdp.forward(request, response);
 
         } else if (!noTelp.matches("[0-9]*")) { //validasi input telepon harus angka

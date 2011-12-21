@@ -46,12 +46,12 @@ public class SimpanEditPenerimaDanaServlet extends HttpServlet {
         
         if (nmPenDan.isEmpty() || almtPenDan.isEmpty() || notelpPenDan.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("errorpendan", "Afwan, data penerima dana gagal disimpan. Semua kolom harus diisi. ");
-            RequestDispatcher rdp = request.getRequestDispatcher("editpenerimadana");
+            RequestDispatcher rdp = request.getRequestDispatcher("penerimadana");
             rdp.forward(request, response);
 
         } else if (!notelpPenDan.matches("[0-9]*")) { //validasi input nomor telepon harus angka
             request.setAttribute("errorpendan", "Afwan, data penerima dana gagal disimpan. Nomor telepon harus berupa angka.");
-            RequestDispatcher rdp = request.getRequestDispatcher("editpenerimadana");
+            RequestDispatcher rdp = request.getRequestDispatcher("penerimadana");
             rdp.forward(request, response);
 
         } else {
@@ -59,7 +59,7 @@ public class SimpanEditPenerimaDanaServlet extends HttpServlet {
             pendan.setAlmtPenDan(almtPenDan);
             pendan.setNotelpPenDan(notelpPenDan);
             daftar.editPenerimaDana(pendan);
-            response.sendRedirect("simpan_edit_penerimadana");
+            response.sendRedirect("penerimadana");
         }        
         try {
             /* TODO output your page here
