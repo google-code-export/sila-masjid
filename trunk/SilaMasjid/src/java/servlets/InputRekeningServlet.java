@@ -9,6 +9,7 @@ import entities.Rekening;
 import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,42 +33,58 @@ public class InputRekeningServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        HttpSession session = request.getSession(); 
+
+        HttpSession session = request.getSession();
         Masjid masjid = (Masjid) session.getAttribute("loged");
-        Long idMasjid=masjid.getId();
-        
-        Long id = null;
-        if (request.getParameter("id")!=null)
+        Long idMasjid = masjid.getId();
+
+       // Long id = null;
+      //  id = Long.parseLong(request.getParameter("id"));
+
+        /*if (request.getParameter("id")!=null)
         {
-            id=Long.parseLong(request.getParameter("id"));
-        }
-        
-        String noRek=request.getParameter("noRek");
-        String nmRek=request.getParameter("nmRek");
-        String bank=request.getParameter("bank");
-        
-        DaftarRekening daftar = new DaftarRekening();
-        Rekening rek = new Rekening();
-        
-        rek.setIdMasjid(idMasjid);
-        rek.setNoRek(noRek);
-        rek.setNmRek(nmRek);
-        rek.setBank(bank);
-        
-        if (daftar.check(id)==false)
-        {
+        id=Long.parseLong(request.getParameter("id"));
+        }*/
+
+        String noRek = request.getParameter("noRek");
+        String nmRek = request.getParameter("nmRek");
+        String bank = request.getParameter("bank");
+
+        if (noRek.isEmpty() || nmRek.isEmpty() || bank.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("errorrekening", "Afwan, data rekening gagal disimpan. Semua kolom harus diisi. ");
+            RequestDispatcher rdp = request.getRequestDispatcher("rekening");
+            rdp.forward(request, response);
+
+        } else if (!noRek.matches("[0-9]*")) { //validasi input telepon harus angka
+            request.setAttribute("errorrekening", "Afwan, data rekening gagal disimpan. Nomor rekening harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("rekening");
+            rdp.forward(request, response);
+
+        } else {
+
+            DaftarRekening daftar = new DaftarRekening();
+            Rekening rek = new Rekening();
+
+            rek.setIdMasjid(idMasjid);
+            rek.setNoRek(noRek);
+            rek.setNmRek(nmRek);
+            rek.setBank(bank);
+
             daftar.addRekening(rek);
+        }
+        /*if (daftar.check(id)==false)
+        {
+        daftar.addRekening(rek);
         }
         else
         {
-            daftar.editRekening(rek);
-        } 
-        
+        daftar.editRekening(rek);
+        } */
+
         try {
-           response.sendRedirect("rekening");
-     
-        } finally {            
+            response.sendRedirect("rekening");
+
+        } finally {
             out.close();
         }
     }
