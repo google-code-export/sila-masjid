@@ -66,7 +66,8 @@
                     <input type="reset" value="Reset"></td>
                   <td>&nbsp;</td>
                 </tr>
-                <tr>
+                <tr><td colspan="6" align="center"><label align="center"><font color="red"><b>${errorrekening}</b></font></label></td></tr>
+                    <tr>
                   <td height="20">&nbsp;</td>
                   <td>&nbsp;</td>
                 </tr>
@@ -87,7 +88,7 @@
                 <td align="left"><%=next.getNoRek()%></td>
                 <td colspan="2" align="left"><%=next.getNmRek()%></td>
                 <td align="center"><%=next.getBank()%></td>
-                <td align="center" bgcolor="#F4F4F4"><a href="editrekening?id=<%=next.getId() %>"><font color="brown">edit</font></a></td>
+                <td align="center" bgcolor="#F4F4F4"><a href="editrekening?id=<%=next.getId() %>"><font color="brown">pilih</font></a></td>
                 <td bgcolor="#F4F4F4">&nbsp;</td>
               </tr>
               <%}%>
