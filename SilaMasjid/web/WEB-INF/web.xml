@@ -180,6 +180,10 @@
         <servlet-name>TerimaServlet</servlet-name>
         <servlet-class>servlets.TerimaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SimpanTerimaServlet</servlet-name>
+        <servlet-class>servlets.SimpanTerimaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -359,6 +363,10 @@
     <servlet-mapping>
         <servlet-name>TerimaServlet</servlet-name>
         <url-pattern>/terima</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanTerimaServlet</servlet-name>
+        <url-pattern>/simpan_terima</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
