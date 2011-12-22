@@ -84,7 +84,7 @@ public class DaftarTransaksi implements Serializable {
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and kdTrans like '1%' ORDER BY o.kdTrans");
+            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and o.kdTrans like '1%' ORDER BY o.kdTrans");
             q.setParameter("idMasjid", idMasjid);
             transaksis = q.getResultList();
 
