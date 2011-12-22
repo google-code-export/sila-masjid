@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("idMasjid", masjid.getId());
             session.setAttribute("loged", masjid);
-            session.setAttribute("nmMasjid",masjid.getEmail()+'/'+masjid.getNmMasjid());
+            session.setAttribute("nmMasjid",masjid.getEmail()+'('+masjid.getNmMasjid()+')');
 
             RequestDispatcher rdp = request.getRequestDispatcher("pages/aplikasi.jsp");
             rdp.forward(request, response);

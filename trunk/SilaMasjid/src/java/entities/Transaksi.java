@@ -27,43 +27,48 @@ public class Transaksi implements Serializable {
     private Long id;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglTran;
-    private Long idTran;
-    private String kdTrans;
-    private Long idRek;
     private Long idMasjid;
     private String kasBank;
     private Double jmlTran;
     private String ket;
     private String flag;
-    /*@ManyToOne
-    @JoinColumn(name = "kdTrans")
-    private KodeTransaksi nmTran;
     @ManyToOne
-    @JoinColumn(name = "idRek")
-    private Rekening nmRek;*/
+    private KodeTransaksi tran;
+    @ManyToOne
+    private Rekening rek;
+    @ManyToOne
+    private Donatur don;
+
+    public Donatur getDon() {
+        return don;
+    }
+
+    public void setDon(Donatur don) {
+        this.don = don;
+    }
 
     public Long getIdMasjid() {
         return idMasjid;
     }
 
+    public Rekening getRek() {
+        return rek;
+    }
+
+    public void setRek(Rekening rek) {
+        this.rek = rek;
+    }
+
+    public KodeTransaksi getTran() {
+        return tran;
+    }
+
+    public void setTran(KodeTransaksi tran) {
+        this.tran = tran;
+    }
+
     public void setIdMasjid(Long idMasjid) {
         this.idMasjid = idMasjid;
-    }
-
-    public Long getIdRek() {
-        return idRek;
-    }
-
-    public void setIdRek(Long idRek) {
-        this.idRek = idRek;
-    }
-
-    public Long getIdTran() {
-        return idTran;
-    }
-
-    public void setIdTran(Long idTran) {
-        this.idTran = idTran;
     }
 
     public String getFlag() {

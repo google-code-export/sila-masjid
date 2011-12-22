@@ -70,7 +70,7 @@ public class DaftarTransaksi implements Serializable {
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid ORDER BY o.kdTrans");
+            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid");
             q.setParameter("idMasjid", idMasjid);
             transaksis = q.getResultList();
 
@@ -79,13 +79,14 @@ public class DaftarTransaksi implements Serializable {
         }
         return transaksis;
     }
-    public List<Transaksi> getTerima(Long idMasjid) {
+    public List<Transaksi> getTrmKlr(Long idMasjid,String flag) {
         List<Transaksi> transaksis = new ArrayList<Transaksi>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and o.kdTrans like '1%' ORDER BY o.kdTrans");
+            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and o.flag=:flag ORDER BY o.tglTran desc");
             q.setParameter("idMasjid", idMasjid);
+            q.setParameter("flag", flag);
             transaksis = q.getResultList();
 
         } finally {
