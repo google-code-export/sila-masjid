@@ -11,20 +11,33 @@
 <%@page import="entities.Transaksi"%>
 <%@page import="entities.DaftarRekening"%>
 <%@page import="entities.Rekening"%>
+<%@page import="entities.DaftarDonatur"%>
+<%@page import="entities.Donatur"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
+<%-- for dropdown kode transaksi--%>
 <% DaftarKodeTransaksi dafkd=new DaftarKodeTransaksi();%>
 <% List<KodeTransaksi> kdtrans=dafkd.getKodeTerimas(idMasjid);%>
 <% Iterator<KodeTransaksi> iterator = kdtrans.iterator();%>
+
+<%-- for list of transaksi--%>
 <% DaftarTransaksi daftr=new DaftarTransaksi();%>
 <% List<Transaksi> trans=daftr.getTransaksis(idMasjid);%>
 <% Iterator<Transaksi> iterTr = trans.iterator();%>
+
+<%-- for dropdown kode rekening--%>
 <% DaftarRekening dafrek=new DaftarRekening();%>
 <% List<Rekening> reks=dafrek.getRekenings(idMasjid);%>
 <% Iterator<Rekening> iterRek = reks.iterator();%>
+
+<%-- for dropdown kode donatur--%>
+<% DaftarDonatur dafDon=new DaftarDonatur();%>
+<% List<Donatur> dons=dafDon.getDonaturs(idMasjid);%>
+<% Iterator<Donatur> iterDon = dons.iterator();%>
+
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
     <tr> 
@@ -40,30 +53,36 @@
                 <form action="simpan_terima" method="post" >
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td >Tanggal</td><td><input type="text" name="tgl"></td>
+                        <td >Tanggal</td><td><input type="text" name="tgl" value="<%=new Utilitas.Kalender().getTanggal2()%>"></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td>Kode Transaksi</td><td><select name="kdTrans">
+                                <option value="">Pilih transaksi</option>
                                 <% while (iterator.hasNext()){%>
                                    <% KodeTransaksi next = iterator.next();%>
-                                <option value=<%=next.getKdTrans()%>><%=next.getKdTrans()+' '+next.getNmTrans()%></option>
+                                <option value=<%=next.getKdTrans()%>><%=next.getKdTrans()+" - "+next.getNmTrans()%></option>
                                 <%}%>
                             </select></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Donatur</td><td><select name="idDonatur">
-                                <option value="11">11 Penerimaan Zakat</option>
-                                <option value="12">12 Penerimaan Infaq/Sedekah</option>
-                                <option value="13">13 Penerimaan Lainnya</option>
+                        <td>Donatur</td><td><select name="idDon">
+                                <option value="">Pilih donatur</option>
+                                <% while (iterDon.hasNext()){%>
+                                   <% Donatur next = iterDon.next();%>
+                                   <option value=<%=next.getId()%>><%=next.getId()+" - "+next.getNmDonatur()%></option>
+                                <%}%>
                             </select></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Kas/bank</td><td><select name="tipe">
-                                <option value="00">00 Kas</option>
-                                <option value="2">12 Penerimaan Infaq/Sedekah</option>
+                        <td>Kas/bank</td><td><select name="idRek">
+                                <option value="">Pilih Rekening</option>
+                                <% while (iterRek.hasNext()){%>
+                                   <% Rekening next = iterRek.next();%>
+                                   <option value=<%=next.getId()%>><%=next.getNoRek()+" - "+next.getBank()%></option>
+                                <%}%>
                             </select></td>
                     </tr>
                     <tr>
