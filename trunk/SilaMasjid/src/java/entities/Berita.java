@@ -27,7 +27,16 @@ public class Berita implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglUnggah;
     private Long idMasjid;
+    private Masjid masjid;
 
+    public Masjid getMasjid() {
+        return masjid;
+    }
+
+    public void setMasjid(Masjid masjid) {
+        this.masjid = masjid;
+    }
+    
     public Long getIdMasjid() {
         return idMasjid;
     }

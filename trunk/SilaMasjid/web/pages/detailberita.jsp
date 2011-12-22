@@ -11,7 +11,7 @@
 <%@page import="java.text.DateFormat"%>
 <% Berita berita = (Berita) request.getAttribute("posting");%>
 <!DOCTYPE html>
-<%@include file='aplikasitemplate.html' %>
+<%@include file='hometemplate.html' %>
 
 <html>
     <body>

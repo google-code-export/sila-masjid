@@ -20,7 +20,7 @@ import jpa.exceptions.NonexistentEntityException;
 
 /**
  *
- * @author Sumurmunding
+ * @author danke
  */
 @Entity
 public class IndexBerita implements Serializable {
@@ -68,12 +68,12 @@ public class IndexBerita implements Serializable {
         return berita;
     }
 
-    public List<Berita> getBeritas(Long id) {//
+    public List<Berita> getBeritas() {//
         List<Berita> beritas = new ArrayList<Berita>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Berita AS o where o.id=:id");
+            Query q = em.createQuery("SELECT object(o) FROM Berita AS o");
             beritas = q.getResultList();
 
         } finally {
