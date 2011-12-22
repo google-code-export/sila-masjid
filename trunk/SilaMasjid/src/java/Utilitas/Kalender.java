@@ -21,6 +21,11 @@ public class Kalender {
         tanggal = day[date.getDay()]+", "+date.getDate()+" "+month[date.getMonth()] + " "+(date.getYear()+1900);
         return tanggal;
     }
+    public String getTanggal2() {
+        Date date = new Date(new java.util.Date().getTime());
+        tanggal = date.getDate()+"-"+(date.getMonth()+1)+ "-"+(date.getYear()+1900);
+        return tanggal;
+    }
 
 
 }
