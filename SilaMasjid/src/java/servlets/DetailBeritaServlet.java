@@ -9,20 +9,18 @@ import entities.Masjid;
 import entities.Berita;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.JOptionPane;
 
 /**
  *
- * @author Sumurmunding
+ * @author danke
  */
-public class BeritaIndexServlet extends HttpServlet {
+public class DetailBeritaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,23 +31,26 @@ public class BeritaIndexServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        Long id = Long.parseLong(request.getParameter("id"));
 
+        IndexBerita index = new IndexBerita();
+        Berita posting = index.getBerita(id);
 
-        
-
+        HttpSession sessionedit = request.getSession();
+        sessionedit.setAttribute("posting", posting);
+        request.setAttribute("posting", posting);
         try {
-            
-            
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("pages/news.jsp");
-            requestDispatcher.forward(request, response);
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/detailberita.jsp");
+            rdp.forward(request, response);
         } finally {
             out.close();
         }
     }
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
      * Handles the HTTP <code>GET</code> method.
      * @param request servlet request

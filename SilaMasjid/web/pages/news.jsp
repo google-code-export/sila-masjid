@@ -30,13 +30,13 @@
             <tr> 
                 <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                         <%--ISI MULAI SINI--%>
-                        <form action="indexberita" method="post">
+                        <form action="" method="post">
                             <tr>
                                 <td width="10%">&nbsp;</td>
-                                <th width="20%" align="left">judul Berita</th>
+                                <th width="20%" align="left">Judul Berita</th>
                                 
                                 <th width="20%" align="left">Tgl Unggah</th>
-                                <th width="10%" align="left">Cek</th>
+                               
 
                             </tr>
 
@@ -49,17 +49,10 @@
                                 
                                 <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
-                                <td width="10%"><input type="checkbox" name="cek" value="<%=next.getId()%>"></td>
+                                
                             </tr>
-                            <%}%>     
-                            <tr><td>&nbsp;</td></tr>
-                            <tr>
-                                <td width="10%">&nbsp;</td>
-                                <td>&nbsp;</td><td><input type="submit" value="Setujui" ></td>
-                            </tr>
-                            <tr>
-                                <td colspan="6" align="center"><label align="center"><font color="black">${pesan}</font></label></td>
-                            </tr>
+                            <%}%>
+                            
                         </form>
                     </table></td>
             </tr>
