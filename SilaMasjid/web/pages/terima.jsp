@@ -20,8 +20,8 @@
 <% List<KodeTransaksi> kdtrans=dafkd.getKodeTerimas(idMasjid);%>
 <% Iterator<KodeTransaksi> iterator = kdtrans.iterator();%>
 <% DaftarTransaksi daftr=new DaftarTransaksi();%>
-<% List<KodeTransaksi> trans=daftr.getTransaksis(idMasjid);%>
-<% Iterator<KodeTransaksi> iterTr = trans.iterator();%>
+<% List<Transaksi> trans=daftr.getTransaksis(idMasjid);%>
+<% Iterator<Transaksi> iterTr = trans.iterator();%>
 <% DaftarRekening dafrek=new DaftarRekening();%>
 <% List<Rekening> reks=dafrek.getRekenings(idMasjid);%>
 <% Iterator<Rekening> iterRek = reks.iterator();%>

@@ -20,6 +20,7 @@ import javax.persistence.Temporal;
  */
 @Entity
 public class Transaksi implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +28,19 @@ public class Transaksi implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglTran;
     private Long idTran;
+    private String kdTrans;
     private Long idRek;
+    private Long idMasjid;
+    private String kasBank;
+    private Double jmlTran;
+    private String ket;
+    private String flag;
+    /*@ManyToOne
+    @JoinColumn(name = "kdTrans")
+    private KodeTransaksi nmTran;
+    @ManyToOne
+    @JoinColumn(name = "idRek")
+    private Rekening nmRek;*/
 
     public Long getIdMasjid() {
         return idMasjid;
@@ -53,33 +66,6 @@ public class Transaksi implements Serializable {
         this.idTran = idTran;
     }
 
-    public Rekening getNmRek() {
-        return nmRek;
-    }
-
-    public void setNmRek(Rekening nmRek) {
-        this.nmRek = nmRek;
-    }
-
-    public KodeTransaksi getNmTran() {
-        return nmTran;
-    }
-
-    public void setNmTran(KodeTransaksi nmTran) {
-        this.nmTran = nmTran;
-    }
-    private Long idMasjid;
-    private String kasBank;
-    private Double jmlTran;
-    private String ket;
-    private String flag;
-    @ManyToOne
-    @JoinColumn(name="idTran")
-    private KodeTransaksi nmTran;
-    @ManyToOne
-    @JoinColumn(name="idRek")
-    private Rekening nmRek;
-
     public String getFlag() {
         return flag;
     }
@@ -104,7 +90,7 @@ public class Transaksi implements Serializable {
         this.kasBank = kasBank;
     }
 
-   public String getKet() {
+    public String getKet() {
         return ket;
     }
 
@@ -119,7 +105,7 @@ public class Transaksi implements Serializable {
     public void setTglTran(Date tglTran) {
         this.tglTran = tglTran;
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -150,7 +136,6 @@ public class Transaksi implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Tranaksi[ id=" + id + " ]";
+        return "entities.Transaksi[ id=" + id + " ]";
     }
-    
 }

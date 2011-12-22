@@ -176,6 +176,10 @@
         <servlet-name>IndeksProposalServlet</servlet-name>
         <servlet-class>servlets.IndeksProposalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TerimaServlet</servlet-name>
+        <servlet-class>servlets.TerimaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -351,6 +355,10 @@
     <servlet-mapping>
         <servlet-name>IndeksProposalServlet</servlet-name>
         <url-pattern>/proposals</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TerimaServlet</servlet-name>
+        <url-pattern>/terima</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
