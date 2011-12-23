@@ -1,9 +1,8 @@
 <%-- 
-    Document   : terima
-    Created on : Dec 12, 2011, 5:08:20 PM
+    Document   : keluar
+    Created on : 23 Des 11, 9:13:42
     Author     : Alin
 --%>
-
 <%@page import="java.text.DateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarKodeTransaksi"%>
@@ -12,8 +11,8 @@
 <%@page import="entities.Transaksi"%>
 <%@page import="entities.DaftarRekening"%>
 <%@page import="entities.Rekening"%>
-<%@page import="entities.DaftarDonatur"%>
-<%@page import="entities.Donatur"%>
+<%@page import="entities.DaftarPenerimaDana"%>
+<%@page import="entities.PenerimaDana"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Date"%>
@@ -24,12 +23,12 @@
 <%@include file='aplikasitemplate.html' %>
 <%-- for dropdown kode transaksi--%>
 <% DaftarKodeTransaksi dafkd = new DaftarKodeTransaksi();%>
-<% List<KodeTransaksi> kdtrans = dafkd.getKodeTerimas(idMasjid);%>
+<% List<KodeTransaksi> kdtrans = dafkd.getKodeKeluars(idMasjid);%>
 <% Iterator<KodeTransaksi> iterator = kdtrans.iterator();%>
 
 <%-- for list of transaksi--%>
 <% DaftarTransaksi daftr = new DaftarTransaksi();%>
-<% List<Transaksi> trans = daftr.getTrmKlr(idMasjid, "1");%>
+<% List<Transaksi> trans = daftr.getTrmKlr(idMasjid, "2");%>
 <% Iterator<Transaksi> iterTr = trans.iterator();%>
 
 <%-- for dropdown kode rekening--%>
@@ -37,17 +36,17 @@
 <% List<Rekening> reks = dafrek.getRekenings(idMasjid);%>
 <% Iterator<Rekening> iterRek = reks.iterator();%>
 
-<%-- for dropdown kode donatur--%>
-<% DaftarDonatur dafDon = new DaftarDonatur();%>
-<% List<Donatur> dons = dafDon.getDonaturs(idMasjid);%>
-<% Iterator<Donatur> iterDon = dons.iterator();%>
+<%-- for dropdown kode PenerimaDana--%>
+<% DaftarPenerimaDana dafPen = new DaftarPenerimaDana();%>
+<% List<PenerimaDana> pens = dafPen.getPenerimaDanas(idMasjid);%>
+<% Iterator<PenerimaDana> iterPen = pens.iterator();%>
 
 <%Date tanggal = new Date();%>
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mcbg">         
     <tr> 
         <%--JUDUL DI SINI--%>
-        <td width="700" height="32" class="contentheader"><div align="center"><b>PENERIMAAN DANA</b></div></td>
+        <td width="700" height="32" class="contentheader"><div align="center"><b>PENGELUARAN DANA</b></div></td>
     </tr>
     <tr> 
         <td><img src="images/main_content_header_under.gif" width="700" height="26"></td>
@@ -55,7 +54,7 @@
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                 <%-- ISI MULAI SINI---%>
-                <form action="simpan_terima" method="post" >
+                <form action="simpan_keluar" method="post" >
                     <tr><td width="7%">&nbsp;</td>
                         <td >&nbsp;</td>
                         <td><label align="center"><font color="red"><b>${errorTerima}</b></font>
@@ -76,11 +75,11 @@
                     </tr>
                     <tr>
                         <td width="7%">&nbsp;</td>
-                        <td>Donatur</td><td><select name="idDon">
-                                <option value="">Pilih donatur</option>
-                                <% while (iterDon.hasNext()) {%>
-                                <% Donatur next = iterDon.next();%>
-                                <option value=<%=next.getId()%>><%=next.getId() + " - " + next.getNmDonatur()%></option>
+                        <td>PenerimaDana</td><td><select name="idPen">
+                                <option value="">Pilih PenerimaDana</option>
+                                <% while (iterPen.hasNext()) {%>
+                                <% PenerimaDana next = iterPen.next();%>
+                                <option value=<%=next.getId()%>><%=next.getId() + " - " + next.getNmPenDan()%></option>
                                 <%}%>
                             </select></td>
                     </tr>
@@ -118,7 +117,7 @@
                     <th align="left">Kas/Bank</th>
                     <th align="right">Jumlah</th>
                     <th width="2%">&nbsp;</th>
-                    <th align="left">Donatur</th>
+                    <th align="left">PenerimaDana</th>
                     <th align="left">Keterangan</th>
                 </tr>
 
@@ -131,7 +130,7 @@
                     <td><a href="editrekening?id=<%=next.getRek().getId()%>"><font color="blue"><%=next.getRek().getBank()+"-"+next.getRek().getNoRek()%></font></a></td>
                     <td align="right"><%=DecimalFormat.getInstance().format(next.getJmlTran())%></td>
                     <td >&nbsp;</td>
-                    <td><a href="editdonatur?id=<%=next.getDon().getId() %>"><font color="blue"><%=next.getDon().getNmDonatur()%></font></a></td>
+                    <td><a href="editpenerimadana?id=<%=next.getPen().getId() %>"><font color="blue"><%=next.getPen().getNmPenDan()%></font></a></td>
                     <td><%=next.getKet() %></td>
                     <%--   <td bgcolor="#F4F4F4"><a href="editkode?id=<%=next.getId() %>"><font color="brown">pilih</font></a></td>
                     --%>                </tr>

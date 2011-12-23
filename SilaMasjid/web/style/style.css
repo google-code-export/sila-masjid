@@ -46,6 +46,13 @@ input {
 	background-color: #F4F4F4;
 	border: 1px solid #969696;
 }
+textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #585858;
+	background-color: #F4F4F4;
+	border: 1px solid #969696;
+}
 button {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: x-small;

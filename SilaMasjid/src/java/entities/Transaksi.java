@@ -28,7 +28,6 @@ public class Transaksi implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglTran;
     private Long idMasjid;
-    private String kasBank;
     private Double jmlTran;
     private String ket;
     private String flag;
@@ -38,6 +37,8 @@ public class Transaksi implements Serializable {
     private Rekening rek;
     @ManyToOne
     private Donatur don;
+    @ManyToOne
+    private PenerimaDana pen;
 
     public Donatur getDon() {
         return don;
@@ -63,6 +64,14 @@ public class Transaksi implements Serializable {
         return tran;
     }
 
+    public PenerimaDana getPen() {
+        return pen;
+    }
+
+    public void setPen(PenerimaDana pen) {
+        this.pen = pen;
+    }
+
     public void setTran(KodeTransaksi tran) {
         this.tran = tran;
     }
@@ -85,14 +94,6 @@ public class Transaksi implements Serializable {
 
     public void setJmlTran(Double jmlTran) {
         this.jmlTran = jmlTran;
-    }
-
-    public String getKasBank() {
-        return kasBank;
-    }
-
-    public void setKasBank(String kasBank) {
-        this.kasBank = kasBank;
     }
 
     public String getKet() {
