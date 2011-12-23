@@ -4,22 +4,20 @@
  */
 package servlets;
 
-import entities.DaftarDonatur;
 import entities.DaftarKodeTransaksi;
+import entities.DaftarPenerimaDana;
 import entities.DaftarRekening;
 import entities.DaftarTransaksi;
-import entities.Donatur;
 import entities.KodeTransaksi;
 import entities.Masjid;
+import entities.PenerimaDana;
 import entities.Rekening;
 import entities.Transaksi;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -33,7 +31,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Alin
  */
-public class SimpanTerimaServlet extends HttpServlet {
+public class SimpanKeluarServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -46,7 +44,6 @@ public class SimpanTerimaServlet extends HttpServlet {
             throws ServletException, IOException, ParseException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
         HttpSession session = request.getSession();
         Masjid masjid = (Masjid) session.getAttribute("loged");
         Long idMasjid = masjid.getId();
@@ -55,26 +52,26 @@ public class SimpanTerimaServlet extends HttpServlet {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
         Date tglTran = dateFormat.parse(dateString);
         String idTrans = request.getParameter("idTrans");
-        String idDon = request.getParameter("idDon");
+        String idPen = request.getParameter("idPen");
         String idRek = request.getParameter("idRek");
         String ket = request.getParameter("nmTrans");
         String jmlTran = request.getParameter("jumlah");
-        String flag = "1";
+        String flag = "2";
 
 
         //validasi masukan
-        if (idTrans.isEmpty() || idDon.isEmpty() || idRek.isEmpty() || jmlTran.isEmpty()) {//validasi isian masukan (kosong/tidak)
-            request.setAttribute("errorTerima", "Afwan, data penerimaan gagal disimpan, ada kotak belum diisi. ");
-            RequestDispatcher rdp = request.getRequestDispatcher("terima");
+        if (idTrans.isEmpty() || idPen.isEmpty() || idRek.isEmpty() || jmlTran.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("errorTerima", "Afwan, data pengeluaran gagal disimpan, ada kotak belum diisi. ");
+            RequestDispatcher rdp = request.getRequestDispatcher("keluar");
             rdp.forward(request, response);
         } else if (!jmlTran.matches("[0-9]*")) { //validasi input jumlah harus angka
-            request.setAttribute("errorTerima", "Afwan, data penerimaan gagal disimpan. Jumlah harus berupa angka.");
-            RequestDispatcher rdp = request.getRequestDispatcher("terima");
+            request.setAttribute("errorTerima", "Afwan, data pengeluaran gagal disimpan. Jumlah harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("keluar");
             rdp.forward(request, response);
         } else {
             //request.setAttribute("pesanberhasil", "Alhamdulillah ya, data penerimaan berhasil disimpan.");
             DaftarTransaksi daf = new DaftarTransaksi();
-            Transaksi terima = new Transaksi();
+            Transaksi keluar = new Transaksi();
 
             DaftarKodeTransaksi dafKd = new DaftarKodeTransaksi();
             KodeTransaksi tran = dafKd.getKodeTransaksi(Long.parseLong(request.getParameter("idTrans")));
@@ -82,23 +79,23 @@ public class SimpanTerimaServlet extends HttpServlet {
             DaftarRekening dafRek = new DaftarRekening();
             Rekening rek = dafRek.getRekening(Long.parseLong(request.getParameter("idRek")));
 
-            DaftarDonatur dafDon = new DaftarDonatur();
-            Donatur don = dafDon.getDonatur(Long.parseLong(request.getParameter("idDon")));
+            DaftarPenerimaDana dafPen = new DaftarPenerimaDana();
+            PenerimaDana pen = dafPen.getPenerimaDana(Long.parseLong(request.getParameter("idPen")));
 
-            terima.setIdMasjid(idMasjid);
-            terima.setTglTran(tglTran);
-            terima.setJmlTran(Double.parseDouble(jmlTran));
-            terima.setKet(ket);
-            terima.setTran(tran);
-            terima.setRek(rek);
-            terima.setDon(don);
-            terima.setFlag(flag);
+            keluar.setIdMasjid(idMasjid);
+            keluar.setTglTran(tglTran);
+            keluar.setJmlTran(Double.parseDouble(jmlTran));
+            keluar.setKet(ket);
+            keluar.setTran(tran);
+            keluar.setRek(rek);
+            keluar.setPen(pen);
+            keluar.setFlag(flag);
 
-            daf.addTransaksi(terima);
+            daf.addTransaksi(keluar);
 
         }
         try {
-            response.sendRedirect("terima");
+            response.sendRedirect("keluar");
         } finally {
             out.close();
         }
@@ -118,7 +115,7 @@ public class SimpanTerimaServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(SimpanTerimaServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SimpanKeluarServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -135,7 +132,7 @@ public class SimpanTerimaServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(SimpanTerimaServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SimpanKeluarServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

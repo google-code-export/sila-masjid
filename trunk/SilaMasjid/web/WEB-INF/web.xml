@@ -184,6 +184,14 @@
         <servlet-name>SimpanTerimaServlet</servlet-name>
         <servlet-class>servlets.SimpanTerimaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>KeluarServlet</servlet-name>
+        <servlet-class>servlets.KeluarServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SimpanKeluarServlet</servlet-name>
+        <servlet-class>servlets.SimpanKeluarServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -367,6 +375,14 @@
     <servlet-mapping>
         <servlet-name>SimpanTerimaServlet</servlet-name>
         <url-pattern>/simpan_terima</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KeluarServlet</servlet-name>
+        <url-pattern>/keluar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanKeluarServlet</servlet-name>
+        <url-pattern>/simpan_keluar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
