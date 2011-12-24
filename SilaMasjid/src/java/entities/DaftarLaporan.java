@@ -19,50 +19,37 @@ import jpa.exceptions.NonexistentEntityException;
  *
  * @author alin
  */
-public class DaftarTransaksi implements Serializable {
+public class DaftarLaporan implements Serializable {
 
-    public DaftarTransaksi() {
+    public DaftarLaporan() {
         emf = Persistence.createEntityManagerFactory("SilaMasjidPU");
     }
-    
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    public boolean check(Long id) {
-        boolean result = false;
+    //mencari jumlah group by n digit kode
+    public Double getJumlah(Long idMasjid, String kdTrans) {
+        //   Transaksi transaksi = null;
+        Double transaksi = null;
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT count(o) FROM Transaksi AS o WHERE o.id=:id");
-            q.setParameter("id", id);
- 
-            int jumlahTransaksi = ((Long) q.getSingleResult()).intValue();
-            if (jumlahTransaksi > 0) {
-                result = true;
-            }
+            Query q = em.createQuery("SELECT sum(o.jmlTran) as jmlTran FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and o.kdTrans LIKE :kdTrans");
+            q.setParameter("idMasjid", idMasjid);
+            q.setParameter("kdTrans", kdTrans + "%");
+
+            transaksi = (Double) q.getSingleResult();
+
         } finally {
             em.close();
         }
-        return result;
-    }
-
-    public Transaksi getTransaksi(Long id) {
-        Transaksi transaksi = null;
-        EntityManager em = getEntityManager();
-        try {
-            boolean hasilCheck = this.check(id);
-            if (hasilCheck) {
-                Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.id=:id");
-                q.setParameter("id", id);
- 
-                transaksi = (Transaksi) q.getSingleResult();
-            }
-        } finally {
-            em.close();
+        if (transaksi == null) {
+            transaksi = Double.valueOf(0);
         }
         return transaksi;
+
     }
 
     public List<Transaksi> getTransaksis(Long idMasjid) {
@@ -79,14 +66,15 @@ public class DaftarTransaksi implements Serializable {
         }
         return transaksis;
     }
-    public List<Transaksi> getTrmKlr(Long idMasjid,String kdTrans) {
+
+    public List<Transaksi> getTrmKlr(Long idMasjid, String kdTrans) {
         List<Transaksi> transaksis = new ArrayList<Transaksi>();
 
         EntityManager em = getEntityManager();
         try {
             Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and o.kdTrans LIKE :kdTrans ORDER BY o.tglTran desc");
             q.setParameter("idMasjid", idMasjid);
-            q.setParameter("kdTrans", kdTrans+'%');
+            q.setParameter("kdTrans", kdTrans + "%");
             transaksis = q.getResultList();
 
         } finally {

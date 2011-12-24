@@ -4,6 +4,8 @@
  */
 package servlets;
 
+import entities.DaftarLaporan;
+import entities.Transaksi;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -29,10 +31,11 @@ public class AplikasiServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+
         try {
             RequestDispatcher rdp = request.getRequestDispatcher("pages/aplikasi.jsp");
             rdp.forward(request, response);
-        } finally {            
+        } finally {
             out.close();
         }
     }
