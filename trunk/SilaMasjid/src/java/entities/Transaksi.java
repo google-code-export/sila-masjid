@@ -27,7 +27,6 @@ public class Transaksi implements Serializable {
     private Long id;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglTran;
-    private Long idMasjid;
     private Double jmlTran;
     private String ket;
     private String flag;
@@ -39,6 +38,8 @@ public class Transaksi implements Serializable {
     private Donatur don;
     @ManyToOne
     private PenerimaDana pen;
+    @ManyToOne
+    private Masjid masjid;
 
     public Donatur getDon() {
         return don;
@@ -48,8 +49,12 @@ public class Transaksi implements Serializable {
         this.don = don;
     }
 
-    public Long getIdMasjid() {
-        return idMasjid;
+    public Masjid getMasjid() {
+        return masjid;
+    }
+
+    public void setMasjid(Masjid masjid) {
+        this.masjid = masjid;
     }
 
     public Rekening getRek() {
@@ -74,10 +79,6 @@ public class Transaksi implements Serializable {
 
     public void setTran(KodeTransaksi tran) {
         this.tran = tran;
-    }
-
-    public void setIdMasjid(Long idMasjid) {
-        this.idMasjid = idMasjid;
     }
 
     public String getFlag() {
