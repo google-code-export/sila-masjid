@@ -5,12 +5,12 @@
 package servlets;
 
 import entities.DaftarKodeTransaksi;
-import entities.DaftarPenerimaDana;
+import entities.DaftarDonatur;
 import entities.DaftarRekening;
 import entities.DaftarTransaksi;
 import entities.KodeTransaksi;
 import entities.Masjid;
-import entities.PenerimaDana;
+import entities.Donatur;
 import entities.Rekening;
 import entities.Transaksi;
 import java.io.IOException;
@@ -31,7 +31,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Alin
  */
-public class SimpanKeluarServlet extends HttpServlet {
+public class SimpanTerimaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -52,26 +52,25 @@ public class SimpanKeluarServlet extends HttpServlet {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
         Date tglTran = dateFormat.parse(dateString);
         String idTrans = request.getParameter("idTrans");
-        String idPen = request.getParameter("idPen");
+        String idPen = request.getParameter("idDon");
         String idRek = request.getParameter("idRek");
         String ket = request.getParameter("nmTrans");
         String jmlTran = request.getParameter("jumlah");
-        String flag = "2";
-
+        String flag = "1";
 
         //validasi masukan
         if (idTrans.isEmpty() || idPen.isEmpty() || idRek.isEmpty() || jmlTran.isEmpty()) {//validasi isian masukan (kosong/tidak)
-            request.setAttribute("errorTerima", "Afwan, data pengeluaran gagal disimpan, ada kotak belum diisi. ");
-            RequestDispatcher rdp = request.getRequestDispatcher("keluar");
+            request.setAttribute("errorTerima", "Afwan, data penerimaan gagal disimpan, ada kotak belum diisi. ");
+            RequestDispatcher rdp = request.getRequestDispatcher("terima");
             rdp.forward(request, response);
         } else if (!jmlTran.matches("[0-9]*")) { //validasi input jumlah harus angka
-            request.setAttribute("errorTerima", "Afwan, data pengeluaran gagal disimpan. Jumlah harus berupa angka.");
-            RequestDispatcher rdp = request.getRequestDispatcher("keluar");
+            request.setAttribute("errorTerima", "Afwan, data penerimaan gagal disimpan. Jumlah harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("terima");
             rdp.forward(request, response);
         } else {
             //request.setAttribute("pesanberhasil", "Alhamdulillah ya, data penerimaan berhasil disimpan.");
             DaftarTransaksi daf = new DaftarTransaksi();
-            Transaksi keluar = new Transaksi();
+            Transaksi terima = new Transaksi();
 
             DaftarKodeTransaksi dafKd = new DaftarKodeTransaksi();
             KodeTransaksi tran = dafKd.getKodeTransaksi(Long.parseLong(request.getParameter("idTrans")));
@@ -79,28 +78,27 @@ public class SimpanKeluarServlet extends HttpServlet {
             DaftarRekening dafRek = new DaftarRekening();
             Rekening rek = dafRek.getRekening(Long.parseLong(request.getParameter("idRek")));
 
-            DaftarPenerimaDana dafPen = new DaftarPenerimaDana();
-            PenerimaDana pen = dafPen.getPenerimaDana(Long.parseLong(request.getParameter("idPen")));
+            DaftarDonatur dafPen = new DaftarDonatur();
+            Donatur pen = dafPen.getDonatur(Long.parseLong(request.getParameter("idPen")));
 
-            keluar.setMasjid(masjid);
-            keluar.setTglTran(tglTran);
-            keluar.setJmlTran(Double.parseDouble(jmlTran));
-            keluar.setKet(ket);
-            keluar.setTran(tran);
-            keluar.setRek(rek);
-            keluar.setPen(pen);
-            keluar.setFlag(flag);
+            terima.setMasjid(masjid);
+            terima.setTglTran(tglTran);
+            terima.setJmlTran(Double.parseDouble(jmlTran));
+            terima.setKet(ket);
+            terima.setTran(tran);
+            terima.setRek(rek);
+            terima.setDon(pen);
+            terima.setFlag(flag);
 
-            daf.addTransaksi(keluar);
+            daf.addTransaksi(terima);
 
         }
         try {
-            response.sendRedirect("keluar");
+            response.sendRedirect("terima");
         } finally {
             out.close();
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
      * Handles the HTTP <code>GET</code> method.
@@ -115,7 +113,7 @@ public class SimpanKeluarServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(SimpanKeluarServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SimpanTerimaServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -132,7 +130,7 @@ public class SimpanKeluarServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(SimpanKeluarServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SimpanTerimaServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
