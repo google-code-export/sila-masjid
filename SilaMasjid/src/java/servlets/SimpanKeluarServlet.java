@@ -90,6 +90,7 @@ public class SimpanKeluarServlet extends HttpServlet {
             keluar.setRek(rek);
             keluar.setPen(pen);
             keluar.setFlag(flag);
+            keluar.setIdMasjid(idMasjid);
 
             daf.addTransaksi(keluar);
 

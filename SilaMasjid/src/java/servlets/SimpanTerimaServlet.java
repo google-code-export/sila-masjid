@@ -52,14 +52,14 @@ public class SimpanTerimaServlet extends HttpServlet {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
         Date tglTran = dateFormat.parse(dateString);
         String idTrans = request.getParameter("idTrans");
-        String idPen = request.getParameter("idDon");
+        String idDon = request.getParameter("idDon");
         String idRek = request.getParameter("idRek");
         String ket = request.getParameter("nmTrans");
         String jmlTran = request.getParameter("jumlah");
         String flag = "1";
 
         //validasi masukan
-        if (idTrans.isEmpty() || idPen.isEmpty() || idRek.isEmpty() || jmlTran.isEmpty()) {//validasi isian masukan (kosong/tidak)
+        if (idTrans.isEmpty() || idDon.isEmpty() || idRek.isEmpty() || jmlTran.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("errorTerima", "Afwan, data penerimaan gagal disimpan, ada kotak belum diisi. ");
             RequestDispatcher rdp = request.getRequestDispatcher("terima");
             rdp.forward(request, response);
@@ -79,7 +79,7 @@ public class SimpanTerimaServlet extends HttpServlet {
             Rekening rek = dafRek.getRekening(Long.parseLong(request.getParameter("idRek")));
 
             DaftarDonatur dafPen = new DaftarDonatur();
-            Donatur pen = dafPen.getDonatur(Long.parseLong(request.getParameter("idPen")));
+            Donatur don = dafPen.getDonatur(Long.parseLong(request.getParameter("idDon")));
 
             terima.setMasjid(masjid);
             terima.setTglTran(tglTran);
@@ -87,8 +87,9 @@ public class SimpanTerimaServlet extends HttpServlet {
             terima.setKet(ket);
             terima.setTran(tran);
             terima.setRek(rek);
-            terima.setDon(pen);
+            terima.setDon(don);
             terima.setFlag(flag);
+            terima.setIdMasjid(idMasjid);
 
             daf.addTransaksi(terima);
 

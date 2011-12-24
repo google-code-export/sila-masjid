@@ -30,6 +30,7 @@ public class Transaksi implements Serializable {
     private Double jmlTran;
     private String ket;
     private String flag;
+    private Long idMasjid;
     @ManyToOne
     private KodeTransaksi tran;
     @ManyToOne
@@ -47,6 +48,14 @@ public class Transaksi implements Serializable {
 
     public void setDon(Donatur don) {
         this.don = don;
+    }
+
+    public Long getIdMasjid() {
+        return idMasjid;
+    }
+
+    public void setIdMasjid(Long idMasjid) {
+        this.idMasjid = idMasjid;
     }
 
     public Masjid getMasjid() {
