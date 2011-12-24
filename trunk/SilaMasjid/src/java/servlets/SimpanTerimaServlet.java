@@ -7,7 +7,7 @@ package servlets;
 import entities.DaftarKodeTransaksi;
 import entities.DaftarDonatur;
 import entities.DaftarRekening;
-import entities.DaftarTransaksi;
+import entities.DaftarLaporan;
 import entities.KodeTransaksi;
 import entities.Masjid;
 import entities.Donatur;
@@ -56,8 +56,7 @@ public class SimpanTerimaServlet extends HttpServlet {
         String idRek = request.getParameter("idRek");
         String ket = request.getParameter("nmTrans");
         String jmlTran = request.getParameter("jumlah");
-        String flag = "1";
-
+    
         //validasi masukan
         if (idTrans.isEmpty() || idDon.isEmpty() || idRek.isEmpty() || jmlTran.isEmpty()) {//validasi isian masukan (kosong/tidak)
             request.setAttribute("errorTerima", "Afwan, data penerimaan gagal disimpan, ada kotak belum diisi. ");
@@ -69,7 +68,7 @@ public class SimpanTerimaServlet extends HttpServlet {
             rdp.forward(request, response);
         } else {
             //request.setAttribute("pesanberhasil", "Alhamdulillah ya, data penerimaan berhasil disimpan.");
-            DaftarTransaksi daf = new DaftarTransaksi();
+            DaftarLaporan daf = new DaftarLaporan();
             Transaksi terima = new Transaksi();
 
             DaftarKodeTransaksi dafKd = new DaftarKodeTransaksi();
@@ -88,7 +87,7 @@ public class SimpanTerimaServlet extends HttpServlet {
             terima.setTran(tran);
             terima.setRek(rek);
             terima.setDon(don);
-            terima.setFlag(flag);
+            terima.setKdTrans(tran.getKdTrans());
             terima.setIdMasjid(idMasjid);
 
             daf.addTransaksi(terima);

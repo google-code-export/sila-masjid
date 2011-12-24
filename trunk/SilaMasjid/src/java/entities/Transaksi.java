@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
@@ -29,7 +28,7 @@ public class Transaksi implements Serializable {
     private Date tglTran;
     private Double jmlTran;
     private String ket;
-    private String flag;
+    private String kdTrans;
     private Long idMasjid;
     @ManyToOne
     private KodeTransaksi tran;
@@ -90,12 +89,12 @@ public class Transaksi implements Serializable {
         this.tran = tran;
     }
 
-    public String getFlag() {
-        return flag;
+    public String getKdTrans() {
+        return kdTrans;
     }
 
-    public void setFlag(String flag) {
-        this.flag = flag;
+    public void setKdTrans(String kdTrans) {
+        this.kdTrans = kdTrans;
     }
 
     public Double getJmlTran() {
