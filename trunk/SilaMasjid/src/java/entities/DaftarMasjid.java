@@ -66,6 +66,7 @@ public class DaftarMasjid implements Serializable {
         }
         return result;
     }
+
     public boolean checkEmail(String email) {
         boolean result = false;
         EntityManager em = getEntityManager();
@@ -121,6 +122,21 @@ public class DaftarMasjid implements Serializable {
         EntityManager em = getEntityManager();
         try {
             Query q = em.createQuery("SELECT object(o) FROM Masjid AS o where o.id=:id");
+            q.setParameter("id", id);
+            masjids = q.getResultList();
+
+        } finally {
+            em.close();
+        }
+        return masjids;
+    }
+
+    public List<Masjid> getMasjids() {// untuk mengetes add Masjid
+        List<Masjid> masjids = new ArrayList<Masjid>();
+
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Masjid AS o");
             masjids = q.getResultList();
 
         } finally {
