@@ -42,17 +42,16 @@ public class DaftarMasjidTest {
     /**
      * Test of getEntityManager method, of class DaftarMasjid.
      */
-    @Test
+    /* @Test
     public void testGetEntityManager() {
-        System.out.println("getEntityManager");
-        DaftarMasjid instance = new DaftarMasjid();
-        EntityManager expResult = null;
-        EntityManager result = instance.getEntityManager();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+    System.out.println("getEntityManager");
+    DaftarMasjid instance = new DaftarMasjid();
+    EntityManager expResult = null;
+    EntityManager result = instance.getEntityManager();
+    assertEquals(expResult, result);
+    // TODO review the generated test code and remove the default call to fail.
+    fail("The test case is a prototype.");
+    }*/
     /**
      * Test of check method, of class DaftarMasjid.
      */
@@ -126,13 +125,14 @@ public class DaftarMasjidTest {
     @Test
     public void testFindMasjid() {
         System.out.println("findMasjid");
-        Long id = Long.parseLong("3420");
+        Long id = Long.parseLong("251");
         DaftarMasjid instance = new DaftarMasjid();
-        String expResult = "Masjid Agung";
+        String expResult = "Masjid Al Akbar";
         Masjid result = instance.findMasjid(id);
         String hasil = result.getNmMasjid();
         try {
             assertEquals(expResult, hasil);
+            System.out.println("findMasjid Sukses");
         } catch (Exception e) {
             // TODO review the generated test code and remove the default call to fail.
             fail("The test case is a prototype.");
@@ -159,11 +159,20 @@ public class DaftarMasjidTest {
     @Test
     public void testEditMasjid() {
         System.out.println("editMasjid");
-        Masjid masjid = null;
+        Masjid masjid;
+        //String email = "a@mail.com";
+        //String password = "aaaaaa";
         DaftarMasjid instance = new DaftarMasjid();
-        instance.editMasjid(masjid);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Masjid> list = instance.getMasjids();
+        masjid = list.get(1);
+        masjid.setAlmtMasjid("Jalan Alun-Alun");
+        masjid.setKotaMasjid("Kabupaten Pemalang");
+        try {
+            instance.editMasjid(masjid);
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -173,7 +182,6 @@ public class DaftarMasjidTest {
     public void testAddMasjid() {
         System.out.println("addMasjid");
         Masjid masjid = new Masjid();
-        Long id = Long.parseLong("3370");
         masjid.setNmMasjid("Masjid Agung");
         masjid.setEmail("a@mail.com");
         masjid.setAlmtMasjid("Jalan Surabaya");
@@ -181,11 +189,13 @@ public class DaftarMasjidTest {
         masjid.setPassword("password");
         masjid.setTelpMasjid("08176549288");
         DaftarMasjid instance = new DaftarMasjid();
-        // instance.addMasjid(masjid);
-        int hasil = instance.getMasjids(id).size();
-        System.out.println("hasil :" + hasil);
+        int hasil1 = instance.getMasjids().size();
+        instance.addMasjid(masjid);
+        int hasil2 = instance.getMasjids().size();
+
         try {
-            assertEquals(1, hasil);
+            assertEquals(hasil1 + 1, hasil2);
+            System.out.println("<List> getMasjid Sukses");
         } catch (Exception e) {
             // assertEquals(1, instance.getMasjids(Long.parseLong("1")).size());
             // TODO review the generated test code and remove the default call to fail.
@@ -199,37 +209,42 @@ public class DaftarMasjidTest {
     @Test
     public void testDeleteMasjid() throws Exception {
         System.out.println("deleteMasjid");
-        Long id = Long.parseLong("1");
+        Long id = Long.parseLong("3920");//id diganti sesuai dengan nomor id yang ada di database
         DaftarMasjid instance = new DaftarMasjid();
+        int hasil1 = instance.getMasjids().size();
         instance.deleteMasjid(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int hasil2 = instance.getMasjids().size();
+        try {
+            assertEquals(hasil1 - 1, hasil2);
+            System.out.println("Tes deleteMasjid Sukses");
+        } catch (Exception e) {// TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
-
     /**
      * Test of getEmf method, of class DaftarMasjid.
      */
-    @Test
+    /*@Test
     public void testGetEmf() {
-        System.out.println("getEmf");
-        DaftarMasjid instance = new DaftarMasjid();
-        EntityManagerFactory expResult = null;
-        EntityManagerFactory result = instance.getEmf();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    System.out.println("getEmf");
+    DaftarMasjid instance = new DaftarMasjid();
+    EntityManagerFactory expResult = null;
+    EntityManagerFactory result = instance.getEmf();
+    assertEquals(expResult, result);
+    // TODO review the generated test code and remove the default call to fail.
+    fail("The test case is a prototype.");
     }
-
+    
     /**
      * Test of setEmf method, of class DaftarMasjid.
      */
-    @Test
+    /* @Test
     public void testSetEmf() {
-        System.out.println("setEmf");
-        EntityManagerFactory emf = null;
-        DaftarMasjid instance = new DaftarMasjid();
-        instance.setEmf(emf);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    System.out.println("setEmf");
+    EntityManagerFactory emf = null;
+    DaftarMasjid instance = new DaftarMasjid();
+    instance.setEmf(emf);
+    // TODO review the generated test code and remove the default call to fail.
+    fail("The test case is a prototype.");
+    }*/
 }
