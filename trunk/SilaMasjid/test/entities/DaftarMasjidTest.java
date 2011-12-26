@@ -63,9 +63,13 @@ public class DaftarMasjidTest {
         DaftarMasjid instance = new DaftarMasjid();
         boolean expResult = false;
         boolean result = instance.check(email, password);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try {
+            assertEquals(expResult, result);
+            System.out.println("Tes Check Sukses");
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -78,9 +82,13 @@ public class DaftarMasjidTest {
         DaftarMasjid instance = new DaftarMasjid();
         boolean expResult = false;
         boolean result = instance.checkId(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try {
+            assertEquals(expResult, result);
+            System.out.println("Tes CheckId Sukses");
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -93,9 +101,15 @@ public class DaftarMasjidTest {
         DaftarMasjid instance = new DaftarMasjid();
         boolean expResult = false;
         boolean result = instance.checkEmail(email);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        try {
+            assertEquals(expResult, result);
+            System.out.println("Tes CheckEmail Sukses");
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
+
     }
 
     /**
@@ -113,7 +127,7 @@ public class DaftarMasjidTest {
         String expResult = "Masjid Al Akbar";
         try {
             assertEquals(expResult, resultNmMasjid);
-            System.out.println("getMasjid Sukses");
+            System.out.println("Tes getMasjid Sukses");
         } catch (Exception e) {// TODO review the generated test code and remove the default call to fail.
             fail("The test case is a prototype.");
         }
@@ -132,7 +146,7 @@ public class DaftarMasjidTest {
         String hasil = result.getNmMasjid();
         try {
             assertEquals(expResult, hasil);
-            System.out.println("findMasjid Sukses");
+            System.out.println("Tes findMasjid Sukses");
         } catch (Exception e) {
             // TODO review the generated test code and remove the default call to fail.
             fail("The test case is a prototype.");
@@ -189,13 +203,13 @@ public class DaftarMasjidTest {
         masjid.setPassword("password");
         masjid.setTelpMasjid("08176549288");
         DaftarMasjid instance = new DaftarMasjid();
-        int hasil1 = instance.getMasjids().size();
+        int hasil1 = instance.getMasjids().size(); //jumlah objek sebelum tambah objek
         instance.addMasjid(masjid);
-        int hasil2 = instance.getMasjids().size();
+        int hasil2 = instance.getMasjids().size(); //jumlah objek setelah tambah objek
 
         try {
             assertEquals(hasil1 + 1, hasil2);
-            System.out.println("<List> getMasjid Sukses");
+            System.out.println("Tes <List> getMasjid Sukses");
         } catch (Exception e) {
             // assertEquals(1, instance.getMasjids(Long.parseLong("1")).size());
             // TODO review the generated test code and remove the default call to fail.
@@ -209,11 +223,11 @@ public class DaftarMasjidTest {
     @Test
     public void testDeleteMasjid() throws Exception {
         System.out.println("deleteMasjid");
-        Long id = Long.parseLong("3920");//id diganti sesuai dengan nomor id yang ada di database
+        Long id = Long.parseLong("4270");//id diganti sesuai dengan nomor id yang ada di database
         DaftarMasjid instance = new DaftarMasjid();
-        int hasil1 = instance.getMasjids().size();
+        int hasil1 = instance.getMasjids().size(); //jumlah objek sebelum delete
         instance.deleteMasjid(id);
-        int hasil2 = instance.getMasjids().size();
+        int hasil2 = instance.getMasjids().size(); //jumlah objek setelah delete
         try {
             assertEquals(hasil1 - 1, hasil2);
             System.out.println("Tes deleteMasjid Sukses");
