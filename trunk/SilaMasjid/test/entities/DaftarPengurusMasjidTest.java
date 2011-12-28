@@ -93,7 +93,7 @@ public class DaftarPengurusMasjidTest {
     /**
      * Test of findPengurusMasjid method, of class DaftarPengurusMasjid.
      */
-    @Test
+   /* @Test
     public void testFindPengurusMasjid() {
         System.out.println("findPengurusMasjid");
         Long id = null;
@@ -107,7 +107,7 @@ public class DaftarPengurusMasjidTest {
             // TODO review the generated test code and remove the default call to fail.
             fail("The test case is a prototype.");
         }
-    }
+    }*/
 
     /**
      * Test of getPengurusMasjids method, of class DaftarPengurusMasjid.
