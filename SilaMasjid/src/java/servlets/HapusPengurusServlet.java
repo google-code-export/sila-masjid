@@ -41,7 +41,7 @@ public class HapusPengurusServlet extends HttpServlet {
             //HttpSession sessionedit = request.getSession();
             DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();
             Long id = Long.parseLong(request.getParameter("id"));
-            PengurusMasjid pengurus = daftar.findPengurusMasjid(id);
+            PengurusMasjid pengurus = daftar.getPengurusMasjid(id);
         /*   edit 1 des 2011 int pilihan = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin akan menghapus '"+pengurus.getNama()+ "' dari Daftar Pengurus Masjid?",
                     JOptionPane.MESSAGE_TYPE_PROPERTY, JOptionPane.YES_NO_OPTION);
 
