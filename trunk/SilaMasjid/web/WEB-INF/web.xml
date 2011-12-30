@@ -196,6 +196,10 @@
         <servlet-name>LapKeluar</servlet-name>
         <jsp-file>/pages/lapkeluar.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>servlets.HomeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -391,6 +395,10 @@
     <servlet-mapping>
         <servlet-name>LapKeluar</servlet-name>
         <url-pattern>/lap_keluar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
