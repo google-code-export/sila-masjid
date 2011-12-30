@@ -200,6 +200,14 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>servlets.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Laporan</servlet-name>
+        <jsp-file>/pages/pilihlaporan.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>LapSaldoServlet</servlet-name>
+        <jsp-file>/pages/lapsaldo.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -399,6 +407,14 @@
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Laporan</servlet-name>
+        <url-pattern>/laporan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LapSaldoServlet</servlet-name>
+        <url-pattern>/lap_saldo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
