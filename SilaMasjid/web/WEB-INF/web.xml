@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <servlet>
-        <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>servlets.HomeServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>AplikasiServlet</servlet-name>
         <servlet-class>servlets.AplikasiServlet</servlet-class>
     </servlet>
@@ -192,10 +188,14 @@
         <servlet-name>SimpanTerimaServlet</servlet-name>
         <servlet-class>servlets.SimpanTerimaServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/home</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>LapTerimaServlet</servlet-name>
+        <servlet-class>servlets.LapTerimaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LapKeluar</servlet-name>
+        <jsp-file>/pages/lapkeluar.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -383,6 +383,14 @@
     <servlet-mapping>
         <servlet-name>SimpanTerimaServlet</servlet-name>
         <url-pattern>/simpan_terima</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LapTerimaServlet</servlet-name>
+        <url-pattern>/lap_terima</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LapKeluar</servlet-name>
+        <url-pattern>/lap_keluar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -36,7 +36,9 @@ public class DaftarLaporan implements Serializable {
         Double transaksi = null;
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT sum(o.jmlTran) as jmlTran FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and o.kdTrans LIKE :kdTrans");
+            Query q = em.createQuery("SELECT sum(o.jmlTran) as jmlTran FROM "
+                    + "Transaksi AS o WHERE o.idMasjid=:idMasjid and o.kdTrans "
+                    + "LIKE :kdTrans");
             q.setParameter("idMasjid", idMasjid);
             q.setParameter("kdTrans", kdTrans + "%");
 
@@ -51,14 +53,18 @@ public class DaftarLaporan implements Serializable {
         return transaksi;
 
     }
-
-    public List<Transaksi> getTransaksis(Long idMasjid) {
+//Untuk laporan penrimaan/pengeluaran berdasarkan tiap kode transaksi
+    public List<Transaksi> getTransByKd(Long idMasjid,String kdTrans) {
         List<Transaksi> transaksis = new ArrayList<Transaksi>();
 
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid");
+            Query q = em.createQuery("SELECT Object(o) "
+                    + "FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and "
+                    + "o.kdTrans LIKE :kdTrans "
+                    + "ORDER by o.tglTran");
             q.setParameter("idMasjid", idMasjid);
+            q.setParameter("kdTrans", kdTrans+"%");
             transaksis = q.getResultList();
 
         } finally {
@@ -67,70 +73,7 @@ public class DaftarLaporan implements Serializable {
         return transaksis;
     }
 
-    public List<Transaksi> getTrmKlr(Long idMasjid, String kdTrans) {
-        List<Transaksi> transaksis = new ArrayList<Transaksi>();
-
-        EntityManager em = getEntityManager();
-        try {
-            Query q = em.createQuery("SELECT object(o) FROM Transaksi AS o WHERE o.idMasjid=:idMasjid and o.kdTrans LIKE :kdTrans ORDER BY o.tglTran desc");
-            q.setParameter("idMasjid", idMasjid);
-            q.setParameter("kdTrans", kdTrans + "%");
-            transaksis = q.getResultList();
-
-        } finally {
-            em.close();
-        }
-        return transaksis;
-    }
-
-    public void editTransaksi(Transaksi transaksi) {
-        EntityManager em = getEntityManager();
-        em.getTransaction().begin();
-        try {
-            em.merge(transaksi);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            em.getTransaction().rollback();
-        } finally {
-            em.close();
-        }
-    }
-
-    public void addTransaksi(Transaksi transaksi) {
-        EntityManager em = getEntityManager();
-        em.getTransaction().begin();
-        try {
-            em.persist(transaksi);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            em.getTransaction().rollback();
-        } finally {
-            em.close();
-        }
-    }
-
-    public void deleteTransaksi(Long id) throws NonexistentEntityException {
-        EntityManager em = null;
-        try {
-            em = getEntityManager();
-            em.getTransaction().begin();
-            Transaksi transaksi;
-            try {
-                transaksi = em.getReference(Transaksi.class, id);
-                transaksi.getId();
-            } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The transaksi with id " + id + " no longer exists.", enfe);
-            }
-            em.remove(transaksi);
-            em.getTransaction().commit();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-    }
-
-    public EntityManagerFactory getEmf() {
+     public EntityManagerFactory getEmf() {
         return emf;
     }
 
