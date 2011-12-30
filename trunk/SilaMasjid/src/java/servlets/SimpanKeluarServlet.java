@@ -7,7 +7,7 @@ package servlets;
 import entities.DaftarKodeTransaksi;
 import entities.DaftarPenerimaDana;
 import entities.DaftarRekening;
-import entities.DaftarLaporan;
+import entities.DaftarTransaksi;
 import entities.KodeTransaksi;
 import entities.Masjid;
 import entities.PenerimaDana;
@@ -68,7 +68,7 @@ public class SimpanKeluarServlet extends HttpServlet {
             rdp.forward(request, response);
         } else {
             //request.setAttribute("pesanberhasil", "Alhamdulillah ya, data penerimaan berhasil disimpan.");
-            DaftarLaporan daf = new DaftarLaporan();
+            DaftarTransaksi daf = new DaftarTransaksi();
             Transaksi keluar = new Transaksi();
 
             DaftarKodeTransaksi dafKd = new DaftarKodeTransaksi();
