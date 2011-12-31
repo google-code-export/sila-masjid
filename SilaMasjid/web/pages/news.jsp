@@ -33,10 +33,11 @@
                         <form action="" method="post">
                             <tr>
                                 <td width="10%">&nbsp;</td>
-                                <th width="20%" align="left">Judul Berita</th>
+                                <th width="60%" align="left">Judul Berita</th>
                                 
-                                <th width="20%" align="left">Tgl Unggah</th>
-                               
+                                <th width="10%" align="left">Tgl Unggah</th>
+                                <td width="10%">&nbsp;</td>
+                                    
 
                             </tr>
 
@@ -49,10 +50,12 @@
                                 
                                 <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
-                                
+                                <td width="20%">&nbsp;</td>
                             </tr>
                             <%}%>
-                            
+                            <tr>
+                                 <td width="20%">&nbsp;</td>
+                            </tr>
                         </form>
                     </table></td>
             </tr>
