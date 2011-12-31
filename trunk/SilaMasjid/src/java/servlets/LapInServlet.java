@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Alin
  */
-public class LapSaldoServlet extends HttpServlet {
+public class LapInServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -48,7 +48,7 @@ public class LapSaldoServlet extends HttpServlet {
         }
         try {
             
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/lapsaldo.jsp");
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/lapin.jsp");
             rdp.forward(request, response);
             
         } finally {
