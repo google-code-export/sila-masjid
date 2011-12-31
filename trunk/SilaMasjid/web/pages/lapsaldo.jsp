@@ -4,6 +4,7 @@
     Author     : Alin
 --%>
 
+<%@page import="entities.Masjid"%>
 <%@page import="entities.Transaksi"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file='hometemplate.html' %>
@@ -11,25 +12,26 @@
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.lang.Double"%>
 
-<% Long idMas=(Long)session.getAttribute("idMas");%>
+<% Masjid masjid=(Masjid)session.getAttribute("masjid");%>
+<%Long idMasjid=masjid.getId();%>
 
 <% DaftarLaporan lap = new DaftarLaporan();%>
 <%--jumlah pnrmaan zakat--%>
-<% Double trmZkt = lap.getJumlah(idMas, "11");%>
+<% Double trmZkt = lap.getJumlah(idMasjid, "11");%>
 <%--jumlah pnrmaan infak--%>
-<% Double trmInfak = lap.getJumlah(idMas, "12");%>
+<% Double trmInfak = lap.getJumlah(idMasjid, "12");%>
 <%--jumlah pnrmaan lain--%>
-<% Double trmLain = lap.getJumlah(idMas, "13");%>
+<% Double trmLain = lap.getJumlah(idMasjid, "13");%>
 <%--jumlah pnrmaan--%>
-<% Double trmJum = lap.getJumlah(idMas, "1");%>
+<% Double trmJum = lap.getJumlah(idMasjid, "1");%>
 <%--jumlah penyaluran zakat--%>
-<% Double klrZkt = lap.getJumlah(idMas, "21");%>
+<% Double klrZkt = lap.getJumlah(idMasjid, "21");%>
 <%--jumlah penyaluran infak--%>
-<% Double klrInfak = lap.getJumlah(idMas, "22");%>
+<% Double klrInfak = lap.getJumlah(idMasjid, "22");%>
 <%--jumlah pengeluaran lain--%>
-<% Double klrLain = lap.getJumlah(idMas, "23");%>
+<% Double klrLain = lap.getJumlah(idMasjid, "23");%>
 <%--jumlah pengeluaran--%>
-<% Double klrJum = lap.getJumlah(idMas, "2");%>
+<% Double klrJum = lap.getJumlah(idMasjid, "2");%>
 <%Double saldo=trmJum-klrJum;%>
 <!DOCTYPE html>
 <html>
@@ -45,6 +47,12 @@
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                 <%-- ISI MULAI SINI---%>
+                <h2 align="center"><%=masjid.getNmMasjid()%></h2>
+                <h4 align="center"><%=masjid.getAlmtMasjid()%></h4>
+                <h3 align="center"><%=masjid.getKotaMasjid()%></h3>
+                <tr> 
+                    <td width="10%">&nbsp;</td>
+                </tr>
                 <tr> 
                     <td width="20%">&nbsp;</td>
                     <td><b>PENERIMAAN:<b></td>
