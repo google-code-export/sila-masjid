@@ -31,18 +31,20 @@
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td width="20%">Masjid</td>
-                        <td><select name="idMas">
+                        <td><select name="idMasjid" onchange="this.form.submit();" >
                                 <option value="">Pilih Masjid</option>
+                                
                                 <% while (iterator.hasNext()) {%>
                                 <% Masjid next = iterator.next();%>
-                                <option value=<%=next.getId()%>><%=next.getNmMasjid() + " - " + next.getAlmtMasjid()+","+next.getKotaMasjid()%></option>
+                                   <option value=<%=next.getId()%>><%=next.getId()+"-"+next.getNmMasjid() + " - " + next.getAlmtMasjid()+","+next.getKotaMasjid()%></option>
                                 <%}%>
                         </select></td>
                     </tr>
+                    <tr><td>&nbsp;</td></tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td >Pilih Laporan:</td>
-                        <td><a href="lap_saldo"><font color="blue">Laporan Ringkas</font></a></td>
+                        <td><a href="lap_saldo?idMasjid=<%=request.getParameter("idMasjid") %>" ><font color="blue">Laporan Ringkas</font></a></td>
                        </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
@@ -52,7 +54,7 @@
                     <tr>
                         <td width="10%">&nbsp;</td>
                          <td width="10%">&nbsp;</td>
-                        <td><a href="lap_out"><font color="blue">Laporan Pengeluaran</font></a></td>
+                         <td><a href="lap_out"><font color="blue">Laporan Pengeluaran</font></a></td>
                      </tr>
                     <tr><td>&nbsp;</td></tr>
                 </form>

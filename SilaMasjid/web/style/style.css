@@ -21,6 +21,9 @@ body {
 	background-color: #F1F1F1;
 	margin: 4px;
 }
+h1,h2,h3,h4 {
+    line-height:60%;
+}
 .lcolumnt {
 	background-image: url(../images/css_bg_lcoumn.gif);
 	background-repeat: no-repeat;

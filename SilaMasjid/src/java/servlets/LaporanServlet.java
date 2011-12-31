@@ -4,8 +4,6 @@
  */
 package servlets;
 
-import entities.DaftarMasjid;
-import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,13 +11,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Alin
  */
-public class LapSaldoServlet extends HttpServlet {
+public class LaporanServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,15 +29,8 @@ public class LapSaldoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        Long idMasjid=Long.parseLong(request.getParameter("idMasjid"));
-        
-        DaftarMasjid daf=new DaftarMasjid();
-        Masjid masjid=daf.findMasjid(idMasjid);
-        HttpSession session=request.getSession(true);
-        session.setAttribute("masjid", masjid);
         try {
-            RequestDispatcher rdp=request.getRequestDispatcher("pages/lapsaldo.jsp");
+            RequestDispatcher rdp=request.getRequestDispatcher("pages/pilihlaporan.jsp");
             rdp.forward(request, response);
         } finally {            
             out.close();
