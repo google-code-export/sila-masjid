@@ -208,6 +208,10 @@
         <servlet-name>LaporanServlet</servlet-name>
         <servlet-class>servlets.LaporanServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LapInServlet</servlet-name>
+        <servlet-class>servlets.LapInServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -415,6 +419,10 @@
     <servlet-mapping>
         <servlet-name>LaporanServlet</servlet-name>
         <url-pattern>/laporan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LapInServlet</servlet-name>
+        <url-pattern>/lap_in</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

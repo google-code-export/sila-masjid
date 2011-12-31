@@ -17,7 +17,7 @@ root {
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: x-small;
-	color: #4E4E4E;
+	color: midnightblue;
 	background-color: #F1F1F1;
 	margin: 4px;
 }
@@ -37,10 +37,12 @@ h1,h2,h3,h4 {
 table {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: x-small;
-	color: #727272;
+	color:midnightblue;
+        line-height: 125%;
 }
 th {
-        background-color: #99CCFF;
+        background-color: maroon;
+        color:whitesmoke;
 }
 input {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -88,11 +90,11 @@ select {
         background-size:100%;
 }
 a:link {
-	color: #727272;
+	color: midnightblue;
 	text-decoration: none;
 }
 a:visited {
-	color: #727272;
+	color: darkblue;
 	text-decoration: none;
 }
 a:hover {

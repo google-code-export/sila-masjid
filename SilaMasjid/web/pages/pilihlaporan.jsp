@@ -27,11 +27,12 @@
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                 <%-- ISI MULAI SINI---%>
+                <h3 align="center"><font color="red"><b>${errormas}</b></font></h3>
                 <form action="" method="post" >
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td width="20%">Masjid</td>
-                        <td><select name="idMasjid" onchange="this.form.submit();" >
+                        <td><select name="idMasjid" >
                                 <option value="">Pilih Masjid</option>
                                 
                                 <% while (iterator.hasNext()) {%>
@@ -44,17 +45,17 @@
                     <tr>
                         <td width="10%">&nbsp;</td>
                         <td >Pilih Laporan:</td>
-                        <td><a href="lap_saldo?idMasjid=<%=request.getParameter("idMasjid") %>" ><font color="blue">Laporan Ringkas</font></a></td>
+                        <td><input type="button" style="color:blue; width:300px;" value=" Laporan Saldo Dana" onclick="this.form.action='lap_saldo';this.form.submit();" ></input></td>
                        </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
                          <td width="10%">&nbsp;</td>
-                        <td><a href="lap_in"><font color="blue">Laporan Penerimaan</font></a></td>
+                        <td><input type="button" style="color:blue; width:300px;" value=" Laporan Penerimaan" onclick="this.form.action='lap_in';this.form.submit();" ></input></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
                          <td width="10%">&nbsp;</td>
-                         <td><a href="lap_out"><font color="blue">Laporan Pengeluaran</font></a></td>
+                        <td><input type="button" style="color:blue; width:300px;" value=" Laporan Pengeluaran" onclick="this.form.action='lap_out';this.form.submit();" ></input></td>
                      </tr>
                     <tr><td>&nbsp;</td></tr>
                 </form>
