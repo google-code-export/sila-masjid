@@ -212,6 +212,10 @@
         <servlet-name>LapInServlet</servlet-name>
         <servlet-class>servlets.LapInServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LapOutServlet</servlet-name>
+        <servlet-class>servlets.LapOutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -423,6 +427,10 @@
     <servlet-mapping>
         <servlet-name>LapInServlet</servlet-name>
         <url-pattern>/lap_in</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LapOutServlet</servlet-name>
+        <url-pattern>/lap_out</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
