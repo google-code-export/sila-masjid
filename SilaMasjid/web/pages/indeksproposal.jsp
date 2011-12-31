@@ -54,14 +54,17 @@ and open the template in the editor.
                     <td width="15%" align="left"><%=DateFormat.getDateInstance().format(tgl)%></td>
                     <% boolean status = next.isSetuju();
                         String ketStatus = "";
+                        String nmMasjid = "";
                         if (status == true) {
                             ketStatus = "Disetujui";
+                            nmMasjid = next.getMasjid().getNmMasjid();
                         } else {
                             ketStatus = "-";
+                            nmMasjid = "-";
                         }%>
 
                     <td width="10%" align="left"><%=ketStatus%></td>
-                    <td width="20%" align="left"><%=next.getMasjid().getNmMasjid()%></td>
+                    <td width="20%" align="left"><%=nmMasjid%></td>
                 </tr>
                 <%}%>     
                 <tr><td>&nbsp;</td></tr>

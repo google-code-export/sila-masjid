@@ -47,7 +47,7 @@ public class ProsesSetujuProposal extends HttpServlet {
         try {
             if (cek == null) {
                 //JOptionPane.showMessageDialog(null, "Kegiatan tidak ada yang dipilih");
-                request.setAttribute("pesan","Anda belum memilih proposal yang akan disetujui");
+                request.setAttribute("pesan", "Anda belum memilih proposal yang akan disetujui");
                 jsp = "pages/daftarproposal.jsp";
             } else {
                 for (int i = 0; i < cek.length; i++) {
@@ -56,7 +56,7 @@ public class ProsesSetujuProposal extends HttpServlet {
                     Proposal proposal = daftar.getProposal(id);
                     Date tglSetuju = new Date(new java.util.Date().getTime());
 
-        //            proposal.setIdMasjid(idMasjid);
+                    proposal.setIdMasjid(idMasjid);
                     proposal.setTglSetuju(tglSetuju);
                     proposal.setSetuju(true);
                     proposal.setMasjid(masjid);
