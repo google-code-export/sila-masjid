@@ -8,17 +8,20 @@ import entities.IndexBerita;
 import entities.Berita;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import jpa.exceptions.NonexistentEntityException;
 
 /**
  *
- * @author Sumurmunding
+ * @author danke
  */
-public class NewsServlet extends HttpServlet {
+public class HapusBeritaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -28,13 +31,28 @@ public class NewsServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, NonexistentEntityException{
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
+        HttpSession sessionedit=request.getSession();
+        
+        IndexBerita index = new IndexBerita();
+        Berita dona = (Berita)sessionedit.getAttribute("berita");
+        Long id=dona.getId();
+        //hapus
+        index.deleteBerita(id);
+        response.sendRedirect("editnews");
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/news.jsp");
-            rdp.forward(request, response);
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SimpanEditKodeTransaksiServlet</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SimpanEditKodeTransaksiServlet at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
         } finally {
             out.close();
         }
@@ -51,7 +69,11 @@ public class NewsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(HapusKodeTransaksiServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /** 
@@ -64,7 +86,11 @@ public class NewsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(HapusKodeTransaksiServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /** 

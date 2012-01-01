@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sumurmunding
  */
-public class NewsServlet extends HttpServlet {
+public class EditNewsServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,7 +33,7 @@ public class NewsServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/news.jsp");
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/editnews.jsp");
             rdp.forward(request, response);
         } finally {
             out.close();

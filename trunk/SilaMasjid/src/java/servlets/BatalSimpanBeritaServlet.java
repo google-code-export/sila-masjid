@@ -13,12 +13,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Sumurmunding
+ * @author danke
  */
-public class NewsServlet extends HttpServlet {
+public class BatalSimpanBeritaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -31,11 +32,12 @@ public class NewsServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
+        
+        
         try {
-            RequestDispatcher rdp = request.getRequestDispatcher("pages/news.jsp");
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/editnews.jsp");
             rdp.forward(request, response);
-        } finally {
+        } finally {            
             out.close();
         }
     }

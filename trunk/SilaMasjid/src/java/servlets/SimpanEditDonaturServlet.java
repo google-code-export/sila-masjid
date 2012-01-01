@@ -8,6 +8,7 @@ import entities.DaftarDonatur;
 import entities.Donatur;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,12 +43,27 @@ public class SimpanEditDonaturServlet extends HttpServlet {
         DaftarDonatur daftar = new DaftarDonatur();
         Donatur dona = (Donatur)sessionedit.getAttribute("donatur");
 
+        if (nmDonatur.isEmpty() || telpDonatur.isEmpty() || almtDonatur.isEmpty()) {//validasi isian masukan (kosong/tidak)
+            request.setAttribute("errordonatur", "Afwan, data donatur gagal disimpan. Semua kolom harus diisi. ");
+            RequestDispatcher rdp = request.getRequestDispatcher("donatur");
+            rdp.forward(request, response);
+        }
+        else if (!telpDonatur.matches("[0-9]*")) { //validasi input nomor telepon harus angka
+            request.setAttribute("errordonatur", "Afwan, data donatur gagal disimpan. Nomor telepon harus berupa angka.");
+            RequestDispatcher rdp = request.getRequestDispatcher("donatur");
+            rdp.forward(request, response);
+
+        
+        } 
+        else
+        {
         dona.setNmDonatur(nmDonatur);
         dona.setTelpDonatur(telpDonatur);
         dona.setAlmtDonatur(almtDonatur);
         //simpan
         daftar.editDonatur(dona);
         response.sendRedirect("donator");
+        }
         try {
             /* TODO output your page here
             out.println("<html>");

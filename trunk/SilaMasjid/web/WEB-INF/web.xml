@@ -216,6 +216,26 @@
         <servlet-name>LapOutServlet</servlet-name>
         <servlet-class>servlets.LapOutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BatalSimpanBeritaServlet</servlet-name>
+        <servlet-class>servlets.BatalSimpanBeritaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HapusBeritaServlet</servlet-name>
+        <servlet-class>servlets.HapusBeritaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SimpanEditBeritaServlet</servlet-name>
+        <servlet-class>servlets.SimpanEditBeritaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditNewsServlet</servlet-name>
+        <servlet-class>servlets.EditNewsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UbahNewsServlet</servlet-name>
+        <servlet-class>servlets.UbahNewsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -431,6 +451,26 @@
     <servlet-mapping>
         <servlet-name>LapOutServlet</servlet-name>
         <url-pattern>/lap_out</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BatalSimpanBeritaServlet</servlet-name>
+        <url-pattern>/batal_berita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HapusBeritaServlet</servlet-name>
+        <url-pattern>/hapus_berita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpanEditBeritaServlet</servlet-name>
+        <url-pattern>/simpan_edit_berita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditNewsServlet</servlet-name>
+        <url-pattern>/editnews</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UbahNewsServlet</servlet-name>
+        <url-pattern>/ubahnews</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
