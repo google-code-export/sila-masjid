@@ -248,6 +248,10 @@
         <servlet-name>HubungiKamiServlet</servlet-name>
         <servlet-class>servlets.HubungiKamiServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TentangKamiServlet</servlet-name>
+        <servlet-class>servlets.TentangKamiServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -495,6 +499,10 @@
     <servlet-mapping>
         <servlet-name>HubungiKamiServlet</servlet-name>
         <url-pattern>/hubungikami</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TentangKamiServlet</servlet-name>
+        <url-pattern>/tentangkami</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
