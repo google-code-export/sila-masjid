@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * @author yooganz
  */
 public class DaftarPenerimaDanaTest {
-    
+
     public DaftarPenerimaDanaTest() {
     }
 
@@ -30,11 +30,11 @@ public class DaftarPenerimaDanaTest {
     @AfterClass
     public static void tearDownClass() throws Exception {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -42,17 +42,16 @@ public class DaftarPenerimaDanaTest {
     /**
      * Test of getEntityManager method, of class DaftarPenerimaDana.
      */
-    @Test
+    /* @Test
     public void testGetEntityManager() {
-        System.out.println("getEntityManager");
-        DaftarPenerimaDana instance = new DaftarPenerimaDana();
-        EntityManager expResult = null;
-        EntityManager result = instance.getEntityManager();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+    System.out.println("getEntityManager");
+    DaftarPenerimaDana instance = new DaftarPenerimaDana();
+    EntityManager expResult = null;
+    EntityManager result = instance.getEntityManager();
+    assertEquals(expResult, result);
+    // TODO review the generated test code and remove the default call to fail.
+    fail("The test case is a prototype.");
+    }*/
     /**
      * Test of check method, of class DaftarPenerimaDana.
      */
@@ -63,9 +62,12 @@ public class DaftarPenerimaDanaTest {
         DaftarPenerimaDana instance = new DaftarPenerimaDana();
         boolean expResult = false;
         boolean result = instance.check(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try {
+            assertEquals(expResult, result);
+            System.out.println("Tes Check sukses");
+        } catch (Exception e) {// TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -78,9 +80,13 @@ public class DaftarPenerimaDanaTest {
         DaftarPenerimaDana instance = new DaftarPenerimaDana();
         PenerimaDana expResult = null;
         PenerimaDana result = instance.getPenerimaDana(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try {
+            assertEquals(expResult, result);
+            System.out.println("Tes getPenerimaDana sukses");
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -93,9 +99,13 @@ public class DaftarPenerimaDanaTest {
         DaftarPenerimaDana instance = new DaftarPenerimaDana();
         PenerimaDana expResult = null;
         PenerimaDana result = instance.findPenerimaDana(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try {
+            assertEquals(expResult, result);
+            System.out.println("Tes findMasjid sukses");
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -106,11 +116,17 @@ public class DaftarPenerimaDanaTest {
         System.out.println("getPenerimaDanas");
         Long idMasjid = null;
         DaftarPenerimaDana instance = new DaftarPenerimaDana();
-        List expResult = null;
-        List result = instance.getPenerimaDanas(idMasjid);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int expResult = 0;
+        //List expResult = null;
+        int result = instance.getPenerimaDanas(idMasjid).size();
+        //List result = instance.getPenerimaDanas(idMasjid);
+        try {
+            assertEquals(expResult, result);
+            System.out.println("Tes getPenerimaDanas sukses");
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
+            fail("The test case is a prototype.");
+        }
     }
 
     /**
@@ -119,18 +135,18 @@ public class DaftarPenerimaDanaTest {
     @Test
     public void testEditPenerimaDana() {
         System.out.println("editPenerimaDana");
-        PenerimaDana penerimaDana = null;
+        Long idMasjid = Long.parseLong("251");
         DaftarPenerimaDana instance = new DaftarPenerimaDana();
-        List<PenerimaDana> list = instance.getPenerimaDanas(Long.parseLong("1"));
-        penerimaDana = list.get(1);
-        penerimaDana.setNmPenDan("Bedjo");
-        penerimaDana.setAlmtPenDan("Bandung");
-        penerimaDana.setNotelpPenDan("68886868");
-        
+        List<PenerimaDana> list = instance.getPenerimaDanas(idMasjid);
+        PenerimaDana pendan = list.get(0);
+        pendan.setAlmtPenDan("Jalan Gajahmada");
+        pendan.setNmPenDan("Andre K.");
+        pendan.setNotelpPenDan("08881245638");
         try {
-        instance.editPenerimaDana(penerimaDana);
-        // TODO review the generated test code and remove the default call to fail.
+            instance.editPenerimaDana(pendan);
+            System.out.println("Tes edtPenerimaDana sukses");
         } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
             fail("The test case is a prototype.");
         }
     }
@@ -141,18 +157,18 @@ public class DaftarPenerimaDanaTest {
     @Test
     public void testAddPenerimaDana() {
         System.out.println("addPenerimaDana");
-        PenerimaDana penerimaDana = null;
-        penerimaDana.setNmPenDan("yooganz");
-        penerimaDana.setAlmtPenDan("jakarta");
-        penerimaDana.setNotelpPenDan("232424");
+        PenerimaDana pendan = new PenerimaDana();
         DaftarPenerimaDana instance = new DaftarPenerimaDana();
-        int hasil1 = instance.getPenerimaDanas(Long.parseLong("1")).size();
-        instance.addPenerimaDana(penerimaDana);
-        int hasil2 = instance.getPenerimaDanas(Long.parseLong("1")).size();
-        // TODO review the generated test code and remove the default call to fail.
+        int hasil1 = instance.getPenerimaDanas(Long.parseLong("251")).size();//nomor id disesuaikan dengan record dalam tabel PenerimaDana
+        pendan.setAlmtPenDan("Jalan Semilir No. 56");
+        pendan.setIdMasjid(Long.parseLong("251"));
+        pendan.setNmPenDan("Gorgon Zolla");
+        pendan.setNotelpPenDan("12345678");
+        instance.addPenerimaDana(pendan);
+        int hasil2 = instance.getPenerimaDanas(Long.parseLong("251")).size();
         try {
             assertEquals(hasil1 + 1, hasil2);
-            System.out.println("Tes <List> Sukses");
+            System.out.println("Tes addMasjid Sukses");
         } catch (Exception e) {
             // TODO review the generated test code and remove the default call to fail.
             fail("The test case is a prototype.");
@@ -165,44 +181,45 @@ public class DaftarPenerimaDanaTest {
     @Test
     public void testDeletePenerimaDana() throws Exception {
         System.out.println("deletePenerimaDana");
-        Long id = Long.parseLong("1");
+        Long idMasjid = Long.parseLong("251");
         DaftarPenerimaDana instance = new DaftarPenerimaDana();
-        int hasil1 = instance.getPenerimaDanas(Long.parseLong("1")).size();
+        List<PenerimaDana> list = instance.getPenerimaDanas(idMasjid);//idMasjid diganti sesuai dengan idMasjid dalam tabel PenerimaDana
+        PenerimaDana pendan = list.get(0);
+        int hasil1 = list.size();
+        Long id = pendan.getId();
         instance.deletePenerimaDana(id);
-        int hasil2 = instance.getPenerimaDanas(Long.parseLong("1")).size();
-        // TODO review the generated test code and remove the default call to fail.
+        int hasil2 = instance.getPenerimaDanas(idMasjid).size();
         try {
             assertEquals(hasil1 - 1, hasil2);
-            System.out.println("Tes delete Sukses");
-        }  catch (Exception e){
+            System.out.println("Tes deletePenerimaDana sukses");
+        } catch (Exception e) {
+            // TODO review the generated test code and remove the default call to fail.
             fail("The test case is a prototype.");
         }
     }
-
     /**
      * Test of getEmf method, of class DaftarPenerimaDana.
      */
-    @Test
+    /*@Test
     public void testGetEmf() {
-        System.out.println("getEmf");
-        DaftarPenerimaDana instance = new DaftarPenerimaDana();
-        EntityManagerFactory expResult = null;
-        EntityManagerFactory result = instance.getEmf();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+    System.out.println("getEmf");
+    DaftarPenerimaDana instance = new DaftarPenerimaDana();
+    EntityManagerFactory expResult = null;
+    EntityManagerFactory result = instance.getEmf();
+    assertEquals(expResult, result);
+    // TODO review the generated test code and remove the default call to fail.
+    fail("The test case is a prototype.");
+    }*/
     /**
      * Test of setEmf method, of class DaftarPenerimaDana.
      */
-    @Test
+    /*@Test
     public void testSetEmf() {
-        System.out.println("setEmf");
-        EntityManagerFactory emf = null;
-        DaftarPenerimaDana instance = new DaftarPenerimaDana();
-        instance.setEmf(emf);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    System.out.println("setEmf");
+    EntityManagerFactory emf = null;
+    DaftarPenerimaDana instance = new DaftarPenerimaDana();
+    instance.setEmf(emf);
+    // TODO review the generated test code and remove the default call to fail.
+    fail("The test case is a prototype.");
+    }*/
 }
