@@ -34,10 +34,11 @@ and open the template in the editor.
                 <tr>
                     <td width="7%">&nbsp;</td>
                     <th width="5%" align="center">No.</th>
-                    <th width="25%" align="left">Nama Masjid</th>
+                    <th width="20%" align="left">Nama Masjid</th>
                     <th width="25%" align="left">Alamat</th>
-                    <th width="20%" align="left">Kota</th>
+                    <th width="15%" align="left">Kota</th>
                     <th width="18%" align="left">Nomor Telepon</th>
+                    <th width="10%" align="center">Pengurus</th>
                 </tr>
                 <% int no = 0;%>
                 <% while (iterator.hasNext()) {%>
@@ -46,10 +47,11 @@ and open the template in the editor.
                 <tr>
                     <td width="7%">&nbsp;</td>
                     <td width="5%" align="center"><%=no%></td>
-                    <td width="25%" align="left"><%=next.getNmMasjid()%></td>
+                    <td width="20%" align="left"><%=next.getNmMasjid()%></td>
                     <td width="25%" align="left"><%=next.getAlmtMasjid()%></td>
-                    <td width="20%" align="left"><%=next.getKotaMasjid()%></td>
-                    <td width="18%" align="left"><%=next.getTelpMasjid()%></td>        
+                    <td width="15%" align="left"><%=next.getKotaMasjid()%></td>
+                    <td width="18%" align="left"><%=next.getTelpMasjid()%></td>
+                    <td width="10%" align="center"><a href="daftarpengurus?id=<%=next.getId()%>">Pengurus</a></td>
                 </tr>
                 <%}%>     
                 <tr><td>&nbsp;</td></tr>

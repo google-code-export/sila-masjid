@@ -252,6 +252,10 @@
         <servlet-name>TentangKamiServlet</servlet-name>
         <servlet-class>servlets.TentangKamiServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DaftarPengurusServlet</servlet-name>
+        <servlet-class>servlets.DaftarPengurusServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -503,6 +507,10 @@
     <servlet-mapping>
         <servlet-name>TentangKamiServlet</servlet-name>
         <url-pattern>/tentangkami</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DaftarPengurusServlet</servlet-name>
+        <url-pattern>/daftarpengurus</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
