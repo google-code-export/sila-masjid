@@ -1,25 +1,18 @@
 <%-- 
-    Document   : kontakkami
+    Document   : hubungikami
     Created on : Dec 30, 2011, 6:57:43 AM
     Author     : yooganz
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="entities.DaftarMasjid"%>
-<%@page import="entities.Masjid"%>
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.List"%>
+<%@include file='hometemplate2.html' %>
 
 <!DOCTYPE html>
 <!--
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
-<%@include file='hometemplate2.html' %>
-<% DaftarMasjid daftar = new DaftarMasjid();%>
-<% List<Masjid> masjid = daftar.getMasjids();%>
-<% Iterator<Masjid> iterator = masjid.iterator();%>
-<!DOCTYPE html>
+
 <html>
     <%-- JUDUL DI SINI--%> 
         <td width="700" height="32" class="contentheader"><div align="center"><b>HUBUNGI KAMI</b></div></td>
