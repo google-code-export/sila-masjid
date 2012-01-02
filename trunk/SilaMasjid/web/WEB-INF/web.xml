@@ -236,6 +236,10 @@
         <servlet-name>UbahNewsServlet</servlet-name>
         <servlet-class>servlets.UbahNewsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetilBeritaServlet</servlet-name>
+        <servlet-class>servlets.DetilBeritaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -471,6 +475,10 @@
     <servlet-mapping>
         <servlet-name>UbahNewsServlet</servlet-name>
         <url-pattern>/ubahnews</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetilBeritaServlet</servlet-name>
+        <url-pattern>/detilberita</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -5,6 +5,7 @@
 package servlets;
 
 import entities.IndexBerita;
+import entities.Masjid;
 import entities.Berita;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author danke
  */
-public class SimpanEditBeritaServlet extends HttpServlet {
+public class DetilBeritaServlet extends HttpServlet {
 
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -30,42 +31,20 @@ public class SimpanEditBeritaServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        HttpSession sessionedit=request.getSession();
-        
-        String judul=request.getParameter("judul");
-        String isiBerita=request.getParameter("isiBerita");
-       
-        
-        
-        
-        IndexBerita index = new IndexBerita();
-        Berita dona = (Berita)sessionedit.getAttribute("berita");
+        Long id = Long.parseLong(request.getParameter("id"));
 
-         if (judul.isEmpty() || isiBerita.isEmpty() ) {//validasi isian masukan (kosong/tidak)
-            request.setAttribute("errorberita", "Afwan, berita gagal disimpan. Semua kolom harus diisi. ");
-            RequestDispatcher rdp = request.getRequestDispatcher("berita");
-            rdp.forward(request, response);
-        }
-         else{
-        dona.setJudul(judul);
-        dona.setIsiBerita(isiBerita);
-       
-        //simpan
-        index.editBerita(dona);
-        response.sendRedirect("editnews");}
+        IndexBerita index = new IndexBerita();
+        Berita posting = index.getBerita(id);
+
+        HttpSession sessionedit = request.getSession();
+        sessionedit.setAttribute("posting", posting);
+        request.setAttribute("posting", posting);
         try {
-            /* TODO output your page here
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SimpanEditKodeTransaksiServlet</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SimpanEditKodeTransaksiServlet at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-             */
+            RequestDispatcher rdp = request.getRequestDispatcher("pages/detilberita.jsp");
+            rdp.forward(request, response);
         } finally {
             out.close();
         }

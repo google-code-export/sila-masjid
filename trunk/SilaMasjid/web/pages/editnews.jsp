@@ -46,7 +46,7 @@
                             <tr>
                                 <td width="10%">&nbsp;</td>
                                 
-                                <td width="20%"><%=next.getJudul()%></td>
+                                <td width="20%"><a href="detilberita?id=<%=next.getId()%>" ><font color="blue"><%=next.getJudul()%></font></a></td>
                                 
                                 <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="20%"><%=DateFormat.getDateInstance().format(tgl)%></td>
