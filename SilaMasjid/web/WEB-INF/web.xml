@@ -244,6 +244,10 @@
         <servlet-name>IndeksMasjidServlet</servlet-name>
         <servlet-class>servlets.IndeksMasjidServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HubungiKamiServlet</servlet-name>
+        <servlet-class>servlets.HubungiKamiServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -487,6 +491,10 @@
     <servlet-mapping>
         <servlet-name>IndeksMasjidServlet</servlet-name>
         <url-pattern>/masjids</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HubungiKamiServlet</servlet-name>
+        <url-pattern>/hubungikami</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
