@@ -36,6 +36,10 @@ public class ProsesRegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String ulangiPassword = request.getParameter("ulangipassword");
+        String nmMasjid = "";
+        String almtMasjid = "";
+        String kotaMasjid = "";
+        String noTelp = "";
 
         DaftarMasjid daftar = new DaftarMasjid();
         Masjid masjid = new Masjid();
@@ -70,6 +74,10 @@ public class ProsesRegisterServlet extends HttpServlet {
         } else { //jika tidak ada error, menambah record masjid
             masjid.setEmail(email);
             masjid.setPassword(password);
+            masjid.setNmMasjid(nmMasjid);
+            masjid.setAlmtMasjid(almtMasjid);
+            masjid.setKotaMasjid(kotaMasjid);
+            masjid.setTelpMasjid(kotaMasjid);
             daftar.addMasjid(masjid);
 
             HttpSession session = request.getSession(true);//setelah registrasi berhasil, langsung login

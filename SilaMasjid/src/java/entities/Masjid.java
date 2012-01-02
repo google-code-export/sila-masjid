@@ -22,10 +22,10 @@ public class Masjid implements Serializable {
     private Long id;
     private String email;
     private String password;
-    private String nmMasjid="";
-    private String almtMasjid="";
-    private String kotaMasjid="";
-    private String telpMasjid="";
+    private String nmMasjid;
+    private String almtMasjid;
+    private String kotaMasjid;
+    private String telpMasjid;
 
     public String getAlmtMasjid() {
         return almtMasjid;
