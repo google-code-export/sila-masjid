@@ -307,7 +307,9 @@ Pengguna berada di halaman utama SILA MASJID. Pengguna menekan link "Log Out". P
 ===================
 Aktor : Pengunjung SILA MASJID
 
-Pengunjung berada di halaman depan SILA MASJID dan memilih menu unggah proposal. Sistem menampilkan halaman Unggah Proposal yang terdapat form pengisian Unggah Proposal yang terdiri dari field nama, alamat, telepon, email, besar dana, judul, dan detail proposal. Pengunjung mengisi field-field tersebut kemudian menekan tombol "unggah". Sistem menyimpan data inputan dari pengunjung tersebut.
+Aktor : Pengunjung 
+
+Pengunjung berada di halaman depan SILA MASJID dan memilih menu unggah proposal. Sistem menampilkan halaman Unggah Proposal yang terdapat form pengisian Unggah Proposal yang terdiri dari field nama, alamat, telepon, email, besar dana, judul, dan detail proposal. Pengunjung mengisi field-field tersebut kemudian menekan tombol "unggah". Sistem menyimpan data inputan dari pengunjung tersebut ke dalam daftar proposal. Sistem menampilkan halaman indeks proposal.
 
 Alternate flow :
   # Jika field nama atau field yang lainnya belum terisi, maka akan muncul peringatan "Afwan, proposal gagal diunggah, semua kolom harus diisi".
