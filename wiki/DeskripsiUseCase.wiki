@@ -46,25 +46,35 @@
 =================================
   20 UC Transaksi pengeluaran
 ==================================
-  21 UC Cetak / Tayang Laporan Keuangan masjid
+  21 UC Tayang Laporan ringkasan dana bagi pengunjung
 ===============================================
-  22 UC Lihat daftar lokasi masjid
+  22 UC Tayang Laporan penerimaan bagi pengunjung
+===============================================
+  23 UC Tayang Laporan pengeluaran bagi pengunjung
+===============================================
+  24 UC Tayang Laporan ringkasan dana bagi pengurus
+===============================================
+  25 UC Tayang Laporan penerimaan bagi pengurus
+===============================================
+  26 UC Tayang Laporan pengeluaran bagi pengurus
+===============================================
+  27 UC Lihat daftar lokasi masjid
 ===================================
-  23 UC Log out
+  28 UC Log out
 ================
-  24 UC Lupa Password
+  29 UC Lupa Password
 ======================
-  25 UC Unggah Proposal
+  30 UC Unggah Proposal
 ========================
-  26 UC Setujui Proposal
+  31 UC Setujui Proposal
 =========================
-  27 UC Laporan Proposal
+  32 UC Laporan Proposal
 =========================
-  28 UC Indeks Proposal
+  33 UC Indeks Proposal
 ========================
-  29 UC Unggah Berita
+  34 UC Unggah Berita
 ======================
-  30 UC Indeks Berita
+  35 UC Indeks Berita
 ======================
 
 Deskripsi tiap-tiap use case adalah sbb. 
@@ -283,18 +293,87 @@ Pengguna berada di halaman utama SILA MASJID memilih menu Pengeluaran. Sistem me
 Jika field tanggal, kode transaksi, nama penerima dana, atau jumlah uang kosong, sistem menampilkan pesan "Field harus diisi !", pengguna tetap berada di halaman Perekaman Pengeluran Masjid. Jika field jumlah uang diisi dengan bukan angka, sistem menampilkan pesan "Jumlah uang harus diisi dengan angka".
 
 
-*UC Cetak / Tayang Laporan Keuangan masjid*
+*UC Tayang Laporan  Ringkasan Dana bagi pengurus*
 ============================================
-Aktor : Pengguna dan Pengunjung SILA MASJID 
+Aktor : Pengurus SILA MASJID 
 
 Deskripsi :
-Use case ini menampilkan halaman untuk mencetak dan menayangkan laporan keuangan masjid.
+Use case ini menampilkan halaman untuk menayangkan laporan keuangan masjid.
 
 normal flow :
-  Pengguna dan Pengunjung berada pada halaman depan SILA MASJID. Pengguna dan Pengunjung memilih menu Cetak/Tayang Laporan Keuangan Masjid pada halaman depan SILA MASJID. Sistem menampilkan halaman Cetak/Tayang Laporan Keuangan Masjid. Pengguna dan Pengunjung memilih salah satu jenis Laporan Keuangan yang ingin dicetak atau dilihat. Pengguna dan Pengunjung memilih tanggal laporan keuangan yang ingin ditampilkan. Sistem menampilkan jenis laporan keuangan sesuai dengan periode yang dipilih oleh pengguna. Pengguna dan pengunjung memilih apakah akan menyimpan dokumen laporan keuangan tersebut ke dalam PC atau mencetak laporan keuangan tersebut melalui printer. 
+  Pengurus memilih menu laporan ringkasan dana. Sistem menampilkan laporan ringkasan dana.
   
 Alternate flow :
-  * Jika pada tanggal yang dipilih tidak ada laporan keuangan yang dikeluarkan masjid, maka sistem akan menampilkan pesan "Maaf, tidak ada laporan keuangan yang dapat ditampilkan pada tanggal tersebut".
+  * Jika laporan ringkasan dana tidak ada, maka sistem akan menampilkan halaman kosong.
+
+*UC Tayang Laporan Penerimaan bagi pengurus*
+============================================
+Aktor : Pengurus SILA MASJID 
+
+Deskripsi :
+Use case ini menampilkan halaman untuk menayangkan laporan keuangan masjid.
+
+normal flow :
+  Pengurus memilih menu laporan penerimaan. Sistem menampilkan laporan penerimaan.
+  
+Alternate flow :
+  * Jika laporan penerimaan tidak ada, maka sistem akan menampilkan halaman kosong.
+
+*UC Tayang Laporan Pengeluaran bagi pengurus*
+============================================
+Aktor : Pengurus SILA MASJID 
+
+Deskripsi :
+Use case ini menampilkan halaman untuk menayangkan laporan keuangan masjid.
+
+normal flow :
+  Pengurus memilih menu laporan pengeluaran. Sistem menampilkan laporan ringkasan dana.
+  
+Alternate flow :
+  * Jika laporan pengeluaran tidak ada, maka sistem akan menampilkan halaman kosong.
+
+
+*UC Tayang Laporan  Ringkasan Dana bagi pengunjung*
+============================================
+Aktor : Pengunjung SILA MASJID 
+
+Deskripsi :
+Use case ini menampilkan halaman untuk menayangkan laporan keuangan masjid.
+
+normal flow :
+  Pengurus memilih menu laporan dana. Sistem menampilkan pilihan laporan yang dapat dipilih oleh pengunjung. Pengunjung memilih laporan ringkasan dana. Sistem menampilkan laporan ringkasan dana.
+  
+Alternate flow :
+  * Jika laporan ringkasan dana tidak ada, maka sistem akan menampilkan halaman kosong.
+  * Jika nama masjid belum dipilih pengunjung, maka sistem akan mengeluarkan pesan error "Silahkan antum(Anda) pilih masjid dulu"
+
+*UC Tayang Laporan Penerimaan bagi pengunjung*
+============================================
+Aktor : Pengurus SILA MASJID 
+
+Deskripsi :
+Use case ini menampilkan halaman untuk menayangkan laporan keuangan masjid.
+
+normal flow :
+  Pengurus memilih menu laporan dana. Sistem menampilkan pilihan laporan yang dapat dipilih oleh pengunjung. Pengunjung memilih laporan penerimaan. Sistem menampilkan laporan penerimaan.
+  
+Alternate flow :
+  * Jika laporan penerimaan tidak ada, maka sistem akan menampilkan halaman kosong.
+  * Jika nama masjid belum dipilih pengunjung, maka sistem akan mengeluarkan pesan error "Silahkan antum(Anda) pilih masjid dulu"
+
+*UC Tayang Laporan Pengeluaran bagi pengunjung*
+============================================
+Aktor : Pengurus SILA MASJID 
+
+Deskripsi :
+Use case ini menampilkan halaman untuk menayangkan laporan keuangan masjid.
+
+normal flow :
+  Pengurus memilih menu laporan dana. Sistem menampilkan pilihan laporan yang dapat dipilih oleh pengunjung. Pengunjung memilih laporan pengeluaran. Sistem menampilkan laporan pengeluaran.
+  
+Alternate flow :
+  * Jika laporan pengeluaran tidak ada, maka sistem akan menampilkan halaman kosong.
+  * Jika nama masjid belum dipilih pengunjung, maka sistem akan mengeluarkan pesan error "Silahkan antum(Anda) pilih masjid dulu"
 
 
 *UC Log out*
