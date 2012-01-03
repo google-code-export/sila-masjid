@@ -61,8 +61,13 @@ and open the template in the editor.
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
+                <td colspan="7">Beberapa fungsi yang terdapat dalam web SILA-MASJID antara lain :</td>
+                </tr>
+              <tr>
                 <td>&nbsp;</td>
-                <td colspan="4"><p>Beberapa fungsi yang terdapat dalam web SILA-MASJID antara lain :</p></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td colspan="4">&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
               </tr>
               <tr>
@@ -255,6 +260,16 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
