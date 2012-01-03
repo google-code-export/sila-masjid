@@ -4,6 +4,7 @@
     Author     : Sumurmunding
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarProposal"%>
 <%@page import="entities.Proposal"%>
@@ -49,7 +50,7 @@ and open the template in the editor.
                     <td width="5%">&nbsp;</td>
                     <td width="15%" align="left"><%=next.getNama()%></td>
                     <td width="20%" align="left"><a href="detailproposalp?id=<%=next.getId() %>" title="lihat detail proposal"> <%=next.getJudul()%></a></td>
-                    <td width="15%" align="left"><%=next.getBesarDana()%></td>
+                    <td width="15%" align="left">Rp<%=DecimalFormat.getInstance().format(next.getBesarDana()) %></td>
                     <% Date tgl = (Date) next.getTglUnggah();%>
                     <td width="15%" align="left"><%=DateFormat.getDateInstance().format(tgl)%></td>
                     <% boolean status = next.isSetuju();

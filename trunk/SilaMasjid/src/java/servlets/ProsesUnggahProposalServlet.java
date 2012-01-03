@@ -37,7 +37,7 @@ public class ProsesUnggahProposalServlet extends HttpServlet {
         String alamat = request.getParameter("alamat");
         String noTelp = request.getParameter("noTelp");
         String email = request.getParameter("email");
-       // Integer besarDana = Integer.parseInt(request.getParameter("besarDana"));
+        // Integer besarDana = Integer.parseInt(request.getParameter("besarDana"));
         String dana = request.getParameter("besarDana");
         String judul = request.getParameter("judul");
         String detailProposal = request.getParameter("detailProposal");
@@ -65,8 +65,8 @@ public class ProsesUnggahProposalServlet extends HttpServlet {
             try {
                 DaftarProposal daftar = new DaftarProposal();
                 Proposal proposal = new Proposal();
+                Double besarDana = Double.parseDouble(dana);
                 
-                Integer besarDana = Integer.parseInt(dana);
                 proposal.setNama(nama);
                 proposal.setAlamat(alamat);
                 proposal.setNoTelp(noTelp);

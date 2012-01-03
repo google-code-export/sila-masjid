@@ -6,6 +6,7 @@ package entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,8 +28,9 @@ public class Proposal implements Serializable {
     private String alamat;
     private String noTelp;
     private String email;
-    private Integer besarDana=null;
+    private Double besarDana;
     private String judul;
+    @Column (columnDefinition = "TEXT")
     private String detailProposal;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglUnggah;
@@ -87,11 +89,11 @@ public class Proposal implements Serializable {
         this.alamat = alamat;
     }
 
-    public Integer getBesarDana() {
+    public Double getBesarDana() {
         return besarDana;
     }
 
-    public void setBesarDana(Integer besarDana) {
+    public void setBesarDana(Double besarDana) {
         this.besarDana = besarDana;
     }
 

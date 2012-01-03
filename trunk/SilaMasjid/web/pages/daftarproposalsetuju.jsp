@@ -4,6 +4,7 @@
     Author     : sumding
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarProposal"%>
 <%@page import="entities.Proposal"%>
@@ -46,7 +47,7 @@
                                 <td width="5%">&nbsp;</td>
                                 <td width="20%"><%=next.getNama()%></td>
                                 <td width="25%"><a title="Lihat detail proposal" href="detailproposal?id=<%=next.getId()%>" ><font color="blue"><%=next.getJudul()%></font></a></td>
-                                <td width="20%"><%=next.getBesarDana()%></td>
+                                <td width="20%"><%=DecimalFormat.getInstance().format(next.getBesarDana()) %></td>
                                 <% Date tgl = (Date) next.getTglUnggah();%>
                                 <td width="15%"><%=DateFormat.getDateInstance().format(tgl)%></td>
                                 <% Date tgl2 = (Date) next.getTglSetuju();%>

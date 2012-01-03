@@ -4,6 +4,7 @@
     Author     : sumding
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.DaftarProposal"%>
 <%@page import="entities.Proposal"%>
@@ -48,7 +49,7 @@
                         </tr>
                         <tr>
                             <td width="10%">&nbsp;</td>
-                            <td width="25%" align="left">Besar Dana</td><td align="center">:</td><td>Rp<%=proposal.getBesarDana()%>,-</td>
+                            <td width="25%" align="left">Besar Dana</td><td align="center">:</td><td><%=DecimalFormat.getInstance().format(proposal.getBesarDana()) %></td>
                         </tr>
                         <tr>
                             <td width="10%">&nbsp;</td>

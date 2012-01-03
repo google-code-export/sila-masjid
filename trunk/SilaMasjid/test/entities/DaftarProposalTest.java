@@ -183,7 +183,7 @@ public class DaftarProposalTest {
         proposal.setNama("Bejo 2");
         proposal.setAlamat("Sumurmunding");
         proposal.setEmail("a@ymail.com");
-        proposal.setBesarDana(1000000);
+        proposal.setBesarDana(1000000.00);
         proposal.setSetuju(false);
         instance.addProposal(proposal);
         int hasil2 = instance.getProposals().size();
