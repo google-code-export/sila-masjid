@@ -15,7 +15,7 @@ and open the template in the editor.
 
 <html>
     <%-- JUDUL DI SINI--%> 
-        <td width="700" height="32" class="contentheader"><div align="center"><b>HUBUNGI KAMI</b></div></td>
+        <td width="700" height="32" class="contentheader"><div align="center"><b>TENTANG KAMI</b></div></td>
     </tr>
     <tr> 
         <td><img src="images/main_content_header_under.gif" width="700" height="26"></td>
