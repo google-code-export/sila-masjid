@@ -7,75 +7,39 @@
 ==DAFTAR USE CASE SILA MASJID==
 
  #  UC Registrasi
-
  #  UC Login
-
  #  UC Ubah Profil masjid
-===========================
  #  UC Tambah Pengurus masjid
-==============================
  #  UC Ubah Pengurus masjid
-=============================
  #  UC Hapus Pengurus masjid
-==============================
  #  UC Tambah Rekening
-=======================
  #  UC Ubah Rekening
-=======================
  #  UC Hapus Rekening
-=======================
  #  UC Tambah Donatur
-=======================
  #  UC Ubah Donatur
-=====================
  #  UC Hapus Donatur
-======================
  #  UC Tambah Penerima Dana
-=============================
  #  UC Ubah Penerima Dana
-===========================
  #  UC Hapus Penerima Dana
-============================
  #  UC Tambah Kode transaksi
-==============================
  #  UC Ubah Kode transaksi
-============================
  #  UC Hapus Kode transaksi
-==============================
  #  UC Transaksi penerimaan
-=================================
  #  UC Transaksi pengeluaran
-==================================
  #  UC Tayang Laporan ringkasan dana bagi pengunjung
-===============================================
  #  UC Tayang Laporan penerimaan bagi pengunjung
-===============================================
  #  UC Tayang Laporan pengeluaran bagi pengunjung
-===============================================
  #  UC Tayang Laporan ringkasan dana bagi pengurus
-===============================================
  #  UC Tayang Laporan penerimaan bagi pengurus
-===============================================
  #  UC Tayang Laporan pengeluaran bagi pengurus
-===============================================
  #  UC Lihat daftar lokasi masjid
-===================================
  #  UC Log out
-================
- #  UC Lupa Password
-======================
  #  UC Unggah Proposal
-========================
  #  UC Setujui Proposal
-=========================
  #  UC Laporan Proposal
-=========================
  #  UC Indeks Proposal
-========================
  #  UC Unggah Berita
-======================
  #  UC Indeks Berita
-======================
 
 Deskripsi tiap-tiap use case adalah sbb. 
 
