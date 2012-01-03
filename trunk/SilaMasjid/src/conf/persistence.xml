@@ -14,10 +14,10 @@
     <class>entities.Proposal</class>
     <class>entities.PenerimaDana</class>
     <class>entities.DaftarPenerimaDana</class>
-    <class>entities.Berita</class>
     <class>entities.IndexBerita</class>
     <class>entities.Transaksi</class>
     <class>entities.DaftarTransaksi</class>
+    <class>entities.Berita</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/silama"/>

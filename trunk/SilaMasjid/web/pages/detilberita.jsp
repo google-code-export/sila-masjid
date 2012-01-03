@@ -34,7 +34,7 @@
                         </tr>
                         <tr>
                         
-                             <p><%=berita.getIsiBerita()%></p>  </tr>
+                        <p><%=berita.getIsiBerita().replace("\n", "<br>") %></p>  </tr>
                         
                         <tr>
                             <td>&nbsp;</td>
