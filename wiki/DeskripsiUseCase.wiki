@@ -50,11 +50,10 @@ Aktor : Pengurus Masjid (Pengguna)
 Pengguna membuka halaman depan SILA MASJID. Setelah itu, Pengguna meng-klik link "Daftar". Sistem menampilkan halaman pendaftaran pengguna baru. Pengguna mengisi field alamat email dengan email pengguna, field kata sandi dengan kata sandi yang sandi, dan field konfirmasi kata sandi dengan kata sandi sama dengan yang diisikan pada field kata sandi. Pengguna kemudian menekan tombol daftar. Sistem menyimpan data masukan dari pengguna ke dalam daftar pengguna dan mengirimkan notifikasi pendaftaran ke email yang digunakan pengguna. Pengguna diarahkan menuju halaman utama SILA MASJID.
 
 alternate flow :
-
-# Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field harus diisi"
-# Jika email yang digunakan sudah berada dalam daftar pengguna, maka sistem menampilkan pesan "Email ini sudah terdaftar
-# Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit"
-# Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak sama".
+  # Jika ada salah satu dari ketiga field kosong, sistem menampilkan pesan "Field harus diisi"
+  # Jika email yang digunakan sudah berada dalam daftar pengguna, maka sistem menampilkan pesan "Email ini sudah terdaftar
+  # Jika kata sandi yang dimasukkan kurang dari 6 digit, sistem menampilkan pesan "Kata sandi minimal 6 digit"
+  # Jika field kata sandi dan field konfirmasi kata sandi tidak sama, sistem menampilkan pesan "kata sandi yang Anda masukkan tidak sama".
 		
 
 *UC Login*
@@ -87,8 +86,8 @@ Aktor : Pengurus Masjid (Pengguna)
 Pengguna berada pada halaman Utama SILA MASJID memilih menu profil masjid. Sistem menampilkan halaman profil masjid dan me-load data profil masjid pada field yang sesuai. Pengguna mengisi field nama masjid, alamat jalan, kota, dan no. telepon kemudian menekan tombol simpan. Sistem menyimpan masukan dari pengguna ke dalam daftar profil masjid dan menampilkan pesan berhasil.
 
 alternate flow :
-#Jika ada salah satu field ada yang kosong, maka sistem akan menampilkan pesan "Semua field harus diisi"
-#Jika no. telepon bukan berupa angka, sistem menampilkan pesan "No. telepon tidak valid". 
+  #Jika ada salah satu field ada yang kosong, maka sistem akan menampilkan pesan "Semua field harus diisi"
+  #Jika no. telepon bukan berupa angka, sistem menampilkan pesan "No. telepon tidak valid". 
 
 
 *UC Tambah Pengurus masjid*
