@@ -5,7 +5,6 @@
  */
 package entities;
 
-
 import java.util.List;
 import java.util.ArrayList;
 import java.io.Serializable;
@@ -51,7 +50,6 @@ public class IndexBerita implements Serializable {
         return result;
     }
 
-    
     public Berita getBerita(Long id) {
         Berita berita = null;
         EntityManager em = getEntityManager();
@@ -67,6 +65,7 @@ public class IndexBerita implements Serializable {
         }
         return berita;
     }
+//berita dari semua masjid
 
     public List<Berita> getBeritas() {//
         List<Berita> beritas = new ArrayList<Berita>();
@@ -81,7 +80,53 @@ public class IndexBerita implements Serializable {
         }
         return beritas;
     }
+//berita dari loged masjid
 
+    public List<Berita> getBeritas(Long idMasjid) {//
+        List<Berita> beritas = new ArrayList<Berita>();
+
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Berita AS o where o.idMasjid=:idMasjid");
+            q.setParameter("idMasjid", idMasjid);
+            beritas = q.getResultList();
+
+        } finally {
+            em.close();
+        }
+        return beritas;
+    }
+//berita terkini
+    public List<Berita> getTerkini() {//
+        List<Berita> beritas = new ArrayList<Berita>();
+
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Berita AS o ORDER BY o.tglUnggah DESC");
+            q.setMaxResults(5);
+            beritas = q.getResultList();
+
+        } finally {
+            em.close();
+        }
+        return beritas;
+    }
+//berita popular
+    public List<Berita> getPopuler() {//
+        List<Berita> beritas = new ArrayList<Berita>();
+
+        EntityManager em = getEntityManager();
+        try {
+            Query q = em.createQuery("SELECT object(o) FROM Berita AS o ORDER BY o.klik DESC");
+            q.setMaxResults(5);
+            beritas = q.getResultList();
+
+        } finally {
+            em.close();
+        }
+        return beritas;
+    }
+    
     public void editBerita(Berita berita) {
         EntityManager em = getEntityManager();
         em.getTransaction().begin();

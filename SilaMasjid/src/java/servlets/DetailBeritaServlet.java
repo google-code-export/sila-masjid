@@ -38,6 +38,10 @@ public class DetailBeritaServlet extends HttpServlet {
 
         IndexBerita index = new IndexBerita();
         Berita posting = index.getBerita(id);
+        
+        //nambah jumlah klik
+        posting.setKlik(posting.getKlik()+1);
+        index.editBerita(posting);
 
         HttpSession sessionedit = request.getSession();
         sessionedit.setAttribute("posting", posting);

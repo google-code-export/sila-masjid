@@ -36,9 +36,6 @@ public class SimpanEditBeritaServlet extends HttpServlet {
         
         String judul=request.getParameter("judul");
         String isiBerita=request.getParameter("isiBerita");
-       
-        
-        
         
         IndexBerita index = new IndexBerita();
         Berita dona = (Berita)sessionedit.getAttribute("berita");
