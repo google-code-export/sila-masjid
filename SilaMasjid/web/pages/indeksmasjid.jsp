@@ -15,7 +15,7 @@
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
-<%@include file='hometemplate2.html' %>
+<%@include file='hometemplate.html' %>
 <% DaftarMasjid daftar = new DaftarMasjid();%>
 <% List<Masjid> masjid = daftar.getMasjids();%>
 <% Iterator<Masjid> iterator = masjid.iterator();%>

@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file='hometemplate2.html' %>
+<%@include file='hometemplate.html' %>
 
 <!DOCTYPE html>
 <!--
@@ -113,7 +113,7 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td width="26%">Eko Supristiyowadi</td>
-                <td width="27%">exco.doc@gmail.com</td>
+                <td width="27%">ecxo.doc@gmail.com</td>
                 <td>&nbsp;</td>
               </tr>
               <tr>
