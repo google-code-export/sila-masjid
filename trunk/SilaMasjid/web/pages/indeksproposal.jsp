@@ -17,7 +17,7 @@
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
-<%@include file='hometemplate2.html' %>
+<%@include file='hometemplate.html' %>
 <% DaftarProposal daftar = new DaftarProposal();%>
 <% List<Proposal> proposal = daftar.getProposals();%>
 <% Iterator<Proposal> iterator = proposal.iterator();%>

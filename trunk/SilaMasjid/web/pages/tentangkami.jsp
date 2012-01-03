@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file='hometemplate2.html' %>
+<%@include file='hometemplate.html' %>
 
 <!DOCTYPE html>
 <!--

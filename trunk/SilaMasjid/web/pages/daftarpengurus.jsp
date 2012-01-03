@@ -13,7 +13,7 @@
 <% Long id = (Long) session.getAttribute("id");%>
 <% Masjid masjid = (Masjid) session.getAttribute("masjid");%>
 <!DOCTYPE html>
-<%@include file='hometemplate2.html' %>
+<%@include file='hometemplate.html' %>
 <% DaftarPengurusMasjid daftar = new DaftarPengurusMasjid();%>
 <% List<PengurusMasjid> listPengurus = daftar.getPengurusMasjids(id);%>
 <% Iterator<PengurusMasjid> iterator = listPengurus.iterator();%>

@@ -12,7 +12,7 @@
 <%@page import="java.text.DateFormat"%>
 <% Proposal proposal = (Proposal) request.getAttribute("proposal");%>
 <!DOCTYPE html>
-<%@include file='hometemplate2.html' %>
+<%@include file='hometemplate.html' %>
 
 <html>
     <body>
