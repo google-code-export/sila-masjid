@@ -6,66 +6,66 @@
 
 ==DAFTAR USE CASE SILA MASJID==
 
-  # UC Registrasi
-
-  # UC Login
-
-  # UC Ubah Profil masjid
-
-  # UC Tambah Pengurus masjid
-
-  # UC Ubah Pengurus masjid
-
-  # UC Hapus Pengurus masjid
-========================
-  # UC Tambah Rekening
-==============
-  # UC Ubah Rekening
-==============
-  # UC Hapus Rekening
-==============
-  # UC Tambah Donatur
-=================
-  # UC Ubah Donatur
-================
-  # UC Hapus Donatur
-================
-  # UC Tambah Penerima Dana
+  1 UC Registrasi
+==================
+  2 UC Login
+==================
+  3 UC Ubah Profil masjid
+===========================
+  4 UC Tambah Pengurus masjid
+==============================
+  5 UC Ubah Pengurus masjid
+=============================
+  6 UC Hapus Pengurus masjid
+==============================
+  7 UC Tambah Rekening
 =======================
-  # UC Ubah Penerima Dana
+  8 UC Ubah Rekening
 =======================
-  # UC Hapus Penerima Dana
+  9 UC Hapus Rekening
+=======================
+  10 UC Tambah Donatur
+=======================
+  11 UC Ubah Donatur
+=====================
+  12 UC Hapus Donatur
 ======================
-  # UC Tambah Kode transaksi
-====================
-  # UC Ubah Kode transaksi
-====================
-  # UC Hapus Kode transaksi
-====================
-  # UC Transaksi penerimaan
+  13 UC Tambah Penerima Dana
+=============================
+  14 UC Ubah Penerima Dana
+===========================
+  15 UC Hapus Penerima Dana
+============================
+  16 UC Tambah Kode transaksi
+==============================
+  17 UC Ubah Kode transaksi
+============================
+  18 UC Hapus Kode transaksi
+==============================
+  19 UC Transaksi penerimaan
 =================================
-  # UC Transaksi pengeluaran
+  20 UC Transaksi pengeluaran
 ==================================
-  # UC Cetak / Tayang Laporan Keuangan masjid
-============================================
-  # UC Lihat daftar lokasi masjid
-================================ 
-  # UC Log out
-=============
-  # UC Lupa Password
-===================
-  # UC Unggah Proposal
-==================
-  # UC Setujui Proposal
-===================
-  # UC Laporan Proposal
-===================
-  # UC Indeks Proposal
-==================
-  # UC Unggah Berita
-==================
-  # UC Indeks Berita
-==================
+  21 UC Cetak / Tayang Laporan Keuangan masjid
+===============================================
+  22 UC Lihat daftar lokasi masjid
+===================================
+  23 UC Log out
+================
+  24 UC Lupa Password
+======================
+  25 UC Unggah Proposal
+========================
+  26 UC Setujui Proposal
+=========================
+  27 UC Laporan Proposal
+=========================
+  28 UC Indeks Proposal
+========================
+  29 UC Unggah Berita
+======================
+  30 UC Indeks Berita
+======================
 
 Deskripsi tiap-tiap use case adalah sbb. 
 
