@@ -256,6 +256,10 @@
         <servlet-name>DaftarPengurusServlet</servlet-name>
         <servlet-class>servlets.DaftarPengurusServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailProposal2Servlet</servlet-name>
+        <servlet-class>servlets.DetailProposal2Servlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AplikasiServlet</servlet-name>
         <url-pattern>/aplikasi</url-pattern>
@@ -511,6 +515,10 @@
     <servlet-mapping>
         <servlet-name>DaftarPengurusServlet</servlet-name>
         <url-pattern>/daftarpengurus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailProposal2Servlet</servlet-name>
+        <url-pattern>/detailproposalp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
