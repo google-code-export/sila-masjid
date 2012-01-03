@@ -23,6 +23,12 @@ body {
 }
 h1,h2,h3,h4 {
     line-height:60%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+p{
+    margin-left: 50px;
+    margin-right: 50px;
 }
 .lcolumnt {
 	background-image: url(../images/css_bg_lcoumn.gif);
