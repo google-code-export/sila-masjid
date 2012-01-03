@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td >Isi Berita</td><td><input type="text"  name="isiBerita" value="<%=dona.getIsiBerita().substring(0)%>"style="width: 160px"></td>
+                        <td >Isi Berita</td><td><textarea name="isiBerita" cols="100" rows="30"><%=dona.getIsiBerita().substring(0)%></textarea></td>
                     </tr>
                     
                     <tr><td>&nbsp;</td></tr>
