@@ -48,7 +48,7 @@ and open the template in the editor.
                 <tr>
                     <td width="5%">&nbsp;</td>
                     <td width="15%" align="left"><%=next.getNama()%></td>
-                    <td width="20%" align="left"><%=next.getJudul()%></td>
+                    <td width="20%" align="left"><a href="detailproposalp?id=<%=next.getId() %>" title="lihat detail proposal"> <%=next.getJudul()%></a></td>
                     <td width="15%" align="left"><%=next.getBesarDana()%></td>
                     <% Date tgl = (Date) next.getTglUnggah();%>
                     <td width="15%" align="left"><%=DateFormat.getDateInstance().format(tgl)%></td>

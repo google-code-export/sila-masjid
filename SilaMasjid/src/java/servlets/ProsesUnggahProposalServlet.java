@@ -77,7 +77,7 @@ public class ProsesUnggahProposalServlet extends HttpServlet {
                 proposal.setTglUnggah(tglUnggah);
                 proposal.setSetuju(false);
                 daftar.addProposal(proposal);
-                response.sendRedirect("home");
+                response.sendRedirect("proposals");
             } finally {
                 out.close();
             }
