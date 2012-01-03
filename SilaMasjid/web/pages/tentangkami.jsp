@@ -79,7 +79,7 @@ and open the template in the editor.
                 <td width="4%">&nbsp;</td>
                 <td width="38%">1. Input Rekening Masjid</td>
                 <td width="5%">&nbsp;</td>
-                <td colspan="3" rowspan="8" align="left"><img src="images/lap_penerimaan.gif" width="315" height="147"></td>
+                <td colspan="3" rowspan="11" align="left"><img src="images/lap_penerimaan.gif" width="315" height="147"></td>
                 </tr>
               <tr>
                 <td>&nbsp;</td>
@@ -102,7 +102,7 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>4. Input Akun Penerimaan Masjid</td>
+                <td>4. Input Kode Transaksi</td>
                 <td>&nbsp;</td>
                 </tr>
               <tr>
@@ -110,7 +110,47 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>5. Input Akun Pengeluaran Masjid</td>
+                <td>5. Input Profil Masjid</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>6. Input Pengurus Masjid</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>7. Input Transaksi Penerimaan</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>8. Input Transaksi Pengeluaran</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>9. Unggah dan Edit Berita</td>
+                <td>&nbsp;</td>
+                </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>10. Unggah dan Edit Proposal</td>
                 <td>&nbsp;</td>
                 </tr>
               <tr>
@@ -128,15 +168,9 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                </tr>
-              <tr>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                </tr>
+                <td colspan="2">&nbsp;</td>
+              </tr>
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -186,15 +220,7 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>4. Index Proposal</td>
                 <td>&nbsp;</td>
                 </tr>
               <tr>
@@ -202,7 +228,7 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>5. Index Berita</td>
                 <td>&nbsp;</td>
                 </tr>
               <tr>
@@ -210,7 +236,15 @@ and open the template in the editor.
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
+                <td>6. Berita Terpopuler</td>
                 <td>&nbsp;</td>
+                </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>7. Berita Terkini</td>
                 <td>&nbsp;</td>
                 </tr>
               <tr>
