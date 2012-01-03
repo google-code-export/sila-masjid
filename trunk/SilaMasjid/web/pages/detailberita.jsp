@@ -27,23 +27,20 @@
                 <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
                         <%--ISI MULAI SINI--%>
                         <tr>
-                            <td width="10%">&nbsp;</td>
-                            <td width="25%" align="left">Judul Berita</td><td align="center">:</td><td><%=berita.getJudul()%></td>
+                            <h2><%=berita.getJudul()%></h2>
                         </tr>
                         <tr>
-                            <td width="10%">&nbsp;</td>
-                            <td width="25%" align="left">Isi Berita</td><td align="center">:</td><td><%=berita.getIsiBerita()%></td>
+                                <td>&nbsp;</td>
                         </tr>
+                        <tr>
+                        
+                             <p><%=berita.getIsiBerita()%></p>  </tr>
                         
                         <tr>
-                            <td width="10%">&nbsp;</td>
-                            <% Date tgl = (Date) berita.getTglUnggah();%>
-                            <td width="25%" align="left">Tanggal Unggah</td><td align="center">:</td><td><%=DateFormat.getDateInstance().format(tgl)%></td>
-                        </tr>
+                            <td>&nbsp;</td>
+                         </tr>
                         
-                        <%
-                        %>
-                    </table></td>
+                        </table></td>
             </tr>
             <tr> 
                 <td class="mctop"><img src="images/mc_box_bottom.gif" alt="-" width="700" height="23"></td>

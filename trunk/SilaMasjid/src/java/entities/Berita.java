@@ -6,10 +6,12 @@ package entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -23,11 +25,22 @@ public class Berita implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String judul;
+    @Column(columnDefinition="TEXT")
     private String isiBerita;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date tglUnggah;
     private Long idMasjid;
+    @ManyToOne
     private Masjid masjid;
+    private int klik;
+
+    public int getKlik() {
+        return klik;
+    }
+
+    public void setKlik(int klik) {
+        this.klik = klik;
+    }
 
     public Masjid getMasjid() {
         return masjid;

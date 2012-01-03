@@ -3,6 +3,13 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <%@page import="java.util.Date"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="entities.Berita"%>
+<%@page import="java.util.List"%>
+<%@page import="entities.IndexBerita"%>
+<%IndexBerita dafPop=new IndexBerita();%>
+<%List<Berita> berPop=dafPop.getPopuler();%>
+<%Iterator<Berita> itPop=berPop.iterator();%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -127,10 +134,18 @@ and open the template in the editor.
                         </tr>
                         <tr> 
                             <td class="lcolumnt" height="17"> <table width="84%" height="14" border="0" align="center" cellpadding="0" cellspacing="0">
+                                   <%while (itPop.hasNext()){
+                                    Berita nextPop=itPop.next();%>
+                                    
                                     <tr> 
-                                        <td width="9%">&nbsp;</td>
-                                        <td width="91%">Content Here</td>
+                                        
+                                        <td width="10%">&nbsp;</td>
+                                        <td width="8%"><div align="center"><img src="images/arrow_icon_nav.gif" width="8" height="10"></div></td>
+                                        <td width="66%" bgcolor="#F4F4F4"><a href="detailberita?id=<%=nextPop.getId()%>"><%=nextPop.getJudul()+"-"+nextPop.getKlik()+" kali diklik"%></a></td>
+                                        <td width="11%">&nbsp;</td>
+                      
                                     </tr>
+                                    <%}%>
                                 </table></td>
                         </tr>
                         <tr> 

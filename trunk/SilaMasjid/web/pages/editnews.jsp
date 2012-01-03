@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <%@include file='aplikasitemplate.html' %>
 <% IndexBerita index = new IndexBerita();%>
-<% List<Berita> berita = index.getBeritas();%>
+<% List<Berita> berita = index.getBeritas(idMasjid);%>
 <% Iterator<Berita> iterator = berita.iterator();%>
 <html>
     <body>

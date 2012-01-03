@@ -4,7 +4,15 @@
     Author     : alin
 --%>
 
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="entities.Berita"%>
+<%@page import="java.util.List"%>
+<%@page import="entities.IndexBerita"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%IndexBerita dafBer=new IndexBerita();%>
+<%List<Berita> beritas=dafBer.getTerkini();%>
+<%Iterator<Berita> itBer=beritas.iterator();%>
 <!DOCTYPE html>
 <%@include file='pages/hometemplate.html' %>
 <html>
@@ -16,11 +24,24 @@
     </tr>
     <tr> 
         <td class="mctop"><table width="94%" border="0" cellpadding="0" cellspacing="0">
-                <tr> 
-                    <td width="6%">&nbsp;</td>
-                    <td width="94%">Content here</td>
-                </tr>
-            </table></td>
+                <%while (itBer.hasNext()){
+                 Berita next=itBer.next();%>
+                 <tr> 
+                  <h3><%=next.getJudul()%></h3>
+                  <p><%="Oleh: "+next.getMasjid().getNmMasjid()+","+next.getMasjid().getKotaMasjid()
+                           +" pada "+DateFormat.getDateInstance(3).format(next.getTglUnggah())%>
+                       </p>
+                 </tr>
+                 <tr>
+                     <p><img src="images/berita.jpg" align="left" width="50px" height="50px">          
+                         <%=next.getIsiBerita().substring(0,300) %>
+                     </p>
+                 </tr>
+                 <tr><a href="detailberita?id=<%=next.getId()%>"><font color="blue">Selengkapnya....</font></a>
+                 </tr>
+                 
+                <%}%>
+         </table></td>
     </tr>
     <tr> 
         <td class="mctop"><img src="images/mc_box_bottom.gif" alt="-" width="700" height="23"></td>

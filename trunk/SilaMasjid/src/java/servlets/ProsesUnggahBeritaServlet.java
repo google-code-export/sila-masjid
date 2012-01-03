@@ -6,6 +6,7 @@ package servlets;
 
 import entities.IndexBerita;
 import entities.Berita;
+import entities.Masjid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -14,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,6 +39,9 @@ public class ProsesUnggahBeritaServlet extends HttpServlet {
         String isiBerita = request.getParameter("isiBerita");
         Date tglUnggah = new Date(new java.util.Date().getTime());
         
+        HttpSession sesMas=request.getSession();
+        Masjid masjid=(Masjid)sesMas.getAttribute("loged");
+        
         try {
             IndexBerita index = new IndexBerita();
             Berita berita = new Berita();
@@ -44,6 +49,8 @@ public class ProsesUnggahBeritaServlet extends HttpServlet {
             berita.setJudul(judul);
             berita.setIsiBerita(isiBerita);
             berita.setTglUnggah(tglUnggah);
+            berita.setMasjid(masjid);
+            berita.setIdMasjid(masjid.getId());
             index.addBerita(berita);
             response.sendRedirect("posting");
         } finally {

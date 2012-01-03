@@ -24,7 +24,7 @@
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
-                        <td>Isi Berita</td><td><textarea rows="10" cols="30" name="isiBerita"></textarea></td>
+                        <td>Isi Berita</td><td><textarea rows="30" cols="100" name="isiBerita"></textarea></td>
                     </tr>
                     <tr>
                         <td width="10%">&nbsp;</td>
