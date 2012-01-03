@@ -6,75 +6,75 @@
 
 ==DAFTAR USE CASE SILA MASJID==
 
-#UC Registrasi
+ # UC Registrasi
 ==================
-#UC Login
+ # UC Login
 ==================
-#UC Ubah Profil masjid
+ # UC Ubah Profil masjid
 ===========================
-  4 UC Tambah Pengurus masjid
+ # UC Tambah Pengurus masjid
 ==============================
-  5 UC Ubah Pengurus masjid
+ # UC Ubah Pengurus masjid
 =============================
-  6 UC Hapus Pengurus masjid
+ # UC Hapus Pengurus masjid
 ==============================
-  7 UC Tambah Rekening
+ # UC Tambah Rekening
 =======================
-  8 UC Ubah Rekening
+ # UC Ubah Rekening
 =======================
-  9 UC Hapus Rekening
+ # UC Hapus Rekening
 =======================
-  10 UC Tambah Donatur
+ # UC Tambah Donatur
 =======================
-  11 UC Ubah Donatur
+ # UC Ubah Donatur
 =====================
-  12 UC Hapus Donatur
+ # UC Hapus Donatur
 ======================
-  13 UC Tambah Penerima Dana
+ # UC Tambah Penerima Dana
 =============================
-  14 UC Ubah Penerima Dana
+ # UC Ubah Penerima Dana
 ===========================
-  15 UC Hapus Penerima Dana
+ # UC Hapus Penerima Dana
 ============================
-  16 UC Tambah Kode transaksi
+ # UC Tambah Kode transaksi
 ==============================
-  17 UC Ubah Kode transaksi
+ # UC Ubah Kode transaksi
 ============================
-  18 UC Hapus Kode transaksi
+ # UC Hapus Kode transaksi
 ==============================
-  19 UC Transaksi penerimaan
+ # UC Transaksi penerimaan
 =================================
-  20 UC Transaksi pengeluaran
+ # UC Transaksi pengeluaran
 ==================================
-  21 UC Tayang Laporan ringkasan dana bagi pengunjung
+ # UC Tayang Laporan ringkasan dana bagi pengunjung
 ===============================================
-  22 UC Tayang Laporan penerimaan bagi pengunjung
+ # UC Tayang Laporan penerimaan bagi pengunjung
 ===============================================
-  23 UC Tayang Laporan pengeluaran bagi pengunjung
+ # UC Tayang Laporan pengeluaran bagi pengunjung
 ===============================================
-  24 UC Tayang Laporan ringkasan dana bagi pengurus
+ # UC Tayang Laporan ringkasan dana bagi pengurus
 ===============================================
-  25 UC Tayang Laporan penerimaan bagi pengurus
+ # UC Tayang Laporan penerimaan bagi pengurus
 ===============================================
-  26 UC Tayang Laporan pengeluaran bagi pengurus
+ # UC Tayang Laporan pengeluaran bagi pengurus
 ===============================================
-  27 UC Lihat daftar lokasi masjid
+ # UC Lihat daftar lokasi masjid
 ===================================
-  28 UC Log out
+ # UC Log out
 ================
-  29 UC Lupa Password
+ # UC Lupa Password
 ======================
-  30 UC Unggah Proposal
+ # UC Unggah Proposal
 ========================
-  31 UC Setujui Proposal
+ # UC Setujui Proposal
 =========================
-  32 UC Laporan Proposal
+ # UC Laporan Proposal
 =========================
-  33 UC Indeks Proposal
+ # UC Indeks Proposal
 ========================
-  34 UC Unggah Berita
+ # UC Unggah Berita
 ======================
-  35 UC Indeks Berita
+ # UC Indeks Berita
 ======================
 
 Deskripsi tiap-tiap use case adalah sbb. 
