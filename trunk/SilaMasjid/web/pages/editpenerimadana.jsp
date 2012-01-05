@@ -45,7 +45,7 @@
                         </tr>
                         <tr>
                             <td width="10%" align="left">&nbsp;</td>
-                            <td align="left">Bank</td>
+                            <td align="left">Telepon</td>
                             <td align="center"><strong>:</strong></td>
                             <td align="left"><strong>
                                     <input type="text" name="notelpPenDan" value="<%=pendan.getNotelpPenDan()%>"style="width: 80px">
