@@ -1,6 +1,5 @@
 #labels Phase-Requirements
 ==TIPE-TIPE USER==
- * ADMINISTRATOR
  * PENGGUNA (PENGURUS MASJID)
  * PENGUNJUNG
 
