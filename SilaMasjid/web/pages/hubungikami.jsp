@@ -32,20 +32,20 @@ and open the template in the editor.
               <tr>
                 <td width="10%">&nbsp;</td>
                 <td width="10%">&nbsp;</td>
-                <td colspan="2"><b>MARKAS BESAR SILA-MASJID :<b></b></b></td>
+                <td colspan="3"><b><p>MARKAS BESAR SILA-MASJID :<b></b></b></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td colspan="2">&nbsp;</td>
-                <td width="30%" rowspan="5"><blockquote>
-                  <p><img src="images/telepon.gif" width="196" height="153"></p>
+                <td width="20%" rowspan="5"><blockquote>
+                  <img src="images/telepon.gif" width="196" height="153">
                 </blockquote></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td colspan="2">Markas Besar Sila-Masjid terletak di Jurusan Sistem Informasi Institut Teknologi Sepuluh Nopember Surabaya (SI-ITS) dengan alamat Kampus ITS Keputih, Sukolilo, Surabaya 60111, Jawa Timur</td>
+                <td colspan="2"><p>Markas Besar Sila-Masjid terletak di Jurusan Sistem Informasi Institut Teknologi Sepuluh Nopember Surabaya (SI-ITS) dengan alamat Kampus ITS Keputih, Sukolilo, Surabaya 60111, Jawa Timur</td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
@@ -55,7 +55,7 @@ and open the template in the editor.
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td colspan="2">Silahkan hubungi kami melalui salah satu Customer Relationship kami di bawah ini, kami dengan senang hati akan menjawab setiap pertanyaan yang anda ajukan mengenai situs yang kami kembangkan ini, terima kasih.</td>
+                <td colspan="2"><p>Silahkan hubungi kami melalui salah satu Customer Relationship kami di bawah ini, kami dengan senang hati akan menjawab setiap pertanyaan yang anda ajukan mengenai situs yang kami kembangkan ini, terima kasih.</td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
